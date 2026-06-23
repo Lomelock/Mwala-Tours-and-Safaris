@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mwala Tours & Safaris – Tanzania</title>
+  <meta name="description" content="Experience the wild heart of Africa with Mwala Tours – your trusted Tanzania travel partner. Serengeti safaris, Kilimanjaro climbs, Zanzibar escapes." />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --savanna:    #C8803A;
+      --dusk:       #1C1410;
+      --ochre:      #E8A44A;
+      --earth:      #6B4226;
+      --mist:       #F5EFE6;
+      --stone:      #9A8A7A;
+      --white:      #FDFAF6;
+      --grass:      #4A6741;
+
+      --display: 'Cormorant Garamond', Georgia, serif;
+      --body:    'DM Sans', system-ui, sans-serif;
+
+      --max: 1200px;
+      --r: 4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--body);
+      background: var(--white);
+      color: var(--dusk);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 70px;
+      background: transparent;
+      transition: background .35s, box-shadow .35s;
+    }
+    nav.scrolled {
+      background: rgba(28,20,16,.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 20px rgba(0,0,0,.4);
+    }
+    .nav-logo {
+      font-family: var(--display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: .04em;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--ochre); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,.85);
+      text-decoration: none;
+      font-size: .85rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 400;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--ochre); }
+    .nav-book {
+      background: var(--savanna);
+      color: var(--white) !important;
+      padding: .5rem 1.2rem;
+      border-radius: var(--r);
+      font-weight: 500 !important;
+      transition: background .2s !important;
+    }
+    .nav-book:hover { background: var(--ochre) !important; color: var(--dusk) !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--white);
+      transition: transform .3s, opacity .3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+    /* ── HERO ── */
+    #home {
+      height: 100vh;
+      min-height: 600px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero-slides {
+      position: absolute; inset: 0;
+    }
+    .hero-slide {
+      position: absolute; inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+    .hero-slide.active { opacity: 1; }
+    .hero-slide::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(28,20,16,.45) 0%, rgba(28,20,16,.55) 60%, rgba(28,20,16,.75) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 760px;
+      padding: 0 2rem;
+    }
+    .hero-eyebrow {
+      font-family: var(--body);
+      font-size: .75rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--ochre);
+      margin-bottom: 1.2rem;
+    }
+    .hero-title {
+      font-family: var(--display);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--ochre);
+    }
+    .hero-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,.78);
+      max-width: 480px;
+      margin: 0 auto 2.2rem;
+      font-weight: 300;
+    }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--savanna);
+      color: var(--white);
+      text-decoration: none;
+      padding: .85rem 2rem;
+      border-radius: var(--r);
+      font-size: .9rem;
+      font-weight: 500;
+      letter-spacing: .04em;
+      transition: background .2s, transform .15s;
+    }
+    .btn-primary:hover { background: var(--ochre); color: var(--dusk); transform: translateY(-2px); }
+    .btn-ghost {
+      border: 1px solid rgba(255,255,255,.5);
+      color: var(--white);
+      text-decoration: none;
+      padding: .85rem 2rem;
+      border-radius: var(--r);
+      font-size: .9rem;
+      font-weight: 400;
+      letter-spacing: .04em;
+      transition: border-color .2s, background .2s;
+    }
+    .btn-ghost:hover { border-color: var(--ochre); background: rgba(200,128,58,.15); }
+
+    .slide-dots {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      display: flex; gap: .5rem; z-index: 5;
+    }
+    .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,.4); cursor: pointer;
+      transition: background .3s, transform .3s;
+    }
+    .dot.active { background: var(--ochre); transform: scale(1.25); }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--dusk);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+    .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      border-right: 1px solid rgba(255,255,255,.08);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--display);
+      font-size: 2rem;
+      color: var(--ochre);
+      font-weight: 600;
+    }
+    .stat-label {
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-top: .15rem;
+    }
+
+    /* ── SHARED ── */
+    section { padding: 6rem 5%; }
+    .container { max-width: var(--max); margin: 0 auto; }
+    .section-eyebrow {
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--savanna);
+      margin-bottom: .8rem;
+      font-weight: 500;
+    }
+    .section-title {
+      font-family: var(--display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--dusk);
+      margin-bottom: 1rem;
+    }
+    .section-title em { font-style: italic; color: var(--savanna); }
+    .section-desc {
+      max-width: 560px;
+      color: var(--stone);
+      font-size: .95rem;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-img-stack {
+      position: relative;
+      height: 480px;
+    }
+    .about-img-main {
+      position: absolute;
+      top: 0; left: 0;
+      width: 78%; height: 85%;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+    .about-img-accent {
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 52%; height: 52%;
+      object-fit: cover;
+      border-radius: 2px;
+      border: 4px solid var(--white);
+    }
+    .about-badge {
+      position: absolute;
+      top: 2rem; right: 3rem;
+      background: var(--savanna);
+      color: var(--white);
+      font-family: var(--display);
+      font-size: 1rem;
+      padding: 1rem 1.4rem;
+      border-radius: 50%;
+      width: 90px; height: 90px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      line-height: 1.2;
+      font-weight: 600;
+      z-index: 2;
+    }
+    .about-badge small { font-size: .6rem; font-family: var(--body); font-weight: 300; letter-spacing: .1em; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+    .feature-card {
+      background: var(--mist);
+      border-radius: var(--r);
+      padding: 1.2rem;
+      border-left: 3px solid var(--savanna);
+    }
+    .feature-icon { font-size: 1.4rem; margin-bottom: .4rem; }
+    .feature-name {
+      font-weight: 500;
+      font-size: .9rem;
+      color: var(--dusk);
+      margin-bottom: .2rem;
+    }
+    .feature-desc { font-size: .8rem; color: var(--stone); font-weight: 300; }
+
+    /* ── DESTINATIONS ── */
+    #destinations { background: var(--mist); }
+    .dest-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
+    .destinations-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .dest-card {
+      position: relative;
+      border-radius: var(--r);
+      overflow: hidden;
+      cursor: pointer;
+      group: 1;
+    }
+    .dest-card:first-child {
+      grid-column: span 2;
+    }
+    .dest-img {
+      width: 100%; height: 340px;
+      object-fit: cover;
+      display: block;
+      transition: transform .6s ease;
+    }
+    .dest-card:first-child .dest-img { height: 420px; }
+    .dest-card:hover .dest-img { transform: scale(1.05); }
+    .dest-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(28,20,16,.85) 0%, transparent 55%);
+      transition: background .4s;
+    }
+    .dest-card:hover .dest-overlay {
+      background: linear-gradient(to top, rgba(28,20,16,.9) 0%, rgba(28,20,16,.2) 60%);
+    }
+    .dest-info {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.5rem;
+    }
+    .dest-kms {
+      font-size: .7rem;
+      letter-spacing: .1em;
+      color: var(--ochre);
+      text-transform: uppercase;
+      margin-bottom: .3rem;
+    }
+    .dest-name {
+      font-family: var(--display);
+      font-size: 1.5rem;
+      color: var(--white);
+      font-weight: 400;
+      margin-bottom: .4rem;
+    }
+    .dest-tags { display: flex; flex-wrap: wrap; gap: .3rem; }
+    .dest-tag {
+      font-size: .65rem;
+      padding: .2rem .6rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.35);
+      color: rgba(255,255,255,.8);
+      letter-spacing: .06em;
+    }
+    .dest-extra {
+      max-height: 0; overflow: hidden;
+      transition: max-height .4s ease;
+      color: rgba(255,255,255,.75);
+      font-size: .82rem;
+      font-weight: 300;
+      margin-top: 0;
+    }
+    .dest-card:hover .dest-extra { max-height: 80px; margin-top: .6rem; }
+
+    /* ── PACKAGES ── */
+    #packages { background: var(--white); }
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .pkg-card {
+      border-radius: var(--r);
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,.07);
+      transition: box-shadow .3s, transform .3s;
+      background: var(--white);
+    }
+    .pkg-card:hover {
+      box-shadow: 0 12px 40px rgba(28,20,16,.12);
+      transform: translateY(-4px);
+    }
+    .pkg-img {
+      width: 100%; height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .pkg-body { padding: 1.4rem; }
+    .pkg-meta {
+      display: flex; gap: .6rem; align-items: center;
+      margin-bottom: .7rem;
+    }
+    .pkg-days {
+      background: var(--savanna);
+      color: var(--white);
+      font-size: .7rem;
+      padding: .2rem .6rem;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+    .pkg-loc {
+      font-size: .75rem;
+      color: var(--stone);
+      letter-spacing: .04em;
+    }
+    .pkg-name {
+      font-family: var(--display);
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--dusk);
+      margin-bottom: .5rem;
+    }
+    .pkg-desc { font-size: .82rem; color: var(--stone); font-weight: 300; line-height: 1.65; margin-bottom: 1rem; }
+    .wildlife-pills { display: flex; flex-wrap: wrap; gap: .3rem; margin-bottom: 1rem; }
+    .wildlife-pill {
+      font-size: .65rem;
+      padding: .2rem .55rem;
+      border-radius: 20px;
+      background: var(--mist);
+      color: var(--earth);
+      font-weight: 500;
+    }
+    .pkg-link {
+      display: inline-block;
+      color: var(--savanna);
+      font-size: .82rem;
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: .04em;
+      border-bottom: 1px solid var(--savanna);
+      padding-bottom: .1rem;
+      transition: color .2s, border-color .2s;
+    }
+    .pkg-link:hover { color: var(--earth); border-color: var(--earth); }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials {
+      background: var(--dusk);
+      padding: 6rem 5%;
+      text-align: center;
+    }
+    #testimonials .section-title { color: var(--white); }
+    #testimonials .section-eyebrow { color: var(--ochre); }
+    .testimonials-carousel {
+      position: relative;
+      max-width: 680px;
+      margin: 3rem auto 0;
+      overflow: hidden;
+    }
+    .testimonial-track {
+      display: flex;
+      transition: transform .5s ease;
+    }
+    .testimonial {
+      min-width: 100%;
+      padding: 2.5rem 2rem;
+      background: rgba(255,255,255,.05);
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .t-quote {
+      font-family: var(--display);
+      font-size: 1.5rem;
+      font-style: italic;
+      color: rgba(255,255,255,.9);
+      line-height: 1.55;
+      margin-bottom: 1.5rem;
+    }
+    .t-quote::before { content: '\201C'; color: var(--ochre); font-size: 2rem; line-height: 0; vertical-align: -.5rem; margin-right: .1rem; }
+    .t-name {
+      font-size: .8rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+    .t-stars { color: var(--ochre); margin-bottom: .6rem; font-size: .9rem; }
+    .carousel-controls {
+      display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1.5rem;
+    }
+    .carousel-btn {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      color: var(--white);
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background .2s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .carousel-btn:hover { background: var(--savanna); border-color: var(--savanna); }
+    .t-dots { display: flex; gap: .4rem; }
+    .t-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.2); cursor: pointer; }
+    .t-dot.active { background: var(--ochre); }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--mist); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-info-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+      align-items: flex-start;
+    }
+    .contact-icon {
+      width: 44px; height: 44px;
+      background: var(--savanna);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .contact-detail-label {
+      font-size: .7rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: .2rem;
+    }
+    .contact-detail-value {
+      font-size: .9rem;
+      color: var(--dusk);
+      font-weight: 400;
+    }
+
+    .contact-form {
+      background: var(--white);
+      padding: 2.5rem;
+      border-radius: var(--r);
+      box-shadow: 0 4px 30px rgba(28,20,16,.06);
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label {
+      display: block;
+      font-size: .75rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: .4rem;
+      font-weight: 500;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: .75rem 1rem;
+      border: 1px solid rgba(0,0,0,.12);
+      border-radius: var(--r);
+      font-family: var(--body);
+      font-size: .9rem;
+      color: var(--dusk);
+      background: var(--white);
+      outline: none;
+      transition: border-color .2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--savanna);
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-submit {
+      width: 100%;
+      background: var(--savanna);
+      color: var(--white);
+      border: none;
+      padding: .9rem 2rem;
+      border-radius: var(--r);
+      font-family: var(--body);
+      font-size: .9rem;
+      font-weight: 500;
+      letter-spacing: .04em;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .form-submit:hover { background: var(--earth); }
+    .form-success {
+      display: none;
+      background: var(--grass);
+      color: var(--white);
+      padding: 1rem;
+      border-radius: var(--r);
+      text-align: center;
+      font-size: .9rem;
+      margin-top: 1rem;
+    }
+    .map-wrap {
+      margin-top: 2rem;
+      border-radius: var(--r);
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,.08);
+    }
+    .map-wrap iframe { display: block; border: none; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dusk);
+      color: rgba(255,255,255,.65);
+      padding: 3.5rem 5% 2rem;
+    }
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .footer-brand-name {
+      font-family: var(--display);
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: .7rem;
+    }
+    .footer-brand-name span { color: var(--ochre); }
+    .footer-tagline { font-size: .82rem; line-height: 1.7; font-weight: 300; max-width: 300px; }
+    .footer-col-title {
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.9);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: .5rem; }
+    .footer-links a {
+      color: rgba(255,255,255,.55);
+      text-decoration: none;
+      font-size: .85rem;
+      font-weight: 300;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--ochre); }
+    .footer-bottom {
+      max-width: var(--max); margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1.5rem;
+      font-size: .75rem;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+    .footer-bottom a { color: var(--ochre); text-decoration: none; }
+
+    /* ── MOBILE NAV DRAWER ── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 70px; left: 0; right: 0; bottom: 0;
+      background: rgba(28,20,16,.97);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: var(--white);
+      font-size: 1.3rem;
+      font-family: var(--display);
+      text-decoration: none;
+      letter-spacing: .04em;
+    }
+    .mobile-menu a:hover { color: var(--ochre); }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .destinations-grid { grid-template-columns: 1fr 1fr; }
+      .dest-card:first-child { grid-column: 1 / -1; }
+      .packages-grid { grid-template-columns: 1fr 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 4rem 5%; }
+      .destinations-grid { grid-template-columns: 1fr; }
+      .packages-grid { grid-template-columns: 1fr; }
+      .stats-bar { flex-direction: column; }
+      .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .about-img-stack { height: 340px; }
+      .features-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="#home">Mwala <span>Tours</span></a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a class="nav-book" href="#contact">Book Now</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="#home" class="mobile-link">Home</a>
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#destinations" class="mobile-link">Destinations</a>
+  <a href="#packages" class="mobile-link">Packages</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+  <a href="#contact" class="mobile-link" style="color:var(--ochre)">Book Now →</a>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide active" style="background-image:url('https://mwala-tours-and-safaris.vercel.app/jorge-tung-1pZJqQlgpsY-unsplash.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('https://mwala-tours-and-safaris.vercel.app/pexels-balazsimon-15994102.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('https://mwala-tours-and-safaris.vercel.app/jorge-tung--5Betfvtgso-unsplash.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('https://mwala-tours-and-safaris.vercel.app/Images/ahmed-galal-VQqMACyNfwA-unsplash.jpg')"></div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Tanzania · East Africa</p>
+    <h1 class="hero-title">Explore the<br/><em>Wild Heart</em> of Africa</h1>
+    <p class="hero-sub">From the endless Serengeti plains to the summit of Kilimanjaro — Mwala Tours crafts journeys you will carry forever.</p>
+    <div class="hero-btns">
+      <a href="#packages" class="btn-primary">View Safari Packages</a>
+      <a href="#about" class="btn-ghost">Our Story</a>
+    </div>
+  </div>
+  <div class="slide-dots" id="slideDots"></div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Happy Travelers</span></div>
+  <div class="stat"><span class="stat-num">6</span><span class="stat-label">Safari Destinations</span></div>
+  <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Years Experience</span></div>
+  <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Tailored Itineraries</span></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-stack reveal">
+        <img class="about-img-main" src="https://mwala-tours-and-safaris.vercel.app/jorge-tung-1pZJqQlgpsY-unsplash.jpg" alt="Serengeti safari" />
+        <img class="about-img-accent" src="https://mwala-tours-and-safaris.vercel.app/Images/ana-singh-1vOBJZ6228U-unsplash.jpg" alt="Ngorongoro Crater" />
+        <div class="about-badge">10+<small>Years of Safaris</small></div>
+      </div>
+      <div class="reveal" style="transition-delay:.15s">
+        <p class="section-eyebrow">About Mwala Tours</p>
+        <h2 class="section-title">Your Gateway to <em>Extraordinary</em> Tanzania</h2>
+        <p class="section-desc" style="margin-bottom:1rem">Mwala Tours is your trusted travel partner for personalized safari adventures across Tanzania. We believe every traveler deserves an experience as unique as the landscape itself.</p>
+        <p class="section-desc">Based in Arusha, we are committed to sustainable tourism that benefits local communities and preserves Tanzania's extraordinary natural heritage for generations to come.</p>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🧭</div>
+            <div class="feature-name">Expert Guides</div>
+            <div class="feature-desc">Passionate, knowledgeable guides who bring the wild to life.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">✨</div>
+            <div class="feature-name">Tailored Experiences</div>
+            <div class="feature-desc">Itineraries shaped around your style and travel goals.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🏕️</div>
+            <div class="feature-name">Luxury Camps</div>
+            <div class="feature-desc">Handpicked lodges blending comfort with African authenticity.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🌿</div>
+            <div class="feature-name">Sustainable Tourism</div>
+            <div class="feature-desc">Eco-practices and direct support for local conservation.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section id="destinations">
+  <div class="container">
+    <div class="dest-header">
+      <div>
+        <p class="section-eyebrow">Our Destinations</p>
+        <h2 class="section-title">Tanzania's Greatest <em>Wonders</em></h2>
+      </div>
+      <a href="#packages" class="btn-primary" style="white-space:nowrap">See All Packages</a>
+    </div>
+    <div class="destinations-grid">
+      <div class="dest-card reveal">
+        <img class="dest-img" src="https://mwala-tours-and-safaris.vercel.app/jorge-tung-1pZJqQlgpsY-unsplash.jpg" alt="Serengeti National Park" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <p class="dest-kms">~8 hrs from Arusha · 14,750 km²</p>
+          <h3 class="dest-name">Serengeti National Park</h3>
+          <div class="dest-tags">
+            <span class="dest-tag">Game Drives</span>
+            <span class="dest-tag">Great Migration</span>
+            <span class="dest-tag">Hot Air Balloon</span>
+            <span class="dest-tag">Bird Watching</span>
+          </div>
+          <p class="dest-extra">Witness the Great Migration across vast plains teeming with the Big Five — ideal for multi-day photographic safaris.</p>
+        </div>
+      </div>
+      <div class="dest-card reveal" style="transition-delay:.1s">
+        <img class="dest-img" src="https://mwala-tours-and-safaris.vercel.app/Images/ana-singh-1vOBJZ6228U-unsplash.jpg" alt="Ngorongoro Crater" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <p class="dest-kms">~4 hrs from Arusha · 8,292 km²</p>
+          <h3 class="dest-name">Ngorongoro Crater</h3>
+          <div class="dest-tags">
+            <span class="dest-tag">Crater Safari</span>
+            <span class="dest-tag">Cultural Visits</span>
+            <span class="dest-tag">Photography</span>
+          </div>
+          <p class="dest-extra">The world's largest intact volcanic caldera. Excellent wildlife concentrations and short transfers make it perfect for day trips.</p>
+        </div>
+      </div>
+      <div class="dest-card reveal" style="transition-delay:.2s">
+        <img class="dest-img" src="https://mwala-tours-and-safaris.vercel.app/pexels-balazsimon-15994102.jpg" alt="Lake Natron" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <p class="dest-kms">~6 hrs from Arusha · 1,040 km²</p>
+          <h3 class="dest-name">Lake Natron</h3>
+          <div class="dest-tags">
+            <span class="dest-tag">Flamingos</span>
+            <span class="dest-tag">Hiking</span>
+            <span class="dest-tag">Maasai Culture</span>
+          </div>
+          <p class="dest-extra">Surreal crimson landscapes, flamingo colonies, and off-the-beaten-path adventure for curious explorers.</p>
+        </div>
+      </div>
+      <div class="dest-card reveal" style="transition-delay:.3s">
+        <img class="dest-img" src="https://mwala-tours-and-safaris.vercel.app/jorge-tung--5Betfvtgso-unsplash.jpg" alt="Lake Manyara" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <p class="dest-kms">~2 hrs from Arusha · 325 km²</p>
+          <h3 class="dest-name">Lake Manyara</h3>
+          <div class="dest-tags">
+            <span class="dest-tag">Tree-Climbing Lions</span>
+            <span class="dest-tag">Flamingos</span>
+            <span class="dest-tag">Forest Walks</span>
+          </div>
+          <p class="dest-extra">Famous for tree-climbing lions and vast flamingo flocks across diverse ecosystems.</p>
+        </div>
+      </div>
+      <div class="dest-card reveal" style="transition-delay:.4s">
+        <img class="dest-img" src="https://mwala-tours-and-safaris.vercel.app/Images/ahmed-galal-VQqMACyNfwA-unsplash.jpg" alt="Tarangire National Park" />
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <p class="dest-kms">~3.5 hrs from Arusha · 2,850 km²</p>
+          <h3 class="dest-name">Tarangire National Park</h3>
+          <div class="dest-tags">
+            <span class="dest-tag">Elephant Herds</span>
+            <span class="dest-tag">Baobab Trees</span>
+            <span class="dest-tag">River Valley</span>
+          </div>
+          <p class="dest-extra">Home to Tanzania's largest elephant populations amid ancient baobab trees and scenic river valleys.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:.5rem">
+      <p class="section-eyebrow">Safari Packages</p>
+      <h2 class="section-title">Journeys Crafted <em>For You</em></h2>
+      <p class="section-desc" style="margin:0 auto">Every itinerary is designed around what moves you — wildlife, landscapes, culture, or all three.</p>
+    </div>
+    <div class="packages-grid">
+
+      <div class="pkg-card reveal">
+        <img class="pkg-img" src="https://mwala-tours-and-safaris.vercel.app/omer-salom-gi6T2ktnpnE-unsplash.jpg" alt="Serengeti Adventure" />
+        <div class="pkg-body">
+          <div class="pkg-meta">
+            <span class="pkg-days">5 Days</span>
+            <span class="pkg-loc">📍 Serengeti</span>
+          </div>
+          <h3 class="pkg-name">Serengeti Adventure</h3>
+          <p class="pkg-desc">Experience endless plains and the spectacular Great Migration through the Serengeti ecosystem. Game drives, camping under the stars, photography opportunities.</p>
+          <div class="wildlife-pills">
+            <span class="wildlife-pill">Lions</span>
+            <span class="wildlife-pill">Elephants</span>
+            <span class="wildlife-pill">Wildebeest</span>
+            <span class="wildlife-pill">Zebras</span>
+            <span class="wildlife-pill">Leopards</span>
+          </div>
+          <a href="itineraries/serengeti.html" class="pkg-link">View Itinerary →</a>
+        </div>
+      </div>
+
+      <div class="pkg-card reveal" style="transition-delay:.1s">
+        <img class="pkg-img" src="https://mwala-tours-and-safaris.vercel.app/Images/ana-singh-1vOBJZ6228U-unsplash.jpg" alt="Ngorongoro Experience" />
+        <div class="pkg-body">
+          <div class="pkg-meta">
+            <span class="pkg-days">3 Days</span>
+            <span class="pkg-loc">📍 Ngorongoro</span>
+          </div>
+          <h3 class="pkg-name">Ngorongoro Experience</h3>
+          <p class="pkg-desc">Explore the world's largest intact volcanic caldera and its astounding concentration of wildlife in a single, breathtaking landscape.</p>
+          <div class="wildlife-pills">
+            <span class="wildlife-pill">Black Rhino</span>
+            <span class="wildlife-pill">Lions</span>
+            <span class="wildlife-pill">Flamingos</span>
+            <span class="wildlife-pill">Hippos</span>
+          </div>
+          <a href="itineraries/ngorongoro.html" class="pkg-link">View Itinerary →</a>
+        </div>
+      </div>
+
+      <div class="pkg-card reveal" style="transition-delay:.2s">
+        <img class="pkg-img" src="https://mwala-tours-and-safaris.vercel.app/jorge-tung--5Betfvtgso-unsplash.jpg" alt="Lake Manyara Escape" />
+        <div class="pkg-body">
+          <div class="pkg-meta">
+            <span class="pkg-days">2 Days</span>
+            <span class="pkg-loc">📍 Lake Manyara</span>
+          </div>
+          <h3 class="pkg-name">Lake Manyara Escape</h3>
+          <p class="pkg-desc">Experience a unique ecosystem famous for tree-climbing lions, diverse bird species, and lush groundwater forest on the edge of the Rift Valley.</p>
+          <div class="wildlife-pills">
+            <span class="wildlife-pill">Tree-Climbing Lions</span>
+            <span class="wildlife-pill">Flamingos</span>
+            <span class="wildlife-pill">Elephants</span>
+            <span class="wildlife-pill">Giraffes</span>
+          </div>
+          <a href="itineraries/manyara.html" class="pkg-link">View Itinerary →</a>
+        </div>
+      </div>
+
+      <div class="pkg-card reveal">
+        <img class="pkg-img" src="https://mwala-tours-and-safaris.vercel.app/Images/ahmed-galal-VQqMACyNfwA-unsplash.jpg" alt="Tarangire Expedition" />
+        <div class="pkg-body">
+          <div class="pkg-meta">
+            <span class="pkg-days">3 Days</span>
+            <span class="pkg-loc">📍 Tarangire</span>
+          </div>
+          <h3 class="pkg-name">Tarangire Expedition</h3>
+          <p class="pkg-desc">Discover iconic baobab landscapes and one of Tanzania's largest elephant herds in a park that rewards early risers and patient observers.</p>
+          <div class="wildlife-pills">
+            <span class="wildlife-pill">Elephants</span>
+            <span class="wildlife-pill">Giraffes</span>
+            <span class="wildlife-pill">Buffalos</span>
+            <span class="wildlife-pill">Ostriches</span>
+          </div>
+          <a href="#contact" class="pkg-link">View Itinerary →</a>
+        </div>
+      </div>
+
+      <div class="pkg-card reveal" style="transition-delay:.1s">
+        <img class="pkg-img" src="https://mwala-tours-and-safaris.vercel.app/pexels-balazsimon-15994102.jpg" alt="Natron Adventure" />
+        <div class="pkg-body">
+          <div class="pkg-meta">
+            <span class="pkg-days">4 Days</span>
+            <span class="pkg-loc">📍 Lake Natron</span>
+          </div>
+          <h3 class="pkg-name">Natron Adventure</h3>
+          <p class="pkg-desc">A birdwatcher's dream: flamingo colonies, surreal alkaline vistas, Maasai cultural encounters, and hiking to hidden waterfalls.</p>
+          <div class="wildlife-pills">
+            <span class="wildlife-pill">Flamingos</span>
+            <span class="wildlife-pill">Pelicans</span>
+            <span class="wildlife-pill">Maasai</span>
+            <span class="wildlife-pill">Grant's Gazelles</span>
+          </div>
+          <a href="#contact" class="pkg-link">View Itinerary →</a>
+        </div>
+      </div>
+
+      <div class="pkg-card reveal" style="transition-delay:.2s">
+        <img class="pkg-img" src="https://mwala-tours-and-safaris.vercel.app/Images/uzuri-safaris-tanzania-dpoOaYVzMuI-unsplash.jpg" alt="Northern Circuit" />
+        <div class="pkg-body">
+          <div class="pkg-meta">
+            <span class="pkg-days">7 Days</span>
+            <span class="pkg-loc">📍 Northern Tanzania</span>
+          </div>
+          <h3 class="pkg-name">Northern Circuit</h3>
+          <p class="pkg-desc">The ultimate Tanzanian experience — all major parks, luxury lodging, and a comprehensive encounter with East Africa's greatest wildlife.</p>
+          <div class="wildlife-pills">
+            <span class="wildlife-pill">Big Five</span>
+            <span class="wildlife-pill">Flamingos</span>
+            <span class="wildlife-pill">Various Antelopes</span>
+          </div>
+          <a href="#contact" class="pkg-link">View Itinerary →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container" style="max-width:var(--max)">
+    <p class="section-eyebrow">Client Stories</p>
+    <h2 class="section-title">What Our <em>Travelers</em> Say</h2>
+    <div class="testimonials-carousel">
+      <div class="testimonial-track" id="testimonialTrack">
+        <div class="testimonial">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">Mwala Tours made our safari completely unforgettable. The guides were extraordinary — they knew exactly where to find the wildlife and told the most wonderful stories about Tanzania.</p>
+          <p class="t-name">— Sarah J., United Kingdom</p>
+        </div>
+        <div class="testimonial">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">An amazing experience from start to finish. The attention to detail, the camps, the food — everything was beyond our expectations. We will absolutely be back.</p>
+          <p class="t-name">— Mark T., United States</p>
+        </div>
+        <div class="testimonial">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">Highly recommend Mwala Tours to anyone dreaming of East Africa. They handled every detail so we could simply enjoy the incredible landscapes and wildlife around us.</p>
+          <p class="t-name">— Emily R., Australia</p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="tPrev">←</button>
+      <div class="t-dots" id="tDots"></div>
+      <button class="carousel-btn" id="tNext">→</button>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <p class="section-eyebrow">Get in Touch</p>
+        <h2 class="section-title">Plan Your <em>Safari</em></h2>
+        <p class="section-desc" style="margin-bottom:2rem">We respond within 24 hours. For urgent enquiries, call us directly — we are always happy to talk about Tanzania.</p>
+
+        <div class="contact-info-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <p class="contact-detail-label">Email</p>
+            <p class="contact-detail-value">mwalatours@gmail.com</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <p class="contact-detail-label">Phone</p>
+            <p class="contact-detail-value">+255 789 021 754</p>
+            <p class="contact-detail-value">+255 699 404 174</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <p class="contact-detail-label">Office</p>
+            <p class="contact-detail-value">Arusha Clock Tower, Arusha, Tanzania</p>
+          </div>
+        </div>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps?q=Arusha+Clock+Tower&output=embed" width="100%" height="220" loading="lazy"></iframe>
+        </div>
+      </div>
+      <div>
+        <div class="contact-form">
+          <h3 style="font-family:var(--display);font-size:1.4rem;font-weight:400;margin-bottom:1.5rem">Send a Message</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Name</label>
+              <input type="text" id="fname" placeholder="Your full name" />
+            </div>
+            <div class="form-group">
+              <label for="femail">Email</label>
+              <input type="email" id="femail" placeholder="your@email.com" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fphone">Phone</label>
+              <input type="tel" id="fphone" placeholder="+1 234 567 8900" />
+            </div>
+            <div class="form-group">
+              <label for="fpackage">Interested In</label>
+              <select id="fpackage">
+                <option value="">Select a package</option>
+                <option>Serengeti Adventure (5 Days)</option>
+                <option>Ngorongoro Experience (3 Days)</option>
+                <option>Lake Manyara Escape (2 Days)</option>
+                <option>Tarangire Expedition (3 Days)</option>
+                <option>Natron Adventure (4 Days)</option>
+                <option>Northern Circuit (7 Days)</option>
+                <option>Custom Itinerary</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="fmessage">Message</label>
+            <textarea id="fmessage" placeholder="Tell us about your dream safari — travel dates, group size, special requests..."></textarea>
+          </div>
+          <button class="form-submit" id="formSubmit">Send Message</button>
+          <div class="form-success" id="formSuccess">✓ Thank you! We will be in touch within 24 hours.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <p class="footer-brand-name">Mwala <span>Tours</span></p>
+      <p class="footer-tagline">Your trusted Tanzania travel partner. Crafting unforgettable safaris, cultural journeys, and mountain adventures since 2015.</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Destinations</p>
+      <ul class="footer-links">
+        <li><a href="#destinations">Serengeti</a></li>
+        <li><a href="#destinations">Ngorongoro</a></li>
+        <li><a href="#destinations">Lake Natron</a></li>
+        <li><a href="#destinations">Lake Manyara</a></li>
+        <li><a href="#destinations">Tarangire</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Quick Links</p>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact">Book Now</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Mwala Tours & Safaris. All rights reserved.</span>
+    <span>Powered by <a href="#">Singra Studio</a></span>
+  </div>
+</footer>
+
+<script>
+  /* ── NAV SCROLL ── */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  /* ── HAMBURGER ── */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-link').forEach(l => {
+    l.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+
+  /* ── HERO SLIDESHOW ── */
+  const slides = document.querySelectorAll('.hero-slide');
+  const dotsContainer = document.getElementById('slideDots');
+  let current = 0;
+
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', () => goSlide(i));
+    dotsContainer.appendChild(d);
+  });
+
+  function goSlide(n) {
+    slides[current].classList.remove('active');
+    dotsContainer.children[current].classList.remove('active');
+    current = n;
+    slides[current].classList.add('active');
+    dotsContainer.children[current].classList.add('active');
+  }
+
+  setInterval(() => goSlide((current + 1) % slides.length), 5000);
+
+  /* ── SCROLL REVEAL ── */
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+
+  /* ── TESTIMONIALS CAROUSEL ── */
+  const track = document.getElementById('testimonialTrack');
+  const tDots = document.getElementById('tDots');
+  const total = 3;
+  let tCurrent = 0;
+
+  for (let i = 0; i < total; i++) {
+    const d = document.createElement('div');
+    d.className = 't-dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', () => goT(i));
+    tDots.appendChild(d);
+  }
+
+  function goT(n) {
+    tDots.children[tCurrent].classList.remove('active');
+    tCurrent = (n + total) % total;
+    track.style.transform = `translateX(-${tCurrent * 100}%)`;
+    tDots.children[tCurrent].classList.add('active');
+  }
+
+  document.getElementById('tPrev').addEventListener('click', () => goT(tCurrent - 1));
+  document.getElementById('tNext').addEventListener('click', () => goT(tCurrent + 1));
+  setInterval(() => goT(tCurrent + 1), 6000);
+
+  /* ── CONTACT FORM ── */
+  document.getElementById('formSubmit').addEventListener('click', () => {
+    const name = document.getElementById('fname').value.trim();
+    const email = document.getElementById('femail').value.trim();
+    if (!name || !email) { alert('Please enter your name and email.'); return; }
+    document.getElementById('formSuccess').style.display = 'block';
+    document.getElementById('formSubmit').style.display = 'none';
+  });
+</script>
+</body>
+</html>

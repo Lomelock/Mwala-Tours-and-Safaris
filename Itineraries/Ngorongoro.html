@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ngorongoro Experience – 3-Day Safari | Mwala Tours</title>
+  <meta name="description" content="Explore the world's largest intact volcanic caldera on a 3-day Ngorongoro safari. Black rhino, lions, flamingos, Maasai culture — and the crater rim at sunrise." />
+  <style>
+/* ── MWALA TOURS — SHARED ITINERARY STYLES ── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --savanna:  #C8803A;
+  --dusk:     #1C1410;
+  --ochre:    #E8A44A;
+  --earth:    #6B4226;
+  --mist:     #F5EFE6;
+  --stone:    #9A8A7A;
+  --white:    #FDFAF6;
+  --grass:    #3D6142;
+  --pale:     #FAF6F0;
+  --border:   rgba(0,0,0,.08);
+
+  --display: 'Cormorant Garamond', Georgia, serif;
+  --body:    'DM Sans', system-ui, sans-serif;
+  --max: 1100px;
+  --r: 4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  background: var(--white);
+  color: var(--dusk);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%; height: 66px;
+  background: rgba(28,20,16,.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.nav-logo {
+  font-family: var(--display); font-size: 1.3rem; font-weight: 600;
+  color: var(--white); text-decoration: none; letter-spacing: .04em;
+}
+.nav-logo span { color: var(--ochre); }
+.nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
+.nav-links a {
+  color: rgba(255,255,255,.75); text-decoration: none;
+  font-size: .8rem; letter-spacing: .09em; text-transform: uppercase;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--ochre); }
+.nav-book {
+  background: var(--savanna); color: var(--white) !important;
+  padding: .45rem 1.1rem; border-radius: var(--r); font-weight: 500 !important;
+}
+.nav-book:hover { background: var(--ochre) !important; color: var(--dusk) !important; }
+
+/* ── HERO ── */
+.itinerary-hero {
+  height: 72vh; min-height: 500px;
+  position: relative; display: flex; align-items: flex-end;
+  padding-bottom: 4rem;
+  background-size: cover; background-position: center;
+}
+.itinerary-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(28,20,16,.25) 0%,
+    rgba(28,20,16,.35) 40%,
+    rgba(28,20,16,.75) 100%
+  );
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  max-width: var(--max); margin: 0 auto;
+  width: 100%; padding: 0 5%;
+}
+.hero-breadcrumb {
+  font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ochre); margin-bottom: .9rem;
+}
+.hero-breadcrumb a { color: rgba(255,255,255,.65); text-decoration: none; }
+.hero-breadcrumb a:hover { color: var(--ochre); }
+.hero-title {
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 300; color: var(--white); line-height: 1.1;
+  margin-bottom: .9rem;
+}
+.hero-title em { font-style: italic; color: var(--ochre); }
+.hero-meta {
+  display: flex; flex-wrap: wrap; gap: .6rem; align-items: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: rgba(255,255,255,.12); backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.2);
+  color: var(--white); padding: .4rem .9rem;
+  border-radius: 20px; font-size: .78rem; font-weight: 400;
+}
+.hero-badge.highlight { background: var(--savanna); border-color: var(--savanna); }
+
+/* ── STICKY SIDEBAR LAYOUT ── */
+.page-body {
+  max-width: var(--max); margin: 0 auto;
+  padding: 4rem 5%;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 3.5rem;
+  align-items: start;
+}
+.page-main > * + * { margin-top: 3.5rem; }
+
+/* ── SIDEBAR ── */
+.sidebar { position: sticky; top: 86px; }
+.sidebar-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(28,20,16,.07);
+}
+.sidebar-header {
+  background: var(--dusk);
+  padding: 1.4rem 1.5rem;
+}
+.sidebar-pkg-name {
+  font-family: var(--display);
+  font-size: 1.2rem; font-weight: 400; color: var(--white);
+  margin-bottom: .3rem;
+}
+.sidebar-tagline { font-size: .78rem; color: var(--stone); font-weight: 300; }
+.sidebar-body { padding: 1.4rem 1.5rem; }
+.sidebar-detail {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: .6rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: .82rem;
+}
+.sidebar-detail:last-of-type { border-bottom: none; }
+.sidebar-label { color: var(--stone); font-weight: 400; }
+.sidebar-value { font-weight: 500; color: var(--dusk); }
+.sidebar-cta {
+  display: block; width: 100%;
+  background: var(--savanna); color: var(--white);
+  text-align: center; text-decoration: none;
+  padding: .85rem; font-size: .9rem; font-weight: 500;
+  border-radius: var(--r); border: none; cursor: pointer;
+  transition: background .2s; margin-top: 1.2rem;
+  letter-spacing: .04em;
+}
+.sidebar-cta:hover { background: var(--earth); }
+.sidebar-ghost {
+  display: block; width: 100%;
+  border: 1px solid var(--savanna); color: var(--savanna);
+  text-align: center; text-decoration: none;
+  padding: .7rem; font-size: .85rem; font-weight: 400;
+  border-radius: var(--r); margin-top: .6rem;
+  transition: background .2s;
+}
+.sidebar-ghost:hover { background: var(--mist); }
+.sidebar-note {
+  font-size: .72rem; color: var(--stone); text-align: center;
+  margin-top: .8rem; font-weight: 300; line-height: 1.5;
+}
+.trust-badges {
+  display: flex; justify-content: space-around;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border);
+  background: var(--pale);
+}
+.trust-badge { text-align: center; font-size: .65rem; color: var(--stone); }
+.trust-badge .icon { font-size: 1.2rem; display: block; margin-bottom: .2rem; }
+
+/* ── SECTIONS ── */
+.section-eyebrow {
+  font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--savanna); margin-bottom: .6rem; font-weight: 500;
+}
+.section-title {
+  font-family: var(--display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 300; color: var(--dusk); line-height: 1.25;
+  margin-bottom: .9rem;
+}
+.section-title em { font-style: italic; color: var(--savanna); }
+.section-lead {
+  font-size: .95rem; color: #5A4A3A; font-weight: 300;
+  line-height: 1.8; max-width: 660px;
+}
+
+/* ── HIGHLIGHTS ── */
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .8rem; margin-top: 1.4rem;
+}
+.highlight-item {
+  display: flex; align-items: flex-start; gap: .7rem;
+  background: var(--pale); border-radius: var(--r);
+  padding: .9rem 1rem;
+  border-left: 3px solid var(--savanna);
+}
+.highlight-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: .05rem; }
+.highlight-text { font-size: .85rem; color: var(--dusk); font-weight: 400; line-height: 1.45; }
+
+/* ── DAY-BY-DAY ── */
+.itinerary-days { margin-top: 1.4rem; }
+.day-block {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0 1.5rem;
+  margin-bottom: 0;
+  position: relative;
+}
+.day-block::before {
+  content: '';
+  position: absolute;
+  left: 39px; top: 52px; bottom: -1px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--savanna), rgba(200,128,58,.1));
+}
+.day-block:last-child::before { display: none; }
+
+.day-label {
+  display: flex; flex-direction: column;
+  align-items: center; padding-top: .9rem;
+  position: relative; z-index: 2;
+}
+.day-num-circle {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--savanna); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--display); font-size: 1.1rem; font-weight: 600;
+  flex-shrink: 0;
+}
+.day-word {
+  font-size: .6rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--stone); margin-top: .3rem; font-weight: 500;
+}
+
+.day-content {
+  padding: .9rem 0 2.5rem;
+}
+.day-title {
+  font-family: var(--display); font-size: 1.2rem; font-weight: 600;
+  color: var(--dusk); margin-bottom: .8rem;
+}
+.day-periods { display: flex; flex-direction: column; gap: .8rem; }
+.day-period {
+  background: var(--pale);
+  border-radius: var(--r);
+  padding: 1rem 1.1rem;
+  border-left: 2px solid var(--border);
+}
+.day-period-label {
+  font-size: .65rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ochre); font-weight: 600; margin-bottom: .4rem;
+}
+.day-period p { font-size: .88rem; color: #4A3A2A; line-height: 1.7; font-weight: 300; }
+.day-accommodation {
+  display: flex; align-items: center; gap: .5rem;
+  margin-top: .7rem; padding: .6rem .9rem;
+  background: rgba(200,128,58,.08); border-radius: var(--r);
+  font-size: .78rem; color: var(--earth); font-weight: 500;
+}
+
+/* ── WILDLIFE ── */
+.wildlife-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .8rem; margin-top: 1.4rem;
+}
+.wildlife-card {
+  background: var(--pale);
+  border-radius: var(--r);
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: box-shadow .2s, transform .2s;
+}
+.wildlife-card:hover { box-shadow: 0 4px 16px rgba(28,20,16,.08); transform: translateY(-2px); }
+.wildlife-emoji { font-size: 1.8rem; margin-bottom: .4rem; }
+.wildlife-name { font-size: .82rem; font-weight: 500; color: var(--dusk); }
+.wildlife-sub { font-size: .7rem; color: var(--stone); font-weight: 300; }
+
+/* ── INCLUDES / EXCLUDES ── */
+.inc-exc-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; margin-top: 1.4rem;
+}
+.inc-card, .exc-card {
+  border-radius: var(--r); padding: 1.5rem;
+}
+.inc-card { background: rgba(61,97,66,.06); border: 1px solid rgba(61,97,66,.15); }
+.exc-card { background: rgba(200,128,58,.05); border: 1px solid rgba(200,128,58,.15); }
+.inc-exc-title {
+  font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+  font-weight: 600; margin-bottom: 1rem;
+}
+.inc-card .inc-exc-title { color: var(--grass); }
+.exc-card .inc-exc-title { color: var(--savanna); }
+.inc-exc-list { list-style: none; }
+.inc-exc-list li {
+  display: flex; align-items: flex-start; gap: .6rem;
+  font-size: .85rem; color: #4A3A2A; font-weight: 300;
+  padding: .35rem 0;
+  border-bottom: 1px solid rgba(0,0,0,.04);
+  line-height: 1.5;
+}
+.inc-exc-list li:last-child { border-bottom: none; }
+.inc-exc-list .chk { font-size: .8rem; flex-shrink: 0; margin-top: .05rem; }
+
+/* ── ACCOMMODATION ── */
+.accomm-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; margin-top: 1.4rem;
+}
+.accomm-card {
+  border-radius: var(--r); padding: 1.3rem;
+  border: 1px solid var(--border);
+  transition: box-shadow .2s;
+}
+.accomm-card:hover { box-shadow: 0 4px 20px rgba(28,20,16,.08); }
+.accomm-tier {
+  font-size: .65rem; letter-spacing: .14em; text-transform: uppercase;
+  font-weight: 600; margin-bottom: .6rem;
+  padding: .25rem .6rem; border-radius: 20px; display: inline-block;
+}
+.tier-budget { background: rgba(154,138,122,.12); color: var(--stone); }
+.tier-mid { background: rgba(200,128,58,.1); color: var(--savanna); }
+.tier-luxury { background: rgba(28,20,16,.07); color: var(--dusk); }
+.accomm-name { font-family: var(--display); font-size: 1rem; font-weight: 600; color: var(--dusk); margin-bottom: .4rem; }
+.accomm-desc { font-size: .8rem; color: var(--stone); font-weight: 300; line-height: 1.55; }
+
+/* ── BEST TIME ── */
+.months-row {
+  display: grid; grid-template-columns: repeat(12, 1fr);
+  gap: .3rem; margin-top: 1.4rem;
+}
+.month-cell {
+  text-align: center; padding: .7rem .2rem; border-radius: var(--r);
+  font-size: .65rem; font-weight: 500;
+}
+.month-label { display: block; letter-spacing: .06em; text-transform: uppercase; margin-bottom: .3rem; }
+.month-dot { width: 8px; height: 8px; border-radius: 50%; margin: 0 auto; }
+.month-peak { background: rgba(200,128,58,.15); color: var(--savanna); }
+.month-peak .month-dot { background: var(--savanna); }
+.month-good { background: rgba(61,97,66,.1); color: var(--grass); }
+.month-good .month-dot { background: var(--grass); }
+.month-low { background: var(--pale); color: var(--stone); }
+.month-low .month-dot { background: var(--stone); }
+.month-legend {
+  display: flex; gap: 1.5rem; margin-top: .8rem; flex-wrap: wrap;
+}
+.legend-item {
+  display: flex; align-items: center; gap: .4rem;
+  font-size: .75rem; color: var(--stone);
+}
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* ── FAQ ── */
+.faq-list { margin-top: 1.4rem; }
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+.faq-question {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 0;
+  font-family: var(--body); font-size: .9rem; font-weight: 500;
+  color: var(--dusk); text-align: left; gap: 1rem;
+}
+.faq-question:hover { color: var(--savanna); }
+.faq-chevron {
+  flex-shrink: 0; font-size: .7rem; color: var(--savanna);
+  transition: transform .3s;
+}
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height .4s ease;
+  font-size: .87rem; color: #5A4A3A; font-weight: 300; line-height: 1.75;
+}
+.faq-answer-inner { padding-bottom: 1rem; }
+.faq-item.open .faq-answer { max-height: 400px; }
+
+/* ── CTA BANNER ── */
+.cta-banner {
+  background: var(--dusk);
+  border-radius: var(--r);
+  padding: 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+}
+.cta-text .eyebrow {
+  font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ochre); margin-bottom: .5rem;
+}
+.cta-text h2 {
+  font-family: var(--display); font-size: 1.9rem; font-weight: 300;
+  color: var(--white); margin-bottom: .5rem;
+}
+.cta-text h2 em { font-style: italic; color: var(--ochre); }
+.cta-text p { font-size: .87rem; color: rgba(255,255,255,.6); font-weight: 300; max-width: 380px; }
+.cta-actions { display: flex; gap: .8rem; flex-wrap: wrap; }
+.btn-cta-primary {
+  background: var(--savanna); color: var(--white);
+  text-decoration: none; padding: .85rem 1.8rem;
+  border-radius: var(--r); font-size: .88rem; font-weight: 500;
+  transition: background .2s; white-space: nowrap;
+}
+.btn-cta-primary:hover { background: var(--ochre); color: var(--dusk); }
+.btn-cta-ghost {
+  border: 1px solid rgba(255,255,255,.25); color: var(--white);
+  text-decoration: none; padding: .85rem 1.8rem;
+  border-radius: var(--r); font-size: .88rem; font-weight: 400;
+  transition: border-color .2s; white-space: nowrap;
+}
+.btn-cta-ghost:hover { border-color: var(--ochre); color: var(--ochre); }
+
+/* ── RELATED PACKAGES ── */
+.related-section {
+  background: var(--mist);
+  padding: 5rem 5%;
+}
+.related-inner { max-width: var(--max); margin: 0 auto; }
+.related-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem; margin-top: 2rem;
+}
+.related-card {
+  border-radius: var(--r); overflow: hidden; background: var(--white);
+  border: 1px solid var(--border);
+  text-decoration: none; color: inherit;
+  transition: box-shadow .2s, transform .2s;
+  display: block;
+}
+.related-card:hover { box-shadow: 0 8px 32px rgba(28,20,16,.1); transform: translateY(-3px); }
+.related-img { width: 100%; height: 160px; object-fit: cover; display: block; }
+.related-body { padding: 1rem; }
+.related-meta { font-size: .7rem; color: var(--stone); margin-bottom: .3rem; }
+.related-name { font-family: var(--display); font-size: 1rem; font-weight: 600; color: var(--dusk); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dusk); color: rgba(255,255,255,.5);
+  padding: 2rem 5%; text-align: center; font-size: .8rem; font-weight: 300;
+}
+footer a { color: var(--ochre); text-decoration: none; }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .page-body { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  .highlights-grid { grid-template-columns: 1fr; }
+  .inc-exc-grid { grid-template-columns: 1fr; }
+  .accomm-grid { grid-template-columns: 1fr; }
+  .wildlife-grid { grid-template-columns: repeat(2, 1fr); }
+  .related-grid { grid-template-columns: 1fr 1fr; }
+  .months-row { grid-template-columns: repeat(6, 1fr); }
+}
+@media (max-width: 600px) {
+  .itinerary-hero { height: 60vh; }
+  .hero-title { font-size: 2rem; }
+  .page-body { padding: 2.5rem 5%; }
+  .cta-banner { padding: 2rem; }
+  .wildlife-grid { grid-template-columns: repeat(2, 1fr); }
+  .related-grid { grid-template-columns: 1fr; }
+  .day-block { grid-template-columns: 50px 1fr; gap: 0 1rem; }
+  .day-num-circle { width: 36px; height: 36px; font-size: .95rem; }
+  .day-block::before { left: 27px; }
+  nav .nav-links { display: none; }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">Mwala <span>Tours</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#packages">Packages</a></li>
+    <li><a href="../index.html#destinations">Destinations</a></li>
+    <li><a class="nav-book" href="../index.html#contact">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="itinerary-hero" style="background-image:url('https://mwala-tours-and-safaris.vercel.app/Images/ana-singh-1vOBJZ6228U-unsplash.jpg'); padding-top:66px;">
+  <div class="hero-inner">
+    <p class="hero-breadcrumb">
+      <a href="../index.html">Home</a> &nbsp;›&nbsp;
+      <a href="../index.html#packages">Packages</a> &nbsp;›&nbsp;
+      Ngorongoro Experience
+    </p>
+    <h1 class="hero-title">Ngorongoro <em>Experience</em></h1>
+    <div class="hero-meta">
+      <span class="hero-badge">🗓 3 Days · 2 Nights</span>
+      <span class="hero-badge">📍 Ngorongoro Crater</span>
+      <span class="hero-badge highlight">🌍 UNESCO World Heritage Site</span>
+      <span class="hero-badge">🦏 Black Rhino Country</span>
+    </div>
+  </div>
+</div>
+
+<div class="page-body">
+  <main class="page-main">
+
+    <!-- OVERVIEW -->
+    <section class="reveal">
+      <p class="section-eyebrow">Tour Overview</p>
+      <h2 class="section-title">The <em>Garden of Eden</em>, Enclosed in Stone</h2>
+      <p class="section-lead">
+        Three million years ago, a volcano the size of Kilimanjaro collapsed inward, creating a caldera 19 kilometres across and 600 metres deep. Today, Ngorongoro is a self-contained world — a UNESCO World Heritage Site where roughly 25,000 large mammals live within a single, enclosed ecosystem. The crater walls form a natural barrier that keeps its wildlife concentrated and remarkably accessible. No other location on Earth allows you to see lions, elephants, flamingos, hippos, and the critically endangered black rhinoceros in a single morning's drive.
+      </p>
+      <p class="section-lead" style="margin-top:.9rem">
+        This three-day itinerary builds the Ngorongoro experience in layers: a dramatic rim descent on arrival, a full crater day for thorough wildlife exploration, a cultural visit to a Maasai community living on the crater's outer slopes, and enough time on the crater floor to find the rhino — something that requires patience, good eyes, and a knowledgeable guide. Ours have both.
+      </p>
+      <div style="margin-top:1.2rem;display:flex;gap:.8rem;flex-wrap:wrap">
+        <div style="background:var(--pale);border-radius:var(--r);padding:.7rem 1rem;font-size:.8rem;color:var(--dusk);border:1px solid var(--border)">
+          <strong style="display:block;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:.2rem">Best Suited For</strong>
+          Short-stay travellers, couples, first-time safari visitors, birdwatchers
+        </div>
+        <div style="background:var(--pale);border-radius:var(--r);padding:.7rem 1rem;font-size:.8rem;color:var(--dusk);border:1px solid var(--border)">
+          <strong style="display:block;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:.2rem">UNESCO Status</strong>
+          World Heritage Site since 1979
+        </div>
+        <div style="background:var(--pale);border-radius:var(--r);padding:.7rem 1rem;font-size:.8rem;color:var(--dusk);border:1px solid var(--border)">
+          <strong style="display:block;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:.2rem">Departs From</strong>
+          Arusha, Tanzania
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="reveal">
+      <p class="section-eyebrow">Tour Highlights</p>
+      <h2 class="section-title">Why Ngorongoro Stays <em>With You</em></h2>
+      <div class="highlights-grid">
+        <div class="highlight-item"><span class="highlight-icon">🦏</span><span class="highlight-text"><strong>Black Rhinoceros:</strong> One of Africa's rarest animals, Ngorongoro's crater floor is home to a small but protected population. Your guide knows exactly where to look — and the moment of sighting is unforgettable.</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🌋</span><span class="highlight-text"><strong>The Crater Rim at Sunrise:</strong> Standing 2,286 metres above sea level, the rim at dawn delivers one of Africa's great views: mist rising from the crater floor while the African sun turns the caldera gold.</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🦩</span><span class="highlight-text"><strong>Lake Magadi's Flamingos:</strong> The soda lake at the crater's heart turns pink with thousands of lesser flamingos, creating a living, shifting canvas visible from kilometres away.</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🏡</span><span class="highlight-text"><strong>Maasai Cultural Village:</strong> Visit a traditional Maasai boma on the crater's outer rim — a genuine exchange with one of East Africa's most iconic peoples, not a staged performance.</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🦁</span><span class="highlight-text"><strong>Lion Density:</strong> Ngorongoro holds one of the highest lion population densities in Africa. Prides here are relaxed around vehicles and often allow remarkable close approaches.</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🌿</span><span class="highlight-text"><strong>Lerai Forest:</strong> A fever tree forest on the crater floor shelters enormous bull elephants — solitary males that come and go through the crater walls on ancient paths only they remember.</span></div>
+      </div>
+    </section>
+
+    <!-- ITINERARY -->
+    <section class="reveal">
+      <p class="section-eyebrow">Day-by-Day Itinerary</p>
+      <h2 class="section-title">Three Days Inside <em>the Caldera</em></h2>
+      <div class="itinerary-days">
+
+        <div class="day-block">
+          <div class="day-label">
+            <div class="day-num-circle">1</div>
+            <span class="day-word">Day</span>
+          </div>
+          <div class="day-content">
+            <h3 class="day-title">Arusha to the Crater Rim — First Light Over the Caldera</h3>
+            <div class="day-periods">
+              <div class="day-period">
+                <p class="day-period-label">Morning</p>
+                <p>Depart Arusha at 07:00. The three-and-a-half hour drive passes through the bustling town of Karatu and climbs through montane forest to the conservation area boundary. As the altitude increases, temperatures drop and the vegetation shifts from dry acacia to dense highland forest — watch for black-and-white colobus monkeys in the canopy.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Afternoon</p>
+                <p>Arrive at the crater rim at approximately 11:00. Your first view of the caldera often stops conversation entirely. After lunch at the rim picnic area, descend into the crater via the Seneto descent road — a steep, winding track that drops 600 metres in four kilometres. The ecosystem changes visibly: short grass plains, forest patches, and the gleaming soda lake below come into view as you descend. An afternoon game drive explores the western crater floor: hippo pools, lionesses in the shade, and the vast open grassland dotted with zebra and wildebeest.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Evening</p>
+                <p>Ascend via the Lerai exit road, passing through the fever tree forest as the light turns amber. Arrive at rim lodge in time for sunset views. Dinner at the lodge — the crater visible below, its mist thickening as night falls.</p>
+              </div>
+            </div>
+            <div class="day-accommodation">🏔 Night at Crater Rim Lodge (Ngorongoro Wildlife Lodge or equivalent by tier)</div>
+          </div>
+        </div>
+
+        <div class="day-block">
+          <div class="day-label">
+            <div class="day-num-circle">2</div>
+            <span class="day-word">Day</span>
+          </div>
+          <div class="day-content">
+            <h3 class="day-title">Full Crater Day — The Rhino, the Lions, and the Lake</h3>
+            <div class="day-periods">
+              <div class="day-period">
+                <p class="day-period-label">Early Morning</p>
+                <p>A 06:00 crater descent gives you the best of the morning light and the best chance of active predators. Your guide makes directly for the open grassland near Ngoitokitok Springs — the crater's reliable rhino territory. The black rhinoceros is a solitary browser: your guide will scan the distant treeline with binoculars, looking for the distinctive high-shouldered silhouette. When you find one — and patience usually pays — it is genuinely one of Africa's most moving wildlife encounters. Fewer than 25 black rhinos remain on the crater floor.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Mid-Morning</p>
+                <p>Move to Lake Magadi's southern shore, where thousands of lesser flamingos feed in the shallows. Beyond them, a lion pride often rests near the lake edge while spotted hyenas slink nearby. Pelicans patrol the water. Egyptian geese march in formation. A bush breakfast is laid out by your guide beside the lake.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Afternoon</p>
+                <p>After a midday rest in the vehicle's shade, explore the Lerai Forest — the acacia grove on the crater's floor that shelters enormous old-bull elephants, solitary males that live semi-independently of the crater's main elephant population. The afternoon light in the forest makes this ideal for photography. A game drive back toward the hippo pool closes the day.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Evening</p>
+                <p>Ascend to the rim as the crater fills with mist. Dinner at your lodge; optional Maasai dancers performance at selected properties. Your guide debriefs the day's sightings over a post-dinner drink.</p>
+              </div>
+            </div>
+            <div class="day-accommodation">🏔 Night at Crater Rim Lodge</div>
+          </div>
+        </div>
+
+        <div class="day-block">
+          <div class="day-label">
+            <div class="day-num-circle">3</div>
+            <span class="day-word">Day</span>
+          </div>
+          <div class="day-content">
+            <h3 class="day-title">Maasai Village Visit — Return to Arusha</h3>
+            <div class="day-periods">
+              <div class="day-period">
+                <p class="day-period-label">Morning</p>
+                <p>After breakfast, visit a traditional Maasai boma on the outer slopes of the caldera. The Maasai have co-existed with Ngorongoro's wildlife for centuries — their cattle graze alongside wildebeest, and their seasonal movements follow the same patterns as the animals. Your guide facilitates a genuine exchange: learn about Maasai livestock culture, traditional medicine, and the significance of the crater in Maasai cosmology. This is not a rehearsed demonstration; it is a meeting.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Late Morning</p>
+                <p>Return to the rim for a final cup of tea with the crater one last time. One of the great Tanzanian views: the caldera spread below, smoke from the Maasai settlements on its far slopes, perhaps an elephant moving through the Lerai Forest far below.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Afternoon</p>
+                <p>Drive back to Arusha via Karatu, arriving approximately 15:00–16:00. Drop-off at hotel or Kilimanjaro International Airport.</p>
+              </div>
+            </div>
+            <div class="day-accommodation">✈ End of safari</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WILDLIFE -->
+    <section class="reveal">
+      <p class="section-eyebrow">Wildlife</p>
+      <h2 class="section-title">Animals You May <em>Encounter</em></h2>
+      <div class="wildlife-grid">
+        <div class="wildlife-card"><div class="wildlife-emoji">🦏</div><div class="wildlife-name">Black Rhinoceros</div><div class="wildlife-sub">Critically endangered — ~25 remain</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🦁</div><div class="wildlife-name">African Lion</div><div class="wildlife-sub">High density prides</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🐘</div><div class="wildlife-name">African Elephant</div><div class="wildlife-sub">Old bulls in Lerai Forest</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🦛</div><div class="wildlife-name">Common Hippopotamus</div><div class="wildlife-sub">Ngoitokitok Springs pools</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🦩</div><div class="wildlife-name">Lesser Flamingo</div><div class="wildlife-sub">Thousands on Lake Magadi</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🦓</div><div class="wildlife-name">Plains Zebra</div><div class="wildlife-sub">Open grassland herds</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🐆</div><div class="wildlife-name">Spotted Hyena</div><div class="wildlife-sub">Large crater clan</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🦒</div><div class="wildlife-name">Masai Giraffe</div><div class="wildlife-sub">Acacia woodland edges</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🦬</div><div class="wildlife-name">Cape Buffalo</div><div class="wildlife-sub">Grassland herds</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🐒</div><div class="wildlife-name">Olive Baboon</div><div class="wildlife-sub">Rim forest &amp; crater floor</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🦅</div><div class="wildlife-name">Kori Bustard</div><div class="wildlife-sub">World's heaviest flying bird</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🐊</div><div class="wildlife-name">Golden Jackal</div><div class="wildlife-sub">Scavenging near predators</div></div>
+      </div>
+    </section>
+
+    <!-- INCLUDES / EXCLUDES -->
+    <section class="reveal">
+      <p class="section-eyebrow">What's Covered</p>
+      <h2 class="section-title">Included &amp; <em>Excluded</em></h2>
+      <div class="inc-exc-grid">
+        <div class="inc-card">
+          <p class="inc-exc-title">✓ What's Included</p>
+          <ul class="inc-exc-list">
+            <li><span class="chk">✓</span> Ngorongoro Conservation Area entry and crater descent fees</li>
+            <li><span class="chk">✓</span> TANAPA-certified professional English-speaking guide</li>
+            <li><span class="chk">✓</span> Private 4×4 Land Cruiser with pop-up roof hatch</li>
+            <li><span class="chk">✓</span> 2 nights' accommodation on crater rim (by chosen tier)</li>
+            <li><span class="chk">✓</span> All meals from dinner Day 1 through breakfast Day 3</li>
+            <li><span class="chk">✓</span> Maasai village cultural visit and guide introduction</li>
+            <li><span class="chk">✓</span> Bush breakfast and packed lunch on crater floor drives</li>
+            <li><span class="chk">✓</span> Drinking water and soft drinks throughout</li>
+            <li><span class="chk">✓</span> Arusha hotel pick-up and drop-off</li>
+            <li><span class="chk">✓</span> Digital wildlife field guide and trip briefing notes</li>
+          </ul>
+        </div>
+        <div class="exc-card">
+          <p class="inc-exc-title">✗ What's Not Included</p>
+          <ul class="inc-exc-list">
+            <li><span class="chk">✗</span> International flights and domestic Tanzania transfers</li>
+            <li><span class="chk">✗</span> Travel and medical insurance (required)</li>
+            <li><span class="chk">✗</span> Tanzania tourist visa (USD 50 — apply online in advance)</li>
+            <li><span class="chk">✗</span> Alcoholic and premium beverages</li>
+            <li><span class="chk">✗</span> Personal spending and optional purchases at the Maasai village</li>
+            <li><span class="chk">✗</span> Gratuities for guide and lodge staff (USD 15–20/day suggested)</li>
+            <li><span class="chk">✗</span> Maasai boma entrance fee (approx. USD 20/person, paid directly)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCOMMODATION -->
+    <section class="reveal">
+      <p class="section-eyebrow">Where You'll Sleep</p>
+      <h2 class="section-title">Accommodation <em>Options</em></h2>
+      <div class="accomm-grid">
+        <div class="accomm-card">
+          <span class="accomm-tier tier-budget">Budget</span>
+          <p class="accomm-name">Rhino Lodge</p>
+          <p class="accomm-desc">A modest but well-run rim lodge operated by the conservation authority. Simple en-suite rooms and a dining room with limited crater views. An honest, affordable option for travellers on a tighter budget who prioritise time on the crater floor over lodge luxury.</p>
+        </div>
+        <div class="accomm-card">
+          <span class="accomm-tier tier-mid">Mid-Range</span>
+          <p class="accomm-name">Ngorongoro Wildlife Lodge</p>
+          <p class="accomm-desc">Perched on the very lip of the crater at 2,286 metres, this established lodge offers comfortable en-suite rooms, most with direct crater views. Waking up here to mist rising off the caldera below is an experience that justifies the extra cost over budget options.</p>
+        </div>
+        <div class="accomm-card">
+          <span class="accomm-tier tier-luxury">Luxury</span>
+          <p class="accomm-name">Ngorongoro Crater Lodge</p>
+          <p class="accomm-desc">One of Africa's most dramatic lodges. Seventeen suites built on the crater rim with floor-to-ceiling glass, private butlers, and a level of theatrical luxury that seems almost implausible in the wilderness. A landmark property for a landmark destination.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEST TIME -->
+    <section class="reveal">
+      <p class="section-eyebrow">Timing Your Visit</p>
+      <h2 class="section-title">Best Time to <em>Visit</em></h2>
+      <p class="section-lead">Unlike the Serengeti, Ngorongoro's enclosed ecosystem means wildlife is present year-round. The question is not whether to see animals — it is which season's atmosphere appeals to you most.</p>
+      <div class="months-row" style="margin-top:1.4rem">
+        <div class="month-cell month-good"><span class="month-label">Jan</span><div class="month-dot"></div></div>
+        <div class="month-cell month-good"><span class="month-label">Feb</span><div class="month-dot"></div></div>
+        <div class="month-cell month-low"><span class="month-label">Mar</span><div class="month-dot"></div></div>
+        <div class="month-cell month-low"><span class="month-label">Apr</span><div class="month-dot"></div></div>
+        <div class="month-cell month-low"><span class="month-label">May</span><div class="month-dot"></div></div>
+        <div class="month-cell month-peak"><span class="month-label">Jun</span><div class="month-dot"></div></div>
+        <div class="month-cell month-peak"><span class="month-label">Jul</span><div class="month-dot"></div></div>
+        <div class="month-cell month-peak"><span class="month-label">Aug</span><div class="month-dot"></div></div>
+        <div class="month-cell month-peak"><span class="month-label">Sep</span><div class="month-dot"></div></div>
+        <div class="month-cell month-good"><span class="month-label">Oct</span><div class="month-dot"></div></div>
+        <div class="month-cell month-peak"><span class="month-label">Nov</span><div class="month-dot"></div></div>
+        <div class="month-cell month-good"><span class="month-label">Dec</span><div class="month-dot"></div></div>
+      </div>
+      <div class="month-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--savanna)"></div> Peak — Dry, Clear Skies, Crisp Visibility</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--grass)"></div> Good — Fewer Visitors, Lush Green</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--stone)"></div> Low — Heavy Rains, Discounted Rates</div>
+      </div>
+      <p class="section-lead" style="margin-top:1rem"><strong>June–October</strong> is prime: dry, cool, excellent visibility across the crater floor, and the flamingo population is often at its largest on Lake Magadi. <strong>November</strong> brings the short rains — brief afternoon showers that leave the crater floor impossibly green, and visitor numbers drop dramatically. <strong>January–February</strong> is warm, clear, and often quiet, with newborn animals attracting predator activity.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="reveal">
+      <p class="section-eyebrow">Questions Answered</p>
+      <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">Will we actually see the black rhinoceros? <span class="faq-chevron">▼</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">We cannot guarantee sightings of any individual species — this is wildlife, not a zoo. However, our guides have exceptional rhino-spotting track records, and the Ngorongoro crater is one of the best places in Africa to find black rhino because the enclosed terrain limits how far they can roam. On a full crater day, the probability is high. We always try.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Is it cold on the crater rim? <span class="faq-chevron">▼</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes — at 2,286 metres, the rim can reach 5–10°C at night and early morning, and mist and drizzle are common year-round. Pack a fleece, a waterproof layer, and warm socks. The crater floor is considerably warmer at midday. Our packing list (sent with your booking confirmation) covers this in detail.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Is the Maasai village visit genuine or touristy? <span class="faq-chevron">▼</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">We work with specific communities whose elders have chosen to share their way of life with respectful visitors. The exchange is real: you will meet families who live here year-round, see how a traditional homestead functions, and hear perspectives on how the Maasai relationship with the conservation area has evolved over generations. It is not a rehearsed performance, and we do not take groups to overly commercialised bomas.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can I combine this with the Serengeti? <span class="faq-chevron">▼</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Absolutely — it is the natural combination. The Ngorongoro Conservation Area lies between Arusha and the Serengeti, so combining both parks in a single itinerary adds minimal extra driving. We offer a 7-day Northern Circuit package that covers both, plus Lake Manyara and Tarangire. This three-day itinerary can also be appended to or preceded by the 5-day Serengeti Adventure.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Are vehicles restricted inside the crater? <span class="faq-chevron">▼</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes. The conservation authority limits the number of vehicles in the crater per day and mandates that all visitors exit by 18:00. This means early arrival is essential for the best experience — another reason our drives depart at 06:00. Only 4×4 vehicles are permitted on the descent roads, and all vehicles must be registered with the authority. Ours always are.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="reveal">
+      <div class="cta-banner">
+        <div class="cta-text">
+          <p class="eyebrow">Reserve Your Spot</p>
+          <h2>Step Into the <em>Ngorongoro</em> Crater</h2>
+          <p>This is a short safari with a long impact. Contact us today — crater rim lodges fill fast, especially in June through September.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="../index.html#contact" class="btn-cta-primary">Book the Experience</a>
+          <a href="../index.html#contact" class="btn-cta-ghost">Ask a Question</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-header">
+        <p class="sidebar-pkg-name">Ngorongoro Experience</p>
+        <p class="sidebar-tagline">3 Days · 2 Nights · UNESCO World Heritage</p>
+      </div>
+      <div class="sidebar-body">
+        <div class="sidebar-detail"><span class="sidebar-label">Duration</span><span class="sidebar-value">3 Days / 2 Nights</span></div>
+        <div class="sidebar-detail"><span class="sidebar-label">Destination</span><span class="sidebar-value">Ngorongoro Crater</span></div>
+        <div class="sidebar-detail"><span class="sidebar-label">Departs From</span><span class="sidebar-value">Arusha</span></div>
+        <div class="sidebar-detail"><span class="sidebar-label">Min. Group</span><span class="sidebar-value">2 People</span></div>
+        <div class="sidebar-detail"><span class="sidebar-label">Max. Group</span><span class="sidebar-value">8 People</span></div>
+        <div class="sidebar-detail"><span class="sidebar-label">Meals</span><span class="sidebar-value">Full Board</span></div>
+        <div class="sidebar-detail"><span class="sidebar-label">Altitude</span><span class="sidebar-value">2,286 m (rim)</span></div>
+        <a class="sidebar-cta" href="../index.html#contact">Book This Safari</a>
+        <a class="sidebar-ghost" href="../index.html#contact">Request Custom Quote</a>
+        <p class="sidebar-note">📞 Call us: +255 789 021 754<br/>We respond within 24 hours</p>
+      </div>
+      <div class="trust-badges">
+        <div class="trust-badge"><span class="icon">🛡</span>Secure Booking</div>
+        <div class="trust-badge"><span class="icon">✓</span>TANAPA Licensed</div>
+        <div class="trust-badge"><span class="icon">🌿</span>Eco-Certified</div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- RELATED -->
+<section class="related-section">
+  <div class="related-inner">
+    <p class="section-eyebrow">Explore More</p>
+    <h2 class="section-title">You May Also <em>Love</em></h2>
+    <div class="related-grid">
+      <a class="related-card" href="Serengeti.html">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/omer-salom-gi6T2ktnpnE-unsplash.jpg" alt="Serengeti" />
+        <div class="related-body">
+          <p class="related-meta">5 Days · Serengeti N.P.</p>
+          <p class="related-name">Serengeti Adventure</p>
+        </div>
+      </a>
+      <a class="related-card" href="Manyara.html">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/jorge-tung--5Betfvtgso-unsplash.jpg" alt="Lake Manyara" />
+        <div class="related-body">
+          <p class="related-meta">2 Days · Lake Manyara</p>
+          <p class="related-name">Lake Manyara Escape</p>
+        </div>
+      </a>
+      <a class="related-card" href="../index.html#packages">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/Images/ahmed-galal-VQqMACyNfwA-unsplash.jpg" alt="All Packages" />
+        <div class="related-body">
+          <p class="related-meta">All Packages</p>
+          <p class="related-name">View All Safaris →</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Mwala Tours &amp; Safaris. All rights reserved. &nbsp;|&nbsp; <a href="../index.html">Back to Home</a></p>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

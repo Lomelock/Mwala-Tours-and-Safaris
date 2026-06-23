@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Northern Circuit Safari – 7-Day Grand Tour | Mwala Tours</title>
+  <meta name="description" content="Tanzania's complete northern safari: Serengeti, Lake Natron, Tarangire, Lake Manyara, and Ngorongoro Crater in 7 days with Mwala Tours. The full Northern Circuit." />
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --savanna:  #C8803A;
+  --dusk:     #1C1410;
+  --ochre:    #E8A44A;
+  --earth:    #6B4226;
+  --mist:     #F5EFE6;
+  --stone:    #9A8A7A;
+  --white:    #FDFAF6;
+  --grass:    #3D6142;
+  --pale:     #FAF6F0;
+  --border:   rgba(0,0,0,.08);
+
+  --display: 'Cormorant Garamond', Georgia, serif;
+  --body:    'DM Sans', system-ui, sans-serif;
+  --max: 1100px;
+  --r: 4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  background: var(--white);
+  color: var(--dusk);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%; height: 66px;
+  background: rgba(28,20,16,.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.nav-logo {
+  font-family: var(--display); font-size: 1.3rem; font-weight: 600;
+  color: var(--white); text-decoration: none; letter-spacing: .04em;
+}
+.nav-logo span { color: var(--ochre); }
+.nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
+.nav-links a {
+  color: rgba(255,255,255,.75); text-decoration: none;
+  font-size: .8rem; letter-spacing: .09em; text-transform: uppercase;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--ochre); }
+.nav-book {
+  background: var(--savanna); color: var(--white) !important;
+  padding: .45rem 1.1rem; border-radius: var(--r); font-weight: 500 !important;
+}
+.nav-book:hover { background: var(--ochre) !important; color: var(--dusk) !important; }
+
+/* ── HERO ── */
+.itinerary-hero {
+  height: 72vh; min-height: 500px;
+  position: relative; display: flex; align-items: flex-end;
+  padding-bottom: 4rem;
+  background-size: cover; background-position: center;
+}
+.itinerary-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(28,20,16,.2) 0%,
+    rgba(28,20,16,.3) 40%,
+    rgba(28,20,16,.82) 100%
+  );
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  max-width: var(--max); margin: 0 auto;
+  width: 100%; padding: 0 5%;
+}
+.hero-breadcrumb {
+  font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ochre); margin-bottom: .9rem;
+}
+.hero-breadcrumb a { color: rgba(255,255,255,.65); text-decoration: none; }
+.hero-breadcrumb a:hover { color: var(--ochre); }
+.hero-title {
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 300; color: var(--white); line-height: 1.1;
+  margin-bottom: .9rem;
+}
+.hero-title em { font-style: italic; color: var(--ochre); }
+.hero-meta {
+  display: flex; flex-wrap: wrap; gap: .6rem; align-items: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: rgba(255,255,255,.12); backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.2);
+  color: var(--white); padding: .4rem .9rem;
+  border-radius: 20px; font-size: .78rem; font-weight: 400;
+}
+.hero-badge.highlight { background: var(--savanna); border-color: var(--savanna); }
+
+/* ── ROUTE STRIP ── */
+.route-strip {
+  background: var(--dusk);
+  padding: 1rem 5%;
+  overflow-x: auto;
+}
+.route-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; align-items: center; gap: 0;
+  min-width: max-content;
+}
+.route-stop {
+  display: flex; align-items: center; gap: .5rem;
+  font-size: .72rem; letter-spacing: .08em; text-transform: uppercase;
+  color: rgba(255,255,255,.6); font-weight: 500;
+  white-space: nowrap;
+}
+.route-stop.active { color: var(--ochre); }
+.route-arrow {
+  color: var(--savanna); font-size: .9rem; margin: 0 .6rem;
+  opacity: .5;
+}
+.route-day-tag {
+  font-size: .6rem; letter-spacing: .06em;
+  color: var(--stone); display: block; margin-bottom: .1rem;
+  text-transform: uppercase;
+}
+
+/* ── STICKY SIDEBAR LAYOUT ── */
+.page-body {
+  max-width: var(--max); margin: 0 auto;
+  padding: 4rem 5%;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 3.5rem;
+  align-items: start;
+}
+.page-main > * + * { margin-top: 3.5rem; }
+
+/* ── SIDEBAR ── */
+.sidebar { position: sticky; top: 86px; }
+.sidebar-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(28,20,16,.07);
+}
+.sidebar-header {
+  background: var(--dusk);
+  padding: 1.4rem 1.5rem;
+}
+.sidebar-pkg-name {
+  font-family: var(--display);
+  font-size: 1.2rem; font-weight: 400; color: var(--white);
+  margin-bottom: .3rem;
+}
+.sidebar-tagline { font-size: .78rem; color: var(--stone); font-weight: 300; }
+.sidebar-body { padding: 1.4rem 1.5rem; }
+.sidebar-detail {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: .6rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: .82rem;
+}
+.sidebar-detail:last-of-type { border-bottom: none; }
+.sidebar-label { color: var(--stone); font-weight: 400; }
+.sidebar-value { font-weight: 500; color: var(--dusk); }
+.sidebar-cta {
+  display: block; width: 100%;
+  background: var(--savanna); color: var(--white);
+  text-align: center; text-decoration: none;
+  padding: .85rem; font-size: .9rem; font-weight: 500;
+  border-radius: var(--r); border: none; cursor: pointer;
+  transition: background .2s; margin-top: 1.2rem;
+  letter-spacing: .04em;
+}
+.sidebar-cta:hover { background: var(--earth); }
+.sidebar-ghost {
+  display: block; width: 100%;
+  border: 1px solid var(--savanna); color: var(--savanna);
+  text-align: center; text-decoration: none;
+  padding: .7rem; font-size: .85rem; font-weight: 400;
+  border-radius: var(--r); margin-top: .6rem;
+  transition: background .2s;
+}
+.sidebar-ghost:hover { background: var(--mist); }
+.sidebar-note {
+  font-size: .72rem; color: var(--stone); text-align: center;
+  margin-top: .8rem; font-weight: 300; line-height: 1.5;
+}
+.trust-badges {
+  display: flex; justify-content: space-around;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border);
+  background: var(--pale);
+}
+.trust-badge { text-align: center; font-size: .65rem; color: var(--stone); }
+.trust-badge .icon { font-size: 1.2rem; display: block; margin-bottom: .2rem; }
+
+/* ── PARK MINI CARDS (sidebar) ── */
+.parks-list { margin-top: 1rem; }
+.park-mini {
+  display: flex; align-items: center; gap: .7rem;
+  padding: .55rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  font-size: .78rem;
+}
+.park-mini:last-child { border-bottom: none; }
+.park-mini-num {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--savanna); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .65rem; font-weight: 600; flex-shrink: 0;
+}
+.park-mini-name { font-weight: 500; color: var(--dusk); }
+.park-mini-days { font-size: .68rem; color: var(--stone); margin-left: auto; }
+
+/* ── SECTIONS ── */
+.section-eyebrow {
+  font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--savanna); margin-bottom: .6rem; font-weight: 500;
+}
+.section-title {
+  font-family: var(--display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 300; color: var(--dusk); line-height: 1.25;
+  margin-bottom: .9rem;
+}
+.section-title em { font-style: italic; color: var(--savanna); }
+.section-lead {
+  font-size: .95rem; color: #5A4A3A; font-weight: 300;
+  line-height: 1.8; max-width: 660px;
+}
+
+/* ── HIGHLIGHTS ── */
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .8rem; margin-top: 1.4rem;
+}
+.highlight-item {
+  display: flex; align-items: flex-start; gap: .7rem;
+  background: var(--pale); border-radius: var(--r);
+  padding: .9rem 1rem;
+  border-left: 3px solid var(--savanna);
+}
+.highlight-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: .05rem; }
+.highlight-text { font-size: .85rem; color: var(--dusk); font-weight: 400; line-height: 1.45; }
+
+/* ── DAY-BY-DAY ── */
+.itinerary-days { margin-top: 1.4rem; }
+.day-block {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0 1.5rem;
+  margin-bottom: 0;
+  position: relative;
+}
+.day-block::before {
+  content: '';
+  position: absolute;
+  left: 39px; top: 52px; bottom: -1px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--savanna), rgba(200,128,58,.1));
+}
+.day-block:last-child::before { display: none; }
+
+.day-label {
+  display: flex; flex-direction: column;
+  align-items: center; padding-top: .9rem;
+  position: relative; z-index: 2;
+}
+.day-num-circle {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--savanna); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--display); font-size: 1.1rem; font-weight: 600;
+  flex-shrink: 0;
+}
+.day-word {
+  font-size: .6rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--stone); margin-top: .3rem; font-weight: 500;
+}
+
+.day-content {
+  padding: .9rem 0 2.5rem;
+}
+.day-title {
+  font-family: var(--display); font-size: 1.2rem; font-weight: 600;
+  color: var(--dusk); margin-bottom: .4rem;
+}
+.day-park-tag {
+  display: inline-flex; align-items: center; gap: .35rem;
+  background: rgba(200,128,58,.1); color: var(--savanna);
+  font-size: .65rem; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; padding: .2rem .6rem; border-radius: 20px;
+  margin-bottom: .8rem;
+}
+.day-periods { display: flex; flex-direction: column; gap: .8rem; }
+.day-period {
+  background: var(--pale);
+  border-radius: var(--r);
+  padding: 1rem 1.1rem;
+  border-left: 2px solid var(--border);
+}
+.day-period-label {
+  font-size: .65rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ochre); font-weight: 600; margin-bottom: .4rem;
+}
+.day-period p { font-size: .88rem; color: #4A3A2A; line-height: 1.7; font-weight: 300; }
+.day-accommodation {
+  display: flex; align-items: center; gap: .5rem;
+  margin-top: .7rem; padding: .6rem .9rem;
+  background: rgba(200,128,58,.08); border-radius: var(--r);
+  font-size: .78rem; color: var(--earth); font-weight: 500;
+}
+
+/* ── WILDLIFE ── */
+.wildlife-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .8rem; margin-top: 1.4rem;
+}
+.wildlife-card {
+  background: var(--pale);
+  border-radius: var(--r);
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: box-shadow .2s, transform .2s;
+}
+.wildlife-card:hover { box-shadow: 0 4px 16px rgba(28,20,16,.08); transform: translateY(-2px); }
+.wildlife-emoji { font-size: 1.8rem; margin-bottom: .4rem; }
+.wildlife-name { font-size: .82rem; font-weight: 500; color: var(--dusk); }
+.wildlife-sub { font-size: .7rem; color: var(--stone); font-weight: 300; }
+
+/* ── INCLUDES / EXCLUDES ── */
+.inc-exc-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; margin-top: 1.4rem;
+}
+.inc-card, .exc-card {
+  border-radius: var(--r); padding: 1.5rem;
+}
+.inc-card { background: rgba(61,97,66,.06); border: 1px solid rgba(61,97,66,.15); }
+.exc-card { background: rgba(200,128,58,.05); border: 1px solid rgba(200,128,58,.15); }
+.inc-exc-title {
+  font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+  font-weight: 600; margin-bottom: 1rem;
+}
+.inc-card .inc-exc-title { color: var(--grass); }
+.exc-card .inc-exc-title { color: var(--savanna); }
+.inc-exc-list { list-style: none; }
+.inc-exc-list li {
+  display: flex; align-items: flex-start; gap: .6rem;
+  font-size: .85rem; color: #4A3A2A; font-weight: 300;
+  padding: .35rem 0;
+  border-bottom: 1px solid rgba(0,0,0,.04);
+  line-height: 1.5;
+}
+.inc-exc-list li:last-child { border-bottom: none; }
+.inc-exc-list .chk { font-size: .8rem; flex-shrink: 0; margin-top: .05rem; }
+
+/* ── ACCOMMODATION ── */
+.accomm-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; margin-top: 1.4rem;
+}
+.accomm-card {
+  border-radius: var(--r); padding: 1.3rem;
+  border: 1px solid var(--border);
+  transition: box-shadow .2s;
+}
+.accomm-card:hover { box-shadow: 0 4px 20px rgba(28,20,16,.08); }
+.accomm-tier {
+  font-size: .65rem; letter-spacing: .14em; text-transform: uppercase;
+  font-weight: 600; margin-bottom: .6rem;
+  padding: .25rem .6rem; border-radius: 20px; display: inline-block;
+}
+.tier-budget { background: rgba(154,138,122,.12); color: var(--stone); }
+.tier-mid { background: rgba(200,128,58,.1); color: var(--savanna); }
+.tier-luxury { background: rgba(28,20,16,.07); color: var(--dusk); }
+.accomm-name { font-family: var(--display); font-size: 1rem; font-weight: 600; color: var(--dusk); margin-bottom: .4rem; }
+.accomm-desc { font-size: .8rem; color: var(--stone); font-weight: 300; line-height: 1.55; }
+
+/* ── BEST TIME ── */
+.months-row {
+  display: grid; grid-template-columns: repeat(12, 1fr);
+  gap: .3rem; margin-top: 1.4rem;
+}
+.month-cell {
+  text-align: center; padding: .7rem .2rem; border-radius: var(--r);
+  font-size: .65rem; font-weight: 500;
+}
+.month-label { display: block; letter-spacing: .06em; text-transform: uppercase; margin-bottom: .3rem; }
+.month-dot { width: 8px; height: 8px; border-radius: 50%; margin: 0 auto; }
+.month-peak { background: rgba(200,128,58,.15); color: var(--savanna); }
+.month-peak .month-dot { background: var(--savanna); }
+.month-good { background: rgba(61,97,66,.1); color: var(--grass); }
+.month-good .month-dot { background: var(--grass); }
+.month-low { background: var(--pale); color: var(--stone); }
+.month-low .month-dot { background: var(--stone); }
+.month-legend {
+  display: flex; gap: 1.5rem; margin-top: .8rem; flex-wrap: wrap;
+}
+.legend-item {
+  display: flex; align-items: center; gap: .4rem;
+  font-size: .75rem; color: var(--stone);
+}
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* ── FAQ ── */
+.faq-list { margin-top: 1.4rem; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-question {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 0;
+  font-family: var(--body); font-size: .9rem; font-weight: 500;
+  color: var(--dusk); text-align: left; gap: 1rem;
+}
+.faq-question:hover { color: var(--savanna); }
+.faq-chevron {
+  flex-shrink: 0; font-size: .7rem; color: var(--savanna);
+  transition: transform .3s;
+}
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height .4s ease;
+  font-size: .87rem; color: #5A4A3A; font-weight: 300; line-height: 1.75;
+}
+.faq-answer-inner { padding-bottom: 1rem; }
+.faq-item.open .faq-answer { max-height: 500px; }
+
+/* ── CTA BANNER ── */
+.cta-banner {
+  background: var(--dusk);
+  border-radius: var(--r);
+  padding: 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+}
+.cta-text .eyebrow {
+  font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ochre); margin-bottom: .5rem;
+}
+.cta-text h2 {
+  font-family: var(--display); font-size: 1.9rem; font-weight: 300;
+  color: var(--white); margin-bottom: .5rem;
+}
+.cta-text h2 em { font-style: italic; color: var(--ochre); }
+.cta-text p { font-size: .87rem; color: rgba(255,255,255,.6); font-weight: 300; max-width: 380px; }
+.cta-actions { display: flex; gap: .8rem; flex-wrap: wrap; }
+.btn-cta-primary {
+  background: var(--savanna); color: var(--white);
+  text-decoration: none; padding: .85rem 1.8rem;
+  border-radius: var(--r); font-size: .88rem; font-weight: 500;
+  transition: background .2s; white-space: nowrap;
+}
+.btn-cta-primary:hover { background: var(--ochre); color: var(--dusk); }
+.btn-cta-ghost {
+  border: 1px solid rgba(255,255,255,.25); color: var(--white);
+  text-decoration: none; padding: .85rem 1.8rem;
+  border-radius: var(--r); font-size: .88rem; font-weight: 400;
+  transition: border-color .2s; white-space: nowrap;
+}
+.btn-cta-ghost:hover { border-color: var(--ochre); color: var(--ochre); }
+
+/* ── RELATED ── */
+.related-section {
+  background: var(--mist);
+  padding: 5rem 5%;
+}
+.related-inner { max-width: var(--max); margin: 0 auto; }
+.related-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem; margin-top: 2rem;
+}
+.related-card {
+  border-radius: var(--r); overflow: hidden; background: var(--white);
+  border: 1px solid var(--border);
+  text-decoration: none; color: inherit;
+  transition: box-shadow .2s, transform .2s;
+  display: block;
+}
+.related-card:hover { box-shadow: 0 8px 32px rgba(28,20,16,.1); transform: translateY(-3px); }
+.related-img { width: 100%; height: 160px; object-fit: cover; display: block; }
+.related-body { padding: 1rem; }
+.related-meta { font-size: .7rem; color: var(--stone); margin-bottom: .3rem; }
+.related-name { font-family: var(--display); font-size: 1rem; font-weight: 600; color: var(--dusk); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dusk); color: rgba(255,255,255,.5);
+  padding: 2rem 5%; text-align: center; font-size: .8rem; font-weight: 300;
+}
+footer a { color: var(--ochre); text-decoration: none; }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .page-body { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  .highlights-grid { grid-template-columns: 1fr; }
+  .inc-exc-grid { grid-template-columns: 1fr; }
+  .accomm-grid { grid-template-columns: 1fr; }
+  .wildlife-grid { grid-template-columns: repeat(2, 1fr); }
+  .related-grid { grid-template-columns: 1fr 1fr; }
+  .months-row { grid-template-columns: repeat(6, 1fr); }
+}
+@media (max-width: 600px) {
+  .itinerary-hero { height: 60vh; }
+  .hero-title { font-size: 2rem; }
+  .page-body { padding: 2.5rem 5%; }
+  .cta-banner { padding: 2rem; }
+  .wildlife-grid { grid-template-columns: repeat(2, 1fr); }
+  .related-grid { grid-template-columns: 1fr; }
+  .day-block { grid-template-columns: 50px 1fr; gap: 0 1rem; }
+  .day-num-circle { width: 36px; height: 36px; font-size: .95rem; }
+  .day-block::before { left: 27px; }
+  nav .nav-links { display: none; }
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">Mwala <span>Tours</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#packages">Packages</a></li>
+    <li><a href="../index.html#destinations">Destinations</a></li>
+    <li><a class="nav-book" href="../index.html#contact">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="itinerary-hero" style="background-image:url('https://mwala-tours-and-safaris.vercel.app/omer-salom-gi6T2ktnpnE-unsplash.jpg'); padding-top:66px;">
+  <div class="hero-inner">
+    <p class="hero-breadcrumb">
+      <a href="../index.html">Home</a> &nbsp;›&nbsp;
+      <a href="../index.html#packages">Packages</a> &nbsp;›&nbsp;
+      Northern Circuit Safari
+    </p>
+    <h1 class="hero-title">Northern Circuit <em>Grand Safari</em></h1>
+    <div class="hero-meta">
+      <span class="hero-badge">🗓 7 Days · 6 Nights</span>
+      <span class="hero-badge highlight">🦁 Big Five &amp; Migration</span>
+      <span class="hero-badge">🌋 5 Iconic Destinations</span>
+      <span class="hero-badge">🦩 Flamingos · Craters · Plains</span>
+    </div>
+  </div>
+</div>
+
+<!-- ROUTE STRIP -->
+<div class="route-strip">
+  <div class="route-inner">
+    <div class="route-stop active">
+      <div>
+        <span class="route-day-tag">Day 1–2</span>
+        🌿 Tarangire
+      </div>
+    </div>
+    <span class="route-arrow">→</span>
+    <div class="route-stop active">
+      <div>
+        <span class="route-day-tag">Day 3</span>
+        🦩 Lake Natron
+      </div>
+    </div>
+    <span class="route-arrow">→</span>
+    <div class="route-stop active">
+      <div>
+        <span class="route-day-tag">Day 4–5</span>
+        🐆 Serengeti
+      </div>
+    </div>
+    <span class="route-arrow">→</span>
+    <div class="route-stop active">
+      <div>
+        <span class="route-day-tag">Day 6</span>
+        🦁 Lake Manyara
+      </div>
+    </div>
+    <span class="route-arrow">→</span>
+    <div class="route-stop active">
+      <div>
+        <span class="route-day-tag">Day 7</span>
+        🌋 Ngorongoro
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-body">
+  <main class="page-main">
+
+    <!-- OVERVIEW -->
+    <section class="reveal">
+      <p class="section-eyebrow">Tour Overview</p>
+      <h2 class="section-title">Tanzania's Complete <em>Northern Circuit</em></h2>
+      <p class="section-lead">
+        This is Tanzania done properly. Seven days, five destinations, and a route that has been refined over decades of guiding to capture each park at its most extraordinary — not just its most famous. The Northern Circuit is the most celebrated safari itinerary in Africa for good reason: it combines the intimate, elephant-dense forests of Tarangire, the surreal flamingo shores of Lake Natron (still Tanzania's best-kept secret), the sheer scale of the Serengeti's endless plains, the tree-climbing lions and Rift Valley grandeur of Lake Manyara, and the geological wonder of Ngorongoro Crater — the world's largest intact volcanic caldera and home to the highest density of wildlife in Africa.
+      </p>
+      <p class="section-lead" style="margin-top:.9rem">
+        The sequence matters. We begin in Tarangire — dry, baobab-studded, and game-rich — to calibrate your eye before the wider landscapes ahead. Lake Natron is timed for the late afternoon light that turns the soda lake a deep rose. The Serengeti is given two full days, not one. Manyara is the gentle reintroduction to forest after open plains. And Ngorongoro closes the circuit with an encounter that leaves every visitor speechless: three thousand animals in a single volcanic bowl, nowhere to go, and nowhere to be but here.
+      </p>
+      <div style="margin-top:1.2rem;display:flex;gap:.8rem;flex-wrap:wrap">
+        <div style="background:var(--pale);border-radius:var(--r);padding:.7rem 1rem;font-size:.8rem;color:var(--dusk);border:1px solid var(--border)">
+          <strong style="display:block;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:.2rem">Best Suited For</strong>
+          First-time safari visitors, wildlife enthusiasts, photographers, couples &amp; families
+        </div>
+        <div style="background:var(--pale);border-radius:var(--r);padding:.7rem 1rem;font-size:.8rem;color:var(--dusk);border:1px solid var(--border)">
+          <strong style="display:block;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:.2rem">Departs From</strong>
+          Arusha or Kilimanjaro International Airport
+        </div>
+        <div style="background:var(--pale);border-radius:var(--r);padding:.7rem 1rem;font-size:.8rem;color:var(--dusk);border:1px solid var(--border)">
+          <strong style="display:block;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:.2rem">Destinations</strong>
+          Tarangire · Lake Natron · Serengeti · Manyara · Ngorongoro
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="reveal">
+      <p class="section-eyebrow">Tour Highlights</p>
+      <h2 class="section-title">Five Parks, <em>One Epic</em> Journey</h2>
+      <div class="highlights-grid">
+        <div class="highlight-item"><span class="highlight-icon">🐘</span><span class="highlight-text"><strong>Tarangire's Elephant Herds:</strong> Africa's highest concentration of elephants per square kilometre outside Botswana. Family groups of forty or more move between the ancient baobabs — an encounter unlike anywhere else in Tanzania.</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🦩</span><span class="highlight-text"><strong>Lake Natron's Flamingo Nursery:</strong> The world's only breeding ground for East Africa's 2.5 million lesser flamingos. The soda lake turns scarlet in afternoon light; the landscape feels like another planet entirely.</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🐆</span><span class="highlight-text"><strong>Serengeti — Africa's Greatest Stage:</strong> Two full days in the Serengeti, covering the central Seronera valley for year-round game and the riverine forest where leopards drape themselves over branches above the Seronera River.</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🦁</span><span class="highlight-text"><strong>Lake Manyara's Tree Lions:</strong> One of the world's only populations of habitual tree-climbing lions, a behaviour that still puzzles researchers. Finding a pride elevated in an acacia is among Tanzania's most singular wildlife experiences.</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🌋</span><span class="highlight-text"><strong>Ngorongoro Crater:</strong> A full descent into the 260-square-kilometre caldera floor, home to the Big Five including Africa's last concentrations of black rhino, lion prides, and flocks of flamingos on the soda lake at the crater's heart.</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🌅</span><span class="highlight-text"><strong>Rift Valley Panoramas:</strong> The entire circuit runs along or across the Great Rift Valley. Sundowners on the crater rim, dawns on the Serengeti plains, and the escarpment views from Manyara — the light here does something to every photograph.</span></div>
+      </div>
+    </section>
+
+    <!-- ITINERARY -->
+    <section class="reveal">
+      <p class="section-eyebrow">Day-by-Day Itinerary</p>
+      <h2 class="section-title">Seven Days Across <em>Northern Tanzania</em></h2>
+      <div class="itinerary-days">
+
+        <!-- DAY 1 -->
+        <div class="day-block">
+          <div class="day-label">
+            <div class="day-num-circle">1</div>
+            <span class="day-word">Day</span>
+          </div>
+          <div class="day-content">
+            <h3 class="day-title">Arusha to Tarangire — Baobabs &amp; the Elephant Kingdom</h3>
+            <div class="day-park-tag">📍 Tarangire National Park</div>
+            <div class="day-periods">
+              <div class="day-period">
+                <p class="day-period-label">Morning</p>
+                <p>Departure from your Arusha hotel at 07:00. The drive south passes through farmland and the town of Makuyuni before the landscape opens into the dry thornbush country that announces Tarangire. The change is immediate and dramatic: within minutes of the park gate, the baobab trees begin — enormous, ancient, impossible-looking things that can live for two thousand years and hold thousands of litres of water in their swollen trunks. En route, your guide briefs you on the park's ecology and what to expect in each habitat zone.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Afternoon</p>
+                <p>Enter the park and begin the main game drive along the Tarangire River, the park's lifeblood. In the dry season, every animal in the ecosystem is drawn here: elephant herds of thirty, forty, fifty individuals moving in slow procession; zebra and wildebeest crossing the river shallows; impala rams sparring in the riverine acacia. Tarangire is also exceptional for tree-climbing python sightings and has one of Tanzania's finest populations of fringe-eared oryx. Picnic lunch is served beneath a sausage tree beside the river.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Evening</p>
+                <p>Late afternoon drive through the open grasslands east of the river — the golden-hour light over the baobab silhouettes is one of Tanzania's most-photographed scenes, and for good reason. Check in at your lodge as the sky turns. Sundowner drinks on the terrace as the park falls quiet below.</p>
+              </div>
+            </div>
+            <div class="day-accommodation">🌿 Night at Tarangire Sopa Lodge or Oliver's Camp (by tier)</div>
+          </div>
+        </div>
+
+        <!-- DAY 2 -->
+        <div class="day-block">
+          <div class="day-label">
+            <div class="day-num-circle">2</div>
+            <span class="day-word">Day</span>
+          </div>
+          <div class="day-content">
+            <h3 class="day-title">Tarangire Full Day — Swamps, Predators &amp; the Northern Wilderness</h3>
+            <div class="day-park-tag">📍 Tarangire National Park</div>
+            <div class="day-periods">
+              <div class="day-period">
+                <p class="day-period-label">Early Morning</p>
+                <p>A 06:00 departure catches the park at its most active. The Silale Swamp in the park's south — one of Tarangire's lesser-visited sections — holds enormous concentrations of buffalo, elephant, and waterbuck in the early morning. Lion prides patrol the swamp edge at dawn. This is also the best area for the park's significant cheetah population, which uses the open grasslands beyond the swamp for hunting.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Mid-Morning to Afternoon</p>
+                <p>A bush breakfast is served in the field — the table laid in an open clearing while elephants move at a respectful distance — before the drive continues north through the park's central areas. The afternoon provides a second pass along the Tarangire River as herds build in intensity toward dusk. This is Tarangire at its most overwhelming: vehicles can sometimes count over four hundred elephants in a single afternoon's drive.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Evening</p>
+                <p>Return to camp as the park closes. Optional night game drive available for guests at certain lodges — an entirely different experience with spring hares, genets, and the occasional serval catching the spotlight. Dinner and debrief with your guide as you review the day's sightings and plan the Lake Natron journey for tomorrow.</p>
+              </div>
+            </div>
+            <div class="day-accommodation">🌿 Second Night at Tarangire Lodge</div>
+          </div>
+        </div>
+
+        <!-- DAY 3 -->
+        <div class="day-block">
+          <div class="day-label">
+            <div class="day-num-circle">3</div>
+            <span class="day-word">Day</span>
+          </div>
+          <div class="day-content">
+            <h3 class="day-title">Lake Natron — The Flamingo Planet</h3>
+            <div class="day-park-tag">📍 Lake Natron, Rift Valley</div>
+            <div class="day-periods">
+              <div class="day-period">
+                <p class="day-period-label">Morning</p>
+                <p>Depart early — the drive to Lake Natron takes approximately three hours through increasingly dramatic scenery. The road passes through Maasai country: red-ochre warriors moving cattle across the dusty plains, bomas visible at intervals, the world becoming more remote and more extraordinary with every kilometre. The Rift Valley escarpment closes in as you descend toward the lake. Ol Doinyo Lengai — the Maasai's "Mountain of God," one of Africa's only active carbonatite volcanoes — comes into view as a perfect cone rising from the valley floor.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Afternoon</p>
+                <p>Arrive at Lake Natron by midday. The lake is a natural wonder that should not exist: its waters are more alkaline than bleach, reaching temperatures of 60°C in summer, and yet it sustains the world's only major breeding colony for lesser flamingos — up to 2.5 million birds nesting on the lake's caustic mudflats. The afternoon light turns the soda lake's surface a deep crimson and rose pink, depending on the algae levels. Optional guided walk along the lake shore — close enough to hear the flamingos, far enough not to disturb them.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Evening</p>
+                <p>Sundowners with a direct view of Ol Doinyo Lengai and the lake reflecting the last light. For those with energy: a walk to the nearby Engare Sero waterfall, a freshwater cascade into the Rift Valley that offers an extraordinary contrast to the hostile lake behind it. Dinner under an open sky with one of Tanzania's least light-polluted horizons above.</p>
+              </div>
+            </div>
+            <div class="day-accommodation">🌋 Night at Lake Natron Tented Camp</div>
+          </div>
+        </div>
+
+        <!-- DAY 4 -->
+        <div class="day-block">
+          <div class="day-label">
+            <div class="day-num-circle">4</div>
+            <span class="day-word">Day</span>
+          </div>
+          <div class="day-content">
+            <h3 class="day-title">Natron to Serengeti — Crossing into the Endless Plains</h3>
+            <div class="day-park-tag">📍 Serengeti National Park</div>
+            <div class="day-periods">
+              <div class="day-period">
+                <p class="day-period-label">Morning</p>
+                <p>An early departure gives time for a final dawn walk beside the lake before the drive west toward the Serengeti. The route passes through some of Tanzania's most remote country — the Ngorongoro Highlands, the crater rim visible to the south, and then the long descent onto the Serengeti plains. The moment the park boundary becomes the horizon is a moment every first-time visitor remembers: the land simply opens, and opens, and opens. There is no preparation for the Serengeti's scale.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Afternoon</p>
+                <p>Enter the Serengeti through the Naabi Hill Gate and begin the afternoon game drive through the southern plains — the calving grounds of the Great Migration. Depending on season, wildebeest herds may be visible on the horizon in numbers that defy comprehension. The central Seronera Valley, where the Seronera and Orangi rivers converge, is the park's year-round wildlife core. Lion prides, leopard, cheetah, and elephant are reliably present. Picnic lunch is taken at a viewpoint above the river.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Evening</p>
+                <p>Arrive at your lodge in the Seronera area as the light fades. The Serengeti's sunsets — flat horizon, no obstruction, the sky's full range of colour — are unlike anywhere else. Dinner at camp.</p>
+              </div>
+            </div>
+            <div class="day-accommodation">🐆 Night at Serengeti Sopa Lodge or Serengeti Migration Camp (by tier)</div>
+          </div>
+        </div>
+
+        <!-- DAY 5 -->
+        <div class="day-block">
+          <div class="day-label">
+            <div class="day-num-circle">5</div>
+            <span class="day-word">Day</span>
+          </div>
+          <div class="day-content">
+            <h3 class="day-title">Full Day in the Serengeti — Big Cats &amp; the Migration</h3>
+            <div class="day-park-tag">📍 Serengeti National Park</div>
+            <div class="day-periods">
+              <div class="day-period">
+                <p class="day-period-label">Dawn Drive</p>
+                <p>A 05:30 departure — while the air is still cold and the grass still silver with dew — is the Serengeti's finest hour. Nocturnal predators are finishing their night's work; leopards carry kills into the trees before dawn breaks. The Seronera River's riverine forest is the most reliable leopard habitat in East Africa, and morning is the hour to find them. Your guide knows each individual territory. Two hours of pre-sunrise game viewing can produce encounters that define an entire trip.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Morning to Midday</p>
+                <p>Continue through the Seronera Valley and onto the open plains, following the current position of the wildebeest herds (which your guide will have tracked the evening before). The full-day format allows the flexibility to follow a cheetah hunt, stay with a lion pride through a kill, or simply drive slowly through a plain of a hundred thousand wildebeest — experiences that two-day Serengeti visitors miss entirely. A full bush lunch is served in the field.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Afternoon</p>
+                <p>The afternoon drive is dedicated to the river crossings if timing aligns with the Migration (July–October), or to the kopjes — the ancient granite outcrops scattered across the Serengeti plains — which function as lion kingdom headquarters and offer spectacular elevated photography. The Moru Kopjes in the south hold a population of black rhino that can sometimes be seen at dusk. Return to camp for the final night on the Serengeti plains.</p>
+              </div>
+            </div>
+            <div class="day-accommodation">🐆 Second Night at Serengeti Lodge</div>
+          </div>
+        </div>
+
+        <!-- DAY 6 -->
+        <div class="day-block">
+          <div class="day-label">
+            <div class="day-num-circle">6</div>
+            <span class="day-word">Day</span>
+          </div>
+          <div class="day-content">
+            <h3 class="day-title">Serengeti to Lake Manyara — Forest, Flamingos &amp; Tree Lions</h3>
+            <div class="day-park-tag">📍 Lake Manyara National Park</div>
+            <div class="day-periods">
+              <div class="day-period">
+                <p class="day-period-label">Morning</p>
+                <p>A final early drive in the Serengeti before departing east through the Ngorongoro Conservation Area and descending to Lake Manyara. The conservation area drive passes through Maasai villages and highland forests — a complete change from the open plains — before the Rift Valley escarpment comes into view and Lake Manyara appears below, silver-blue and vast, its near shore already pink with flamingos.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Afternoon</p>
+                <p>Enter Lake Manyara National Park for an afternoon game drive. After the Serengeti's scale, Manyara's intimacy is a deliberate contrast: the park is compact, forested, and rewards patience and close observation. The groundwater forest along the park's northern section is the habitat of the tree-climbing lions — the guides know which trees, which prides, and which time of day. The forest also holds olive baboon troops, blue monkeys, and the secretive bushbuck.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Evening</p>
+                <p>Emerge from the forest to drive along the lake shore at golden hour — the flamingo shallows catching the last light, the escarpment wall glowing above. Check into your lodge on the crater rim with views across the lake below. Dinner on the terrace — this evening, the circuit feels close to complete.</p>
+              </div>
+            </div>
+            <div class="day-accommodation">🦁 Night at Lake Manyara Serena Lodge or Kirurumu Tented Lodge (by tier)</div>
+          </div>
+        </div>
+
+        <!-- DAY 7 -->
+        <div class="day-block">
+          <div class="day-label">
+            <div class="day-num-circle">7</div>
+            <span class="day-word">Day</span>
+          </div>
+          <div class="day-content">
+            <h3 class="day-title">Ngorongoro Crater — The World's Greatest Caldera</h3>
+            <div class="day-park-tag">📍 Ngorongoro Conservation Area</div>
+            <div class="day-periods">
+              <div class="day-period">
+                <p class="day-period-label">Early Morning</p>
+                <p>Depart by 06:30 for the Ngorongoro Crater descent. The crater rim sits at 2,300 metres; the descent to the floor takes approximately 45 minutes on a steep volcanic track. As the vehicle drops through the morning cloud, the crater floor reveals itself in layers — first the grasslands, then the soda lake at the centre, then the dots of wildebeest, the moving specks of zebra, the distant smear of flamingos. The caldera is 260 square kilometres and contains approximately 25,000 large animals that cannot leave. They have been here, self-sustaining, since the volcano collapsed 2.5 million years ago.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Morning Drive</p>
+                <p>The morning game drive prioritises the black rhino — Ngorongoro holds one of Africa's last stable populations — and the crater's resident lion prides, which are the most genetically isolated in Africa and extraordinarily relaxed around vehicles. The central soda lake at Ngorongoro's heart holds flamingos and pelicans; hippo pools at the Ngoitokitok Springs are a reliable stop. Your guide will also look for the leopards that hunt the forest patches along the crater's inner walls.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Midday</p>
+                <p>Picnic lunch at the designated area beside the Ngoitokitok Springs — the most atmospherically located picnic spot in Tanzania, with a hippo pool five metres away and Maasai cattle on the crater rim 600 metres above your head. A final loop through the crater floor before the ascent.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Afternoon</p>
+                <p>Ascend the crater and drive back to Arusha, arriving approximately 16:30–17:30. Drop-off at your hotel or Kilimanjaro International Airport. The seven days of Tanzania's Northern Circuit, complete. Optional extension available: continue to Zanzibar for beach days — the most popular post-safari addition.</p>
+              </div>
+            </div>
+            <div class="day-accommodation">✈ End of Safari — Return to Arusha (or connect to Zanzibar)</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WILDLIFE -->
+    <section class="reveal">
+      <p class="section-eyebrow">Wildlife</p>
+      <h2 class="section-title">Animals You May <em>Encounter</em></h2>
+      <div class="wildlife-grid">
+        <div class="wildlife-card"><div class="wildlife-emoji">🦁</div><div class="wildlife-name">African Lion</div><div class="wildlife-sub">Serengeti &amp; Ngorongoro prides</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🐘</div><div class="wildlife-name">African Elephant</div><div class="wildlife-sub">Tarangire herds of 50+</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🦏</div><div class="wildlife-name">Black Rhino</div><div class="wildlife-sub">Ngorongoro — last stronghold</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🐆</div><div class="wildlife-name">Leopard</div><div class="wildlife-sub">Seronera riverine forest</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🐆</div><div class="wildlife-name">Cheetah</div><div class="wildlife-sub">Serengeti open plains</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🦬</div><div class="wildlife-name">Cape Buffalo</div><div class="wildlife-sub">All parks — massive herds</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🦩</div><div class="wildlife-name">Lesser Flamingo</div><div class="wildlife-sub">Natron — 2.5 million breeding</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🦒</div><div class="wildlife-name">Masai Giraffe</div><div class="wildlife-sub">Tarangire &amp; Manyara</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🦓</div><div class="wildlife-name">Plains Zebra</div><div class="wildlife-sub">Migration herds — Serengeti</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🦛</div><div class="wildlife-name">Hippopotamus</div><div class="wildlife-sub">Ngorongoro &amp; Manyara pools</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🐊</div><div class="wildlife-name">Nile Crocodile</div><div class="wildlife-sub">Serengeti river crossings</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🦅</div><div class="wildlife-name">Martial Eagle</div><div class="wildlife-sub">Tarangire baobab canopy</div></div>
+      </div>
+    </section>
+
+    <!-- INCLUDES / EXCLUDES -->
+    <section class="reveal">
+      <p class="section-eyebrow">What's Covered</p>
+      <h2 class="section-title">Included &amp; <em>Excluded</em></h2>
+      <div class="inc-exc-grid">
+        <div class="inc-card">
+          <p class="inc-exc-title">✓ What's Included</p>
+          <ul class="inc-exc-list">
+            <li><span class="chk">✓</span> All national park &amp; conservation area entry fees</li>
+            <li><span class="chk">✓</span> Professional TANAPA-certified guide (English-speaking)</li>
+            <li><span class="chk">✓</span> Private 4×4 Land Cruiser with pop-up roof</li>
+            <li><span class="chk">✓</span> 6 nights' accommodation (lodge by chosen tier)</li>
+            <li><span class="chk">✓</span> All meals: breakfast, lunch &amp; dinner throughout</li>
+            <li><span class="chk">✓</span> Bush breakfasts and picnic lunches in the field</li>
+            <li><span class="chk">✓</span> Unlimited drinking water and soft drinks</li>
+            <li><span class="chk">✓</span> Ngorongoro Crater descent fees</li>
+            <li><span class="chk">✓</span> Arusha hotel pick-up and airport drop-off</li>
+            <li><span class="chk">✓</span> Digital wildlife guide, bird checklist &amp; route map PDF</li>
+          </ul>
+        </div>
+        <div class="exc-card">
+          <p class="inc-exc-title">✗ What's Not Included</p>
+          <ul class="inc-exc-list">
+            <li><span class="chk">✗</span> International and domestic flights</li>
+            <li><span class="chk">✗</span> Travel and medical insurance (strongly recommended)</li>
+            <li><span class="chk">✗</span> Tanzania tourist visa (USD 50 — apply online)</li>
+            <li><span class="chk">✗</span> Alcoholic and premium beverages</li>
+            <li><span class="chk">✗</span> Hot air balloon safari over Serengeti (available on request)</li>
+            <li><span class="chk">✗</span> Personal purchases and souvenirs</li>
+            <li><span class="chk">✗</span> Gratuities (USD 10–15/day per guide suggested)</li>
+            <li><span class="chk">✗</span> Maasai village cultural visit add-on</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCOMMODATION -->
+    <section class="reveal">
+      <p class="section-eyebrow">Where You'll Sleep</p>
+      <h2 class="section-title">Accommodation <em>Options</em></h2>
+      <div class="accomm-grid">
+        <div class="accomm-card">
+          <span class="accomm-tier tier-budget">Budget</span>
+          <p class="accomm-name">Circuit Camping &amp; Lodges</p>
+          <p class="accomm-desc">A mix of public campsites and budget lodges in Tarangire, Serengeti, and Ngorongoro — clean, comfortable, and genuinely immersive. This tier puts you closest to the bush sounds at night. Shared facilities at camps; en-suite at lodges. Ideal for adventurous travellers on tighter schedules.</p>
+        </div>
+        <div class="accomm-card">
+          <span class="accomm-tier tier-mid">Mid-Range</span>
+          <p class="accomm-name">Sopa Lodges Circuit</p>
+          <p class="accomm-desc">The Sopa group operates lodges at Tarangire, Serengeti, and Ngorongoro — reliable mid-range comfort with swimming pools, excellent buffet meals, and rooms that actually feel like a reward after a long game drive. Consistent quality across the entire circuit without the premium-lodge price.</p>
+        </div>
+        <div class="accomm-card">
+          <span class="accomm-tier tier-luxury">Luxury</span>
+          <p class="accomm-name">Tented Camps &amp; Premier Lodges</p>
+          <p class="accomm-desc">Oliver's Camp (Tarangire), Serengeti Migration Camp, Kirurumu (Manyara), and Ngorongoro Crater Lodge — four of East Africa's finest properties, each positioned to give the most extraordinary view its park offers. Walking safaris, private guides, and wine lists to match the sunset.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEST TIME -->
+    <section class="reveal">
+      <p class="section-eyebrow">Timing Your Visit</p>
+      <h2 class="section-title">Best Time to <em>Visit</em></h2>
+      <p class="section-lead">The Northern Circuit operates year-round. Each season rewards differently — choose based on what you most want to see.</p>
+      <div class="months-row">
+        <div class="month-cell month-peak"><span class="month-label">Jan</span><div class="month-dot"></div></div>
+        <div class="month-cell month-peak"><span class="month-label">Feb</span><div class="month-dot"></div></div>
+        <div class="month-cell month-low"><span class="month-label">Mar</span><div class="month-dot"></div></div>
+        <div class="month-cell month-low"><span class="month-label">Apr</span><div class="month-dot"></div></div>
+        <div class="month-cell month-low"><span class="month-label">May</span><div class="month-dot"></div></div>
+        <div class="month-cell month-peak"><span class="month-label">Jun</span><div class="month-dot"></div></div>
+        <div class="month-cell month-peak"><span class="month-label">Jul</span><div class="month-dot"></div></div>
+        <div class="month-cell month-peak"><span class="month-label">Aug</span><div class="month-dot"></div></div>
+        <div class="month-cell month-peak"><span class="month-label">Sep</span><div class="month-dot"></div></div>
+        <div class="month-cell month-good"><span class="month-label">Oct</span><div class="month-dot"></div></div>
+        <div class="month-cell month-good"><span class="month-label">Nov</span><div class="month-dot"></div></div>
+        <div class="month-cell month-good"><span class="month-label">Dec</span><div class="month-dot"></div></div>
+      </div>
+      <div class="month-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--savanna)"></div> Peak — Dry Season, Migration, Best Visibility</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--grass)"></div> Good — Lush &amp; Green, Newborn Animals, Fewer Visitors</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--stone)"></div> Low — Heavy Rains, Some Tracks Challenging</div>
+      </div>
+      <p class="section-lead" style="margin-top:1rem">
+        <strong>June–October</strong> is peak season: the long dry season brings the Great Migration's northern river crossings at the Mara River (July–October), superb game viewing throughout with short grass giving maximum visibility, and the best flamingo numbers at Lake Natron. <strong>January–February</strong> offers the Migration's calving season on the southern Serengeti plains — thousands of wildebeest calves born each day, and the predator activity that follows. <strong>November–December</strong> brings the short rains and a dramatic lush green landscape with far fewer tourists — recommended for photographers and those seeking a quieter experience. <strong>March–May</strong> sees the long rains; some tracks become difficult but all parks remain open, and rates drop significantly.
+      </p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="reveal">
+      <p class="section-eyebrow">Questions Answered</p>
+      <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">Is 7 days enough for all five parks? <span class="faq-chevron">▼</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Seven days is the Northern Circuit's optimal length — long enough to spend meaningful time in each destination (two days in Tarangire, two in the Serengeti) without rushing, and compact enough to work within most international holiday windows. We do not compress this itinerary to five or six days, as the driving time between Natron and the Serengeti requires a full day. Those with more time can add Zanzibar as a post-safari extension or extend their Serengeti stay to three nights, which we highly recommend during the Migration months.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">When is the best time to see the Great Migration? <span class="faq-chevron">▼</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">The Migration is a year-round movement, not a single event. January–February: the calving season on the Serengeti's southern plains — extraordinary predator action as cheetah, lion, and hyena follow the herds. April–May: the herds begin moving north through the central Serengeti. June–July: the first Grumeti River crossings in the western corridor. July–October: the Mara River crossings in the north — the most dramatic spectacle, with crocodiles taking wildebeest as they cross. November–December: the herds return south. We adjust the game-drive areas based on where the Migration is when you visit.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Can I see the Big Five on this itinerary? <span class="faq-chevron">▼</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes — this is one of very few itineraries that gives genuinely good odds on all five. Lion: Serengeti and Ngorongoro, daily sightings. Elephant: Tarangire in extraordinary numbers. Buffalo: all parks. Leopard: Serengeti's Seronera valley, our most reliable site. Black rhino: Ngorongoro Crater, which holds one of Africa's last stable populations. The black rhino is never guaranteed — they are shy and sometimes stay in the crater's forested edges — but with two dedicated drive periods in the crater and experienced guides, sightings are more likely here than anywhere else in Tanzania.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Why visit Lake Natron — it isn't a national park? <span class="faq-chevron">▼</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Lake Natron is the most underrated destination on the Northern Circuit. It is the world's only breeding ground for East Africa's 2.5 million lesser flamingos — a spectacle on a scale that no national park can match — and the surrounding landscape, with Ol Doinyo Lengai volcano rising from the valley floor and the Rift Valley escarpment on three sides, is unlike anything else in Africa. Most circuits skip it to save time. We include it precisely because it changes the trip from a collection of game drives into something genuinely unlike any other safari in the world.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Is the itinerary private or shared with other travellers? <span class="faq-chevron">▼</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">All Mwala Tours safaris are private: your own vehicle, your own guide, your own schedule within the parks. You will share lodges with other guests in the common areas, but your game drives are entirely your own. This means your guide can stay with a leopard for two hours if you want to — no group consensus required. We do not do shared group safaris. The minimum booking is two people.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Can we add a hot air balloon over the Serengeti? <span class="faq-chevron">▼</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes — the Serengeti balloon safari is one of Africa's finest add-ons and fits naturally into Day 5. The balloons launch at dawn, float for approximately an hour over the plains with a champagne breakfast served on landing, and return you to camp in time for a regular afternoon game drive. Cost is approximately USD 600 per person, booked through Serengeti Balloon Safaris. We recommend booking at least two months in advance during peak season. Mention this interest when enquiring and we will include it in your quote.</div></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="reveal">
+      <div class="cta-banner">
+        <div class="cta-text">
+          <p class="eyebrow">Your Northern Circuit Awaits</p>
+          <h2>Book the <em>Grand Safari</em></h2>
+          <p>Seven days. Five parks. Send us your travel dates and we will confirm availability and build your personalised itinerary within 24 hours.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="../index.html#contact" class="btn-cta-primary">Reserve Your Dates</a>
+          <a href="../index.html#contact" class="btn-cta-ghost">Enquire Now</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-header">
+        <p class="sidebar-pkg-name">Northern Circuit Grand Safari</p>
+        <p class="sidebar-tagline">7 Days · 6 Nights · 5 Parks</p>
+      </div>
+      <div class="sidebar-body">
+        <div class="sidebar-detail"><span class="sidebar-label">Duration</span><span class="sidebar-value">7 Days / 6 Nights</span></div>
+        <div class="sidebar-detail"><span class="sidebar-label">Departs From</span><span class="sidebar-value">Arusha / KIA</span></div>
+        <div class="sidebar-detail"><span class="sidebar-label">Parks Visited</span><span class="sidebar-value">5 Destinations</span></div>
+        <div class="sidebar-detail"><span class="sidebar-label">Min. Group</span><span class="sidebar-value">2 People</span></div>
+        <div class="sidebar-detail"><span class="sidebar-label">Max. Group</span><span class="sidebar-value">8 People</span></div>
+        <div class="sidebar-detail"><span class="sidebar-label">Meals</span><span class="sidebar-value">Full Board</span></div>
+        <div class="sidebar-detail"><span class="sidebar-label">Activity Level</span><span class="sidebar-value">Easy – Moderate</span></div>
+        <a class="sidebar-cta" href="../index.html#contact">Book This Safari</a>
+        <a class="sidebar-ghost" href="../index.html#contact">Add Zanzibar Extension →</a>
+        <p class="sidebar-note">📞 Call us: +255 789 021 754<br/>We respond within 24 hours</p>
+      </div>
+      <div class="trust-badges">
+        <div class="trust-badge"><span class="icon">🛡</span>Secure Booking</div>
+        <div class="trust-badge"><span class="icon">✓</span>TANAPA Licensed</div>
+        <div class="trust-badge"><span class="icon">🌿</span>Eco-Certified</div>
+      </div>
+    </div>
+
+    <!-- PARKS LIST -->
+    <div class="sidebar-card" style="margin-top:1rem">
+      <div class="sidebar-header">
+        <p class="sidebar-pkg-name" style="font-size:1rem">🗺 Parks on This Circuit</p>
+        <p class="sidebar-tagline">Visited in sequence, Day 1–7</p>
+      </div>
+      <div class="parks-list">
+        <div class="park-mini">
+          <div class="park-mini-num">1</div>
+          <div>
+            <div class="park-mini-name">Tarangire N.P.</div>
+            <div style="font-size:.68rem;color:var(--stone)">Elephants &amp; Baobabs</div>
+          </div>
+          <span class="park-mini-days">Days 1–2</span>
+        </div>
+        <div class="park-mini">
+          <div class="park-mini-num">2</div>
+          <div>
+            <div class="park-mini-name">Lake Natron</div>
+            <div style="font-size:.68rem;color:var(--stone)">Flamingos &amp; Volcano</div>
+          </div>
+          <span class="park-mini-days">Day 3</span>
+        </div>
+        <div class="park-mini">
+          <div class="park-mini-num">3</div>
+          <div>
+            <div class="park-mini-name">Serengeti N.P.</div>
+            <div style="font-size:.68rem;color:var(--stone)">Big Cats &amp; Migration</div>
+          </div>
+          <span class="park-mini-days">Days 4–5</span>
+        </div>
+        <div class="park-mini">
+          <div class="park-mini-num">4</div>
+          <div>
+            <div class="park-mini-name">Lake Manyara N.P.</div>
+            <div style="font-size:.68rem;color:var(--stone)">Tree Lions &amp; Forest</div>
+          </div>
+          <span class="park-mini-days">Day 6</span>
+        </div>
+        <div class="park-mini">
+          <div class="park-mini-num">5</div>
+          <div>
+            <div class="park-mini-name">Ngorongoro Crater</div>
+            <div style="font-size:.68rem;color:var(--stone)">Black Rhino &amp; Big Five</div>
+          </div>
+          <span class="park-mini-days">Day 7</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADD-ON -->
+    <div class="sidebar-card" style="margin-top:1rem">
+      <div class="sidebar-header" style="background:var(--grass)">
+        <p class="sidebar-pkg-name" style="font-size:1rem">💡 Popular Add-On</p>
+        <p class="sidebar-tagline">Extend with Zanzibar — 3 nights</p>
+      </div>
+      <div class="sidebar-body">
+        <p style="font-size:.82rem;color:var(--stone);font-weight:300;line-height:1.6;margin-bottom:1rem">
+          From Arusha to the white sands of Zanzibar is a 1-hour domestic flight. Safari and beach in a single trip — the most popular Tanzania combination. Stone Town, Nungwi, and the spice routes are 3 days well spent.
+        </p>
+        <a class="sidebar-cta" href="../index.html#contact" style="background:var(--grass)">Ask About Zanzibar</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- RELATED -->
+<section class="related-section">
+  <div class="related-inner">
+    <p class="section-eyebrow">Explore More</p>
+    <h2 class="section-title">You May Also <em>Love</em></h2>
+    <div class="related-grid">
+      <a class="related-card" href="Manyara.html">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/jorge-tung--5Betfvtgso-unsplash.jpg" alt="Lake Manyara" />
+        <div class="related-body">
+          <p class="related-meta">2 Days · Lake Manyara N.P.</p>
+          <p class="related-name">Lake Manyara Escape</p>
+        </div>
+      </a>
+      <a class="related-card" href="Ngorongoro.html">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/Images/ana-singh-1vOBJZ6228U-unsplash.jpg" alt="Ngorongoro" />
+        <div class="related-body">
+          <p class="related-meta">3 Days · Ngorongoro Crater</p>
+          <p class="related-name">Ngorongoro Experience</p>
+        </div>
+      </a>
+      <a class="related-card" href="Serengeti.html">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/omer-salom-gi6T2ktnpnE-unsplash.jpg" alt="Serengeti" />
+        <div class="related-body">
+          <p class="related-meta">5 Days · Serengeti N.P.</p>
+          <p class="related-name">Serengeti Adventure</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Mwala Tours &amp; Safaris. All rights reserved. &nbsp;|&nbsp; <a href="../index.html">Back to Home</a></p>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

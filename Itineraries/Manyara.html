@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lake Manyara Escape – 2-Day Safari | Mwala Tours</title>
+  <meta name="description" content="Discover tree-climbing lions, thousands of flamingos, and ancient groundwater forest on a 2-day Lake Manyara safari with Mwala Tours. The Rift Valley's best-kept secret." />
+  <style>
+/* ── MWALA TOURS — SHARED ITINERARY STYLES ── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --savanna:  #C8803A;
+  --dusk:     #1C1410;
+  --ochre:    #E8A44A;
+  --earth:    #6B4226;
+  --mist:     #F5EFE6;
+  --stone:    #9A8A7A;
+  --white:    #FDFAF6;
+  --grass:    #3D6142;
+  --pale:     #FAF6F0;
+  --border:   rgba(0,0,0,.08);
+
+  --display: 'Cormorant Garamond', Georgia, serif;
+  --body:    'DM Sans', system-ui, sans-serif;
+  --max: 1100px;
+  --r: 4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  background: var(--white);
+  color: var(--dusk);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%; height: 66px;
+  background: rgba(28,20,16,.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.nav-logo {
+  font-family: var(--display); font-size: 1.3rem; font-weight: 600;
+  color: var(--white); text-decoration: none; letter-spacing: .04em;
+}
+.nav-logo span { color: var(--ochre); }
+.nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
+.nav-links a {
+  color: rgba(255,255,255,.75); text-decoration: none;
+  font-size: .8rem; letter-spacing: .09em; text-transform: uppercase;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--ochre); }
+.nav-book {
+  background: var(--savanna); color: var(--white) !important;
+  padding: .45rem 1.1rem; border-radius: var(--r); font-weight: 500 !important;
+}
+.nav-book:hover { background: var(--ochre) !important; color: var(--dusk) !important; }
+
+/* ── HERO ── */
+.itinerary-hero {
+  height: 72vh; min-height: 500px;
+  position: relative; display: flex; align-items: flex-end;
+  padding-bottom: 4rem;
+  background-size: cover; background-position: center;
+}
+.itinerary-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(28,20,16,.25) 0%,
+    rgba(28,20,16,.35) 40%,
+    rgba(28,20,16,.75) 100%
+  );
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  max-width: var(--max); margin: 0 auto;
+  width: 100%; padding: 0 5%;
+}
+.hero-breadcrumb {
+  font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ochre); margin-bottom: .9rem;
+}
+.hero-breadcrumb a { color: rgba(255,255,255,.65); text-decoration: none; }
+.hero-breadcrumb a:hover { color: var(--ochre); }
+.hero-title {
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 300; color: var(--white); line-height: 1.1;
+  margin-bottom: .9rem;
+}
+.hero-title em { font-style: italic; color: var(--ochre); }
+.hero-meta {
+  display: flex; flex-wrap: wrap; gap: .6rem; align-items: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: rgba(255,255,255,.12); backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.2);
+  color: var(--white); padding: .4rem .9rem;
+  border-radius: 20px; font-size: .78rem; font-weight: 400;
+}
+.hero-badge.highlight { background: var(--savanna); border-color: var(--savanna); }
+
+/* ── STICKY SIDEBAR LAYOUT ── */
+.page-body {
+  max-width: var(--max); margin: 0 auto;
+  padding: 4rem 5%;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 3.5rem;
+  align-items: start;
+}
+.page-main > * + * { margin-top: 3.5rem; }
+
+/* ── SIDEBAR ── */
+.sidebar { position: sticky; top: 86px; }
+.sidebar-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(28,20,16,.07);
+}
+.sidebar-header {
+  background: var(--dusk);
+  padding: 1.4rem 1.5rem;
+}
+.sidebar-pkg-name {
+  font-family: var(--display);
+  font-size: 1.2rem; font-weight: 400; color: var(--white);
+  margin-bottom: .3rem;
+}
+.sidebar-tagline { font-size: .78rem; color: var(--stone); font-weight: 300; }
+.sidebar-body { padding: 1.4rem 1.5rem; }
+.sidebar-detail {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: .6rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: .82rem;
+}
+.sidebar-detail:last-of-type { border-bottom: none; }
+.sidebar-label { color: var(--stone); font-weight: 400; }
+.sidebar-value { font-weight: 500; color: var(--dusk); }
+.sidebar-cta {
+  display: block; width: 100%;
+  background: var(--savanna); color: var(--white);
+  text-align: center; text-decoration: none;
+  padding: .85rem; font-size: .9rem; font-weight: 500;
+  border-radius: var(--r); border: none; cursor: pointer;
+  transition: background .2s; margin-top: 1.2rem;
+  letter-spacing: .04em;
+}
+.sidebar-cta:hover { background: var(--earth); }
+.sidebar-ghost {
+  display: block; width: 100%;
+  border: 1px solid var(--savanna); color: var(--savanna);
+  text-align: center; text-decoration: none;
+  padding: .7rem; font-size: .85rem; font-weight: 400;
+  border-radius: var(--r); margin-top: .6rem;
+  transition: background .2s;
+}
+.sidebar-ghost:hover { background: var(--mist); }
+.sidebar-note {
+  font-size: .72rem; color: var(--stone); text-align: center;
+  margin-top: .8rem; font-weight: 300; line-height: 1.5;
+}
+.trust-badges {
+  display: flex; justify-content: space-around;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border);
+  background: var(--pale);
+}
+.trust-badge { text-align: center; font-size: .65rem; color: var(--stone); }
+.trust-badge .icon { font-size: 1.2rem; display: block; margin-bottom: .2rem; }
+
+/* ── SECTIONS ── */
+.section-eyebrow {
+  font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--savanna); margin-bottom: .6rem; font-weight: 500;
+}
+.section-title {
+  font-family: var(--display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 300; color: var(--dusk); line-height: 1.25;
+  margin-bottom: .9rem;
+}
+.section-title em { font-style: italic; color: var(--savanna); }
+.section-lead {
+  font-size: .95rem; color: #5A4A3A; font-weight: 300;
+  line-height: 1.8; max-width: 660px;
+}
+
+/* ── HIGHLIGHTS ── */
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .8rem; margin-top: 1.4rem;
+}
+.highlight-item {
+  display: flex; align-items: flex-start; gap: .7rem;
+  background: var(--pale); border-radius: var(--r);
+  padding: .9rem 1rem;
+  border-left: 3px solid var(--savanna);
+}
+.highlight-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: .05rem; }
+.highlight-text { font-size: .85rem; color: var(--dusk); font-weight: 400; line-height: 1.45; }
+
+/* ── DAY-BY-DAY ── */
+.itinerary-days { margin-top: 1.4rem; }
+.day-block {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0 1.5rem;
+  margin-bottom: 0;
+  position: relative;
+}
+.day-block::before {
+  content: '';
+  position: absolute;
+  left: 39px; top: 52px; bottom: -1px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--savanna), rgba(200,128,58,.1));
+}
+.day-block:last-child::before { display: none; }
+
+.day-label {
+  display: flex; flex-direction: column;
+  align-items: center; padding-top: .9rem;
+  position: relative; z-index: 2;
+}
+.day-num-circle {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--savanna); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--display); font-size: 1.1rem; font-weight: 600;
+  flex-shrink: 0;
+}
+.day-word {
+  font-size: .6rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--stone); margin-top: .3rem; font-weight: 500;
+}
+
+.day-content {
+  padding: .9rem 0 2.5rem;
+}
+.day-title {
+  font-family: var(--display); font-size: 1.2rem; font-weight: 600;
+  color: var(--dusk); margin-bottom: .8rem;
+}
+.day-periods { display: flex; flex-direction: column; gap: .8rem; }
+.day-period {
+  background: var(--pale);
+  border-radius: var(--r);
+  padding: 1rem 1.1rem;
+  border-left: 2px solid var(--border);
+}
+.day-period-label {
+  font-size: .65rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ochre); font-weight: 600; margin-bottom: .4rem;
+}
+.day-period p { font-size: .88rem; color: #4A3A2A; line-height: 1.7; font-weight: 300; }
+.day-accommodation {
+  display: flex; align-items: center; gap: .5rem;
+  margin-top: .7rem; padding: .6rem .9rem;
+  background: rgba(200,128,58,.08); border-radius: var(--r);
+  font-size: .78rem; color: var(--earth); font-weight: 500;
+}
+
+/* ── WILDLIFE ── */
+.wildlife-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .8rem; margin-top: 1.4rem;
+}
+.wildlife-card {
+  background: var(--pale);
+  border-radius: var(--r);
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: box-shadow .2s, transform .2s;
+}
+.wildlife-card:hover { box-shadow: 0 4px 16px rgba(28,20,16,.08); transform: translateY(-2px); }
+.wildlife-emoji { font-size: 1.8rem; margin-bottom: .4rem; }
+.wildlife-name { font-size: .82rem; font-weight: 500; color: var(--dusk); }
+.wildlife-sub { font-size: .7rem; color: var(--stone); font-weight: 300; }
+
+/* ── INCLUDES / EXCLUDES ── */
+.inc-exc-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; margin-top: 1.4rem;
+}
+.inc-card, .exc-card {
+  border-radius: var(--r); padding: 1.5rem;
+}
+.inc-card { background: rgba(61,97,66,.06); border: 1px solid rgba(61,97,66,.15); }
+.exc-card { background: rgba(200,128,58,.05); border: 1px solid rgba(200,128,58,.15); }
+.inc-exc-title {
+  font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+  font-weight: 600; margin-bottom: 1rem;
+}
+.inc-card .inc-exc-title { color: var(--grass); }
+.exc-card .inc-exc-title { color: var(--savanna); }
+.inc-exc-list { list-style: none; }
+.inc-exc-list li {
+  display: flex; align-items: flex-start; gap: .6rem;
+  font-size: .85rem; color: #4A3A2A; font-weight: 300;
+  padding: .35rem 0;
+  border-bottom: 1px solid rgba(0,0,0,.04);
+  line-height: 1.5;
+}
+.inc-exc-list li:last-child { border-bottom: none; }
+.inc-exc-list .chk { font-size: .8rem; flex-shrink: 0; margin-top: .05rem; }
+
+/* ── ACCOMMODATION ── */
+.accomm-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; margin-top: 1.4rem;
+}
+.accomm-card {
+  border-radius: var(--r); padding: 1.3rem;
+  border: 1px solid var(--border);
+  transition: box-shadow .2s;
+}
+.accomm-card:hover { box-shadow: 0 4px 20px rgba(28,20,16,.08); }
+.accomm-tier {
+  font-size: .65rem; letter-spacing: .14em; text-transform: uppercase;
+  font-weight: 600; margin-bottom: .6rem;
+  padding: .25rem .6rem; border-radius: 20px; display: inline-block;
+}
+.tier-budget { background: rgba(154,138,122,.12); color: var(--stone); }
+.tier-mid { background: rgba(200,128,58,.1); color: var(--savanna); }
+.tier-luxury { background: rgba(28,20,16,.07); color: var(--dusk); }
+.accomm-name { font-family: var(--display); font-size: 1rem; font-weight: 600; color: var(--dusk); margin-bottom: .4rem; }
+.accomm-desc { font-size: .8rem; color: var(--stone); font-weight: 300; line-height: 1.55; }
+
+/* ── BEST TIME ── */
+.months-row {
+  display: grid; grid-template-columns: repeat(12, 1fr);
+  gap: .3rem; margin-top: 1.4rem;
+}
+.month-cell {
+  text-align: center; padding: .7rem .2rem; border-radius: var(--r);
+  font-size: .65rem; font-weight: 500;
+}
+.month-label { display: block; letter-spacing: .06em; text-transform: uppercase; margin-bottom: .3rem; }
+.month-dot { width: 8px; height: 8px; border-radius: 50%; margin: 0 auto; }
+.month-peak { background: rgba(200,128,58,.15); color: var(--savanna); }
+.month-peak .month-dot { background: var(--savanna); }
+.month-good { background: rgba(61,97,66,.1); color: var(--grass); }
+.month-good .month-dot { background: var(--grass); }
+.month-low { background: var(--pale); color: var(--stone); }
+.month-low .month-dot { background: var(--stone); }
+.month-legend {
+  display: flex; gap: 1.5rem; margin-top: .8rem; flex-wrap: wrap;
+}
+.legend-item {
+  display: flex; align-items: center; gap: .4rem;
+  font-size: .75rem; color: var(--stone);
+}
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* ── FAQ ── */
+.faq-list { margin-top: 1.4rem; }
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+.faq-question {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 0;
+  font-family: var(--body); font-size: .9rem; font-weight: 500;
+  color: var(--dusk); text-align: left; gap: 1rem;
+}
+.faq-question:hover { color: var(--savanna); }
+.faq-chevron {
+  flex-shrink: 0; font-size: .7rem; color: var(--savanna);
+  transition: transform .3s;
+}
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height .4s ease;
+  font-size: .87rem; color: #5A4A3A; font-weight: 300; line-height: 1.75;
+}
+.faq-answer-inner { padding-bottom: 1rem; }
+.faq-item.open .faq-answer { max-height: 400px; }
+
+/* ── CTA BANNER ── */
+.cta-banner {
+  background: var(--dusk);
+  border-radius: var(--r);
+  padding: 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+}
+.cta-text .eyebrow {
+  font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ochre); margin-bottom: .5rem;
+}
+.cta-text h2 {
+  font-family: var(--display); font-size: 1.9rem; font-weight: 300;
+  color: var(--white); margin-bottom: .5rem;
+}
+.cta-text h2 em { font-style: italic; color: var(--ochre); }
+.cta-text p { font-size: .87rem; color: rgba(255,255,255,.6); font-weight: 300; max-width: 380px; }
+.cta-actions { display: flex; gap: .8rem; flex-wrap: wrap; }
+.btn-cta-primary {
+  background: var(--savanna); color: var(--white);
+  text-decoration: none; padding: .85rem 1.8rem;
+  border-radius: var(--r); font-size: .88rem; font-weight: 500;
+  transition: background .2s; white-space: nowrap;
+}
+.btn-cta-primary:hover { background: var(--ochre); color: var(--dusk); }
+.btn-cta-ghost {
+  border: 1px solid rgba(255,255,255,.25); color: var(--white);
+  text-decoration: none; padding: .85rem 1.8rem;
+  border-radius: var(--r); font-size: .88rem; font-weight: 400;
+  transition: border-color .2s; white-space: nowrap;
+}
+.btn-cta-ghost:hover { border-color: var(--ochre); color: var(--ochre); }
+
+/* ── RELATED PACKAGES ── */
+.related-section {
+  background: var(--mist);
+  padding: 5rem 5%;
+}
+.related-inner { max-width: var(--max); margin: 0 auto; }
+.related-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem; margin-top: 2rem;
+}
+.related-card {
+  border-radius: var(--r); overflow: hidden; background: var(--white);
+  border: 1px solid var(--border);
+  text-decoration: none; color: inherit;
+  transition: box-shadow .2s, transform .2s;
+  display: block;
+}
+.related-card:hover { box-shadow: 0 8px 32px rgba(28,20,16,.1); transform: translateY(-3px); }
+.related-img { width: 100%; height: 160px; object-fit: cover; display: block; }
+.related-body { padding: 1rem; }
+.related-meta { font-size: .7rem; color: var(--stone); margin-bottom: .3rem; }
+.related-name { font-family: var(--display); font-size: 1rem; font-weight: 600; color: var(--dusk); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dusk); color: rgba(255,255,255,.5);
+  padding: 2rem 5%; text-align: center; font-size: .8rem; font-weight: 300;
+}
+footer a { color: var(--ochre); text-decoration: none; }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .page-body { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  .highlights-grid { grid-template-columns: 1fr; }
+  .inc-exc-grid { grid-template-columns: 1fr; }
+  .accomm-grid { grid-template-columns: 1fr; }
+  .wildlife-grid { grid-template-columns: repeat(2, 1fr); }
+  .related-grid { grid-template-columns: 1fr 1fr; }
+  .months-row { grid-template-columns: repeat(6, 1fr); }
+}
+@media (max-width: 600px) {
+  .itinerary-hero { height: 60vh; }
+  .hero-title { font-size: 2rem; }
+  .page-body { padding: 2.5rem 5%; }
+  .cta-banner { padding: 2rem; }
+  .wildlife-grid { grid-template-columns: repeat(2, 1fr); }
+  .related-grid { grid-template-columns: 1fr; }
+  .day-block { grid-template-columns: 50px 1fr; gap: 0 1rem; }
+  .day-num-circle { width: 36px; height: 36px; font-size: .95rem; }
+  .day-block::before { left: 27px; }
+  nav .nav-links { display: none; }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">Mwala <span>Tours</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#packages">Packages</a></li>
+    <li><a href="../index.html#destinations">Destinations</a></li>
+    <li><a class="nav-book" href="../index.html#contact">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="itinerary-hero" style="background-image:url('https://mwala-tours-and-safaris.vercel.app/jorge-tung--5Betfvtgso-unsplash.jpg'); padding-top:66px;">
+  <div class="hero-inner">
+    <p class="hero-breadcrumb">
+      <a href="../index.html">Home</a> &nbsp;›&nbsp;
+      <a href="../index.html#packages">Packages</a> &nbsp;›&nbsp;
+      Lake Manyara Escape
+    </p>
+    <h1 class="hero-title">Lake Manyara <em>Escape</em></h1>
+    <div class="hero-meta">
+      <span class="hero-badge">🗓 2 Days · 1 Night</span>
+      <span class="hero-badge">📍 Lake Manyara National Park</span>
+      <span class="hero-badge highlight">🦁 Tree-Climbing Lions</span>
+      <span class="hero-badge">🌋 Great Rift Valley Views</span>
+    </div>
+  </div>
+</div>
+
+<div class="page-body">
+  <main class="page-main">
+
+    <!-- OVERVIEW -->
+    <section class="reveal">
+      <p class="section-eyebrow">Tour Overview</p>
+      <h2 class="section-title">The Rift Valley's <em>Most Surprising</em> Safari</h2>
+      <p class="section-lead">
+        Lake Manyara National Park is Tanzania's great underestimated. At just 325 square kilometres — a fraction of the Serengeti — it delivers an experience that surprises every visitor who expects it to be merely a warm-up for bigger parks. The secret lies in its extraordinary ecological compression: within a single afternoon's drive, you pass from dense groundwater forest sheltering baboon troops and blue monkeys, through grassy floodplains where elephant families graze at dusk, to the alkaline lake's edge where thousands of flamingos turn the shallows pink. Overhead, the towering wall of the Great Rift Valley escarpment turns the park into a natural amphitheatre.
+      </p>
+      <p class="section-lead" style="margin-top:.9rem">
+        And then there are the lions. Lake Manyara is one of the only places in the world where lions habitually climb trees — a behaviour not fully understood by scientists, but thrilling to witness: a 180-kilogram predator draped across an acacia branch eight metres above the ground, perfectly at ease. This two-day escape covers both the forest and the lake, the flamingos and the tree lions, giving first-time visitors a genuine taste of Tanzania's wild heart with minimal travel time from Arusha.
+      </p>
+      <div style="margin-top:1.2rem;display:flex;gap:.8rem;flex-wrap:wrap">
+        <div style="background:var(--pale);border-radius:var(--r);padding:.7rem 1rem;font-size:.8rem;color:var(--dusk);border:1px solid var(--border)">
+          <strong style="display:block;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:.2rem">Best Suited For</strong>
+          Short-break travellers, birdwatchers, nature lovers, families with young children
+        </div>
+        <div style="background:var(--pale);border-radius:var(--r);padding:.7rem 1rem;font-size:.8rem;color:var(--dusk);border:1px solid var(--border)">
+          <strong style="display:block;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:.2rem">Drive from Arusha</strong>
+          ~2 hours each way — the closest major park
+        </div>
+        <div style="background:var(--pale);border-radius:var(--r);padding:.7rem 1rem;font-size:.8rem;color:var(--dusk);border:1px solid var(--border)">
+          <strong style="display:block;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:.2rem">Park Size</strong>
+          325 km² · Compact &amp; Diverse
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="reveal">
+      <p class="section-eyebrow">Tour Highlights</p>
+      <h2 class="section-title">Small Park, <em>Enormous</em> Impressions</h2>
+      <div class="highlights-grid">
+        <div class="highlight-item"><span class="highlight-icon">🦁</span><span class="highlight-text"><strong>Tree-Climbing Lions:</strong> Lake Manyara's lions are among the world's most photographed — not for their numbers, but for this singular behaviour. Finding a pride at rest in the branches requires knowledge of their favoured trees. Our guides have it.</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🌳</span><span class="highlight-text"><strong>Ancient Groundwater Forest:</strong> The park's northern section is dominated by a cathedral-like fig and mahogany forest fed by underground springs — home to troops of olive baboons, colobus monkeys, and the secretive bush pig.</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🦩</span><span class="highlight-text"><strong>Flamingo Spectacle:</strong> When water levels are right, hundreds of thousands of lesser flamingos feed along Lake Manyara's alkaline shallows, forming one of East Africa's most vivid and chaotic natural gatherings.</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🐘</span><span class="highlight-text"><strong>Elephant Families:</strong> Manyara's elephants are notably relaxed around vehicles — generations of exposure to respectful tourism have produced some of the most photographable family groups in Tanzania.</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🌋</span><span class="highlight-text"><strong>Rift Valley Escarpment:</strong> The park sits in the shadow of the escarpment's 600-metre cliff wall, providing a dramatic backdrop to every game drive and extraordinary panoramic views from the lodge terrace at dusk.</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🐦</span><span class="highlight-text"><strong>Over 400 Bird Species:</strong> Lake Manyara is one of Tanzania's premier birding destinations — from the iconic lilac-breasted roller to the goliath heron stalking the shallows in slow motion.</span></div>
+      </div>
+    </section>
+
+    <!-- ITINERARY -->
+    <section class="reveal">
+      <p class="section-eyebrow">Day-by-Day Itinerary</p>
+      <h2 class="section-title">Two Days in the <em>Rift Valley</em></h2>
+      <div class="itinerary-days">
+
+        <div class="day-block">
+          <div class="day-label">
+            <div class="day-num-circle">1</div>
+            <span class="day-word">Day</span>
+          </div>
+          <div class="day-content">
+            <h3 class="day-title">Arusha Departure — Forest, Lions &amp; the Lake at Sunset</h3>
+            <div class="day-periods">
+              <div class="day-period">
+                <p class="day-period-label">Morning</p>
+                <p>Your guide collects you from your Arusha hotel at 07:30. The drive south passes through the towns of Usa River and Mto wa Mbu — the "River of Mosquitoes," a market town at the foot of the Rift Valley escarpment where dozens of Tanzania's tribal groups live side by side. A brief stop here to collect fresh fruit for the road is a small pleasure. From Mto wa Mbu, the lake and its papyrus-fringed shores come into view as you descend, and the escarpment wall rises dramatically behind the park entrance.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Mid-Morning</p>
+                <p>Enter the park and begin immediately in the groundwater forest — the most productive section for tree-climbing lions and primates. Your guide drives slowly beneath the forest canopy, scanning the upper branches of sausage trees and acacias. Olive baboon troops cross the road; blue monkeys move through the branches overhead; bushbuck freeze in the forest shadows. This is a different kind of game viewing — quieter, more attentive, and extraordinarily rewarding when patience pays off with a pair of lions resting twelve feet above the forest floor.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Afternoon</p>
+                <p>Emerge from the forest onto the open floodplain, where the ecosystem shifts completely. Elephant families graze along the floodplain edge. Giraffes move with their characteristic slow-motion elegance through the acacia scrub. The lake comes into view: a vast silver-and-pink sheet, its near shore lined with flamingos and pelicans. A picnic lunch is laid out beside the lake as white pelicans drift past in formation. The afternoon drive continues south along the lake shore — the escarpment wall catching the afternoon sun, its reflection fragmenting in the lake below.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Evening</p>
+                <p>Return through the floodplain at golden hour — the hour before sunset when Manyara's light becomes extraordinary. Hippos emerge from the water at the hippo pools; a buffalo herd moves through the tall grass; a lone fish eagle calls from a dead acacia above the water. Check into your lodge as the sun drops behind the escarpment. Dinner on the terrace with a view across the lake to the fading sky.</p>
+              </div>
+            </div>
+            <div class="day-accommodation">🌿 Night at Lake Manyara Lodge or Kirurumu Tented Camp (by tier)</div>
+          </div>
+        </div>
+
+        <div class="day-block">
+          <div class="day-label">
+            <div class="day-num-circle">2</div>
+            <span class="day-word">Day</span>
+          </div>
+          <div class="day-content">
+            <h3 class="day-title">Dawn Drive — Birding, Hot Springs &amp; Return to Arusha</h3>
+            <div class="day-periods">
+              <div class="day-period">
+                <p class="day-period-label">Early Morning</p>
+                <p>A 06:00 departure catches the park at its most atmospheric. Morning mist lies across the lake; the flamingos begin their feeding movements; and the forest is alive with birdsong. This is Manyara's best birding hour. Your guide — who doubles as a bird specialist — covers the park's most celebrated species: the lilac-breasted roller, the grey-crowned crane, the saddle-billed stork, and the southern ground hornbill, which walks in stately procession across the floodplain in groups that look like small herds of cattle.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Mid-Morning</p>
+                <p>Visit the Maji Moto hot springs near the park's southern boundary — a series of geothermal pools where steam rises year-round and endemic reed frogs call from the surrounding vegetation. This corner of the park is rarely visited and consistently produces excellent elephant sightings. A bush breakfast is served here: your guide lays out the table as a family of elephants browses within clear view.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Late Morning</p>
+                <p>A final pass through the floodplain and forest before the midday heat closes the park's active wildlife window. Exit through the main gate and make a brief stop in Mto wa Mbu, where a local market offers fresh produce, hand-carved wooden crafts, and some of the best fresh-pressed sugarcane juice in Tanzania. A good place to find a memento that was actually made here.</p>
+              </div>
+              <div class="day-period">
+                <p class="day-period-label">Afternoon</p>
+                <p>Return drive to Arusha arrives approximately 14:30–15:30. Drop-off at your hotel or Kilimanjaro International Airport. Optional add-on: continue directly to Ngorongoro Crater for overnight — this route connects seamlessly with the Ngorongoro Experience package.</p>
+              </div>
+            </div>
+            <div class="day-accommodation">✈ End of safari (or connect to Ngorongoro)</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WILDLIFE -->
+    <section class="reveal">
+      <p class="section-eyebrow">Wildlife</p>
+      <h2 class="section-title">Animals You May <em>Encounter</em></h2>
+      <div class="wildlife-grid">
+        <div class="wildlife-card"><div class="wildlife-emoji">🦁</div><div class="wildlife-name">Tree-Climbing Lion</div><div class="wildlife-sub">Manyara's unique behaviour</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🐘</div><div class="wildlife-name">African Elephant</div><div class="wildlife-sub">Relaxed family groups</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🦩</div><div class="wildlife-name">Lesser Flamingo</div><div class="wildlife-sub">Lake shallows — thousands</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🦛</div><div class="wildlife-name">Hippopotamus</div><div class="wildlife-sub">Hippo pools near lake</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🦒</div><div class="wildlife-name">Masai Giraffe</div><div class="wildlife-sub">Acacia floodplain</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🐒</div><div class="wildlife-name">Blue Monkey</div><div class="wildlife-sub">Groundwater forest canopy</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🦅</div><div class="wildlife-name">African Fish Eagle</div><div class="wildlife-sub">Lake shore dead trees</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🐒</div><div class="wildlife-name">Olive Baboon</div><div class="wildlife-sub">Forest troops</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🦬</div><div class="wildlife-name">Cape Buffalo</div><div class="wildlife-sub">Floodplain herds</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🦓</div><div class="wildlife-name">Plains Zebra</div><div class="wildlife-sub">Grassland herds</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🐦</div><div class="wildlife-name">Lilac-Breasted Roller</div><div class="wildlife-sub">Park's most-photographed bird</div></div>
+        <div class="wildlife-card"><div class="wildlife-emoji">🐊</div><div class="wildlife-name">Nile Monitor Lizard</div><div class="wildlife-sub">Lakeside rocks &amp; banks</div></div>
+      </div>
+    </section>
+
+    <!-- INCLUDES / EXCLUDES -->
+    <section class="reveal">
+      <p class="section-eyebrow">What's Covered</p>
+      <h2 class="section-title">Included &amp; <em>Excluded</em></h2>
+      <div class="inc-exc-grid">
+        <div class="inc-card">
+          <p class="inc-exc-title">✓ What's Included</p>
+          <ul class="inc-exc-list">
+            <li><span class="chk">✓</span> Lake Manyara National Park entry fees</li>
+            <li><span class="chk">✓</span> Professional TANAPA-certified guide (English-speaking)</li>
+            <li><span class="chk">✓</span> Private 4×4 Land Cruiser with pop-up roof</li>
+            <li><span class="chk">✓</span> 1 night's accommodation (lodge by chosen tier)</li>
+            <li><span class="chk">✓</span> All meals from lunch Day 1 to lunch Day 2</li>
+            <li><span class="chk">✓</span> Picnic lunch and bush breakfast in the field</li>
+            <li><span class="chk">✓</span> Unlimited drinking water and soft drinks</li>
+            <li><span class="chk">✓</span> Arusha hotel transfers (pick-up and drop-off)</li>
+            <li><span class="chk">✓</span> Digital bird checklist and wildlife guide PDF</li>
+          </ul>
+        </div>
+        <div class="exc-card">
+          <p class="inc-exc-title">✗ What's Not Included</p>
+          <ul class="inc-exc-list">
+            <li><span class="chk">✗</span> International and domestic flights</li>
+            <li><span class="chk">✗</span> Travel and medical insurance (strongly recommended)</li>
+            <li><span class="chk">✗</span> Tanzania tourist visa (USD 50 — apply online)</li>
+            <li><span class="chk">✗</span> Alcoholic and premium beverages</li>
+            <li><span class="chk">✗</span> Personal purchases and souvenirs at Mto wa Mbu market</li>
+            <li><span class="chk">✗</span> Gratuities (USD 10–15/day per guide suggested)</li>
+            <li><span class="chk">✗</span> Night game drive add-on (available on request)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCOMMODATION -->
+    <section class="reveal">
+      <p class="section-eyebrow">Where You'll Sleep</p>
+      <h2 class="section-title">Accommodation <em>Options</em></h2>
+      <div class="accomm-grid">
+        <div class="accomm-card">
+          <span class="accomm-tier tier-budget">Budget</span>
+          <p class="accomm-name">Jambo Campsite &amp; Lodge</p>
+          <p class="accomm-desc">A clean, friendly lodge in Mto wa Mbu town, a short drive from the park entrance. Simple banda rooms with en-suite facilities, a communal dining area, and a lively atmosphere shared with other travellers. Excellent value and a genuinely social experience.</p>
+        </div>
+        <div class="accomm-card">
+          <span class="accomm-tier tier-mid">Mid-Range</span>
+          <p class="accomm-name">Lake Manyara Serena Lodge</p>
+          <p class="accomm-desc">Built into the Rift Valley escarpment with commanding views over the lake and park, the Serena offers comfortable rooms, a swimming pool, and a terrace where sundowners feel like a reward well earned. The escarpment position means the views are genuinely spectacular.</p>
+        </div>
+        <div class="accomm-card">
+          <span class="accomm-tier tier-luxury">Luxury</span>
+          <p class="accomm-name">Kirurumu Tented Lodge</p>
+          <p class="accomm-desc">An intimate tented lodge perched on the escarpment edge, overlooking the entire lake and its flamingo colonies. Just sixteen tents, each with a private veranda and unobstructed Rift Valley views. The evening here — sundowners, the lake turning pink below — is among Tanzania's finest.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEST TIME -->
+    <section class="reveal">
+      <p class="section-eyebrow">Timing Your Visit</p>
+      <h2 class="section-title">Best Time to <em>Visit</em></h2>
+      <p class="section-lead">Lake Manyara is a year-round destination, but certain months reward specific interests. Birdwatchers should plan carefully; flamingo numbers fluctuate with water levels; and the tree-climbing lions are reliably present throughout the year.</p>
+      <div class="months-row" style="margin-top:1.4rem">
+        <div class="month-cell month-peak"><span class="month-label">Jan</span><div class="month-dot"></div></div>
+        <div class="month-cell month-peak"><span class="month-label">Feb</span><div class="month-dot"></div></div>
+        <div class="month-cell month-low"><span class="month-label">Mar</span><div class="month-dot"></div></div>
+        <div class="month-cell month-low"><span class="month-label">Apr</span><div class="month-dot"></div></div>
+        <div class="month-cell month-low"><span class="month-label">May</span><div class="month-dot"></div></div>
+        <div class="month-cell month-peak"><span class="month-label">Jun</span><div class="month-dot"></div></div>
+        <div class="month-cell month-peak"><span class="month-label">Jul</span><div class="month-dot"></div></div>
+        <div class="month-cell month-peak"><span class="month-label">Aug</span><div class="month-dot"></div></div>
+        <div class="month-cell month-peak"><span class="month-label">Sep</span><div class="month-dot"></div></div>
+        <div class="month-cell month-good"><span class="month-label">Oct</span><div class="month-dot"></div></div>
+        <div class="month-cell month-good"><span class="month-label">Nov</span><div class="month-dot"></div></div>
+        <div class="month-cell month-good"><span class="month-label">Dec</span><div class="month-dot"></div></div>
+      </div>
+      <div class="month-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--savanna)"></div> Peak — Dry Season, Best Flamingo Numbers</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--grass)"></div> Good — Lush, Migratory Birds Present</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--stone)"></div> Low — Heavy Rains, Tracks Can Be Muddy</div>
+      </div>
+      <p class="section-lead" style="margin-top:1rem">
+        <strong>June–September</strong> is dry and ideal: short grass gives excellent visibility, flamingo numbers peak on the lake, and the tree-climbing lions spend more time in the acacias escaping the heat. <strong>January–February</strong> is also excellent — warm, dry, and with the added bonus of migratory bird species from Europe passing through. <strong>November–December</strong> brings the short rains, turning the park lush green and dramatically reducing visitor numbers — a worthwhile trade-off for those who prefer solitude. <strong>March–May</strong> sees heavy rains that can make the park's tracks challenging; we still operate during this period but advise clients accordingly.
+      </p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="reveal">
+      <p class="section-eyebrow">Questions Answered</p>
+      <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">Is two days enough to experience Lake Manyara properly? <span class="faq-chevron">▼</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes — and this is one of the park's greatest advantages. Its compact size means two full game drives cover the park thoroughly, and the proximity to Arusha (just two hours) makes it ideal for travellers with limited time. Many visitors combine this with Ngorongoro Crater as a three- or four-day itinerary — the parks are consecutive on the same road, making the combination extremely efficient.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Are the tree-climbing lions guaranteed to be in the trees? <span class="faq-chevron">▼</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">No wildlife sighting is ever guaranteed. However, tree-climbing behaviour at Lake Manyara is well-documented and our guides know which trees and which prides are most likely to exhibit it. In the dry season, when shade is scarce, lions spend considerably more time elevated. On a full day's game drive with an experienced guide, the probability of a tree lion sighting is high. If you visit and don't see them in trees, your guide will locate the pride on the ground — which is equally spectacular and far rarer in other parks.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Is Lake Manyara suitable for birdwatchers? <span class="faq-chevron">▼</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Exceptionally so. With over 400 recorded species — including the flamingo colonies, six species of kingfisher, the southern ground hornbill, grey-crowned crane, and a remarkable variety of raptors — it is considered one of East Africa's top birding destinations. Our guides carry identification guides and binoculars. If you are a dedicated birder, please let us know in advance and we will tailor the route to maximise species count.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Can I combine Lake Manyara with Ngorongoro in one trip? <span class="faq-chevron">▼</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">This is one of our most popular combinations and flows naturally as a four-day itinerary: Day 1 Arusha to Manyara (afternoon game drive), Day 2 morning drive in Manyara then drive to Ngorongoro rim, Day 3 full crater day, Day 4 Maasai village visit and return to Arusha. The drive between the two parks takes approximately 90 minutes and the road is good tarmac the entire way. Contact us and we'll build the combined quote.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What is the difference between Lake Manyara and the Serengeti? <span class="faq-chevron">▼</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">They are complementary rather than comparable. Manyara is intimate, ecologically diverse, and offers forest wildlife, birdlife, and the unique tree-lion experience in a compact setting. The Serengeti is vast, open, and defined by sheer scale — the Migration, the plains, and an overwhelming sense of wilderness. Manyara is ideal as a stand-alone short break or as an opener to a longer Northern Circuit safari. The Serengeti is the definitive big-game destination. Ideally, you visit both.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Is this a good first safari for children? <span class="faq-chevron">▼</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Lake Manyara is one of our top recommendations for families with children precisely because of its short transfer from Arusha, compact park size (less time in the vehicle), and the variety of encounters — monkeys, flamingos, elephants, giraffes, and the drama of the tree-climbing lions tend to capture children's attention far more effectively than the open-plain driving of larger parks. We recommend it for children aged four and above.</div></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="reveal">
+      <div class="cta-banner">
+        <div class="cta-text">
+          <p class="eyebrow">Your Escape Awaits</p>
+          <h2>Book the <em>Manyara</em> Experience</h2>
+          <p>Two days is all it takes. Send us your travel dates and we will confirm availability and build your perfect itinerary within 24 hours.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="../index.html#contact" class="btn-cta-primary">Reserve Your Dates</a>
+          <a href="../index.html#contact" class="btn-cta-ghost">Enquire Now</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-header">
+        <p class="sidebar-pkg-name">Lake Manyara Escape</p>
+        <p class="sidebar-tagline">2 Days · 1 Night · Tree-Climbing Lions</p>
+      </div>
+      <div class="sidebar-body">
+        <div class="sidebar-detail"><span class="sidebar-label">Duration</span><span class="sidebar-value">2 Days / 1 Night</span></div>
+        <div class="sidebar-detail"><span class="sidebar-label">Destination</span><span class="sidebar-value">Lake Manyara N.P.</span></div>
+        <div class="sidebar-detail"><span class="sidebar-label">Departs From</span><span class="sidebar-value">Arusha (~2 hrs)</span></div>
+        <div class="sidebar-detail"><span class="sidebar-label">Min. Group</span><span class="sidebar-value">2 People</span></div>
+        <div class="sidebar-detail"><span class="sidebar-label">Max. Group</span><span class="sidebar-value">8 People</span></div>
+        <div class="sidebar-detail"><span class="sidebar-label">Meals</span><span class="sidebar-value">Lunch D1 – Lunch D2</span></div>
+        <div class="sidebar-detail"><span class="sidebar-label">Activity Level</span><span class="sidebar-value">Easy — Family Friendly</span></div>
+        <a class="sidebar-cta" href="../index.html#contact">Book This Safari</a>
+        <a class="sidebar-ghost" href="../index.html#contact">Add Ngorongoro →</a>
+        <p class="sidebar-note">📞 Call us: +255 789 021 754<br/>We respond within 24 hours</p>
+      </div>
+      <div class="trust-badges">
+        <div class="trust-badge"><span class="icon">🛡</span>Secure Booking</div>
+        <div class="trust-badge"><span class="icon">✓</span>TANAPA Licensed</div>
+        <div class="trust-badge"><span class="icon">🌿</span>Eco-Certified</div>
+      </div>
+    </div>
+
+    <!-- ADD-ON SUGGESTION -->
+    <div class="sidebar-card" style="margin-top:1rem">
+      <div class="sidebar-header" style="background:var(--grass)">
+        <p class="sidebar-pkg-name" style="font-size:1rem">💡 Popular Add-On</p>
+        <p class="sidebar-tagline">Combine with Ngorongoro for a 4-day trip</p>
+      </div>
+      <div class="sidebar-body">
+        <p style="font-size:.82rem;color:var(--stone);font-weight:300;line-height:1.6;margin-bottom:1rem">
+          Manyara and Ngorongoro sit on the same road. Adding 2 nights on the crater rim transforms this into a comprehensive Northern Tanzania experience — tree lions, black rhino, flamingos, and the world's greatest caldera.
+        </p>
+        <a class="sidebar-cta" href="ngorongoro.html" style="background:var(--grass)">View Ngorongoro Package</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- RELATED -->
+<section class="related-section">
+  <div class="related-inner">
+    <p class="section-eyebrow">Explore More</p>
+    <h2 class="section-title">You May Also <em>Love</em></h2>
+    <div class="related-grid">
+      <a class="related-card" href="serengeti.html">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/omer-salom-gi6T2ktnpnE-unsplash.jpg" alt="Serengeti" />
+        <div class="related-body">
+          <p class="related-meta">5 Days · Serengeti N.P.</p>
+          <p class="related-name">Serengeti Adventure</p>
+        </div>
+      </a>
+      <a class="related-card" href="Ngorongoro.html">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/Images/ana-singh-1vOBJZ6228U-unsplash.jpg" alt="Ngorongoro" />
+        <div class="related-body">
+          <p class="related-meta">3 Days · Ngorongoro Crater</p>
+          <p class="related-name">Ngorongoro Experience</p>
+        </div>
+      </a>
+      <a class="related-card" href="../index.html#packages">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/Images/ahmed-galal-VQqMACyNfwA-unsplash.jpg" alt="All Packages" />
+        <div class="related-body">
+          <p class="related-meta">All Packages</p>
+          <p class="related-name">View All Safaris →</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Mwala Tours &amp; Safaris. All rights reserved. &nbsp;|&nbsp; <a href="../index.html">Back to Home</a></p>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
