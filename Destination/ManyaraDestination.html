@@ -3,14 +3,1177 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lake Manyara National Park — Tree Lions, Flamingos & the Rift Valley | Mwala Tours</title>
   <link rel="icon" type="image/jpeg" href="../Mwalatourslogo.jpg" />
   <link rel="shortcut icon" type="image/jpeg" href="../Mwalatourslogo.jpg" />
   <link rel="apple-touch-icon" href="../Mwalatourslogo.jpg" />
-  <title>Lake Manyara — Tree-Climbing Lions & Flamingos | Mwala Tours</title>
-  <meta name="description" content="Explore Lake Manyara with Mwala Tours — tree-climbing lions, flamingo flocks, and lush forests on a memorable safari." />
+  <meta name="description" content="Lake Manyara: tree-climbing lions, ancient groundwater forest, 400+ bird species, and thousands of flamingos beneath a 600m Rift Valley escarpment. Tanzania's great underestimated." />
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --savanna:  #C8803A;
+  --dusk:     #1C1410;
+  --ochre:    #E8A44A;
+  --earth:    #6B4226;
+  --mist:     #F5EFE6;
+  --stone:    #9A8A7A;
+  --white:    #FDFAF6;
+  --grass:    #3D6142;
+  --pale:     #FAF6F0;
+  --border:   rgba(0,0,0,.08);
+  --forest:   #2D4A2A;
+  --lake:     #3A6B7A;
+  --escarp:   #4A3A2A;
+
+  --display: 'Cormorant Garamond', Georgia, serif;
+  --body:    'DM Sans', system-ui, sans-serif;
+  --max: 1100px;
+  --r: 4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--body); background: var(--white); color: var(--dusk); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%; height: 66px;
+  background: rgba(28,20,16,.95); backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.nav-logo { font-family: var(--display); font-size: 1.3rem; font-weight: 600; color: var(--white); text-decoration: none; letter-spacing: .04em; }
+.nav-logo span { color: var(--ochre); }
+.nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
+.nav-links a { color: rgba(255,255,255,.75); text-decoration: none; font-size: .8rem; letter-spacing: .09em; text-transform: uppercase; transition: color .2s; }
+.nav-links a:hover { color: var(--ochre); }
+.nav-book { background: var(--savanna); color: var(--white) !important; padding: .45rem 1.1rem; border-radius: var(--r); font-weight: 500 !important; }
+.nav-book:hover { background: var(--ochre) !important; color: var(--dusk) !important; }
+
+/* ── HERO ── */
+.dest-hero {
+  height: 90vh; min-height: 600px; position: relative;
+  display: flex; align-items: flex-end;
+  background-size: cover; background-position: center 45%; padding-top: 66px;
+}
+.dest-hero::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(28,20,16,.15) 0%, rgba(28,20,16,.2) 35%, rgba(28,20,16,.93) 100%);
+}
+.hero-inner {
+  position: relative; z-index: 2; max-width: var(--max); margin: 0 auto;
+  width: 100%; padding: 0 5% 4.5rem;
+}
+.hero-breadcrumb { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ochre); margin-bottom: 1rem; }
+.hero-breadcrumb a { color: rgba(255,255,255,.55); text-decoration: none; }
+.hero-breadcrumb a:hover { color: var(--ochre); }
+.hero-eyebrow { font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--ochre); font-weight: 500; margin-bottom: .7rem; }
+.hero-title { font-family: var(--display); font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 300; color: var(--white); line-height: 1.05; margin-bottom: 1.1rem; max-width: 800px; }
+.hero-title em { font-style: italic; color: var(--ochre); }
+.hero-sub { font-size: .98rem; color: rgba(255,255,255,.7); font-weight: 300; line-height: 1.75; max-width: 560px; margin-bottom: 2rem; }
+.hero-badges { display: flex; flex-wrap: wrap; gap: .55rem; }
+.hero-badge { display: inline-flex; align-items: center; gap: .4rem; background: rgba(255,255,255,.1); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.18); color: var(--white); padding: .4rem .9rem; border-radius: 20px; font-size: .78rem; }
+.hero-badge.hl { background: var(--savanna); border-color: var(--savanna); }
+
+/* ── FACTS BAND ── */
+.facts-band { background: var(--dusk); padding: 0 5%; }
+.facts-inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); border-left: 1px solid rgba(255,255,255,.06); }
+.fact-cell { padding: 2rem 1.5rem; border-right: 1px solid rgba(255,255,255,.06); border-top: 1px solid rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.06); }
+.fact-num { font-family: var(--display); font-size: 2.3rem; font-weight: 300; color: var(--white); line-height: 1; margin-bottom: .3rem; }
+.fact-num em { font-style: italic; color: var(--ochre); }
+.fact-label { font-size: .75rem; color: var(--stone); font-weight: 300; line-height: 1.5; }
+
+/* ── PAGE WRAP ── */
+.page-wrap { max-width: var(--max); margin: 0 auto; padding: 5rem 5%; }
+.page-wrap > * + * { margin-top: 5rem; }
+
+/* ── SECTION HEADERS ── */
+.section-eyebrow { font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--savanna); margin-bottom: .6rem; font-weight: 500; }
+.section-title { font-family: var(--display); font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 300; color: var(--dusk); line-height: 1.2; margin-bottom: 1rem; }
+.section-title em { font-style: italic; color: var(--savanna); }
+.section-lead { font-size: .95rem; color: #5A4A3A; font-weight: 300; line-height: 1.85; }
+
+/* ── SPLIT ── */
+.split-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.split-section.reverse { direction: rtl; }
+.split-section.reverse > * { direction: ltr; }
+.split-img-wrap { position: relative; }
+.split-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--r); display: block; }
+.split-img-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(28,20,16,.8), transparent); padding: 1.5rem 1rem .8rem; font-size: .72rem; color: rgba(255,255,255,.75); font-weight: 300; border-radius: 0 0 var(--r) var(--r); }
+
+/* ══════════════════════════════════════════════════
+   SIGNATURE — ECOLOGICAL ZONES STRIP MAP
+   ══════════════════════════════════════════════════ */
+.zones-section {
+  background: linear-gradient(180deg, #1A1408 0%, #1C1410 100%);
+  border-radius: var(--r); overflow: hidden;
+}
+.zones-header { padding: 3rem 3rem 2rem; border-bottom: 1px solid rgba(255,255,255,.07); }
+.zones-header .section-eyebrow { color: var(--ochre); }
+.zones-header .section-title { color: var(--white); }
+.zones-header .section-title em { color: var(--ochre); }
+.zones-header .section-lead { color: rgba(255,255,255,.6); max-width: 640px; }
+.zones-svg-wrap { padding: 2.5rem 3rem 0; }
+
+/* Zone info cards below SVG */
+.zone-cards {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+.zone-card-item { padding: 1.5rem 1.2rem 2rem; border-right: 1px solid rgba(255,255,255,.07); transition: background .2s; }
+.zone-card-item:last-child { border-right: none; }
+.zone-card-item:hover { background: rgba(255,255,255,.04); }
+.zci-dot { width: 10px; height: 10px; border-radius: 50%; margin-bottom: .6rem; }
+.zci-name { font-family: var(--display); font-size: .95rem; font-weight: 600; color: var(--white); margin-bottom: .15rem; }
+.zci-dist { font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; color: var(--stone); margin-bottom: .55rem; font-weight: 500; }
+.zci-animals { font-size: .76rem; color: rgba(255,255,255,.5); font-weight: 300; line-height: 1.6; }
+.zci-animals strong { color: var(--ochre); font-weight: 500; }
+
+/* ── TREE LION FEATURE ── */
+.lion-feature {
+  background: linear-gradient(135deg, #1A0E08 0%, #2A1810 100%);
+  border-radius: var(--r); padding: 3rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;
+}
+.lion-text .section-eyebrow { color: var(--ochre); }
+.lion-text .section-title { color: var(--white); }
+.lion-text .section-title em { color: var(--ochre); }
+.lion-text .section-lead { color: rgba(255,255,255,.65); }
+.lion-facts { display: flex; flex-direction: column; gap: .75rem; }
+.lion-fact { display: flex; align-items: flex-start; gap: .9rem; background: rgba(255,255,255,.06); border-radius: var(--r); padding: .9rem 1.1rem; }
+.lion-fact-icon { font-size: 1.2rem; flex-shrink: 0; }
+.lion-fact-text { font-size: .83rem; color: rgba(255,255,255,.7); font-weight: 300; line-height: 1.65; }
+.lion-fact-text strong { color: var(--ochre); font-weight: 500; }
+
+/* ── WILDLIFE GRID ── */
+.wildlife-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; margin-top: 2rem; }
+.wl-card { background: var(--pale); border-radius: var(--r); padding: 1rem; text-align: center; border: 1px solid var(--border); transition: box-shadow .2s, transform .2s; }
+.wl-card:hover { box-shadow: 0 4px 16px rgba(28,20,16,.08); transform: translateY(-2px); }
+.wl-card.featured { grid-column: span 2; display: flex; align-items: center; gap: 1.2rem; text-align: left; padding: 1.3rem 1.5rem; background: var(--dusk); border-color: rgba(255,255,255,.06); }
+.wl-card.featured .wl-emoji { font-size: 2.8rem; flex-shrink: 0; }
+.wl-card.featured .wl-name { color: var(--white); font-size: .95rem; }
+.wl-card.featured .wl-sub { color: var(--stone); }
+.wl-card.featured .wl-desc { color: rgba(255,255,255,.6); font-size: .82rem; font-weight: 300; line-height: 1.6; margin-top: .4rem; }
+.wl-emoji { font-size: 1.8rem; margin-bottom: .4rem; }
+.wl-name { font-size: .82rem; font-weight: 500; color: var(--dusk); }
+.wl-sub { font-size: .7rem; color: var(--stone); font-weight: 300; }
+
+/* ── BIRDING SECTION ── */
+.birding-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+.bird-card { border-radius: var(--r); padding: 1.5rem; border: 1px solid var(--border); transition: box-shadow .2s, transform .2s; }
+.bird-card:hover { box-shadow: 0 6px 24px rgba(28,20,16,.08); transform: translateY(-3px); }
+.bird-icon { font-size: 1.6rem; margin-bottom: .6rem; }
+.bird-name { font-family: var(--display); font-size: 1rem; font-weight: 600; color: var(--dusk); margin-bottom: .15rem; }
+.bird-latin { font-size: .68rem; font-style: italic; color: var(--stone); margin-bottom: .6rem; }
+.bird-desc { font-size: .82rem; color: #5A4A3A; font-weight: 300; line-height: 1.6; }
+.bird-where { display: flex; align-items: center; gap: .4rem; margin-top: .7rem; font-size: .7rem; color: var(--savanna); font-weight: 500; }
+
+/* ── EXPERIENCES ── */
+.exp-list { margin-top: 2rem; }
+.exp-item { display: grid; grid-template-columns: 60px 1fr; gap: 1.5rem; padding: 1.8rem 0; border-bottom: 1px solid var(--border); align-items: start; }
+.exp-item:first-child { border-top: 1px solid var(--border); }
+.exp-icon-wrap { width: 52px; height: 52px; border-radius: 50%; background: rgba(200,128,58,.1); border: 1px solid rgba(200,128,58,.2); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.exp-title { font-family: var(--display); font-size: 1.15rem; font-weight: 600; color: var(--dusk); margin-bottom: .3rem; }
+.exp-meta { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--savanna); font-weight: 500; margin-bottom: .5rem; }
+.exp-desc { font-size: .88rem; color: #5A4A3A; font-weight: 300; line-height: 1.7; }
+
+/* ── ESCARPMENT SECTION ── */
+.escarp-banner {
+  background: linear-gradient(135deg, #1A2A1A 0%, #1C1410 100%);
+  border-radius: var(--r); padding: 3rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+}
+.escarp-text .section-eyebrow { color: var(--ochre); }
+.escarp-text .section-title { color: var(--white); }
+.escarp-text .section-title em { color: var(--ochre); }
+.escarp-text .section-lead { color: rgba(255,255,255,.65); }
+.escarp-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.escarp-stat { background: rgba(255,255,255,.06); border-radius: var(--r); padding: 1.2rem 1.3rem; }
+.escarp-stat-num { font-family: var(--display); font-size: 1.8rem; font-weight: 300; color: var(--ochre); line-height: 1; margin-bottom: .3rem; }
+.escarp-stat-label { font-size: .72rem; color: rgba(255,255,255,.5); font-weight: 300; line-height: 1.45; }
+
+/* ── PRACTICAL ── */
+.practical-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2rem; }
+.prac-card { background: var(--pale); border-radius: var(--r); padding: 1.5rem; border: 1px solid var(--border); }
+.prac-icon { font-size: 1.4rem; margin-bottom: .6rem; }
+.prac-title { font-family: var(--display); font-size: 1rem; font-weight: 600; color: var(--dusk); margin-bottom: .5rem; }
+.prac-body { font-size: .84rem; color: #5A4A3A; font-weight: 300; line-height: 1.7; }
+.prac-body strong { font-weight: 500; color: var(--dusk); }
+
+/* ── BEST TIME ── */
+.months-row { display: grid; grid-template-columns: repeat(12, 1fr); gap: .3rem; margin-top: 1.4rem; }
+.month-cell { text-align: center; padding: .7rem .2rem; border-radius: var(--r); font-size: .65rem; font-weight: 500; }
+.month-label { display: block; letter-spacing: .06em; text-transform: uppercase; margin-bottom: .3rem; }
+.month-dot { width: 8px; height: 8px; border-radius: 50%; margin: 0 auto; }
+.month-peak { background: rgba(200,128,58,.15); color: var(--savanna); }
+.month-peak .month-dot { background: var(--savanna); }
+.month-good { background: rgba(61,97,66,.1); color: var(--grass); }
+.month-good .month-dot { background: var(--grass); }
+.month-low { background: var(--pale); color: var(--stone); }
+.month-low .month-dot { background: var(--stone); }
+.month-legend { display: flex; gap: 1.5rem; margin-top: .8rem; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: .4rem; font-size: .75rem; color: var(--stone); }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* ── FAQ ── */
+.faq-list { margin-top: 1.4rem; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-question { width: 100%; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; font-family: var(--body); font-size: .9rem; font-weight: 500; color: var(--dusk); text-align: left; gap: 1rem; }
+.faq-question:hover { color: var(--savanna); }
+.faq-chevron { flex-shrink: 0; font-size: .7rem; color: var(--savanna); transition: transform .3s; }
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height .4s ease; font-size: .87rem; color: #5A4A3A; font-weight: 300; line-height: 1.75; }
+.faq-answer-inner { padding-bottom: 1rem; }
+.faq-item.open .faq-answer { max-height: 500px; }
+
+/* ── PACKAGES ── */
+.pkgs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin-top: 2rem; }
+.pkg-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--r); padding: 1.4rem; text-decoration: none; color: inherit; display: block; transition: box-shadow .2s, transform .2s; }
+.pkg-card:hover { box-shadow: 0 6px 24px rgba(28,20,16,.08); transform: translateY(-3px); }
+.pkg-duration { font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: var(--savanna); font-weight: 600; margin-bottom: .4rem; }
+.pkg-name { font-family: var(--display); font-size: 1rem; font-weight: 600; color: var(--dusk); margin-bottom: .4rem; }
+.pkg-desc { font-size: .8rem; color: var(--stone); font-weight: 300; line-height: 1.5; }
+.pkg-link { display: inline-flex; align-items: center; gap: .3rem; margin-top: .8rem; font-size: .75rem; color: var(--savanna); font-weight: 500; }
+
+/* ── CTA ── */
+.cta-banner { background: var(--dusk); border-radius: var(--r); padding: 3.5rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.cta-text .eyebrow { font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ochre); margin-bottom: .5rem; }
+.cta-text h2 { font-family: var(--display); font-size: 2.2rem; font-weight: 300; color: var(--white); margin-bottom: .5rem; line-height: 1.15; }
+.cta-text h2 em { font-style: italic; color: var(--ochre); }
+.cta-text p { font-size: .88rem; color: rgba(255,255,255,.6); font-weight: 300; max-width: 400px; }
+.cta-actions { display: flex; gap: .8rem; flex-wrap: wrap; }
+.btn-primary { background: var(--savanna); color: var(--white); text-decoration: none; padding: .95rem 2rem; border-radius: var(--r); font-size: .88rem; font-weight: 500; transition: background .2s; white-space: nowrap; }
+.btn-primary:hover { background: var(--ochre); color: var(--dusk); }
+.btn-ghost { border: 1px solid rgba(255,255,255,.25); color: var(--white); text-decoration: none; padding: .95rem 2rem; border-radius: var(--r); font-size: .88rem; font-weight: 400; transition: border-color .2s; white-space: nowrap; }
+.btn-ghost:hover { border-color: var(--ochre); color: var(--ochre); }
+
+/* ── RELATED ── */
+.related-section { background: var(--mist); padding: 5rem 5%; }
+.related-inner { max-width: var(--max); margin: 0 auto; }
+.related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2rem; }
+.related-card { border-radius: var(--r); overflow: hidden; background: var(--white); border: 1px solid var(--border); text-decoration: none; color: inherit; transition: box-shadow .2s, transform .2s; display: block; }
+.related-card:hover { box-shadow: 0 8px 32px rgba(28,20,16,.1); transform: translateY(-3px); }
+.related-img { width: 100%; height: 170px; object-fit: cover; display: block; }
+.related-body { padding: 1.1rem; }
+.related-meta { font-size: .7rem; color: var(--stone); margin-bottom: .3rem; }
+.related-name { font-family: var(--display); font-size: 1.05rem; font-weight: 600; color: var(--dusk); }
+
+/* ── FOOTER ── */
+footer { background: var(--dusk); color: rgba(255,255,255,.5); padding: 2rem 5%; text-align: center; font-size: .8rem; font-weight: 300; }
+footer a { color: var(--ochre); text-decoration: none; }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1000px) {
+  .facts-inner { grid-template-columns: repeat(2, 1fr); }
+  .zone-cards { grid-template-columns: repeat(3, 1fr); }
+  .birding-grid { grid-template-columns: repeat(2, 1fr); }
+  .lion-feature { grid-template-columns: 1fr; gap: 2rem; }
+  .escarp-banner { grid-template-columns: 1fr; gap: 2rem; }
+  .split-section { grid-template-columns: 1fr; gap: 2rem; }
+  .split-section.reverse { direction: ltr; }
+  .pkgs-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .dest-hero { height: 85vh; }
+  .hero-title { font-size: 2.4rem; }
+  .facts-inner { grid-template-columns: repeat(2, 1fr); }
+  .zone-cards { grid-template-columns: repeat(2, 1fr); }
+  .wildlife-grid { grid-template-columns: repeat(2, 1fr); }
+  .wl-card.featured { grid-column: span 2; }
+  .birding-grid { grid-template-columns: 1fr; }
+  .practical-grid { grid-template-columns: 1fr; }
+  .pkgs-grid { grid-template-columns: 1fr; }
+  .related-grid { grid-template-columns: 1fr; }
+  .months-row { grid-template-columns: repeat(6, 1fr); }
+  .cta-banner { padding: 2rem; }
+  .zones-header { padding: 2rem 1.5rem 1.5rem; }
+  .zones-svg-wrap { padding: 1rem 1rem 0; }
+  .escarp-stats { grid-template-columns: 1fr; }
+  nav .nav-links { display: none; }
+}
+  </style>
 </head>
 <body>
-  <h1>Lake Manyara</h1>
-  <p>Content coming soon.</p>
+
+<nav>
+  <a class="nav-logo" href="../index.html">Mwala <span>Tours</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#packages">Packages</a></li>
+    <li><a href="../index.html#destinations">Destinations</a></li>
+    <li><a class="nav-book" href="../index.html#contact">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="dest-hero" style="background-image:url('https://mwala-tours-and-safaris.vercel.app/jorge-tung--5Betfvtgso-unsplash.jpg');">
+  <div class="hero-inner">
+    <p class="hero-breadcrumb">
+      <a href="../index.html">Home</a> &nbsp;›&nbsp;
+      <a href="../index.html#destinations">Destinations</a> &nbsp;›&nbsp;
+      Lake Manyara
+    </p>
+    <p class="hero-eyebrow">Tanzania's Great Underestimated</p>
+    <h1 class="hero-title">Lake Manyara — <em>Five Worlds in Fifty Kilometres</em></h1>
+    <p class="hero-sub">
+      A 600-metre cliff wall. A cathedral forest. A pink-fringed alkaline lake. Tree-climbing lions. And a light at dusk that makes every photograph look impossible. Lake Manyara is Tanzania's most surprising park.
+    </p>
+    <div class="hero-badges">
+      <span class="hero-badge hl">🦁 Tree-Climbing Lions</span>
+      <span class="hero-badge">🌋 Rift Valley Escarpment</span>
+      <span class="hero-badge">🦩 Flamingo Flocks</span>
+      <span class="hero-badge">🌿 Groundwater Forest</span>
+      <span class="hero-badge">🐦 400+ Bird Species</span>
+    </div>
+  </div>
+</div>
+
+<!-- FACTS BAND -->
+<div class="facts-band">
+  <div class="facts-inner">
+    <div class="fact-cell">
+      <div class="fact-num">325 <em>km²</em></div>
+      <div class="fact-label">Park area — compact enough to cover completely in two days, diverse enough to fill a week</div>
+    </div>
+    <div class="fact-cell">
+      <div class="fact-num">400<em>+</em></div>
+      <div class="fact-label">Bird species recorded — one of Tanzania's premier birding destinations, rivalling anywhere in East Africa</div>
+    </div>
+    <div class="fact-cell">
+      <div class="fact-num">600<em>m</em></div>
+      <div class="fact-label">Rift Valley escarpment rising behind the park — the cliff wall that makes every Manyara photograph distinctive</div>
+    </div>
+    <div class="fact-cell">
+      <div class="fact-num">2 <em>Hours</em></div>
+      <div class="fact-label">From Arusha — the closest major park on the Northern Circuit, making it ideal for short breaks</div>
+    </div>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <!-- INTRO -->
+  <section class="reveal">
+    <div class="split-section">
+      <div>
+        <p class="section-eyebrow">About Lake Manyara</p>
+        <h2 class="section-title">The Park That <em>Punches Far Above</em> Its Size</h2>
+        <p class="section-lead">
+          Lake Manyara National Park is Tanzania's great secret — a place that most visitors treat as a one-night warm-up for Ngorongoro and the Serengeti, and that almost all of them leave wishing they had stayed longer. At 325 square kilometres, it is a fraction of the size of the Serengeti. What it lacks in scale it compensates for in ecological density that has no parallel in Tanzania's national park system.
+        </p>
+        <p class="section-lead" style="margin-top:.9rem">
+          The park exists in a narrow strip between the Rift Valley escarpment — a vertical wall of volcanic rock 600 metres high — and the alkaline waters of Lake Manyara itself. Squeezed between cliff and lake, the park packs five completely distinct ecosystems into a corridor fifty kilometres long: groundwater forest, bush woodland, open floodplain, lakeshore marsh, and the alkaline lake surface. Driving from north to south, you pass through all five in sequence. The wildlife shifts entirely from zone to zone. Baboons in the forest canopy. Elephants on the floodplain. Flamingos on the lake edge. Tree-climbing lions in the acacia. And over all of it, the escarpment wall glowing gold and ochre in the afternoon light.
+        </p>
+        <p class="section-lead" style="margin-top:.9rem">
+          The lions are why most people come. They are why most people return.
+        </p>
+      </div>
+      <div class="split-img-wrap">
+        <img class="split-img" src="https://mwala-tours-and-safaris.vercel.app/jorge-tung--5Betfvtgso-unsplash.jpg" alt="Lake Manyara flamingos at dusk with escarpment behind" />
+        <p class="split-img-caption">The lake at golden hour — flamingos feeding in the shallows, the escarpment wall catching the last light behind</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNATURE — ECOLOGICAL ZONE MAP -->
+  <div class="zones-section reveal">
+    <div class="zones-header">
+      <p class="section-eyebrow">The Park's Anatomy</p>
+      <h2 class="section-title">Five Ecosystems, <em>One Rift Valley Drive</em></h2>
+      <p class="section-lead">Manyara's extraordinary diversity comes from its geography — squeezed between a cliff and a lake, each zone has its own distinct climate, vegetation, and wildlife. This is what you drive through, north to south, on every game drive.</p>
+    </div>
+    <div class="zones-svg-wrap">
+      <svg viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+        <defs>
+          <linearGradient id="escarpGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#3A2A1A"/>
+            <stop offset="100%" stop-color="#5A4A2A"/>
+          </linearGradient>
+          <linearGradient id="forestGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#1A3018"/>
+            <stop offset="100%" stop-color="#2D4A2A"/>
+          </linearGradient>
+          <linearGradient id="woodGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#4A6030"/>
+            <stop offset="100%" stop-color="#5A7040"/>
+          </linearGradient>
+          <linearGradient id="plainGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#8A9A50"/>
+            <stop offset="100%" stop-color="#7A8A44"/>
+          </linearGradient>
+          <linearGradient id="shoreGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#5A7A3A"/>
+            <stop offset="100%" stop-color="#4A6A2A"/>
+          </linearGradient>
+          <linearGradient id="lakeGradM" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#2A5A6A"/>
+            <stop offset="100%" stop-color="#3A7A8A"/>
+          </linearGradient>
+          <linearGradient id="skyM" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1A2A30"/>
+            <stop offset="100%" stop-color="#2A3A1A"/>
+          </linearGradient>
+          <radialGradient id="sunM" cx="20%" cy="25%" r="25%">
+            <stop offset="0%" stop-color="rgba(232,164,74,.25)"/>
+            <stop offset="100%" stop-color="rgba(232,164,74,0)"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Sky background -->
+        <rect x="0" y="0" width="1000" height="300" fill="url(#skyM)"/>
+        <rect x="0" y="0" width="1000" height="300" fill="url(#sunM)"/>
+
+        <!-- ── ZONE 1: ESCARPMENT (far left, vertical cliff) ── -->
+        <!-- Cliff face -->
+        <rect x="0" y="0" width="110" height="300" fill="url(#escarpGrad)"/>
+        <!-- Rock texture strata lines -->
+        <line x1="0" y1="45" x2="110" y2="52" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+        <line x1="0" y1="88" x2="110" y2="94" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+        <line x1="0" y1="130" x2="110" y2="136" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+        <line x1="0" y1="175" x2="110" y2="180" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+        <line x1="0" y1="220" x2="110" y2="225" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+        <!-- Waterfall / seep lines -->
+        <path d="M30,0 Q32,60 28,120 Q26,180 30,240" stroke="rgba(100,180,200,.2)" stroke-width="1.5" fill="none"/>
+        <path d="M65,0 Q68,80 64,160 Q62,220 66,280" stroke="rgba(100,180,200,.15)" stroke-width="1" fill="none"/>
+        <!-- Escarpment height arrow -->
+        <line x1="95" y1="10" x2="95" y2="290" stroke="rgba(232,164,74,.3)" stroke-width="1"/>
+        <path d="M91,14 L95,6 L99,14" fill="rgba(232,164,74,.4)"/>
+        <path d="M91,286 L95,294 L99,286" fill="rgba(232,164,74,.4)"/>
+        <text x="102" y="155" font-family="'DM Sans', sans-serif" font-size="7" fill="rgba(232,164,74,.6)" writing-mode="tb" letter-spacing="1">600 METRES</text>
+        <!-- Zone label -->
+        <rect x="4" y="8" width="86" height="24" rx="3" fill="rgba(0,0,0,.3)"/>
+        <text x="47" y="23" font-family="'DM Sans', sans-serif" font-size="8.5" fill="rgba(255,255,255,.75)" text-anchor="middle" font-weight="600" letter-spacing=".5">ESCARPMENT</text>
+        <!-- Buffalo on cliff base -->
+        <g opacity=".7">
+          <ellipse cx="55" cy="275" rx="10" ry="6" fill="#2A1A10"/>
+          <circle cx="45" cy="270" r="6" fill="#2A1A10"/>
+          <line x1="48" y1="276" x2="47" y2="284" stroke="#2A1A10" stroke-width="2"/>
+          <line x1="54" y1="280" x2="53" y2="288" stroke="#2A1A10" stroke-width="2"/>
+          <line x1="60" y1="280" x2="60" y2="288" stroke="#2A1A10" stroke-width="2"/>
+          <line x1="65" y1="278" x2="65" y2="286" stroke="#2A1A10" stroke-width="2"/>
+        </g>
+
+        <!-- ── ZONE 2: GROUNDWATER FOREST ── -->
+        <rect x="110" y="0" width="175" height="300" fill="url(#forestGrad)"/>
+        <!-- Dense canopy layer at top -->
+        <ellipse cx="140" cy="15" rx="35" ry="20" fill="#1A3A18" opacity=".9"/>
+        <ellipse cx="185" cy="8" rx="40" ry="22" fill="#2D4A2A" opacity=".95"/>
+        <ellipse cx="230" cy="12" rx="35" ry="18" fill="#1A3A18" opacity=".9"/>
+        <ellipse cx="270" cy="6" rx="30" ry="20" fill="#2D4A2A" opacity=".9"/>
+        <!-- Mid-level trees -->
+        <ellipse cx="155" cy="45" rx="28" ry="18" fill="#2A4020" opacity=".85"/>
+        <ellipse cx="205" cy="38" rx="32" ry="20" fill="#1A3018" opacity=".85"/>
+        <ellipse cx="252" cy="42" rx="26" ry="16" fill="#2A4020" opacity=".85"/>
+        <!-- Trunk lines -->
+        <line x1="140" y1="35" x2="140" y2="80" stroke="#1A1A08" stroke-width="3"/>
+        <line x1="185" y1="30" x2="185" y2="90" stroke="#1A1A08" stroke-width="4"/>
+        <line x1="230" y1="30" x2="230" y2="85" stroke="#1A1A08" stroke-width="3"/>
+        <line x1="268" y1="26" x2="268" y2="80" stroke="#1A1A08" stroke-width="3"/>
+        <!-- Forest floor undergrowth -->
+        <rect x="110" y="200" width="175" height="100" fill="#1A2A14" opacity=".6"/>
+        <!-- Dappled light patches -->
+        <ellipse cx="145" cy="180" rx="12" ry="25" fill="rgba(200,160,80,.06)"/>
+        <ellipse cx="200" cy="160" rx="10" ry="30" fill="rgba(200,160,80,.05)"/>
+        <ellipse cx="255" cy="175" rx="11" ry="22" fill="rgba(200,160,80,.06)"/>
+        <!-- Baboon troop in canopy -->
+        <g opacity=".85">
+          <circle cx="162" cy="52" r="5" fill="#5A3A18"/>
+          <ellipse cx="162" cy="59" rx="4" ry="5" fill="#5A3A18"/>
+          <path d="M162,64 Q166,70 165,76" stroke="#5A3A18" stroke-width="1.5" fill="none"/>
+          <!-- Hanging from branch -->
+          <line x1="162" y1="47" x2="162" y2="40" stroke="#3A2A10" stroke-width="1.5"/>
+          <line x1="162" y1="40" x2="145" y2="38" stroke="#3A2A10" stroke-width="1.2" opacity=".6"/>
+        </g>
+        <!-- Blue monkey -->
+        <g opacity=".8">
+          <circle cx="220" cy="44" r="4" fill="#2A3A4A"/>
+          <ellipse cx="220" cy="50" rx="3" ry="4" fill="#2A3A4A"/>
+          <path d="M220,54 Q224,60 222,66" stroke="#2A3A4A" stroke-width="1.5" fill="none"/>
+        </g>
+        <!-- LEOPARD draped on branch -->
+        <g opacity=".9">
+          <line x1="200" y1="90" x2="255" y2="86" stroke="#3A2010" stroke-width="3"/>
+          <ellipse cx="228" cy="86" rx="16" ry="4.5" fill="#C8803A" opacity=".9"/>
+          <circle cx="213" cy="83" r="5" fill="#C8803A" opacity=".9"/>
+          <!-- Tail draping down -->
+          <path d="M244,88 Q252,96 250,106" stroke="#C8803A" stroke-width="2" fill="none"/>
+          <!-- Spots -->
+          <circle cx="222" cy="85" r="1.5" fill="#3A1A00" opacity=".6"/>
+          <circle cx="230" cy="84" r="1.5" fill="#3A1A00" opacity=".6"/>
+          <circle cx="238" cy="85" r="1.5" fill="#3A1A00" opacity=".6"/>
+        </g>
+        <!-- Zone label -->
+        <rect x="115" y="8" width="162" height="24" rx="3" fill="rgba(0,0,0,.4)"/>
+        <text x="196" y="23" font-family="'DM Sans', sans-serif" font-size="8.5" fill="rgba(255,255,255,.8)" text-anchor="middle" font-weight="600" letter-spacing=".5">GROUNDWATER FOREST</text>
+        <!-- Leopard indicator -->
+        <text x="196" y="112" font-family="'DM Sans', sans-serif" font-size="7" fill="rgba(232,164,74,.8)" text-anchor="middle">🐆 Leopard in tree</text>
+
+        <!-- ── ZONE 3: BUSH WOODLAND & ACACIA ── -->
+        <rect x="285" y="0" width="160" height="300" fill="url(#woodGrad)"/>
+        <!-- Acacia trees (umbrella shape) -->
+        <!-- Tree 1 -->
+        <line x1="320" y1="300" x2="320" y2="120" stroke="#5A3A1A" stroke-width="5"/>
+        <ellipse cx="320" cy="100" rx="50" ry="22" fill="#3D6142" opacity=".85"/>
+        <ellipse cx="295" cy="115" rx="20" ry="8" fill="#2D5032" opacity=".7"/>
+        <ellipse cx="345" cy="112" rx="20" ry="8" fill="#2D5032" opacity=".7"/>
+        <!-- Tree 2 -->
+        <line x1="390" y1="300" x2="390" y2="140" stroke="#5A3A1A" stroke-width="4"/>
+        <ellipse cx="390" cy="122" rx="42" ry="18" fill="#4A7050" opacity=".85"/>
+        <ellipse cx="368" cy="135" rx="18" ry="7" fill="#3D6142" opacity=".7"/>
+        <ellipse cx="412" cy="132" rx="16" ry="7" fill="#3D6142" opacity=".7"/>
+        <!-- Dry grass ground -->
+        <rect x="285" y="240" width="160" height="60" fill="#5A6A28" opacity=".5"/>
+        <!-- LION in tree! -->
+        <!-- Branch of tree 1 -->
+        <line x1="285" y1="108" x2="340" y2="102" stroke="#4A2A10" stroke-width="3"/>
+        <!-- Lion body draped -->
+        <ellipse cx="308" cy="103" rx="18" ry="5" fill="#D49040" opacity=".95"/>
+        <circle cx="290" cy="100" r="7" fill="#C8803A" opacity=".95"/>
+        <!-- Mane -->
+        <circle cx="290" cy="100" r="9" fill="#8B5A2A" opacity=".6"/>
+        <!-- Tail hanging -->
+        <path d="M326,106 Q334,115 332,125" stroke="#D49040" stroke-width="2.5" fill="none"/>
+        <!-- Paws dangling -->
+        <line x1="298" y1="107" x2="296" y2="118" stroke="#C8803A" stroke-width="2"/>
+        <line x1="304" y1="108" x2="303" y2="119" stroke="#C8803A" stroke-width="2"/>
+        <!-- Second lion resting on ground below -->
+        <g opacity=".85">
+          <ellipse cx="360" cy="268" rx="18" ry="8" fill="#D49040"/>
+          <circle cx="342" cy="263" r="8" fill="#C8803A"/>
+          <circle cx="342" cy="263" r="10" fill="#8B5A2A" opacity=".5"/>
+        </g>
+        <!-- Tree-lion label -->
+        <text x="320" y="134" font-family="'DM Sans', sans-serif" font-size="7" fill="rgba(232,164,74,.9)" text-anchor="middle">🦁 Tree-Climbing Lion</text>
+        <!-- Zone label -->
+        <rect x="290" y="8" width="148" height="24" rx="3" fill="rgba(0,0,0,.4)"/>
+        <text x="365" y="23" font-family="'DM Sans', sans-serif" font-size="8.5" fill="rgba(255,255,255,.8)" text-anchor="middle" font-weight="600" letter-spacing=".5">ACACIA WOODLAND</text>
+
+        <!-- ── ZONE 4: OPEN FLOODPLAIN ── -->
+        <rect x="445" y="0" width="200" height="300" fill="url(#plainGrad)"/>
+        <!-- Long grass texture -->
+        <g stroke="#6A7A38" stroke-width="1" opacity=".4">
+          <line x1="460" y1="300" x2="458" y2="280"/><line x1="470" y1="300" x2="472" y2="278"/>
+          <line x1="485" y1="300" x2="483" y2="282"/><line x1="500" y1="300" x2="501" y2="279"/>
+          <line x1="515" y1="300" x2="513" y2="281"/><line x1="530" y1="300" x2="532" y2="280"/>
+          <line x1="545" y1="300" x2="543" y2="282"/><line x1="560" y1="300" x2="561" y2="279"/>
+          <line x1="575" y1="300" x2="573" y2="281"/><line x1="590" y1="300" x2="592" y2="280"/>
+          <line x1="605" y1="300" x2="603" y2="282"/><line x1="620" y1="300" x2="621" y2="279"/>
+          <line x1="635" y1="300" x2="633" y2="281"/>
+        </g>
+        <!-- ELEPHANT FAMILY on floodplain -->
+        <!-- Matriarch -->
+        <g opacity=".95">
+          <ellipse cx="510" cy="200" rx="32" ry="18" fill="#4A3A2A"/>
+          <circle cx="478" cy="190" r="16" fill="#3A2A1A"/>
+          <!-- Ear -->
+          <ellipse cx="466" cy="184" rx="14" ry="18" fill="#4A3A2A" opacity=".8"/>
+          <!-- Trunk down -->
+          <path d="M466,196 Q460,210 458,225 Q456,232 460,235" stroke="#3A2A1A" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <!-- Tusk -->
+          <path d="M470,200 Q462,206 460,215" stroke="#F0E8D0" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- Legs -->
+          <rect x="483" y="215" width="8" height="28" rx="4" fill="#4A3A2A"/>
+          <rect x="494" y="215" width="8" height="28" rx="4" fill="#4A3A2A"/>
+          <rect x="516" y="215" width="8" height="28" rx="4" fill="#4A3A2A"/>
+          <rect x="527" y="215" width="8" height="28" rx="4" fill="#4A3A2A"/>
+          <!-- Tail -->
+          <path d="M542,200 Q550,205 548,216" stroke="#4A3A2A" stroke-width="2.5" fill="none"/>
+          <!-- Eye -->
+          <circle cx="472" cy="186" r="2" fill="#1A1008"/>
+        </g>
+        <!-- Calf -->
+        <g opacity=".9">
+          <ellipse cx="560" cy="232" rx="16" ry="9" fill="#5A4A3A"/>
+          <circle cx="544" cy="226" r="8" fill="#4A3A2A"/>
+          <ellipse cx="537" cy="222" rx="7" ry="9" fill="#5A4A3A" opacity=".8"/>
+          <path d="M537,226 Q532,234 530,240" stroke="#4A3A2A" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <rect x="547" y="240" width="5" height="16" rx="2" fill="#5A4A3A"/>
+          <rect x="554" y="240" width="5" height="16" rx="2" fill="#5A4A3A"/>
+          <rect x="562" y="240" width="5" height="16" rx="2" fill="#5A4A3A"/>
+          <rect x="569" y="240" width="5" height="16" rx="2" fill="#5A4A3A"/>
+        </g>
+        <!-- Giraffe in background -->
+        <g opacity=".7">
+          <rect x="595" y="90" width="10" height="80" rx="4" fill="#D49040"/>
+          <rect x="590" y="60" width="8" height="40" rx="3" fill="#D49040"/>
+          <!-- Ossicones -->
+          <line x1="591" y1="60" x2="589" y2="50" stroke="#C8803A" stroke-width="2"/>
+          <line x1="597" y1="60" x2="599" y2="50" stroke="#C8803A" stroke-width="2"/>
+          <!-- Giraffe spots -->
+          <rect x="591" y="90" width="12" height="80" rx="4" fill="#D49040"/>
+          <circle cx="596" cy="100" r="4" fill="#8B5A1A" opacity=".5"/>
+          <circle cx="596" cy="115" r="5" fill="#8B5A1A" opacity=".5"/>
+          <circle cx="596" cy="130" r="4" fill="#8B5A1A" opacity=".5"/>
+          <!-- Legs -->
+          <line x1="591" y1="170" x2="589" y2="210" stroke="#D49040" stroke-width="5"/>
+          <line x1="601" y1="170" x2="603" y2="210" stroke="#D49040" stroke-width="5"/>
+        </g>
+        <!-- Zebra herd - distant -->
+        <g opacity=".6">
+          <ellipse cx="625" cy="200" rx="12" ry="6" fill="#E8E0D0"/>
+          <circle cx="613" cy="196" r="6" fill="#E8E0D0"/>
+          <line x1="614" y1="194" x2="614" y2="200" stroke="#1A1A1A" stroke-width="1"/>
+          <line x1="618" y1="193" x2="618" y2="201" stroke="#1A1A1A" stroke-width="1"/>
+          <line x1="622" y1="193" x2="622" y2="202" stroke="#1A1A1A" stroke-width="1"/>
+          <line x1="626" y1="194" x2="626" y2="202" stroke="#1A1A1A" stroke-width="1"/>
+          <line x1="630" y1="195" x2="630" y2="202" stroke="#1A1A1A" stroke-width="1"/>
+        </g>
+        <!-- Zone label -->
+        <rect x="450" y="8" width="188" height="24" rx="3" fill="rgba(0,0,0,.3)"/>
+        <text x="545" y="23" font-family="'DM Sans', sans-serif" font-size="8.5" fill="rgba(255,255,255,.8)" text-anchor="middle" font-weight="600" letter-spacing=".5">OPEN FLOODPLAIN</text>
+        <text x="510" y="175" font-family="'DM Sans', sans-serif" font-size="7" fill="rgba(255,255,255,.55)" text-anchor="middle">🐘 Elephant families</text>
+
+        <!-- ── ZONE 5: LAKESHORE MARSH ── -->
+        <rect x="645" y="0" width="120" height="300" fill="url(#shoreGrad)"/>
+        <!-- Papyrus / reed silhouettes -->
+        <g fill="#2A4A20" opacity=".8">
+          <rect x="650" y="180" width="4" height="60" rx="2"/>
+          <ellipse cx="652" cy="178" rx="8" ry="12"/>
+          <rect x="665" y="170" width="4" height="70" rx="2"/>
+          <ellipse cx="667" cy="168" rx="9" ry="13"/>
+          <rect x="680" y="175" width="4" height="65" rx="2"/>
+          <ellipse cx="682" cy="173" rx="8" ry="11"/>
+          <rect x="695" y="165" width="4" height="75" rx="2"/>
+          <ellipse cx="697" cy="163" rx="9" ry="13"/>
+          <rect x="710" y="172" width="4" height="68" rx="2"/>
+          <ellipse cx="712" cy="170" rx="8" ry="12"/>
+          <rect x="725" y="168" width="4" height="72" rx="2"/>
+          <ellipse cx="727" cy="166" rx="9" ry="13"/>
+          <rect x="740" y="175" width="4" height="65" rx="2"/>
+          <ellipse cx="742" cy="173" rx="8" ry="11"/>
+          <rect x="753" y="162" width="4" height="78" rx="2"/>
+          <ellipse cx="755" cy="160" rx="9" ry="14"/>
+        </g>
+        <!-- Shallow water patches -->
+        <ellipse cx="680" cy="240" rx="30" ry="10" fill="rgba(58,107,122,.4)"/>
+        <ellipse cx="730" cy="255" rx="25" ry="8" fill="rgba(58,107,122,.35)"/>
+        <!-- Hippos in water -->
+        <g opacity=".85">
+          <ellipse cx="672" cy="255" rx="14" ry="8" fill="#3A2A20"/>
+          <circle cx="659" cy="250" r="6" fill="#2A1A10"/>
+          <!-- Eyes / nostrils above water -->
+          <circle cx="657" cy="247" r="2" fill="#1A0A08"/>
+          <circle cx="662" cy="246" r="1.5" fill="#1A0A08"/>
+        </g>
+        <!-- Pelican -->
+        <g opacity=".8">
+          <ellipse cx="718" cy="140" rx="8" ry="5" fill="#F0EAD6"/>
+          <circle cx="710" cy="137" r="5" fill="#F0EAD6"/>
+          <!-- Bill -->
+          <path d="M705,137 Q698,138 696,140" stroke="#E8A44A" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- Wing -->
+          <path d="M718,138 Q728,132 730,128" stroke="#D0C8B4" stroke-width="3" fill="none"/>
+        </g>
+        <!-- Stork -->
+        <g opacity=".75">
+          <line x1="740" y1="130" x2="740" y2="160" stroke="#2A2A2A" stroke-width="2"/>
+          <line x1="740" y1="160" x2="735" y2="175" stroke="#2A2A2A" stroke-width="2"/>
+          <line x1="740" y1="160" x2="745" y2="175" stroke="#2A2A2A" stroke-width="2"/>
+          <ellipse cx="740" cy="125" rx="5" ry="6" fill="#F0EAD6"/>
+          <!-- Red bill -->
+          <line x1="740" y1="119" x2="740" y2="110" stroke="#C84020" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <!-- Zone label -->
+        <rect x="650" y="8" width="110" height="24" rx="3" fill="rgba(0,0,0,.4)"/>
+        <text x="705" y="23" font-family="'DM Sans', sans-serif" font-size="8" fill="rgba(255,255,255,.8)" text-anchor="middle" font-weight="600" letter-spacing=".5">LAKESHORE</text>
+
+        <!-- ── ZONE 6: LAKE MANYARA ── -->
+        <rect x="765" y="0" width="235" height="300" fill="url(#lakeGradM)"/>
+        <!-- Lake shimmer -->
+        <ellipse cx="880" cy="150" rx="200" ry="120" fill="rgba(255,255,255,.04)"/>
+        <!-- Wave hints -->
+        <path d="M770,100 Q810,95 850,100 Q890,105 930,100 Q960,96 1000,100" stroke="rgba(255,255,255,.08)" stroke-width="1" fill="none"/>
+        <path d="M770,140 Q820,136 860,140 Q900,144 940,140 Q970,137 1000,140" stroke="rgba(255,255,255,.06)" stroke-width="1" fill="none"/>
+        <path d="M770,180 Q815,177 855,180 Q895,183 935,180 Q965,178 1000,180" stroke="rgba(255,255,255,.07)" stroke-width="1" fill="none"/>
+        <!-- Reflection of escarpment -->
+        <rect x="765" y="200" width="235" height="100" fill="rgba(58,107,122,.4)" opacity=".5"/>
+        <!-- FLAMINGO FLOCK -->
+        <!-- Row 1 — foreground flamingos -->
+        <g stroke="#E87090" stroke-width="1.5" fill="none">
+          <line x1="780" y1="240" x2="780" y2="228"/><ellipse cx="782" cy="227" rx="4" ry="2.5" fill="#E87090" stroke="none"/><circle cx="780" cy="225" r="2" fill="#C84060" stroke="none"/>
+          <line x1="796" y1="238" x2="796" y2="226"/><ellipse cx="798" cy="225" rx="4" ry="2.5" fill="#D86080" stroke="none"/>
+          <line x1="812" y1="240" x2="812" y2="228"/><ellipse cx="814" cy="227" rx="4" ry="2.5" fill="#E87090" stroke="none"/><circle cx="812" cy="225" r="2" fill="#C84060" stroke="none"/>
+          <line x1="828" y1="238" x2="828" y2="226"/><ellipse cx="830" cy="225" rx="3.5" ry="2.5" fill="#E87090" stroke="none"/>
+          <line x1="844" y1="240" x2="844" y2="228"/><ellipse cx="846" cy="227" rx="4" ry="2.5" fill="#D86080" stroke="none"/>
+          <line x1="860" y1="238" x2="860" y2="226"/><ellipse cx="862" cy="225" rx="3.5" ry="2.5" fill="#E87090" stroke="none"/>
+          <line x1="876" y1="239" x2="876" y2="227"/><ellipse cx="878" cy="226" rx="4" ry="2.5" fill="#D86080" stroke="none"/>
+          <line x1="892" y1="238" x2="892" y2="226"/><ellipse cx="894" cy="225" rx="3.5" ry="2" fill="#E87090" stroke="none"/>
+          <line x1="908" y1="240" x2="908" y2="228"/><ellipse cx="910" cy="227" rx="4" ry="2.5" fill="#D86080" stroke="none"/>
+        </g>
+        <!-- Row 2 — mid distance -->
+        <g opacity=".7">
+          <line x1="788" y1="248" x2="788" y2="238" stroke="#C84060" stroke-width="1.2"/>
+          <line x1="804" y1="246" x2="804" y2="236" stroke="#D06070" stroke-width="1.2"/>
+          <line x1="820" y1="248" x2="820" y2="238" stroke="#C84060" stroke-width="1.2"/>
+          <line x1="836" y1="246" x2="836" y2="236" stroke="#D06070" stroke-width="1.2"/>
+          <line x1="852" y1="248" x2="852" y2="238" stroke="#C84060" stroke-width="1.2"/>
+          <line x1="868" y1="246" x2="868" y2="236" stroke="#D06070" stroke-width="1.2"/>
+          <line x1="884" y1="247" x2="884" y2="237" stroke="#C84060" stroke-width="1.2"/>
+          <line x1="900" y1="246" x2="900" y2="236" stroke="#D06070" stroke-width="1.2"/>
+          <line x1="916" y1="248" x2="916" y2="238" stroke="#C84060" stroke-width="1.2"/>
+        </g>
+        <!-- Distant flock mass -->
+        <ellipse cx="870" cy="258" rx="100" ry="10" fill="rgba(200,64,96,.25)"/>
+        <ellipse cx="870" cy="267" rx="80" ry="7" fill="rgba(180,48,80,.2)"/>
+        <!-- Fish eagle on dead tree stump -->
+        <line x1="940" y1="180" x2="940" y2="120" stroke="#4A2A10" stroke-width="5"/>
+        <g opacity=".9">
+          <ellipse cx="940" cy="113" rx="7" ry="5" fill="#3A2A18"/>
+          <circle cx="933" cy="109" r="5" fill="#F0EAD6"/><!-- White head -->
+          <!-- Wings spread -->
+          <path d="M933,113 Q920,108 910,112" stroke="#1A1008" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M947,113 Q960,108 970,112" stroke="#1A1008" stroke-width="4" fill="none" stroke-linecap="round"/>
+        </g>
+        <!-- Zone label -->
+        <rect x="770" y="8" width="222" height="24" rx="3" fill="rgba(0,0,0,.3)"/>
+        <text x="881" y="23" font-family="'DM Sans', sans-serif" font-size="8.5" fill="rgba(255,255,255,.8)" text-anchor="middle" font-weight="600" letter-spacing=".5">LAKE MANYARA</text>
+        <text x="870" y="214" font-family="'DM Sans', sans-serif" font-size="7" fill="rgba(255,200,210,.8)" text-anchor="middle">🦩 Flamingo colony</text>
+        <text x="940" y="138" font-family="'DM Sans', sans-serif" font-size="7" fill="rgba(255,255,255,.5)">Fish Eagle</text>
+
+        <!-- ── DRIVE DIRECTION ARROW ── -->
+        <path d="M120,290 L645,290" stroke="rgba(232,164,74,.35)" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <path d="M638,286 L646,290 L638,294" fill="rgba(232,164,74,.5)"/>
+        <text x="380" y="288" font-family="'DM Sans', sans-serif" font-size="8" fill="rgba(232,164,74,.5)" text-anchor="middle" letter-spacing="2">GAME DRIVE DIRECTION — NORTH TO SOUTH</text>
+
+        <!-- Zone dividers (subtle) -->
+        <line x1="110" y1="0" x2="110" y2="300" stroke="rgba(255,255,255,.08)" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="285" y1="0" x2="285" y2="300" stroke="rgba(255,255,255,.08)" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="445" y1="0" x2="445" y2="300" stroke="rgba(255,255,255,.08)" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="645" y1="0" x2="645" y2="300" stroke="rgba(255,255,255,.08)" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="765" y1="0" x2="765" y2="300" stroke="rgba(255,255,255,.08)" stroke-width="1" stroke-dasharray="4,4"/>
+      </svg>
+    </div>
+    <!-- Zone cards -->
+    <div class="zone-cards">
+      <div class="zone-card-item">
+        <div class="zci-dot" style="background:#5A4A2A;"></div>
+        <div class="zci-name">Escarpment</div>
+        <div class="zci-dist">600m cliff · Western wall</div>
+        <p class="zci-animals">The Rift Valley wall rising directly behind the park. Fed by underground springs that flow down through the rock to create the groundwater forest. <strong>Buffalo, eland, klipspringer</strong> on the cliff face.</p>
+      </div>
+      <div class="zone-card-item">
+        <div class="zci-dot" style="background:#2D4A2A;"></div>
+        <div class="zci-name">Forest</div>
+        <div class="zci-dist">~5km wide · Northern zone</div>
+        <p class="zci-animals">Ancient groundwater forest fed by underground springs. The most productive zone for tree-climbing lions and primates. <strong>Baboon troops, blue monkey, colobus, leopard, bushbuck</strong>.</p>
+      </div>
+      <div class="zone-card-item">
+        <div class="zci-dot" style="background:#4A6030;"></div>
+        <div class="zci-name">Woodland</div>
+        <div class="zci-dist">Acacia & sausage trees</div>
+        <p class="zci-animals">The lion habitat. Scattered acacia and sausage trees with open grass between — the zones most used by Manyara's famous tree-climbing prides. <strong>Lion, impala, giraffe, warthog</strong>.</p>
+      </div>
+      <div class="zone-card-item">
+        <div class="zci-dot" style="background:#8A9A50;"></div>
+        <div class="zci-name">Floodplain</div>
+        <div class="zci-dist">Open grassland · Central</div>
+        <p class="zci-animals">Wide open floodplain where elephant families graze at dusk. The largest landscape in the park and the easiest for spotting large herds. <strong>Elephant, zebra, wildebeest, giraffe, hippo pools</strong>.</p>
+      </div>
+      <div class="zone-card-item">
+        <div class="zci-dot" style="background:#3A6B7A;"></div>
+        <div class="zci-name">Lake Shore</div>
+        <div class="zci-dist">Alkaline lake · Eastern edge</div>
+        <p class="zci-animals">The lake's edge where alkaline shallows support flamingo colonies and an extraordinary diversity of waterbirds. <strong>Flamingo, pelican, stork, fish eagle, hippo, 400+ bird species</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TREE LION FEATURE -->
+  <section class="reveal">
+    <div class="lion-feature">
+      <div class="lion-text">
+        <p class="section-eyebrow">The Tree-Climbing Lions</p>
+        <h2 class="section-title">Why Lions Climb Trees <em>at Manyara</em></h2>
+        <p class="section-lead">Lake Manyara is one of the only places in the world where lions habitually climb trees. It is a behaviour documented nowhere else in East Africa with this frequency and one that scientists have studied for decades without reaching a definitive explanation.</p>
+        <p class="section-lead" style="margin-top:.8rem">The leading hypotheses involve temperature regulation, insect avoidance, and the elevated vantage point for spotting prey. What is certain is that the behaviour is learned and transmitted within family groups — cubs that grow up watching their mothers climb become climbers themselves. The Manyara lions have been doing this for generations.</p>
+      </div>
+      <div class="lion-facts">
+        <div class="lion-fact">
+          <div class="lion-fact-icon">🌡</div>
+          <p class="lion-fact-text"><strong>Temperature theory:</strong> The park's high humidity makes the ground extremely hot midday. Elevated in a tree, the lions catch the breeze and escape both the heat and the tsetse flies that concentrate in the undergrowth.</p>
+        </div>
+        <div class="lion-fact">
+          <div class="lion-fact-icon">👁</div>
+          <p class="lion-fact-text"><strong>Hunting advantage:</strong> From a branch 8–12 metres up, a lion has an unobstructed view across the floodplain — able to track herd movements and identify injured animals from a position that the prey cannot smell.</p>
+        </div>
+        <div class="lion-fact">
+          <div class="lion-fact-icon">🌳</div>
+          <p class="lion-fact-text"><strong>The trees:</strong> Manyara's lions favour specific trees — sausage trees (<em>Kigelia africana</em>) with large horizontal branches, and yellow acacia with fork structures that provide a comfortable rest at height. Our guides know which trees to check.</p>
+        </div>
+        <div class="lion-fact">
+          <div class="lion-fact-icon">📸</div>
+          <p class="lion-fact-text"><strong>The photograph:</strong> A 180kg lion horizontal on an acacia branch, entirely relaxed, tail hanging, looking down at your vehicle from above — it is unlike any lion image taken anywhere else. Most visitors photograph more lions at the Serengeti; none photograph lions like this.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WILDLIFE -->
+  <section class="reveal">
+    <p class="section-eyebrow">Wildlife</p>
+    <h2 class="section-title">Animals of <em>Lake Manyara</em></h2>
+    <div class="wildlife-grid">
+      <div class="wl-card featured">
+        <div class="wl-emoji">🦁</div>
+        <div>
+          <div class="wl-name">Tree-Climbing Lion — Manyara's Icon</div>
+          <div class="wl-sub">Panthera leo · Unique behaviour documented in only a handful of locations globally</div>
+          <p class="wl-desc">Manyara's lions are not the most numerous in Tanzania, nor the largest — but they are the most distinctive. The park holds several prides whose members have all been raised in the tree-climbing tradition. Our guides know the territories, know the favoured trees, and know which hours of the day each pride most reliably climbs. No visit to Manyara is complete without searching for them in the canopy.</p>
+        </div>
+      </div>
+      <div class="wl-card featured" style="background:rgba(58,107,122,.08); border-color:rgba(58,107,122,.2);">
+        <div class="wl-emoji">🦩</div>
+        <div>
+          <div class="wl-name">Lesser Flamingo — The Pink Shore</div>
+          <div class="wl-sub">Phoeniconaias minor · Numbers fluctuate with water levels — at peak, hundreds of thousands</div>
+          <p class="wl-desc">When water levels and alkalinity are right, Lake Manyara's southern shallows turn entirely pink. The flamingo flocks here can number in the hundreds of thousands — not the 2.5 million of Lake Natron, but spectacular in scale and far more accessible from the vehicle track along the lake edge. The flamingos feed in tightly packed masses that shift and swirl in unison.</p>
+        </div>
+      </div>
+      <div class="wl-card"><div class="wl-emoji">🐘</div><div class="wl-name">African Elephant</div><div class="wl-sub">Relaxed family groups</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦛</div><div class="wl-name">Hippopotamus</div><div class="wl-sub">Hippo pool — central floodplain</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦒</div><div class="wl-name">Masai Giraffe</div><div class="wl-sub">Acacia woodland</div></div>
+      <div class="wl-card"><div class="wl-emoji">🐒</div><div class="wl-name">Olive Baboon</div><div class="wl-sub">Forest troops — very large</div></div>
+      <div class="wl-card"><div class="wl-emoji">🐒</div><div class="wl-name">Blue Monkey</div><div class="wl-sub">Forest canopy</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦬</div><div class="wl-name">Cape Buffalo</div><div class="wl-sub">Escarpment base &amp; floodplain</div></div>
+      <div class="wl-card"><div class="wl-emoji">🐆</div><div class="wl-name">Leopard</div><div class="wl-sub">Groundwater forest — rare</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦓</div><div class="wl-name">Plains Zebra</div><div class="wl-sub">Floodplain herds</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦌</div><div class="wl-name">Impala</div><div class="wl-sub">Woodland edge — abundant</div></div>
+      <div class="wl-card"><div class="wl-emoji">🐗</div><div class="wl-name">Warthog</div><div class="wl-sub">Open grassland — common</div></div>
+    </div>
+  </section>
+
+  <!-- BIRDING -->
+  <section class="reveal">
+    <div class="split-section reverse">
+      <div class="split-img-wrap">
+        <img class="split-img" src="https://mwala-tours-and-safaris.vercel.app/jorge-tung--5Betfvtgso-unsplash.jpg" alt="Lilac-breasted roller and birds at Lake Manyara" />
+        <p class="split-img-caption">The lilac-breasted roller — Manyara's most-photographed bird, perched on every dead acacia branch at the forest edge</p>
+      </div>
+      <div>
+        <p class="section-eyebrow">Birding</p>
+        <h2 class="section-title">400 Species in <em>One Park</em></h2>
+        <p class="section-lead">Lake Manyara is one of Tanzania's premier birding destinations — a fact that surprises visitors who come for the mammals and leave converting to birdwatchers. The combination of forest, woodland, floodplain, lakeshore, and open water creates an extraordinary diversity that few parks in East Africa can match in such a compact area.</p>
+        <p class="section-lead" style="margin-top:.8rem">Our guides carry identification guides and binoculars as standard. If you are a dedicated birder, tell us when enquiring — we will pair you with a specialist guide whose life list runs to 700+ species and who knows every resident individual in the park by territory.</p>
+      </div>
+    </div>
+    <div class="birding-grid" style="margin-top:2.5rem">
+      <div class="bird-card">
+        <div class="bird-icon">🪶</div>
+        <div class="bird-name">Lilac-Breasted Roller</div>
+        <div class="bird-latin">Coracias caudatus</div>
+        <p class="bird-desc">Manyara's most-photographed bird — a jewel of iridescent blue, lilac, green, and chestnut that perches conspicuously on dead branches at the woodland edge, scanning the ground for insects. Every colour in the visible spectrum seems to appear somewhere on its plumage. The roller is present year-round and reliably found on every game drive.</p>
+        <div class="bird-where">📍 Woodland edge · Acacia zone · Year-round</div>
+      </div>
+      <div class="bird-card">
+        <div class="bird-icon">🦅</div>
+        <div class="bird-name">African Fish Eagle</div>
+        <div class="bird-latin">Haliaeetus vocifer</div>
+        <p class="bird-desc">The fish eagle's call is the sound of Africa — a wild, descending cry that carries for kilometres across the water. Manyara's lake shore holds resident pairs on dead acacias above the water's edge, making dramatic plunge-dives for fish in the shallows visible from the vehicle track. The call, once heard, is never forgotten.</p>
+        <div class="bird-where">📍 Lake shore · Dead trees · Year-round</div>
+      </div>
+      <div class="bird-card">
+        <div class="bird-icon">🦃</div>
+        <div class="bird-name">Southern Ground Hornbill</div>
+        <div class="bird-latin">Bucorvus leadbeateri</div>
+        <p class="bird-desc">The largest hornbill in the world — an extraordinary bird that walks in stately procession across the floodplain in groups of four to six, its deep booming call audible at dawn. The red facial skin of breeding males is vivid against the bird's otherwise all-black plumage. Groups walk up to ten kilometres in a single day. Long-lived and slow-breeding, their presence indicates a healthy ecosystem.</p>
+        <div class="bird-where">📍 Open floodplain · Dawn walks · Year-round</div>
+      </div>
+      <div class="bird-card">
+        <div class="bird-icon">🦢</div>
+        <div class="bird-name">Grey-Crowned Crane</div>
+        <div class="bird-latin">Balearica regulorum</div>
+        <p class="bird-desc">Uganda's national bird is equally at home at Manyara — an elegantly strange creature with a golden crown of feathers, crimson cheek patch, and a dancing courtship display that humans have been watching and imitating for thousands of years. The cranes are seen on the floodplain, often in pairs, occasionally in larger groups during the wet season.</p>
+        <div class="bird-where">📍 Floodplain &amp; lake margin · Year-round</div>
+      </div>
+      <div class="bird-card">
+        <div class="bird-icon">🐦</div>
+        <div class="bird-name">Six Kingfisher Species</div>
+        <div class="bird-latin">Multiple genera</div>
+        <p class="bird-desc">Manyara is one of very few places in East Africa where six kingfisher species can be seen in a single day: the giant kingfisher, malachite kingfisher, pied kingfisher, striped kingfisher, grey-headed kingfisher, and woodland kingfisher. Each occupies a different habitat micro-niche — together they represent one of the finest kingfisher spectacles in the region.</p>
+        <div class="bird-where">📍 River · Lake shore · Forest stream</div>
+      </div>
+      <div class="bird-card">
+        <div class="bird-icon">🦩</div>
+        <div class="bird-name">Goliath Heron</div>
+        <div class="bird-latin">Ardea goliath</div>
+        <p class="bird-desc">The world's largest heron — standing 1.5 metres tall and hunting fish in water too deep for any other wading bird. Goliath herons stalk the lake shallows in slow motion, striking with a bill the size and weight of a short sword. Seeing one next to a normal grey heron clarifies the "goliath" immediately: it is enormous, and it moves with the unhurried confidence of something that has no predators.</p>
+        <div class="bird-where">📍 Lake shore · Year-round resident</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESCARPMENT SECTION -->
+  <section class="reveal">
+    <div class="escarp-banner">
+      <div class="escarp-text">
+        <p class="section-eyebrow">The Great Rift Valley</p>
+        <h2 class="section-title">The Cliff That <em>Makes Manyara</em></h2>
+        <p class="section-lead">The Rift Valley escarpment is not just a backdrop to Lake Manyara — it is the reason the park exists. The underground springs seeping down through the volcanic rock create the groundwater forest. The cliff wall channels the afternoon light into extraordinary golden angles. And the view from the lodges perched on the rim — looking down over the forest canopy, the floodplain, the lake, and the park boundary — is one of the finest in Tanzania.</p>
+        <p class="section-lead" style="margin-top:.8rem">Geologically, the escarpment is the wall of the Great Rift Valley — the tectonic system stretching 6,000 kilometres from the Red Sea to Mozambique. At Manyara, the eastern branch of the Rift runs directly alongside the park, and the cliff face you see from the lake shore is the raw edge of Africa's geological transformation, exposed over millions of years of movement.</p>
+      </div>
+      <div class="escarp-stats">
+        <div class="escarp-stat">
+          <div class="escarp-stat-num">600m</div>
+          <div class="escarp-stat-label">Height of the escarpment wall above the lake — visible from every point in the park</div>
+        </div>
+        <div class="escarp-stat">
+          <div class="escarp-stat-num">6,000km</div>
+          <div class="escarp-stat-label">Total length of the East African Rift System — Manyara sits on its eastern branch</div>
+        </div>
+        <div class="escarp-stat">
+          <div class="escarp-stat-num">25km</div>
+          <div class="escarp-stat-label">Width of the Rift Valley at Manyara — the lake occupies roughly half the valley floor</div>
+        </div>
+        <div class="escarp-stat">
+          <div class="escarp-stat-num">~20km</div>
+          <div class="escarp-stat-label">Length of the park's game-drive circuit along the lake shore — compact, efficient, diverse</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCES -->
+  <section class="reveal">
+    <div class="split-section">
+      <div>
+        <p class="section-eyebrow">Safari Experiences</p>
+        <h2 class="section-title">How to Experience <em>Lake Manyara</em></h2>
+        <p class="section-lead">Manyara rewards different kinds of attention at different hours. The forest demands patience and quiet. The floodplain rewards stillness at dusk. The lake shore is best at dawn, when the flamingos begin their feeding movements and the escarpment catches the first light.</p>
+      </div>
+      <div class="split-img-wrap">
+        <img class="split-img" src="https://mwala-tours-and-safaris.vercel.app/jorge-tung--5Betfvtgso-unsplash.jpg" alt="Game drive in Manyara forest" />
+        <p class="split-img-caption">The groundwater forest game drive — the most productive zone for tree-climbing lions and forest primates</p>
+      </div>
+    </div>
+    <div class="exp-list" style="margin-top:2.5rem">
+      <div class="exp-item">
+        <div class="exp-icon-wrap">🚙</div>
+        <div>
+          <div class="exp-title">Full Day Game Drive</div>
+          <div class="exp-meta">Dawn to Dusk · All Five Zones</div>
+          <p class="exp-desc">A full-day drive covers all five ecological zones in sequence — forest, woodland, floodplain, shore, and lake edge. The morning is dedicated to the forest and tree lions; midday to the floodplain and hippo pools; afternoon to the lake shore at golden hour when the flamingo flocks reorganise for their evening feeding. Picnic lunch is served beside the lake. The full circuit is approximately 50km and takes 8–10 hours driven properly.</p>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-icon-wrap">🌅</div>
+        <div>
+          <div class="exp-title">Sunrise Forest Drive</div>
+          <div class="exp-meta">06:00 Departure · Forest &amp; Woodland</div>
+          <p class="exp-desc">The forest game drive at dawn is Manyara at its most atmospheric. Mist in the fig canopy. Baboon troops crossing the road. The groundwater forest alive with birdsong as the light gradually filters through the canopy. And the tree-climbing lions — most active early morning and late afternoon — most likely to be found elevated in the sausage trees and acacias at this hour. This is the drive to add if you have one morning at Manyara.</p>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-icon-wrap">🐦</div>
+        <div>
+          <div class="exp-title">Specialist Birding Drive</div>
+          <div class="exp-meta">Dedicated Birding Route · Specialist Guide Available</div>
+          <p class="exp-desc">Manyara's 400+ species are spread across all five zones — meaning a specialist birding drive covers the park differently to a mammal-focused game drive, moving slowly through the forest edge, pausing at the lake margin for waders, and spending significant time at the hippo pool where the diversity of species is extraordinary. If you are a birder, specify this when enquiring and we will arrange a guide whose primary expertise is ornithology.</p>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-icon-wrap">🌙</div>
+        <div>
+          <div class="exp-title">Night Game Drive</div>
+          <div class="exp-meta">Available on Request · Spotlight Drive</div>
+          <p class="exp-desc">The park's woodland and forest edge at night reveal species entirely absent from the day drives — the serval hunting the grassland edge, the genet patrolling the forest floor, the bushbaby peering from the tree canopy with enormous reflected eyes. Manyara's night drive focuses on the northern woodland and forest zone, where nocturnal species density is highest. Available on request through partner lodges with the appropriate permits.</p>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-icon-wrap">🏊</div>
+        <div>
+          <div class="exp-title">Maji Moto Hot Springs Walk</div>
+          <div class="exp-meta">Southern Park · Geothermal Springs</div>
+          <p class="exp-desc">Near the park's southern boundary, geothermal springs emerge from the valley floor — pools of warm, sulphur-scented water surrounded by papyrus and endemic reed frogs. The springs are reached by a short guided walk from the vehicle, through a section of the park rarely visited by other tourists. Elephant sightings are common in this area, and the springs themselves are an extraordinary geological feature in an already geologically remarkable landscape.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRACTICAL -->
+  <section class="reveal">
+    <p class="section-eyebrow">Planning Your Visit</p>
+    <h2 class="section-title">Practical <em>Information</em></h2>
+    <div class="practical-grid">
+      <div class="prac-card">
+        <div class="prac-icon">🚗</div>
+        <div class="prac-title">Getting There</div>
+        <p class="prac-body">Lake Manyara is <strong>2 hours south of Arusha</strong> on good tarmac via Makuyuni junction and then down to the town of Mto wa Mbu at the park gate. It is the closest major national park to Arusha and Kilimanjaro International Airport — making it an ideal first or last stop on the Northern Circuit. The descent from the Ngorongoro highlands to the Rift Valley floor on the approach road gives a first view of the lake and escarpment that acts as an introduction to what awaits.</p>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">🏕</div>
+        <div class="prac-title">Accommodation</div>
+        <p class="prac-body"><strong>Budget:</strong> Jambo Campsite in Mto wa Mbu town — clean, simple, and 5 minutes from the gate. <strong>Mid-range:</strong> Lake Manyara Serena Lodge — built into the escarpment wall with commanding views over the entire park and lake from its terrace; swimming pool, sundowner deck, and reliable Wi-Fi. <strong>Luxury:</strong> Kirurumu Tented Lodge — 16 tents perched on the escarpment edge with unobstructed Rift Valley views; the finest sundowner position in northern Tanzania.</p>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">📏</div>
+        <div class="prac-title">How Long to Stay</div>
+        <p class="prac-body">A <strong>minimum of one full day and one night</strong> allows both the morning forest drive and the afternoon lake shore drive. Two nights is recommended for birders or photographers who want to explore the southern springs area and attempt the night drive. Manyara works as a standalone 2-day escape from Arusha, as the final stop before Ngorongoro on the Northern Circuit, or as the combination destination paired with a short Lake Manyara Escape package (see below).</p>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">📸</div>
+        <div class="prac-title">Photography Notes</div>
+        <p class="prac-body">Manyara produces two completely distinct photographic environments: the forest (dark, complex, close-range, requiring fast lenses at wide apertures) and the lake shore (open, bright, long distances, requiring telephoto reach for flamingos). <strong>For tree lions:</strong> a 70–200mm is ideal; be ready to shoot upward into backlit canopy. <strong>For flamingos:</strong> 300mm minimum, 500mm preferred. The escarpment in late afternoon light behind any subject gives Manyara images their distinctive character.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEST TIME -->
+  <section class="reveal">
+    <p class="section-eyebrow">When to Visit</p>
+    <h2 class="section-title">Best Time for <em>Lake Manyara</em></h2>
+    <p class="section-lead">Manyara is a year-round destination — the tree-climbing lions are resident regardless of season, and the forest wildlife doesn't migrate. The main variable is flamingo numbers, which depend on lake water levels.</p>
+    <div class="months-row">
+      <div class="month-cell month-peak"><span class="month-label">Jan</span><div class="month-dot"></div></div>
+      <div class="month-cell month-peak"><span class="month-label">Feb</span><div class="month-dot"></div></div>
+      <div class="month-cell month-low"><span class="month-label">Mar</span><div class="month-dot"></div></div>
+      <div class="month-cell month-low"><span class="month-label">Apr</span><div class="month-dot"></div></div>
+      <div class="month-cell month-low"><span class="month-label">May</span><div class="month-dot"></div></div>
+      <div class="month-cell month-peak"><span class="month-label">Jun</span><div class="month-dot"></div></div>
+      <div class="month-cell month-peak"><span class="month-label">Jul</span><div class="month-dot"></div></div>
+      <div class="month-cell month-peak"><span class="month-label">Aug</span><div class="month-dot"></div></div>
+      <div class="month-cell month-peak"><span class="month-label">Sep</span><div class="month-dot"></div></div>
+      <div class="month-cell month-good"><span class="month-label">Oct</span><div class="month-dot"></div></div>
+      <div class="month-cell month-good"><span class="month-label">Nov</span><div class="month-dot"></div></div>
+      <div class="month-cell month-good"><span class="month-label">Dec</span><div class="month-dot"></div></div>
+    </div>
+    <div class="month-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--savanna)"></div> Peak — Dry Season, Max Flamingos, Tree Lions in Canopy More</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--grass)"></div> Good — Lush, Migratory Birds Present, Fewer Visitors</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--stone)"></div> Low — Heavy Rains, Lake Levels High, Tracks Muddy</div>
+    </div>
+    <p class="section-lead" style="margin-top:1.2rem">
+      <strong>June–September</strong> is peak season: the dry season concentrates wildlife around remaining water sources, the tree-climbing lions spend more time elevated to escape the heat, and the lake level drops to expose the alkaline shallows that flamingos prefer for feeding. The escarpment light in the dry season is the most photogenic — golden, clear, and long. <strong>January–February</strong> is excellent — warm but not oppressively hot, migratory bird species from Europe are present, and the park is far less crowded than the July–September peak. <strong>November–December</strong> brings the short rains, turning the forest an extraordinary lush green and reducing visitor numbers dramatically — worth the trade-off for those who prefer solitude. <strong>March–May</strong> (long rains) produces muddy tracks and can make some forest sections impassable; we operate but advise accordingly.
+    </p>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="reveal">
+    <p class="section-eyebrow">Visit Manyara with Mwala</p>
+    <h2 class="section-title">Choose Your <em>Manyara</em> Safari</h2>
+    <p class="section-lead" style="margin-bottom:0">Manyara works as a focused 2-day escape from Arusha or as part of the full Northern Circuit. Both are exceptional in completely different ways.</p>
+    <div class="pkgs-grid">
+      <a class="pkg-card" href="manyara-escape.html">
+        <div class="pkg-duration">2 Days · 1 Night</div>
+        <div class="pkg-name">Lake Manyara Escape</div>
+        <p class="pkg-desc">A focused 2-day standalone: forest drive, tree lions, flamingos, hippo pools, and a night on the escarpment. The closest major park to Arusha — ideal for short breaks.</p>
+        <span class="pkg-link">View Package →</span>
+      </a>
+      <a class="pkg-card" href="northern-circuit.html">
+        <div class="pkg-duration">7 Days · 6 Nights</div>
+        <div class="pkg-name">Northern Circuit Grand Safari</div>
+        <p class="pkg-desc">Manyara as Day 6 of the full circuit — after Tarangire, Natron, and the Serengeti, before the Ngorongoro crater descent. The complete Northern Tanzania story.</p>
+        <span class="pkg-link">View Package →</span>
+      </a>
+      <a class="pkg-card" href="../index.html#contact">
+        <div class="pkg-duration">Custom</div>
+        <div class="pkg-name">Manyara + Ngorongoro</div>
+        <p class="pkg-desc">The most natural 4-day combination on the circuit — both parks sit on the same road, 90 minutes apart. Tree lions one day, black rhino the next.</p>
+        <span class="pkg-link">Enquire Now →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="reveal">
+    <p class="section-eyebrow">Questions Answered</p>
+    <h2 class="section-title">Lake Manyara <em>FAQ</em></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">Are the tree-climbing lions guaranteed to be in the trees? <span class="faq-chevron">▼</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">No wildlife sighting is ever guaranteed. What we can tell you is that Manyara's lions exhibit this behaviour more reliably than any other population in East Africa, and our guides know which trees, which prides, and which times of day produce the highest probability. In the dry season, when shade is scarce and heat builds by midday, the lions spend considerably more time elevated. On a full day's game drive with an experienced guide starting at dawn, the probability of a tree-lion sighting is high. If you don't see them elevated, your guide will locate the pride on the ground — which is still a genuine Manyara lion sighting, just without the altitude.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is Manyara worth visiting if I'm already going to the Serengeti and Ngorongoro? <span class="faq-chevron">▼</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Absolutely — and specifically because it offers something neither of the other two can. The tree-climbing lions exist nowhere else on the circuit. The groundwater forest provides a completely different kind of wildlife encounter to the open plains of the Serengeti or the enclosed caldera of Ngorongoro. The flamingo lake and escarpment combination produces images that are distinctively Manyara — they cannot be mistaken for anywhere else. On our Northern Circuit, we include Manyara precisely because it provides the ecological contrast that makes the overall trip feel comprehensive rather than repetitive.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is Manyara good for birding? <span class="faq-chevron">▼</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Exceptionally good. With 400+ recorded species across five distinct habitat zones — including six kingfisher species, the entire major flamingo habitat, six species of roller and starling, the southern ground hornbill, grey-crowned crane, and a remarkable variety of raptors and forest species — Manyara is considered one of East Africa's top birding destinations. The diversity comes from the habitat compression: forest species, open-country species, water birds, and forest edge specialists all within a 50km circuit. If you are a birder, please identify this when enquiring; we have specialist bird guides whose primary qualification is ornithological and whose life list typically exceeds 700 species.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How does Manyara compare to Tarangire for elephants? <span class="faq-chevron">▼</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Tarangire has more elephants — significantly more, particularly in the dry season when mega-herds of 200+ form at the river. Manyara's elephants are notable for a different reason: their remarkably relaxed behaviour around vehicles. Generations of exposure to respectful tourism have produced family groups that barely glance at vehicles passing within ten metres. The encounters are close, calm, and extraordinarily photogenic — but for sheer elephant volume, Tarangire wins without contest. If you are on the Northern Circuit, you will visit both parks, and the elephant experiences are genuinely different enough to be complementary.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is Lake Manyara suitable for families with children? <span class="faq-chevron">▼</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Lake Manyara is one of our strongest recommendations for families with children. The short drive from Arusha (2 hours) means minimal travel time. The compact park circuit means less time between sightings. And the variety of wildlife — monkeys, flamingos, elephants, giraffes, hippos, and the drama of the tree-climbing lions — captures children's attention more effectively than the longer open-plain drives of larger parks. The baboon troops crossing the road in the forest are invariably a highlight for younger visitors. We recommend Manyara for children from age 4 upward.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="reveal">
+    <div class="cta-banner">
+      <div class="cta-text">
+        <p class="eyebrow">The Rift Valley Awaits</p>
+        <h2>Discover <em>Lake Manyara</em></h2>
+        <p>Tree-climbing lions, a pink-fringed alkaline lake, and a 600-metre cliff wall catching the afternoon light. Tell us your dates and we'll handle everything else.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="../index.html#contact" class="btn-primary">Start Planning</a>
+        <a href="northern-circuit.html" class="btn-ghost">View Northern Circuit →</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- RELATED -->
+<section class="related-section">
+  <div class="related-inner">
+    <p class="section-eyebrow">Explore More Destinations</p>
+    <h2 class="section-title">Also Worth <em>Visiting</em></h2>
+    <div class="related-grid">
+      <a class="related-card" href="ngorongoro.html">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/Images/ana-singh-1vOBJZ6228U-unsplash.jpg" alt="Ngorongoro" />
+        <div class="related-body">
+          <p class="related-meta">Destination · Ngorongoro Conservation Area</p>
+          <p class="related-name">Ngorongoro Crater</p>
+        </div>
+      </a>
+      <a class="related-card" href="serengeti.html">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/omer-salom-gi6T2ktnpnE-unsplash.jpg" alt="Serengeti" />
+        <div class="related-body">
+          <p class="related-meta">Destination · Serengeti National Park</p>
+          <p class="related-name">The Serengeti</p>
+        </div>
+      </a>
+      <a class="related-card" href="tarangire.html">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/Images/ahmed-galal-VQqMACyNfwA-unsplash.jpg" alt="Tarangire" />
+        <div class="related-body">
+          <p class="related-meta">Destination · Tarangire National Park</p>
+          <p class="related-name">Tarangire National Park</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Mwala Tours &amp; Safaris. All rights reserved. &nbsp;|&nbsp; <a href="../index.html">Back to Home</a></p>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
 </body>
 </html>
