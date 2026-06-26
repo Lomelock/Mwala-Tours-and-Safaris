@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/jpeg" href="../Mwalatourslogo.jpg" />
+  <link rel="shortcut icon" type="image/jpeg" href="../Mwalatourslogo.jpg" />
+  <link rel="apple-touch-icon" href="../Mwalatourslogo.jpg" />
+  <title>Serengeti National Park — Tanzania's Infinite Plains | Mwala Tours</title>
+  <meta name="description" content="Discover the Serengeti — Africa's greatest wildlife stage. The Great Migration, big cats, ancient kopjes, and skies that go on forever. Plan your Serengeti safari with Mwala Tours." />
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --savanna:  #C8803A;
+  --dusk:     #1C1410;
+  --ochre:    #E8A44A;
+  --earth:    #6B4226;
+  --mist:     #F5EFE6;
+  --stone:    #9A8A7A;
+  --white:    #FDFAF6;
+  --grass:    #3D6142;
+  --pale:     #FAF6F0;
+  --border:   rgba(0,0,0,.08);
+  --river:    #2A4A5E;
+
+  --display: 'Cormorant Garamond', Georgia, serif;
+  --body:    'DM Sans', system-ui, sans-serif;
+  --max: 1100px;
+  --r: 4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  background: var(--white);
+  color: var(--dusk);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%; height: 66px;
+  background: rgba(28,20,16,.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.nav-logo {
+  font-family: var(--display); font-size: 1.3rem; font-weight: 600;
+  color: var(--white); text-decoration: none; letter-spacing: .04em;
+}
+.nav-logo span { color: var(--ochre); }
+.nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
+.nav-links a {
+  color: rgba(255,255,255,.75); text-decoration: none;
+  font-size: .8rem; letter-spacing: .09em; text-transform: uppercase;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--ochre); }
+.nav-book {
+  background: var(--savanna); color: var(--white) !important;
+  padding: .45rem 1.1rem; border-radius: var(--r); font-weight: 500 !important;
+}
+.nav-book:hover { background: var(--ochre) !important; color: var(--dusk) !important; }
+
+/* ── HERO ── */
+.dest-hero {
+  height: 90vh; min-height: 600px;
+  position: relative; display: flex; align-items: center;
+  background-size: cover; background-position: center 40%;
+  padding-top: 66px;
+}
+.dest-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(28,20,16,.85) 0%,
+    rgba(28,20,16,.5) 50%,
+    rgba(28,20,16,.1) 100%
+  );
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  max-width: var(--max); margin: 0 auto;
+  width: 100%; padding: 0 5%;
+}
+.hero-breadcrumb {
+  font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ochre); margin-bottom: 1.2rem;
+}
+.hero-breadcrumb a { color: rgba(255,255,255,.55); text-decoration: none; }
+.hero-breadcrumb a:hover { color: var(--ochre); }
+.hero-eyebrow {
+  font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--ochre); font-weight: 500; margin-bottom: .7rem;
+}
+.hero-title {
+  font-family: var(--display);
+  font-size: clamp(3rem, 6.5vw, 5.2rem);
+  font-weight: 300; color: var(--white); line-height: 1.0;
+  margin-bottom: 1.2rem; max-width: 680px;
+}
+.hero-title em { font-style: italic; color: var(--ochre); display: block; }
+.hero-sub {
+  font-size: 1rem; color: rgba(255,255,255,.7); font-weight: 300;
+  line-height: 1.7; max-width: 480px; margin-bottom: 2rem;
+}
+.hero-stats {
+  display: flex; gap: 2.5rem; flex-wrap: wrap;
+}
+.hero-stat { }
+.hero-stat-num {
+  font-family: var(--display); font-size: 2.2rem; font-weight: 600;
+  color: var(--white); line-height: 1; margin-bottom: .15rem;
+}
+.hero-stat-num span { color: var(--ochre); }
+.hero-stat-label {
+  font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(255,255,255,.5); font-weight: 400;
+}
+.hero-scroll-hint {
+  position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+  z-index: 2; display: flex; flex-direction: column; align-items: center;
+  gap: .4rem; color: rgba(255,255,255,.4); font-size: .65rem;
+  letter-spacing: .15em; text-transform: uppercase;
+  animation: bounce 2.5s ease-in-out infinite;
+}
+.scroll-arrow { font-size: 1rem; color: var(--ochre); }
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ── INTRO NUMBERS BAR ── */
+.numbers-bar {
+  background: var(--dusk);
+  padding: 0 5%;
+}
+.numbers-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-left: 1px solid rgba(255,255,255,.06);
+}
+.num-cell {
+  padding: 2rem 1.5rem;
+  border-right: 1px solid rgba(255,255,255,.06);
+  border-top: 1px solid rgba(255,255,255,.06);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.num-figure {
+  font-family: var(--display); font-size: 2.4rem; font-weight: 300;
+  color: var(--white); line-height: 1; margin-bottom: .3rem;
+}
+.num-figure em { font-style: italic; color: var(--ochre); }
+.num-desc {
+  font-size: .75rem; color: var(--stone); font-weight: 300; line-height: 1.5;
+}
+
+/* ── PAGE LAYOUT ── */
+.page-wrap {
+  max-width: var(--max); margin: 0 auto;
+  padding: 5rem 5%;
+}
+.page-wrap > * + * { margin-top: 5rem; }
+
+/* ── TWO-COL TEXT+IMAGE ── */
+.split-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.split-section.reverse { direction: rtl; }
+.split-section.reverse > * { direction: ltr; }
+.split-img {
+  width: 100%; aspect-ratio: 4/3;
+  object-fit: cover; border-radius: var(--r);
+  display: block;
+}
+.split-img-wrap { position: relative; }
+.split-img-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(28,20,16,.8), transparent);
+  padding: 1.5rem 1rem .8rem;
+  font-size: .72rem; color: rgba(255,255,255,.75); font-weight: 300;
+  border-radius: 0 0 var(--r) var(--r);
+}
+
+/* ── SECTION HEADERS ── */
+.section-eyebrow {
+  font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--savanna); margin-bottom: .6rem; font-weight: 500;
+}
+.section-title {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 300; color: var(--dusk); line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.section-title em { font-style: italic; color: var(--savanna); }
+.section-lead {
+  font-size: .95rem; color: #5A4A3A; font-weight: 300;
+  line-height: 1.85;
+}
+.section-lead + .section-lead { margin-top: .9rem; }
+
+/* ── ZONE CARDS ── */
+.zones-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  margin-top: 2rem;
+}
+.zone-card {
+  background: var(--white);
+  padding: 1.8rem 1.5rem;
+  transition: background .2s;
+}
+.zone-card:hover { background: var(--pale); }
+.zone-icon { font-size: 1.6rem; margin-bottom: .7rem; }
+.zone-name {
+  font-family: var(--display); font-size: 1.1rem; font-weight: 600;
+  color: var(--dusk); margin-bottom: .3rem;
+}
+.zone-sub {
+  font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--savanna); font-weight: 500; margin-bottom: .7rem;
+}
+.zone-desc {
+  font-size: .83rem; color: #5A4A3A; font-weight: 300; line-height: 1.65;
+}
+.zone-tags {
+  display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .9rem;
+}
+.zone-tag {
+  font-size: .65rem; padding: .2rem .55rem; border-radius: 20px;
+  background: var(--pale); color: var(--stone); border: 1px solid var(--border);
+  font-weight: 400;
+}
+
+/* ── MIGRATION TIMELINE — SIGNATURE ELEMENT ── */
+.migration-section {
+  background: var(--dusk);
+  border-radius: var(--r);
+  overflow: hidden;
+  margin-top: 5rem;
+}
+.migration-header {
+  padding: 3rem 3rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.migration-header .section-eyebrow { color: var(--ochre); }
+.migration-header .section-title { color: var(--white); }
+.migration-header .section-title em { color: var(--ochre); }
+.migration-header .section-lead { color: rgba(255,255,255,.6); max-width: 620px; }
+
+.migration-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+.mig-month {
+  border-right: 1px solid rgba(255,255,255,.06);
+  padding: 1.5rem .8rem 1.8rem;
+  cursor: default;
+  transition: background .2s;
+  position: relative;
+}
+.mig-month:last-child { border-right: none; }
+.mig-month:hover { background: rgba(255,255,255,.04); }
+.mig-month-label {
+  font-size: .65rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--stone); font-weight: 500; margin-bottom: .8rem;
+  display: block;
+}
+.mig-zone-pill {
+  display: block;
+  width: 100%; padding: .4rem .3rem;
+  border-radius: 3px;
+  font-size: .6rem; font-weight: 600;
+  text-align: center; line-height: 1.3;
+  margin-bottom: .4rem;
+}
+.zone-south    { background: rgba(61,97,66,.3);  color: #8FC49A; }
+.zone-central  { background: rgba(200,128,58,.25); color: var(--ochre); }
+.zone-west     { background: rgba(42,74,94,.4);   color: #7BB8D4; }
+.zone-north    { background: rgba(107,66,38,.35); color: #D4916A; }
+.zone-calving  { background: rgba(232,164,74,.2); color: var(--ochre); border: 1px solid rgba(232,164,74,.4); }
+.mig-event {
+  font-size: .58rem; color: rgba(255,255,255,.35);
+  display: block; margin-top: .5rem; line-height: 1.4;
+  font-style: italic;
+}
+
+.migration-legend {
+  display: flex; flex-wrap: wrap; gap: .8rem;
+  padding: 1.5rem 3rem 2rem;
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+.mig-legend-item {
+  display: flex; align-items: center; gap: .5rem;
+  font-size: .72rem; color: rgba(255,255,255,.5);
+}
+.mig-legend-dot {
+  width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0;
+}
+
+/* ── BIG CATS SECTION ── */
+.cats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; margin-top: 2rem;
+}
+.cat-card {
+  border-radius: var(--r); overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform .25s, box-shadow .25s;
+}
+.cat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(28,20,16,.12); }
+.cat-img-wrap {
+  height: 200px; overflow: hidden; position: relative;
+  background: var(--pale);
+  display: flex; align-items: center; justify-content: center;
+}
+.cat-emoji { font-size: 5rem; }
+.cat-img-wrap::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(28,20,16,.6) 100%);
+}
+.cat-body { padding: 1.3rem; }
+.cat-name {
+  font-family: var(--display); font-size: 1.2rem; font-weight: 600;
+  color: var(--dusk); margin-bottom: .2rem;
+}
+.cat-latin {
+  font-size: .7rem; font-style: italic; color: var(--stone);
+  margin-bottom: .7rem;
+}
+.cat-desc { font-size: .83rem; color: #5A4A3A; font-weight: 300; line-height: 1.65; }
+.cat-where {
+  display: flex; align-items: center; gap: .4rem;
+  margin-top: .8rem; padding-top: .8rem;
+  border-top: 1px solid var(--border);
+  font-size: .72rem; color: var(--savanna); font-weight: 500;
+}
+
+/* ── EXPERIENCES ── */
+.exp-list { margin-top: 2rem; }
+.exp-item {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 1.5rem;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+.exp-item:first-child { border-top: 1px solid var(--border); }
+.exp-icon-wrap {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: rgba(200,128,58,.1);
+  border: 1px solid rgba(200,128,58,.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; flex-shrink: 0;
+}
+.exp-title {
+  font-family: var(--display); font-size: 1.15rem; font-weight: 600;
+  color: var(--dusk); margin-bottom: .3rem;
+}
+.exp-meta {
+  font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--savanna); font-weight: 500; margin-bottom: .5rem;
+}
+.exp-desc { font-size: .88rem; color: #5A4A3A; font-weight: 300; line-height: 1.7; }
+
+/* ── WILDLIFE MOSAIC ── */
+.wildlife-mosaic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  gap: .8rem;
+  margin-top: 2rem;
+}
+.wl-card {
+  background: var(--pale);
+  border-radius: var(--r);
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: box-shadow .2s, transform .2s;
+}
+.wl-card:hover { box-shadow: 0 4px 16px rgba(28,20,16,.08); transform: translateY(-2px); }
+.wl-card.featured {
+  grid-column: span 2;
+  display: flex; align-items: center; gap: 1.2rem;
+  text-align: left; padding: 1.3rem 1.5rem;
+  background: var(--dusk);
+}
+.wl-card.featured .wl-emoji { font-size: 3rem; flex-shrink: 0; }
+.wl-card.featured .wl-name { color: var(--white); font-size: 1rem; }
+.wl-card.featured .wl-sub { color: var(--stone); font-size: .78rem; margin-top: .3rem; }
+.wl-card.featured .wl-desc { color: rgba(255,255,255,.6); font-size: .82rem; font-weight: 300; line-height: 1.6; margin-top: .5rem; }
+.wl-emoji { font-size: 1.8rem; margin-bottom: .4rem; }
+.wl-name { font-size: .85rem; font-weight: 500; color: var(--dusk); }
+.wl-sub { font-size: .7rem; color: var(--stone); font-weight: 300; }
+
+/* ── PRACTICAL INFO ── */
+.practical-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.prac-card {
+  background: var(--pale);
+  border-radius: var(--r);
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+}
+.prac-icon { font-size: 1.5rem; margin-bottom: .7rem; }
+.prac-title {
+  font-family: var(--display); font-size: 1rem; font-weight: 600;
+  color: var(--dusk); margin-bottom: .6rem;
+}
+.prac-body { font-size: .84rem; color: #5A4A3A; font-weight: 300; line-height: 1.7; }
+.prac-body strong { font-weight: 500; color: var(--dusk); }
+
+/* ── BEST TIME ── */
+.months-row {
+  display: grid; grid-template-columns: repeat(12, 1fr);
+  gap: .3rem; margin-top: 1.4rem;
+}
+.month-cell {
+  text-align: center; padding: .7rem .2rem; border-radius: var(--r);
+  font-size: .65rem; font-weight: 500;
+}
+.month-label { display: block; letter-spacing: .06em; text-transform: uppercase; margin-bottom: .3rem; }
+.month-dot { width: 8px; height: 8px; border-radius: 50%; margin: 0 auto; }
+.month-peak { background: rgba(200,128,58,.15); color: var(--savanna); }
+.month-peak .month-dot { background: var(--savanna); }
+.month-good { background: rgba(61,97,66,.1); color: var(--grass); }
+.month-good .month-dot { background: var(--grass); }
+.month-low { background: var(--pale); color: var(--stone); }
+.month-low .month-dot { background: var(--stone); }
+.month-legend { display: flex; gap: 1.5rem; margin-top: .8rem; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: .4rem; font-size: .75rem; color: var(--stone); }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* ── FAQ ── */
+.faq-list { margin-top: 1.4rem; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-question {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 0;
+  font-family: var(--body); font-size: .9rem; font-weight: 500;
+  color: var(--dusk); text-align: left; gap: 1rem;
+}
+.faq-question:hover { color: var(--savanna); }
+.faq-chevron { flex-shrink: 0; font-size: .7rem; color: var(--savanna); transition: transform .3s; }
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height .4s ease;
+  font-size: .87rem; color: #5A4A3A; font-weight: 300; line-height: 1.75;
+}
+.faq-answer-inner { padding-bottom: 1rem; }
+.faq-item.open .faq-answer { max-height: 500px; }
+
+/* ── PACKAGES CTA ── */
+.packages-cta {
+  background: var(--pale);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 3rem;
+}
+.packages-cta-inner {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap;
+}
+.pkgs-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: .8rem; margin-top: 2rem;
+}
+.pkg-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 1.3rem;
+  text-decoration: none; color: inherit;
+  display: block;
+  transition: box-shadow .2s, transform .2s;
+}
+.pkg-card:hover { box-shadow: 0 6px 24px rgba(28,20,16,.08); transform: translateY(-3px); }
+.pkg-duration {
+  font-size: .65rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--savanna); font-weight: 600; margin-bottom: .4rem;
+}
+.pkg-name {
+  font-family: var(--display); font-size: 1rem; font-weight: 600;
+  color: var(--dusk); margin-bottom: .4rem;
+}
+.pkg-desc { font-size: .8rem; color: var(--stone); font-weight: 300; line-height: 1.5; }
+.pkg-link {
+  display: inline-flex; align-items: center; gap: .3rem;
+  margin-top: .8rem; font-size: .75rem; color: var(--savanna); font-weight: 500;
+}
+
+/* ── BIG CTA ── */
+.cta-banner {
+  background: var(--dusk); border-radius: var(--r);
+  padding: 3.5rem 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+}
+.cta-text .eyebrow {
+  font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ochre); margin-bottom: .5rem;
+}
+.cta-text h2 {
+  font-family: var(--display); font-size: 2.2rem; font-weight: 300;
+  color: var(--white); margin-bottom: .5rem; line-height: 1.15;
+}
+.cta-text h2 em { font-style: italic; color: var(--ochre); }
+.cta-text p { font-size: .88rem; color: rgba(255,255,255,.6); font-weight: 300; max-width: 400px; }
+.cta-actions { display: flex; gap: .8rem; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--savanna); color: var(--white);
+  text-decoration: none; padding: .95rem 2rem;
+  border-radius: var(--r); font-size: .88rem; font-weight: 500;
+  transition: background .2s; white-space: nowrap;
+}
+.btn-primary:hover { background: var(--ochre); color: var(--dusk); }
+.btn-ghost {
+  border: 1px solid rgba(255,255,255,.25); color: var(--white);
+  text-decoration: none; padding: .95rem 2rem;
+  border-radius: var(--r); font-size: .88rem; font-weight: 400;
+  transition: border-color .2s; white-space: nowrap;
+}
+.btn-ghost:hover { border-color: var(--ochre); color: var(--ochre); }
+
+/* ── RELATED ── */
+.related-section { background: var(--mist); padding: 5rem 5%; }
+.related-inner { max-width: var(--max); margin: 0 auto; }
+.related-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem; margin-top: 2rem;
+}
+.related-card {
+  border-radius: var(--r); overflow: hidden; background: var(--white);
+  border: 1px solid var(--border);
+  text-decoration: none; color: inherit;
+  transition: box-shadow .2s, transform .2s; display: block;
+}
+.related-card:hover { box-shadow: 0 8px 32px rgba(28,20,16,.1); transform: translateY(-3px); }
+.related-img { width: 100%; height: 170px; object-fit: cover; display: block; }
+.related-body { padding: 1.1rem; }
+.related-meta { font-size: .7rem; color: var(--stone); margin-bottom: .3rem; }
+.related-name { font-family: var(--display); font-size: 1.05rem; font-weight: 600; color: var(--dusk); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dusk); color: rgba(255,255,255,.5);
+  padding: 2rem 5%; text-align: center; font-size: .8rem; font-weight: 300;
+}
+footer a { color: var(--ochre); text-decoration: none; }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1000px) {
+  .numbers-inner { grid-template-columns: repeat(2, 1fr); }
+  .zones-grid { grid-template-columns: repeat(2, 1fr); }
+  .cats-grid { grid-template-columns: repeat(2, 1fr); }
+  .migration-grid { grid-template-columns: repeat(6, 1fr); }
+  .split-section { grid-template-columns: 1fr; gap: 2rem; }
+  .split-section.reverse { direction: ltr; }
+  .pkgs-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .dest-hero { height: 80vh; }
+  .hero-title { font-size: 2.6rem; }
+  .hero-stats { gap: 1.5rem; }
+  .numbers-inner { grid-template-columns: repeat(2, 1fr); }
+  .zones-grid { grid-template-columns: 1fr; }
+  .cats-grid { grid-template-columns: 1fr; }
+  .migration-grid { grid-template-columns: repeat(4, 1fr); }
+  .wildlife-mosaic { grid-template-columns: repeat(2, 1fr); }
+  .wl-card.featured { grid-column: span 2; }
+  .practical-grid { grid-template-columns: 1fr; }
+  .pkgs-grid { grid-template-columns: 1fr; }
+  .related-grid { grid-template-columns: 1fr; }
+  .months-row { grid-template-columns: repeat(6, 1fr); }
+  .cta-banner { padding: 2rem; }
+  .migration-header { padding: 2rem 1.5rem 1rem; }
+  .migration-legend { padding: 1rem 1.5rem 1.5rem; }
+  .page-wrap { padding: 3rem 5%; }
+  nav .nav-links { display: none; }
+}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="../index.html">Mwala <span>Tours</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#packages">Packages</a></li>
+    <li><a href="../index.html#destinations">Destinations</a></li>
+    <li><a class="nav-book" href="../index.html#contact">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="dest-hero" style="background-image:url('https://mwala-tours-and-safaris.vercel.app/omer-salom-gi6T2ktnpnE-unsplash.jpg');">
+  <div class="hero-inner">
+    <p class="hero-breadcrumb">
+      <a href="../index.html">Home</a> &nbsp;›&nbsp;
+      <a href="../index.html#destinations">Destinations</a> &nbsp;›&nbsp;
+      Serengeti
+    </p>
+    <p class="hero-eyebrow">Tanzania's Greatest Wild Place</p>
+    <h1 class="hero-title">
+      The Serengeti
+      <em>Endless &amp; Ancient</em>
+    </h1>
+    <p class="hero-sub">
+      Africa's most celebrated wildlife arena. Fifteen thousand square kilometres of open plain, riverine forest, and granite kopjes — where the Great Migration has moved without interruption for two million years.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">14<span>,763</span></div>
+        <div class="hero-stat-label">km² of Wilderness</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">1<span>.5M</span></div>
+        <div class="hero-stat-label">Wildebeest in Migration</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">500<span>+</span></div>
+        <div class="hero-stat-label">Bird Species Recorded</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">
+    <span>Explore</span>
+    <span class="scroll-arrow">↓</span>
+  </div>
+</div>
+
+<!-- NUMBERS BAR -->
+<div class="numbers-bar">
+  <div class="numbers-inner">
+    <div class="num-cell">
+      <div class="num-figure">UNESCO <em>World Heritage</em></div>
+      <div class="num-desc">Inscribed 1981 — one of the first African parks recognised for its outstanding universal value</div>
+    </div>
+    <div class="num-cell">
+      <div class="num-figure">2 <em>Million</em></div>
+      <div class="num-desc">Years the Great Migration has been making the same circuit — the oldest land migration on Earth</div>
+    </div>
+    <div class="num-cell">
+      <div class="num-figure">3,000 <em>Lions</em></div>
+      <div class="num-desc">The Serengeti lion population — Africa's largest, and the most-studied wild lion population in the world</div>
+    </div>
+    <div class="num-cell">
+      <div class="num-figure">All 5 <em>Big Five</em></div>
+      <div class="num-desc">Lion, leopard, elephant, buffalo, and rhino — all present, all accessible with the right guide and timing</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="page-wrap">
+
+  <!-- INTRO -->
+  <section class="reveal">
+    <div class="split-section">
+      <div>
+        <p class="section-eyebrow">About the Serengeti</p>
+        <h2 class="section-title">The Place That <em>Defines</em> Safari</h2>
+        <p class="section-lead">
+          The word Serengeti comes from the Maasai <em>Siringet</em> — "the place where the land runs on forever." It is an accurate description. Standing on the Serengeti plains at dawn, with the horizon unbroken in every direction and the sound of a million wildebeest somewhere beyond what you can see, the scale is not comprehensible in any framework a city-dweller possesses.
+        </p>
+        <p class="section-lead" style="margin-top:.9rem">
+          The Serengeti is not simply a park. It is an ecosystem — one that extends north across the Kenyan border into the Masai Mara, east into the Ngorongoro Conservation Area, and west to the Grumeti River reserves. The 14,763 square kilometres of Serengeti National Park is the protected core of a much larger wild system that has remained largely intact since the Pleistocene. The animals here are not managed. They go where food and water take them. The park's job — and ours — is to follow.
+        </p>
+        <p class="section-lead" style="margin-top:.9rem">
+          What separates the Serengeti from every other park in Africa is the combination of scale, variety, and the Migration. The Migration is not a moment. It is a continuous, year-round movement of approximately 1.5 million wildebeest, 500,000 zebra, and 300,000 gazelle — a living river of animals that circuits the ecosystem in response to rainfall, following the grass. Every month of the year, the Migration is somewhere in the Serengeti. Every month rewards a different kind of game viewing.
+        </p>
+      </div>
+      <div class="split-img-wrap">
+        <img class="split-img" src="https://mwala-tours-and-safaris.vercel.app/omer-salom-gi6T2ktnpnE-unsplash.jpg" alt="Serengeti plains at dawn" />
+        <p class="split-img-caption">The Serengeti's central Seronera valley at first light — the most wildlife-dense corridor in Africa</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONES -->
+  <section class="reveal">
+    <p class="section-eyebrow">Serengeti Zones</p>
+    <h2 class="section-title">One Park, <em>Five Worlds</em></h2>
+    <p class="section-lead">The Serengeti is not uniform. Each zone has its own ecology, its own wildlife concentrations, and its own best season. Knowing which zone you are visiting — and why — makes the difference between a good game drive and an extraordinary one.</p>
+    <div class="zones-grid">
+      <div class="zone-card">
+        <div class="zone-icon">🌾</div>
+        <div class="zone-name">Southern Plains</div>
+        <div class="zone-sub">Ndutu &amp; Naabi Hill</div>
+        <p class="zone-desc">The short-grass plains that stretch south toward Ngorongoro — the Serengeti's most open landscape. In January and February, the wildebeest calving happens here: 8,000 calves born every single day. Cheetah hunting, lion ambushes, and hyena clan activity makes this the most action-dense zone of any season.</p>
+        <div class="zone-tags">
+          <span class="zone-tag">Calving Jan–Feb</span>
+          <span class="zone-tag">Cheetah</span>
+          <span class="zone-tag">Open plains</span>
+        </div>
+      </div>
+      <div class="zone-card">
+        <div class="zone-icon">🌳</div>
+        <div class="zone-name">Seronera Valley</div>
+        <div class="zone-sub">Central Serengeti</div>
+        <p class="zone-desc">The park's year-round wildlife core — where the Seronera and Orangi rivers converge in a belt of riverine forest and open savanna. This is Tanzania's most reliable leopard habitat; the trees above the river hold resident individuals that can be tracked by guide over multiple days. Lion prides are present daily.</p>
+        <div class="zone-tags">
+          <span class="zone-tag">Year-round</span>
+          <span class="zone-tag">Leopard</span>
+          <span class="zone-tag">Lions</span>
+          <span class="zone-tag">Elephant</span>
+        </div>
+      </div>
+      <div class="zone-card">
+        <div class="zone-icon">🦛</div>
+        <div class="zone-name">Moru Kopjes</div>
+        <div class="zone-sub">Southern Central</div>
+        <p class="zone-desc">Ancient granite outcrops rising from the central plains — the Serengeti's most atmospheric landscape. Lion prides use the kopjes as territorial headquarters; black rhino sightings are possible here at dusk. The kopjes also hold rock hyrax, Verreaux's eagle owls, and augur buzzards that nest in the rock crevices.</p>
+        <div class="zone-tags">
+          <span class="zone-tag">Black Rhino</span>
+          <span class="zone-tag">Rock outcrops</span>
+          <span class="zone-tag">Lions</span>
+        </div>
+      </div>
+      <div class="zone-card">
+        <div class="zone-icon">🌊</div>
+        <div class="zone-name">Western Corridor</div>
+        <div class="zone-sub">Grumeti River</div>
+        <p class="zone-desc">The Grumeti River bisects the park's western arm — where the Migration's first major river crossings occur in May and June. Enormous Nile crocodiles, some exceeding five metres, have waited in these pools for a million years. The western corridor is also home to the rare patas monkey and large troops of colobus.</p>
+        <div class="zone-tags">
+          <span class="zone-tag">River crossings May–Jul</span>
+          <span class="zone-tag">Crocodile</span>
+          <span class="zone-tag">Hippo</span>
+        </div>
+      </div>
+      <div class="zone-card">
+        <div class="zone-icon">🏔</div>
+        <div class="zone-name">Northern Serengeti</div>
+        <div class="zone-sub">Lobo &amp; Mara River</div>
+        <p class="zone-desc">The Mara River in the north is where the Migration's most dramatic crossings happen — July through October. The northern Serengeti is wilder, less visited, and bordered by the Masai Mara across the Kenyan frontier. Elephant are larger and more numerous here; the landscape more varied, with rocky hills and dense bush.</p>
+        <div class="zone-tags">
+          <span class="zone-tag">Mara Crossings Jul–Oct</span>
+          <span class="zone-tag">Elephant</span>
+          <span class="zone-tag">Remote</span>
+        </div>
+      </div>
+      <div class="zone-card">
+        <div class="zone-icon">🎈</div>
+        <div class="zone-name">Above the Plains</div>
+        <div class="zone-sub">Balloon Safari Zone</div>
+        <p class="zone-desc">The dawn balloon safari departs from the central Seronera area, drifting for one hour above whichever part of the ecosystem the wind takes you. The perspective from 200 metres — herds below, the escarpment behind, the horizon in every direction — is simply unlike anything available from a vehicle. Champagne breakfast on landing.</p>
+        <div class="zone-tags">
+          <span class="zone-tag">Dawn departures</span>
+          <span class="zone-tag">~1 hour flight</span>
+          <span class="zone-tag">Add-on</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MIGRATION TIMELINE — SIGNATURE ELEMENT -->
+  <div class="migration-section reveal">
+    <div class="migration-header">
+      <p class="section-eyebrow">The Great Migration</p>
+      <h2 class="section-title">Where the Herds Are — <em>Month by Month</em></h2>
+      <p class="section-lead">The Migration never stops. This is where 1.5 million wildebeest are in each month of the year — and what you'll witness when you visit.</p>
+    </div>
+    <div class="migration-grid">
+      <div class="mig-month">
+        <span class="mig-month-label">Jan</span>
+        <span class="mig-zone-pill zone-south">Southern Plains</span>
+        <span class="mig-zone-pill zone-calving">Calving Begins</span>
+        <span class="mig-event">8,000 calves born daily</span>
+      </div>
+      <div class="mig-month">
+        <span class="mig-month-label">Feb</span>
+        <span class="mig-zone-pill zone-south">Southern Plains</span>
+        <span class="mig-zone-pill zone-calving">Peak Calving</span>
+        <span class="mig-event">Cheetah &amp; lion hunting frenzy</span>
+      </div>
+      <div class="mig-month">
+        <span class="mig-month-label">Mar</span>
+        <span class="mig-zone-pill zone-south">Southern Plains</span>
+        <span class="mig-zone-pill zone-central">Moving North</span>
+        <span class="mig-event">Herds begin shifting toward central</span>
+      </div>
+      <div class="mig-month">
+        <span class="mig-month-label">Apr</span>
+        <span class="mig-zone-pill zone-central">Central Serengeti</span>
+        <span class="mig-event">Long rains — grasslands lush, herds dense</span>
+      </div>
+      <div class="mig-month">
+        <span class="mig-month-label">May</span>
+        <span class="mig-zone-pill zone-west">Western Corridor</span>
+        <span class="mig-event">First Grumeti River crossings</span>
+      </div>
+      <div class="mig-month">
+        <span class="mig-month-label">Jun</span>
+        <span class="mig-zone-pill zone-west">Western Corridor</span>
+        <span class="mig-event">Major Grumeti crossings; crocodile action</span>
+      </div>
+      <div class="mig-month">
+        <span class="mig-month-label">Jul</span>
+        <span class="mig-zone-pill zone-north">Northern Serengeti</span>
+        <span class="mig-event">Mara River crossings begin</span>
+      </div>
+      <div class="mig-month">
+        <span class="mig-month-label">Aug</span>
+        <span class="mig-zone-pill zone-north">Northern Serengeti</span>
+        <span class="mig-event">Peak river crossings — most dramatic month</span>
+      </div>
+      <div class="mig-month">
+        <span class="mig-month-label">Sep</span>
+        <span class="mig-zone-pill zone-north">Northern Serengeti</span>
+        <span class="mig-event">Crossings continue; some herds return south</span>
+      </div>
+      <div class="mig-month">
+        <span class="mig-month-label">Oct</span>
+        <span class="mig-zone-pill zone-north">Northern Serengeti</span>
+        <span class="mig-zone-pill zone-central">Returning South</span>
+        <span class="mig-event">Herds begin southward migration</span>
+      </div>
+      <div class="mig-month">
+        <span class="mig-month-label">Nov</span>
+        <span class="mig-zone-pill zone-central">Central Serengeti</span>
+        <span class="mig-event">Short rains; herds disperse across central plains</span>
+      </div>
+      <div class="mig-month">
+        <span class="mig-month-label">Dec</span>
+        <span class="mig-zone-pill zone-south">Southern Plains</span>
+        <span class="mig-event">Herds return south — the cycle restarts</span>
+      </div>
+    </div>
+    <div class="migration-legend">
+      <div class="mig-legend-item"><div class="mig-legend-dot" style="background:#8FC49A"></div> Southern Plains (Ndutu)</div>
+      <div class="mig-legend-item"><div class="mig-legend-dot" style="background:var(--ochre)"></div> Central Serengeti (Seronera)</div>
+      <div class="mig-legend-item"><div class="mig-legend-dot" style="background:#7BB8D4"></div> Western Corridor (Grumeti)</div>
+      <div class="mig-legend-item"><div class="mig-legend-dot" style="background:#D4916A"></div> Northern Serengeti (Mara River)</div>
+      <div class="mig-legend-item"><div class="mig-legend-dot" style="background:rgba(232,164,74,.6)"></div> Calving Season</div>
+    </div>
+  </div>
+
+  <!-- BIG CATS -->
+  <section class="reveal">
+    <p class="section-eyebrow">Predator Capital</p>
+    <h2 class="section-title">The Serengeti's <em>Big Cats</em></h2>
+    <p class="section-lead">The Serengeti is the world's best place to watch Africa's three big cats. All three are present year-round; all three are habituated to vehicles; all three can be located by experienced guides who track individuals by territory and behaviour.</p>
+    <div class="cats-grid">
+      <div class="cat-card">
+        <div class="cat-img-wrap">
+          <div class="cat-emoji">🦁</div>
+        </div>
+        <div class="cat-body">
+          <div class="cat-name">Lion</div>
+          <div class="cat-latin">Panthera leo</div>
+          <p class="cat-desc">The Serengeti holds Africa's largest lion population — approximately 3,000 individuals in over 40 prides. They are extraordinarily relaxed around vehicles, having been observed by researchers since the 1960s. Morning drives in the Seronera valley routinely encounter multiple prides; during the calving season in the south, lion hunting activity is constant and extraordinary to watch.</p>
+          <div class="cat-where">📍 Seronera Valley · Southern Plains · Moru Kopjes</div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-img-wrap">
+          <div class="cat-emoji">🐆</div>
+        </div>
+        <div class="cat-body">
+          <div class="cat-name">Leopard</div>
+          <div class="cat-latin">Panthera pardus</div>
+          <p class="cat-desc">The Seronera River's riverine forest is East Africa's most reliable leopard habitat. Individual leopards maintain territories along the river and are known to our guides by their tracks, facial markings, and tree preferences. Finding a leopard draped over a yellow-barked fever tree above the Seronera at dawn — its kill hanging in the branches beside it — is among the finest wildlife photographs possible in Africa.</p>
+          <div class="cat-where">📍 Seronera River · Orangi River Forest</div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-img-wrap">
+          <div class="cat-emoji">🐆</div>
+        </div>
+        <div class="cat-body">
+          <div class="cat-name">Cheetah</div>
+          <div class="cat-latin">Acinonyx jubatus</div>
+          <p class="cat-desc">The southern Serengeti's open short-grass plains are perfect cheetah country — flat, open, and full of Thomson's gazelle. Cheetah rely on vision rather than cover, and the plains give them the long sightlines they need. The calving season (January–February) brings cheetah hunting activity to a peak unseen anywhere else on Earth. Watching a cheetah bring down a gazelle fawn at 110 km/h from thirty metres is a moment that stays forever.</p>
+          <div class="cat-where">📍 Southern Plains · Ndutu · Naabi Hill</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCES -->
+  <section class="reveal">
+    <div class="split-section reverse">
+      <div class="split-img-wrap">
+        <img class="split-img" src="https://mwala-tours-and-safaris.vercel.app/omer-salom-gi6T2ktnpnE-unsplash.jpg" alt="Serengeti game drive at sunset" />
+        <p class="split-img-caption">The Serengeti's kopjes at golden hour — lion territory for ten thousand years</p>
+      </div>
+      <div>
+        <p class="section-eyebrow">Safari Experiences</p>
+        <h2 class="section-title">Ways to <em>Experience</em> the Serengeti</h2>
+        <p class="section-lead">The game drive is the foundation — but the Serengeti offers several layers of experience for those who want to go deeper than the vehicle window.</p>
+      </div>
+    </div>
+    <div class="exp-list" style="margin-top:2rem">
+      <div class="exp-item">
+        <div class="exp-icon-wrap">🚙</div>
+        <div>
+          <div class="exp-title">Private Full-Day Game Drive</div>
+          <div class="exp-meta">Sunrise to Sunset · All Zones</div>
+          <p class="exp-desc">The essential Serengeti experience. A private vehicle and guide, a picnic lunch served in the field, and a full 10–12 hours in the park — enough time to follow a cheetah hunt from start to finish, stay with a pride of lions through a kill, or simply drift slowly across the plains as the light changes through the day. We never do half-day Serengeti game drives. The park rewards time.</p>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-icon-wrap">🎈</div>
+        <div>
+          <div class="exp-title">Hot Air Balloon Safari</div>
+          <div class="exp-meta">Dawn Departure · ~1 Hour · Champagne Breakfast</div>
+          <p class="exp-desc">The most spectacular add-on in African safari. The balloon launches at dawn while the plains are still silver and cold, drifting for approximately 60 minutes over whatever the wind offers — sometimes the calving herds, sometimes a pride of lions on a kill, sometimes simply the immense landscape of the plains glowing in the morning light. A full champagne bush breakfast is laid out on landing. Operated by Serengeti Balloon Safaris; reservations essential.</p>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-icon-wrap">🌅</div>
+        <div>
+          <div class="exp-title">Dawn &amp; Dusk Drives</div>
+          <div class="exp-meta">Golden Hours · Best Light · Most Active Wildlife</div>
+          <p class="exp-desc">The two-hour window either side of sunrise and sunset is when the Serengeti is most alive and most beautiful. Nocturnal predators are finishing their hunting; diurnal hunters are beginning. The light is extraordinary — low, warm, and directional. Our itineraries are structured around these windows, not convenience. No Mwala safari leaves after 07:30 or returns before 18:30.</p>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-icon-wrap">🚶</div>
+        <div>
+          <div class="exp-title">Walking Safari (Bush Walk)</div>
+          <div class="exp-meta">Available at Select Camps · Armed Guide Required</div>
+          <p class="exp-desc">Some of our Serengeti partner camps offer guided walking safaris in the surrounding conservancies — areas that adjoin the national park and hold the same wildlife. Walking changes everything: you read tracks instead of looking at animals from above, you smell the bush instead of sitting in air conditioning, and the size of an elephant at twenty metres on foot is a completely different experience to the same elephant viewed from a Land Cruiser. Available on request at luxury-tier camps.</p>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-icon-wrap">📸</div>
+        <div>
+          <div class="exp-title">Photography Safari</div>
+          <div class="exp-meta">Extended time at sightings · Bean bags provided · Specialist guide</div>
+          <p class="exp-desc">For serious photographers, the Serengeti is the world's finest outdoor studio. Our photography-focused departures use vehicles with window mounts and bean bags for telephoto lenses, allocate unlimited time at sightings (no group pressure to move on), and are guided by specialists who understand the light, the behaviour, and the positioning required for the images you're after. Mention photography when enquiring and we will tailor the itinerary accordingly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WILDLIFE MOSAIC -->
+  <section class="reveal">
+    <p class="section-eyebrow">Wildlife</p>
+    <h2 class="section-title">Animals of the <em>Serengeti</em></h2>
+    <div class="wildlife-mosaic">
+      <div class="wl-card featured">
+        <div class="wl-emoji">🦬</div>
+        <div>
+          <div class="wl-name">Wildebeest</div>
+          <div class="wl-sub">Connochaetes taurinus</div>
+          <p class="wl-desc">1.5 million of them — moving, always moving. The wildebeest is the engine of the Great Migration and the reason the Serengeti ecosystem functions as it does. Their hooves aerate the soil; their dung fertilises the grass; their deaths feed the crocodiles, lions, hyenas, and vultures. The Serengeti without the wildebeest is inconceivable.</p>
+        </div>
+      </div>
+      <div class="wl-card featured" style="background:rgba(61,97,66,.08); border-color:rgba(61,97,66,.15)">
+        <div class="wl-emoji">🦅</div>
+        <div>
+          <div class="wl-name" style="color:var(--dusk)">Raptors &amp; Vultures</div>
+          <div class="wl-sub" style="color:var(--stone)">Over 500 bird species recorded</div>
+          <p class="wl-desc" style="color:#5A4A3A">The Serengeti's skies are as spectacular as its plains. Six vulture species circle above every kill. Martial eagles carry hares through the air. Bateleur eagles drift on thermals for hours without a wingbeat. For birdwatchers, this is East Africa's premier destination.</p>
+        </div>
+      </div>
+      <div class="wl-card"><div class="wl-emoji">🦓</div><div class="wl-name">Plains Zebra</div><div class="wl-sub">500,000 in Migration</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦒</div><div class="wl-name">Masai Giraffe</div><div class="wl-sub">Acacia woodland</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦬</div><div class="wl-name">Cape Buffalo</div><div class="wl-sub">Herds of thousands</div></div>
+      <div class="wl-card"><div class="wl-emoji">🐘</div><div class="wl-name">African Elephant</div><div class="wl-sub">Northern zone &amp; riverine</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦝</div><div class="wl-name">Spotted Hyena</div><div class="wl-sub">Largest clan predator</div></div>
+      <div class="wl-card"><div class="wl-emoji">🐊</div><div class="wl-name">Nile Crocodile</div><div class="wl-sub">Mara &amp; Grumeti Rivers</div></div>
+      <div class="wl-card"><div class="wl-emoji">🐒</div><div class="wl-name">Olive Baboon</div><div class="wl-sub">Riverine forest troops</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦛</div><div class="wl-name">Hippopotamus</div><div class="wl-sub">River pools</div></div>
+    </div>
+  </section>
+
+  <!-- PRACTICAL INFO -->
+  <section class="reveal">
+    <p class="section-eyebrow">Planning Your Visit</p>
+    <h2 class="section-title">Practical <em>Information</em></h2>
+    <div class="practical-grid">
+      <div class="prac-card">
+        <div class="prac-icon">🚗</div>
+        <div class="prac-title">Getting There</div>
+        <p class="prac-body">The Serengeti is accessed by road from Arusha — a drive of approximately 5–6 hours through the Ngorongoro Conservation Area and Naabi Hill Gate. Alternatively, scheduled or charter flights operate to Seronera Airstrip (several daily), Lobo Airstrip (northern zone), and several private camp airstrips. Flying saves road time and offers an extraordinary aerial view of the plains on approach.</p>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">🏕</div>
+        <div class="prac-title">Accommodation</div>
+        <p class="prac-body">Options range from <strong>public campsites</strong> (basic, inexpensive, requiring self-catering equipment) to <strong>mid-range lodges</strong> like Serengeti Sopa Lodge and <strong>luxury tented camps</strong> like Serengeti Migration Camp and Four Seasons Safari Lodge. Location matters as much as tier: a camp in the northern Serengeti in August is worth more than a luxury lodge in the wrong zone.</p>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">💉</div>
+        <div class="prac-title">Health &amp; Safety</div>
+        <p class="prac-body">Malaria prophylaxis is strongly recommended for all visits — consult your doctor 4–6 weeks before travel. Yellow fever vaccination is not required for Tanzania but is recommended. The Serengeti's altitude (1,500 m) means cooler evenings — pack a fleece for dawn drives. The sun at altitude is intense: broad-spectrum sunscreen and a wide-brimmed hat are essentials, not options.</p>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">📋</div>
+        <div class="prac-title">Entry &amp; Fees</div>
+        <p class="prac-body">Tanzania requires a tourist visa (USD 50, apply online at <strong>eservices.immigration.go.tz</strong> before travel). Serengeti National Park entrance fees for non-residents are approximately <strong>USD 70 per person per day</strong> — these are included in all Mwala Tours packages. The Ngorongoro Conservation Area transit fee applies when driving through to reach the park.</p>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">👕</div>
+        <div class="prac-title">What to Pack</div>
+        <p class="prac-body">Neutral colours — khaki, olive, tan — are ideal. Avoid bright colours and white (dust) on game drives. Mornings in the Serengeti can be cold (8–12°C); afternoons reach 28–32°C. A lightweight fleece or jacket, a quality sunhat, polarising sunglasses for photography, and a dust bag for camera gear are the key items most first-timers don't bring and wish they had.</p>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">📶</div>
+        <div class="prac-title">Connectivity &amp; Currency</div>
+        <p class="prac-body">Mobile coverage exists in most lodge areas but is unreliable in remote zones. Most lodges have Wi-Fi, quality varying by remoteness. Tanzania's currency is the Tanzanian Shilling (TZS); US dollars are accepted almost everywhere. Credit cards work at major lodges but bring some cash for tips and market purchases. ATMs in Arusha before departure; none inside the park.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEST TIME -->
+  <section class="reveal">
+    <p class="section-eyebrow">When to Visit</p>
+    <h2 class="section-title">Best Time for the <em>Serengeti</em></h2>
+    <p class="section-lead">Every month has a reason to visit. Your best month depends on what you most want to see — use the Migration calendar above alongside this seasonal guide.</p>
+    <div class="months-row">
+      <div class="month-cell month-peak"><span class="month-label">Jan</span><div class="month-dot"></div></div>
+      <div class="month-cell month-peak"><span class="month-label">Feb</span><div class="month-dot"></div></div>
+      <div class="month-cell month-good"><span class="month-label">Mar</span><div class="month-dot"></div></div>
+      <div class="month-cell month-low"><span class="month-label">Apr</span><div class="month-dot"></div></div>
+      <div class="month-cell month-low"><span class="month-label">May</span><div class="month-dot"></div></div>
+      <div class="month-cell month-peak"><span class="month-label">Jun</span><div class="month-dot"></div></div>
+      <div class="month-cell month-peak"><span class="month-label">Jul</span><div class="month-dot"></div></div>
+      <div class="month-cell month-peak"><span class="month-label">Aug</span><div class="month-dot"></div></div>
+      <div class="month-cell month-peak"><span class="month-label">Sep</span><div class="month-dot"></div></div>
+      <div class="month-cell month-good"><span class="month-label">Oct</span><div class="month-dot"></div></div>
+      <div class="month-cell month-good"><span class="month-label">Nov</span><div class="month-dot"></div></div>
+      <div class="month-cell month-good"><span class="month-label">Dec</span><div class="month-dot"></div></div>
+    </div>
+    <div class="month-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--savanna)"></div> Peak — Dry Season or Calving</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--grass)"></div> Good — Lush, Fewer Visitors, Still Rewarding</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--stone)"></div> Low — Long Rains, Tracks Challenging</div>
+    </div>
+    <p class="section-lead" style="margin-top:1.2rem">
+      <strong>January–February</strong> for the calving season — the Serengeti's most intense and emotionally overwhelming spectacle. <strong>July–September</strong> for the Mara River crossings — the most dramatic wildlife event on Earth, when hundreds of thousands of wildebeest plunge into crocodile-filled water. <strong>June</strong> is excellent throughout — dry, cool, grass short, and the Grumeti crossings beginning. <strong>April–May</strong> brings the long rains and significantly reduced visitor numbers — a worthwhile trade for photographers who want empty roads and lush green landscapes. We operate year-round and advise each client on the best timing for their specific priorities.
+    </p>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="reveal">
+    <div class="packages-cta">
+      <div class="packages-cta-inner">
+        <div>
+          <p class="section-eyebrow">Serengeti Safari Packages</p>
+          <h2 class="section-title" style="margin-bottom:.5rem">Choose Your <em>Serengeti</em></h2>
+          <p class="section-lead">From a focused 3-day Serengeti stay to the full Northern Circuit — select the format that fits your time and priorities.</p>
+        </div>
+      </div>
+      <div class="pkgs-grid">
+        <a class="pkg-card" href="serengeti-adventure.html">
+          <div class="pkg-duration">5 Days · 4 Nights</div>
+          <div class="pkg-name">Serengeti Adventure</div>
+          <p class="pkg-desc">A focused deep-dive into the Serengeti — two zones, two nights in the park, and both golden-hour drives. The definitive single-park experience.</p>
+          <span class="pkg-link">View Package →</span>
+        </a>
+        <a class="pkg-card" href="northern-circuit.html">
+          <div class="pkg-duration">7 Days · 6 Nights</div>
+          <div class="pkg-name">Northern Circuit Grand Safari</div>
+          <p class="pkg-desc">Tarangire, Lake Natron, Serengeti, Manyara, and Ngorongoro. Tanzania complete — the Northern Circuit as it should be done.</p>
+          <span class="pkg-link">View Package →</span>
+        </a>
+        <a class="pkg-card" href="../index.html#contact">
+          <div class="pkg-duration">Custom · Your Dates</div>
+          <div class="pkg-name">Bespoke Serengeti Trip</div>
+          <p class="pkg-desc">Your priorities, your zone, your timing. Tell us when you want to visit and what you most want to see — we will build the itinerary around it.</p>
+          <span class="pkg-link">Enquire Now →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="reveal">
+    <p class="section-eyebrow">Questions Answered</p>
+    <h2 class="section-title">Serengeti <em>FAQ</em></h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question">How many days do I need in the Serengeti? <span class="faq-chevron">▼</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">A minimum of two full game-drive days — ideally three. One day is not enough; the park is too large and too varied to experience properly in a single drive. Two days allow you to cover two zones and catch both the morning and afternoon activity peaks. Three days allows genuine flexibility to follow specific animals, visit multiple zones, and add the balloon safari. We do not recommend the Serengeti as a single-night stop on a multi-park trip if you can avoid it.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is the Great Migration guaranteed to be visible when I visit? <span class="faq-chevron">▼</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">The Migration is always somewhere in the Serengeti ecosystem — but "somewhere" matters enormously. In January, the herds are on the southern plains; in August, they're in the north at the Mara River. Booking the right zone for your month is the difference between driving past a million wildebeest and driving through an area the herds passed through two weeks ago. Our guides track the current position before every departure and adjust routes accordingly. The river crossings (July–October at the Mara) are never guaranteed on any given day — they happen when the herds decide to cross, not on schedule — but with multiple days in the northern Serengeti during this period, sightings are highly likely.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is the Serengeti suitable for first-time safari visitors? <span class="faq-chevron">▼</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">The Serengeti is one of the best parks in Africa for first-time visitors precisely because wildlife density is high, the roads are manageable, and the experience of the open plains is something that no amount of preparation can approximate — it simply needs to be encountered. First-timers sometimes worry that they won't recognise what they're seeing or understand the behaviour. This is exactly what a good guide is for, and Mwala's guides are experts at calibrating the level of ecological and behavioural explanation to each group's appetite.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Should I fly into the Serengeti or drive? <span class="faq-chevron">▼</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">For most clients, driving is the better choice on at least one leg — the road through the Ngorongoro Highlands and across the plains toward Naabi Hill is itself a superb experience, and it means you begin seeing wildlife well before you reach the park boundary. Flying in and driving out (or vice versa) is an excellent compromise that saves time while preserving the road experience in one direction. For the northern Serengeti specifically, flying is strongly recommended — the road journey from Arusha to Lobo takes 7–8 hours, and the flight takes 50 minutes.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is the difference between the Serengeti and the Masai Mara? <span class="faq-chevron">▼</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">They are the same ecosystem divided by a political border. The Masai Mara is the northern continuation of the Serengeti into Kenya, and the wildebeest cross between them seasonally. The Serengeti is vastly larger (14,763 km² versus 1,500 km²), less crowded, and offers a greater variety of zones and habitats. The Masai Mara has looser regulations that permit off-road driving and night game drives. For the river crossings, both sides see the action in July–October. We recommend the Serengeti for overall safari quality and the Mara for clients specifically targeting the crossings who want the flexibility of off-road access.</div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="reveal">
+    <div class="cta-banner">
+      <div class="cta-text">
+        <p class="eyebrow">The Serengeti Awaits</p>
+        <h2>Plan Your <em>Serengeti Safari</em></h2>
+        <p>Tell us when you want to visit and what you most want to see. We will build the itinerary around the Migration calendar, your time, and your priorities — and respond within 24 hours.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="../index.html#contact" class="btn-primary">Start Planning</a>
+        <a href="northern-circuit.html" class="btn-ghost">View Northern Circuit →</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- RELATED -->
+<section class="related-section">
+  <div class="related-inner">
+    <p class="section-eyebrow">Explore More Destinations</p>
+    <h2 class="section-title">Also Worth <em>Visiting</em></h2>
+    <div class="related-grid">
+      <a class="related-card" href="ngorongoro.html">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/Images/ana-singh-1vOBJZ6228U-unsplash.jpg" alt="Ngorongoro Crater" />
+        <div class="related-body">
+          <p class="related-meta">Destination · Ngorongoro Conservation Area</p>
+          <p class="related-name">Ngorongoro Crater</p>
+        </div>
+      </a>
+      <a class="related-card" href="manyara.html">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/jorge-tung--5Betfvtgso-unsplash.jpg" alt="Lake Manyara" />
+        <div class="related-body">
+          <p class="related-meta">Destination · Lake Manyara National Park</p>
+          <p class="related-name">Lake Manyara</p>
+        </div>
+      </a>
+      <a class="related-card" href="../index.html#packages">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/Images/ahmed-galal-VQqMACyNfwA-unsplash.jpg" alt="All Safaris" />
+        <div class="related-body">
+          <p class="related-meta">All Packages</p>
+          <p class="related-name">View All Safaris →</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Mwala Tours &amp; Safaris. All rights reserved. &nbsp;|&nbsp; <a href="../index.html">Back to Home</a></p>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

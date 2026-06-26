@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lake Natron — East Africa's Flamingo Kingdom | Mwala Tours</title>
+  <meta name="description" content="Discover Lake Natron — a blood-red alkaline lake on the Rift Valley floor, home to 2.5 million flamingos, an active volcano, and ancient Maasai culture. Plan your visit with Mwala Tours." />
+  <link rel="icon" type="image/jpeg" href="../Mwalatourslogo.jpg" />
+  <link rel="shortcut icon" type="image/jpeg" href="../Mwalatourslogo.jpg" />
+  <link rel="apple-touch-icon" href="../Mwalatourslogo.jpg" />
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --savanna:  #C8803A;
+  --dusk:     #1C1410;
+  --ochre:    #E8A44A;
+  --earth:    #6B4226;
+  --mist:     #F5EFE6;
+  --stone:    #9A8A7A;
+  --white:    #FDFAF6;
+  --grass:    #3D6142;
+  --pale:     #FAF6F0;
+  --border:   rgba(0,0,0,.08);
+
+  /* Natron-specific palette */
+  --natron-deep:   #1A0A08;
+  --natron-red:    #8B2020;
+  --natron-crust:  #C44030;
+  --natron-pink:   #E87090;
+  --natron-orange: #D0602A;
+  --rift-rock:     #3A2E28;
+  --rift-scrub:    #4A5A35;
+  --volcano-dark:  #1E1A10;
+  --volcano-mid:   #3A3020;
+  --lava-glow:     #D04020;
+
+  --display: 'Cormorant Garamond', Georgia, serif;
+  --body:    'DM Sans', system-ui, sans-serif;
+  --max: 1100px;
+  --r: 4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--body);
+  background: var(--white);
+  color: var(--dusk);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%; height: 66px;
+  background: rgba(28,20,16,.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.nav-logo { font-family: var(--display); font-size: 1.3rem; font-weight: 600; color: var(--white); text-decoration: none; letter-spacing: .04em; }
+.nav-logo span { color: var(--ochre); }
+.nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
+.nav-links a { color: rgba(255,255,255,.75); text-decoration: none; font-size: .8rem; letter-spacing: .09em; text-transform: uppercase; transition: color .2s; }
+.nav-links a:hover { color: var(--ochre); }
+.nav-book { background: var(--savanna); color: var(--white) !important; padding: .45rem 1.1rem; border-radius: var(--r); font-weight: 500 !important; }
+.nav-book:hover { background: var(--ochre) !important; color: var(--dusk) !important; }
+
+/* ── HERO ── */
+.dest-hero {
+  height: 90vh; min-height: 600px;
+  position: relative; display: flex; align-items: flex-end;
+  background-size: cover; background-position: center 40%;
+  padding-top: 66px; padding-bottom: 0;
+}
+.dest-hero::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(28,10,8,.2) 0%, rgba(28,10,8,.3) 35%, rgba(28,10,8,.92) 100%);
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  max-width: var(--max); margin: 0 auto;
+  width: 100%; padding: 0 5% 4.5rem;
+}
+.hero-breadcrumb { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ochre); margin-bottom: 1rem; }
+.hero-breadcrumb a { color: rgba(255,255,255,.55); text-decoration: none; }
+.hero-breadcrumb a:hover { color: var(--ochre); }
+.hero-eyebrow { font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--ochre); font-weight: 500; margin-bottom: .7rem; }
+.hero-title { font-family: var(--display); font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 300; color: var(--white); line-height: 1.05; margin-bottom: 1.1rem; max-width: 760px; }
+.hero-title em { font-style: italic; color: var(--ochre); }
+.hero-sub { font-size: .98rem; color: rgba(255,255,255,.7); font-weight: 300; line-height: 1.75; max-width: 560px; margin-bottom: 2rem; }
+.hero-badges { display: flex; flex-wrap: wrap; gap: .55rem; }
+.hero-badge { display: inline-flex; align-items: center; gap: .4rem; background: rgba(255,255,255,.1); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.18); color: var(--white); padding: .4rem .9rem; border-radius: 20px; font-size: .78rem; }
+.hero-badge.hl { background: var(--natron-crust); border-color: var(--natron-crust); }
+
+/* ── FACTS BAND ── */
+.facts-band { background: var(--dusk); padding: 0 5%; }
+.facts-inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); border-left: 1px solid rgba(255,255,255,.06); }
+.fact-cell { padding: 2rem 1.5rem; border-right: 1px solid rgba(255,255,255,.06); border-top: 1px solid rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.06); }
+.fact-num { font-family: var(--display); font-size: 2.3rem; font-weight: 300; color: var(--white); line-height: 1; margin-bottom: .3rem; }
+.fact-num em { font-style: italic; color: var(--ochre); }
+.fact-label { font-size: .75rem; color: var(--stone); font-weight: 300; line-height: 1.5; }
+
+/* ── PAGE WRAP ── */
+.page-wrap { max-width: var(--max); margin: 0 auto; padding: 5rem 5%; }
+.page-wrap > * + * { margin-top: 5rem; }
+
+/* ── SECTION HEADERS ── */
+.section-eyebrow { font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--savanna); margin-bottom: .6rem; font-weight: 500; }
+.section-title { font-family: var(--display); font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 300; color: var(--dusk); line-height: 1.2; margin-bottom: 1rem; }
+.section-title em { font-style: italic; color: var(--savanna); }
+.section-lead { font-size: .95rem; color: #5A4A3A; font-weight: 300; line-height: 1.85; }
+
+/* ── SPLIT SECTION ── */
+.split-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.split-section.reverse { direction: rtl; }
+.split-section.reverse > * { direction: ltr; }
+.split-img-wrap { position: relative; }
+.split-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--r); display: block; }
+.split-img-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(28,10,8,.8), transparent); padding: 1.5rem 1rem .8rem; font-size: .72rem; color: rgba(255,255,255,.75); font-weight: 300; border-radius: 0 0 var(--r) var(--r); }
+
+/* ═══════════════════════════════════════════════
+   SIGNATURE — RIFT VALLEY / NATRON CROSS-SECTION
+   ═══════════════════════════════════════════════ */
+.rift-section { background: var(--natron-deep); border-radius: var(--r); overflow: hidden; }
+.rift-header { padding: 3rem 3rem 2rem; border-bottom: 1px solid rgba(255,255,255,.07); }
+.rift-header .section-eyebrow { color: var(--ochre); }
+.rift-header .section-title { color: var(--white); }
+.rift-header .section-title em { color: var(--ochre); }
+.rift-header .section-lead { color: rgba(255,255,255,.6); max-width: 600px; }
+.rift-diagram { padding: 2.5rem 3rem 0; }
+.rift-svg-wrap { width: 100%; overflow: hidden; }
+.rift-layers { display: grid; grid-template-columns: repeat(5,1fr); border-top: 1px solid rgba(255,255,255,.07); }
+.rift-layer { padding: 1.5rem 1.2rem 1.8rem; border-right: 1px solid rgba(255,255,255,.07); transition: background .2s; }
+.rift-layer:last-child { border-right: none; }
+.rift-layer:hover { background: rgba(255,255,255,.04); }
+.layer-dot { width: 10px; height: 10px; border-radius: 50%; margin-bottom: .6rem; }
+.layer-name { font-family: var(--display); font-size: .95rem; font-weight: 600; color: var(--white); margin-bottom: .15rem; }
+.layer-elev { font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; color: var(--stone); margin-bottom: .6rem; font-weight: 500; }
+.layer-animals { font-size: .75rem; color: rgba(255,255,255,.5); font-weight: 300; line-height: 1.6; }
+.layer-animals strong { color: var(--ochre); font-weight: 500; }
+
+/* ── FLAMINGO SPECIES ── */
+.flamingo-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; margin-top: 2rem; }
+.flamingo-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--r); padding: 1.8rem 1.5rem; }
+.flamingo-emoji { font-size: 2.8rem; margin-bottom: .8rem; display: block; }
+.flamingo-num { font-family: var(--display); font-size: .7rem; font-weight: 600; color: var(--stone); letter-spacing: .12em; text-transform: uppercase; margin-bottom: .5rem; display: block; }
+.flamingo-name { font-family: var(--display); font-size: 1.3rem; font-weight: 600; color: var(--dusk); margin-bottom: .2rem; }
+.flamingo-latin { font-size: .72rem; font-style: italic; color: var(--stone); margin-bottom: .8rem; }
+.flamingo-desc { font-size: .85rem; color: #5A4A3A; font-weight: 300; line-height: 1.7; }
+.flamingo-stat { display: flex; gap: 1rem; margin-top: 1.2rem; flex-wrap: wrap; }
+.f-stat { background: var(--pale); border-radius: var(--r); padding: .5rem .9rem; }
+.f-stat-val { font-family: var(--display); font-size: 1.1rem; color: var(--natron-crust); font-weight: 600; }
+.f-stat-label { font-size: .65rem; color: var(--stone); font-weight: 300; }
+
+/* ── WILDLIFE GRID ── */
+.wildlife-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: .8rem; margin-top: 2rem; }
+.wl-card { background: var(--pale); border-radius: var(--r); padding: 1rem; text-align: center; border: 1px solid var(--border); transition: box-shadow .2s, transform .2s; }
+.wl-card:hover { box-shadow: 0 4px 16px rgba(28,20,16,.08); transform: translateY(-2px); }
+.wl-emoji { font-size: 1.8rem; margin-bottom: .4rem; }
+.wl-name { font-size: .82rem; font-weight: 500; color: var(--dusk); }
+.wl-sub { font-size: .7rem; color: var(--stone); font-weight: 300; }
+
+/* ── DAY PLAN ── */
+.day-plan { display: grid; grid-template-columns: 100px 1fr; gap: 0 1.5rem; margin-top: 2rem; }
+.time-col { display: flex; flex-direction: column; }
+.time-block { display: flex; flex-direction: column; align-items: center; flex: 1; min-height: 120px; position: relative; }
+.time-block::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 2px; height: 100%; background: linear-gradient(to bottom, var(--savanna), rgba(200,128,58,.1)); transform: translateX(-50%); z-index: 0; }
+.time-block:last-child::after { display: none; }
+.time-pip { width: 44px; height: 44px; border-radius: 50%; background: var(--dusk); border: 2px solid var(--savanna); display: flex; align-items: center; justify-content: center; font-size: .65rem; font-weight: 600; color: var(--ochre); letter-spacing: .04em; z-index: 1; flex-shrink: 0; text-align: center; line-height: 1.2; }
+.event-col { display: flex; flex-direction: column; gap: 0; }
+.event-block { padding: .9rem 0 2.2rem; }
+.event-time { font-size: .65rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ochre); font-weight: 600; margin-bottom: .3rem; }
+.event-title { font-family: var(--display); font-size: 1.1rem; font-weight: 600; color: var(--dusk); margin-bottom: .4rem; }
+.event-desc { font-size: .87rem; color: #5A4A3A; font-weight: 300; line-height: 1.7; background: var(--pale); padding: .9rem 1.1rem; border-radius: var(--r); border-left: 2px solid var(--border); }
+
+/* ── ECOSYSTEM CARDS ── */
+.ecosystem-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 2rem; }
+.eco-card { border-radius: var(--r); padding: 1.6rem; border: 1px solid var(--border); transition: box-shadow .2s, transform .2s; }
+.eco-card:hover { box-shadow: 0 6px 24px rgba(28,20,16,.08); transform: translateY(-3px); }
+.eco-icon { font-size: 1.6rem; margin-bottom: .7rem; }
+.eco-name { font-family: var(--display); font-size: 1.05rem; font-weight: 600; color: var(--dusk); margin-bottom: .2rem; }
+.eco-zone { font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: var(--savanna); font-weight: 600; margin-bottom: .7rem; }
+.eco-desc { font-size: .83rem; color: #5A4A3A; font-weight: 300; line-height: 1.65; }
+.eco-tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .9rem; }
+.eco-tag { font-size: .63rem; padding: .18rem .5rem; border-radius: 20px; background: var(--pale); color: var(--stone); border: 1px solid var(--border); }
+
+/* ── VOLCANO BANNER ── */
+.volcano-banner {
+  background: linear-gradient(135deg, var(--volcano-dark) 0%, #2A1808 100%);
+  border-radius: var(--r); padding: 3rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+}
+.volcano-text .section-eyebrow { color: var(--ochre); }
+.volcano-text .section-title { color: var(--white); }
+.volcano-text .section-title em { color: var(--ochre); }
+.volcano-text .section-lead { color: rgba(255,255,255,.65); }
+.volcano-facts { display: flex; flex-direction: column; gap: .8rem; }
+.volcano-fact { display: flex; align-items: flex-start; gap: .9rem; background: rgba(255,255,255,.06); border-radius: var(--r); padding: 1rem 1.2rem; }
+.volcano-fact-icon { font-size: 1.2rem; flex-shrink: 0; }
+.volcano-fact-text { font-size: .84rem; color: rgba(255,255,255,.7); font-weight: 300; line-height: 1.6; }
+.volcano-fact-text strong { color: var(--ochre); font-weight: 500; }
+
+/* ── PRACTICAL ── */
+.practical-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; margin-top: 2rem; }
+.prac-card { background: var(--pale); border-radius: var(--r); padding: 1.5rem; border: 1px solid var(--border); }
+.prac-icon { font-size: 1.4rem; margin-bottom: .6rem; }
+.prac-title { font-family: var(--display); font-size: 1rem; font-weight: 600; color: var(--dusk); margin-bottom: .5rem; }
+.prac-body { font-size: .84rem; color: #5A4A3A; font-weight: 300; line-height: 1.7; }
+.prac-body strong { font-weight: 500; color: var(--dusk); }
+
+/* ── BEST TIME ── */
+.months-row { display: grid; grid-template-columns: repeat(12,1fr); gap: .3rem; margin-top: 1.4rem; }
+.month-cell { text-align: center; padding: .7rem .2rem; border-radius: var(--r); font-size: .65rem; font-weight: 500; }
+.month-label { display: block; letter-spacing: .06em; text-transform: uppercase; margin-bottom: .3rem; }
+.month-dot { width: 8px; height: 8px; border-radius: 50%; margin: 0 auto; }
+.month-peak { background: rgba(200,128,58,.15); color: var(--savanna); }
+.month-peak .month-dot { background: var(--savanna); }
+.month-good { background: rgba(61,97,66,.1); color: var(--grass); }
+.month-good .month-dot { background: var(--grass); }
+.month-low { background: var(--pale); color: var(--stone); }
+.month-low .month-dot { background: var(--stone); }
+.month-legend { display: flex; gap: 1.5rem; margin-top: .8rem; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: .4rem; font-size: .75rem; color: var(--stone); }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* ── FAQ ── */
+.faq-list { margin-top: 1.4rem; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-question { width: 100%; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; font-family: var(--body); font-size: .9rem; font-weight: 500; color: var(--dusk); text-align: left; gap: 1rem; }
+.faq-question:hover { color: var(--savanna); }
+.faq-chevron { flex-shrink: 0; font-size: .7rem; color: var(--savanna); transition: transform .3s; }
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height .4s ease; font-size: .87rem; color: #5A4A3A; font-weight: 300; line-height: 1.75; }
+.faq-answer-inner { padding-bottom: 1rem; }
+.faq-item.open .faq-answer { max-height: 500px; }
+
+/* ── PACKAGES ── */
+.pkgs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: .8rem; margin-top: 2rem; }
+.pkg-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--r); padding: 1.4rem; text-decoration: none; color: inherit; display: block; transition: box-shadow .2s, transform .2s; }
+.pkg-card:hover { box-shadow: 0 6px 24px rgba(28,20,16,.08); transform: translateY(-3px); }
+.pkg-duration { font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: var(--savanna); font-weight: 600; margin-bottom: .4rem; }
+.pkg-name { font-family: var(--display); font-size: 1rem; font-weight: 600; color: var(--dusk); margin-bottom: .4rem; }
+.pkg-desc { font-size: .8rem; color: var(--stone); font-weight: 300; line-height: 1.5; }
+.pkg-link { display: inline-flex; align-items: center; gap: .3rem; margin-top: .8rem; font-size: .75rem; color: var(--savanna); font-weight: 500; }
+
+/* ── CTA ── */
+.cta-banner { background: var(--dusk); border-radius: var(--r); padding: 3.5rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.cta-text .eyebrow { font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ochre); margin-bottom: .5rem; }
+.cta-text h2 { font-family: var(--display); font-size: 2.2rem; font-weight: 300; color: var(--white); margin-bottom: .5rem; line-height: 1.15; }
+.cta-text h2 em { font-style: italic; color: var(--ochre); }
+.cta-text p { font-size: .88rem; color: rgba(255,255,255,.6); font-weight: 300; max-width: 400px; }
+.cta-actions { display: flex; gap: .8rem; flex-wrap: wrap; }
+.btn-primary { background: var(--savanna); color: var(--white); text-decoration: none; padding: .95rem 2rem; border-radius: var(--r); font-size: .88rem; font-weight: 500; transition: background .2s; white-space: nowrap; }
+.btn-primary:hover { background: var(--ochre); color: var(--dusk); }
+.btn-ghost { border: 1px solid rgba(255,255,255,.25); color: var(--white); text-decoration: none; padding: .95rem 2rem; border-radius: var(--r); font-size: .88rem; font-weight: 400; transition: border-color .2s; white-space: nowrap; }
+.btn-ghost:hover { border-color: var(--ochre); color: var(--ochre); }
+
+/* ── RELATED ── */
+.related-section { background: var(--mist); padding: 5rem 5%; }
+.related-inner { max-width: var(--max); margin: 0 auto; }
+.related-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; margin-top: 2rem; }
+.related-card { border-radius: var(--r); overflow: hidden; background: var(--white); border: 1px solid var(--border); text-decoration: none; color: inherit; transition: box-shadow .2s, transform .2s; display: block; }
+.related-card:hover { box-shadow: 0 8px 32px rgba(28,20,16,.1); transform: translateY(-3px); }
+.related-img { width: 100%; height: 170px; object-fit: cover; display: block; }
+.related-body { padding: 1.1rem; }
+.related-meta { font-size: .7rem; color: var(--stone); margin-bottom: .3rem; }
+.related-name { font-family: var(--display); font-size: 1.05rem; font-weight: 600; color: var(--dusk); }
+
+/* ── FOOTER ── */
+footer { background: var(--dusk); color: rgba(255,255,255,.5); padding: 2rem 5%; text-align: center; font-size: .8rem; font-weight: 300; }
+footer a { color: var(--ochre); text-decoration: none; }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1000px) {
+  .facts-inner { grid-template-columns: repeat(2,1fr); }
+  .flamingo-grid { grid-template-columns: 1fr; }
+  .ecosystem-grid { grid-template-columns: repeat(2,1fr); }
+  .split-section { grid-template-columns: 1fr; gap: 2rem; }
+  .split-section.reverse { direction: ltr; }
+  .volcano-banner { grid-template-columns: 1fr; gap: 2rem; }
+  .pkgs-grid { grid-template-columns: 1fr 1fr; }
+  .rift-layers { grid-template-columns: repeat(3,1fr); }
+  .wildlife-grid { grid-template-columns: repeat(3,1fr); }
+}
+@media (max-width: 700px) {
+  .dest-hero { height: 85vh; }
+  .hero-title { font-size: 2.4rem; }
+  .facts-inner { grid-template-columns: repeat(2,1fr); }
+  .ecosystem-grid { grid-template-columns: 1fr; }
+  .wildlife-grid { grid-template-columns: repeat(2,1fr); }
+  .practical-grid { grid-template-columns: 1fr; }
+  .pkgs-grid { grid-template-columns: 1fr; }
+  .related-grid { grid-template-columns: 1fr; }
+  .months-row { grid-template-columns: repeat(6,1fr); }
+  .cta-banner { padding: 2rem; }
+  .rift-header { padding: 2rem 1.5rem 1.5rem; }
+  .rift-diagram { padding: 1.5rem 1.5rem 0; }
+  .rift-layers { grid-template-columns: repeat(2,1fr); }
+  .day-plan { grid-template-columns: 60px 1fr; gap: 0 1rem; }
+  .time-pip { width: 36px; height: 36px; font-size: .58rem; }
+  nav .nav-links { display: none; }
+}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="../index.html">Mwala <span>Tours</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#packages">Packages</a></li>
+    <li><a href="../index.html#destinations">Destinations</a></li>
+    <li><a class="nav-book" href="../index.html#contact">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="dest-hero" style="background-image:url('https://mwala-tours-and-safaris.vercel.app/pexels-balazsimon-15994102.jpg');">
+  <div class="hero-inner">
+    <p class="hero-breadcrumb">
+      <a href="../index.html">Home</a> &nbsp;›&nbsp;
+      <a href="../index.html#destinations">Destinations</a> &nbsp;›&nbsp;
+      Lake Natron
+    </p>
+    <p class="hero-eyebrow">East Africa's Flamingo Kingdom</p>
+    <h1 class="hero-title">Lake Natron — <em>Where Fire Meets the Flamingo</em></h1>
+    <p class="hero-sub">
+      A blood-red alkaline lake on the Rift Valley floor. An active volcano breathing sulphur above it. Two and a half million flamingos feeding in the shallows. There is nowhere quite like this on Earth.
+    </p>
+    <div class="hero-badges">
+      <span class="hero-badge hl">🦩 2.5M Flamingos</span>
+      <span class="hero-badge">🌋 Active Volcano</span>
+      <span class="hero-badge">🔴 Alkaline Lake</span>
+      <span class="hero-badge">🏺 5,000-Year-Old Rock Art</span>
+      <span class="hero-badge">📍 Great Rift Valley</span>
+    </div>
+  </div>
+</div>
+
+<!-- FACTS BAND -->
+<div class="facts-band">
+  <div class="facts-inner">
+    <div class="fact-cell">
+      <div class="fact-num">2.5 <em>Million</em></div>
+      <div class="fact-label">Lesser flamingos breed here — the largest single flamingo colony on Earth</div>
+    </div>
+    <div class="fact-cell">
+      <div class="fact-num">10.5 <em>pH</em></div>
+      <div class="fact-label">Lake alkalinity — close to ammonia. Lethal to most animals. Perfect for flamingos.</div>
+    </div>
+    <div class="fact-cell">
+      <div class="fact-num">2,878 <em>Metres</em></div>
+      <div class="fact-label">Height of Ol Doinyo Lengai — the only active carbonatite volcano on Earth</div>
+    </div>
+    <div class="fact-cell">
+      <div class="fact-num">5,000 <em>Years Old</em></div>
+      <div class="fact-label">Engare Sero rock art — human figures painted in ochre by Natron's first inhabitants</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="page-wrap">
+
+  <!-- INTRO -->
+  <section class="reveal">
+    <div class="split-section">
+      <div>
+        <p class="section-eyebrow">About Lake Natron</p>
+        <h2 class="section-title">The Lake That <em>Defies Explanation</em></h2>
+        <p class="section-lead">
+          Lake Natron does not look like it belongs on this planet. Its surface — stained deep crimson by the halophilic bacteria that thrive in its extreme alkalinity — shifts between shades of blood red, rusted orange, and dusty pink depending on the light and the season. On the far shore, Ol Doinyo Lengai, the Mountain of God, exhales pale wisps of sulphur from a crater that has been active for millennia. The air smells of minerals and ancient heat.
+        </p>
+        <p class="section-lead" style="margin-top:.9rem">
+          The lake sits at the floor of the Great Rift Valley — the fracture in the Earth's crust where Africa is slowly tearing apart — at an altitude of just 600 metres. The Rift Valley walls rise dramatically on both sides: the Ngorongoro Highlands to the west, the Gelai and Ketumbeine volcanoes to the east. In this enclosed, superheated basin, sodium carbonate-rich water drains from the surrounding volcanic highlands and has no outlet. It simply evaporates, concentrating the salts to levels that would crystallise bare skin within minutes of immersion.
+        </p>
+        <p class="section-lead" style="margin-top:.9rem">
+          For the lesser flamingo, this chemistry is home. The lake's alkalinity repels every natural predator — no lion, no crocodile, no hyena can follow a flamingo into those waters. Natron is therefore the safest nursery in Africa, and up to 2.5 million flamingos choose it for breeding in years when conditions are right. Nothing else in nature prepares you for the sight of that lake — the colour, the scale, the noise, and the smell — when you first stand at its edge.
+        </p>
+      </div>
+      <div class="split-img-wrap">
+        <img class="split-img" src="https://mwala-tours-and-safaris.vercel.app/pexels-balazsimon-15994102.jpg" alt="Lake Natron at dusk — crimson waters and flamingo colonies" />
+        <p class="split-img-caption">The lake's surface turns blood-red as halophilic bacteria bloom in the extreme alkalinity</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SIGNATURE — RIFT VALLEY CROSS-SECTION SVG
+       ══════════════════════════════════════════════ -->
+  <div class="rift-section reveal">
+    <div class="rift-header">
+      <p class="section-eyebrow">Anatomy of the Rift Valley</p>
+      <h2 class="section-title">From Escarpment to Lake Floor — <em>A World in Vertical</em></h2>
+      <p class="section-lead">Lake Natron sits at the base of one of the Earth's greatest geological features. This cross-section shows the five distinct zones you pass through — from highland forest to lake crust — each with its own ecosystem, its own wildlife, and its own extreme character.</p>
+    </div>
+
+    <div class="rift-diagram">
+      <div class="rift-svg-wrap">
+        <svg viewBox="0 0 1000 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+          <defs>
+            <!-- Sky gradient — hot Rift Valley atmosphere -->
+            <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#1A0E06"/>
+              <stop offset="60%" stop-color="#2A1608"/>
+              <stop offset="100%" stop-color="#3A1A08"/>
+            </linearGradient>
+            <!-- Left escarpment -->
+            <linearGradient id="escL" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#3A2E22"/>
+              <stop offset="100%" stop-color="#2A1E14"/>
+            </linearGradient>
+            <!-- Right escarpment / volcano side -->
+            <linearGradient id="escR" x1="1" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#1E1A10"/>
+              <stop offset="100%" stop-color="#2E2210"/>
+            </linearGradient>
+            <!-- Scrubland slope -->
+            <linearGradient id="scrubG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#3A4A2A"/>
+              <stop offset="100%" stop-color="#4A5A35"/>
+            </linearGradient>
+            <!-- Valley floor / semi-arid -->
+            <linearGradient id="floorG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#7A6A4A"/>
+              <stop offset="100%" stop-color="#6A5A3A"/>
+            </linearGradient>
+            <!-- Lake — crimson alkaline -->
+            <linearGradient id="lakeG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#8B2020"/>
+              <stop offset="40%" stop-color="#A03028"/>
+              <stop offset="100%" stop-color="#701818"/>
+            </linearGradient>
+            <!-- Volcano gradient -->
+            <linearGradient id="volG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#1E1A10"/>
+              <stop offset="70%" stop-color="#3A2E1A"/>
+              <stop offset="100%" stop-color="#4A3A22"/>
+            </linearGradient>
+            <!-- Lava glow at volcano top -->
+            <radialGradient id="glowG" cx="50%" cy="100%" r="50%">
+              <stop offset="0%" stop-color="#D04020" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#D04020" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- Sky background -->
+          <rect x="0" y="0" width="1000" height="280" fill="url(#skyG)"/>
+
+          <!-- Stars / night atmosphere -->
+          <circle cx="60" cy="18" r="1.2" fill="rgba(255,255,255,.35)"/>
+          <circle cx="130" cy="30" r="0.8" fill="rgba(255,255,255,.25)"/>
+          <circle cx="200" cy="12" r="1" fill="rgba(255,255,255,.3)"/>
+          <circle cx="300" cy="22" r="0.8" fill="rgba(255,255,255,.2)"/>
+          <circle cx="680" cy="18" r="1" fill="rgba(255,255,255,.3)"/>
+          <circle cx="760" cy="8" r="1.2" fill="rgba(255,255,255,.25)"/>
+          <circle cx="840" cy="28" r="0.8" fill="rgba(255,255,255,.2)"/>
+
+          <!-- ── LEFT ESCARPMENT — Ngorongoro Highlands ── -->
+          <path d="M0,280 L0,30 C20,28 50,26 80,30 C110,34 130,50 145,70
+                   C158,88 165,115 168,145 L172,190 L0,190 Z" fill="url(#escL)"/>
+
+          <!-- Highlands forest cap -->
+          <ellipse cx="25" cy="35" rx="18" ry="12" fill="#2D4A20" opacity=".85"/>
+          <ellipse cx="58" cy="28" rx="16" ry="11" fill="#3A5A2A" opacity=".8"/>
+          <ellipse cx="90" cy="33" rx="20" ry="13" fill="#2D4A20" opacity=".9"/>
+
+          <!-- Highland label -->
+          <text x="8" y="20" font-family="'DM Sans',sans-serif" font-size="7.5" fill="rgba(255,255,255,.55)" letter-spacing="1">NGORONGORO HIGHLANDS — 2,100m</text>
+
+          <!-- ── LEFT SLOPE — Scrubland descent ── -->
+          <path d="M168,145 C172,165 176,180 180,200 L220,195 L215,160 L205,145 Z" fill="url(#scrubG)" opacity=".9"/>
+          <!-- Acacia scrub dots left slope -->
+          <ellipse cx="178" cy="155" rx="8" ry="5" fill="#3A5A2A" opacity=".75"/>
+          <ellipse cx="192" cy="168" rx="7" ry="4" fill="#4A6A35" opacity=".7"/>
+          <ellipse cx="205" cy="178" rx="6" ry="4" fill="#3A5A2A" opacity=".65"/>
+
+          <!-- ── RIGHT SIDE — OL DOINYO LENGAI VOLCANO ── -->
+          <!-- Volcano main body -->
+          <path d="M1000,280 L1000,45
+                   C980,42 960,38 940,35
+                   C915,32 895,28 870,25
+                   C845,22 820,26 800,38
+                   C775,52 758,75 748,100
+                   C738,125 735,155 732,185
+                   L728,230 L1000,230 Z" fill="url(#volG)"/>
+
+          <!-- Volcano cone — peak detail -->
+          <path d="M870,25 C855,22 842,20 832,22
+                   C820,24 812,30 808,40
+                   C802,55 800,72 800,86 L830,80 L858,68 L882,52 L890,35 Z"
+                fill="#2A2015" opacity=".9"/>
+
+          <!-- Crater opening glow -->
+          <ellipse cx="847" cy="24" rx="22" ry="8" fill="url(#glowG)"/>
+          <ellipse cx="847" cy="24" rx="12" ry="5" fill="rgba(208,64,32,.3)"/>
+
+          <!-- Lava flow hint -->
+          <path d="M847,28 C843,40 840,55 838,70 C836,82 837,92 840,100"
+                stroke="rgba(208,64,32,.4)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M852,30 C856,44 858,60 855,78"
+                stroke="rgba(208,64,32,.25)" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+          <!-- Sulphur cloud above crater -->
+          <ellipse cx="848" cy="14" rx="16" ry="6" fill="rgba(220,200,140,.12)"/>
+          <ellipse cx="838" cy="8" rx="10" ry="4" fill="rgba(220,200,140,.08)"/>
+          <ellipse cx="860" cy="10" rx="8" ry="3.5" fill="rgba(220,200,140,.08)"/>
+
+          <!-- Volcano labels -->
+          <text x="852" y="8" font-family="'DM Sans',sans-serif" font-size="7" fill="rgba(208,164,74,.9)" text-anchor="middle" letter-spacing=".5">SULPHUR PLUME</text>
+          <text x="920" y="42" font-family="'DM Sans',sans-serif" font-size="7.5" fill="rgba(255,255,255,.5)" letter-spacing="1">OL DOINYO LENGAI — 2,878m</text>
+          <line x1="918" y1="44" x2="870" y2="34" stroke="rgba(255,255,255,.2)" stroke-width=".8" stroke-dasharray="3,3"/>
+
+          <!-- Right slope scrub -->
+          <path d="M728,185 C726,195 724,210 722,225 L700,230 L705,205 L715,190 Z" fill="url(#scrubG)" opacity=".8"/>
+          <ellipse cx="720" cy="196" rx="7" ry="4" fill="#3A5A2A" opacity=".7"/>
+          <ellipse cx="710" cy="210" rx="6" ry="3.5" fill="#4A6A35" opacity=".65"/>
+
+          <!-- ── VALLEY FLOOR — semi-arid scrub ── -->
+          <path d="M180,200 C200,215 240,225 280,228 L500,232 L720,228 C760,225 800,215 820,200
+                   L800,195 L720,220 L500,224 L280,220 L200,195 Z" fill="url(#floorG)"/>
+
+          <!-- Floor scrub / sparse vegetation -->
+          <ellipse cx="250" cy="224" rx="12" ry="5" fill="#5A5030" opacity=".6"/>
+          <ellipse cx="310" cy="227" rx="8" ry="4" fill="#4A4020" opacity=".5"/>
+          <ellipse cx="370" cy="228" rx="10" ry="4" fill="#5A5030" opacity=".55"/>
+          <ellipse cx="640" cy="228" rx="10" ry="4" fill="#5A5030" opacity=".55"/>
+          <ellipse cx="700" cy="225" rx="8" ry="4" fill="#4A4020" opacity=".5"/>
+
+          <!-- ── LAKE NATRON — alkaline, crimson ── -->
+          <ellipse cx="500" cy="248" rx="175" ry="28" fill="url(#lakeG)"/>
+          <ellipse cx="500" cy="248" rx="155" ry="22" fill="#A02828" opacity=".6"/>
+
+          <!-- Lake surface shimmer / salt crust patterns -->
+          <ellipse cx="460" cy="244" rx="45" ry="8" fill="rgba(200,100,80,.25)"/>
+          <ellipse cx="540" cy="252" rx="40" ry="6" fill="rgba(180,60,60,.2)"/>
+          <ellipse cx="500" cy="248" rx="100" ry="12" fill="rgba(255,180,160,.06)"/>
+
+          <!-- Salt crust edge -->
+          <path d="M325,248 C340,238 380,235 420,237 L500,238 L580,237 C620,235 660,238 675,248"
+                stroke="rgba(220,180,160,.35)" stroke-width="2" fill="none"/>
+
+          <!-- Lake label -->
+          <text x="500" y="270" font-family="'DM Sans',sans-serif" font-size="7.5" fill="rgba(255,180,160,.7)" text-anchor="middle" letter-spacing="1">LAKE NATRON — 600m · pH 10.5</text>
+
+          <!-- ── FLAMINGO COLONIES on lake ── -->
+          <!-- Flamingo group 1 — west shore -->
+          <g opacity=".9">
+            <line x1="336" y1="244" x2="336" y2="237" stroke="#E87090" stroke-width="1.6"/>
+            <ellipse cx="336" cy="237" rx="3.5" ry="2" fill="#E87090"/>
+            <circle cx="335" cy="235" r="1.8" fill="#C85060"/>
+          </g>
+          <g opacity=".85">
+            <line x1="344" y1="246" x2="344" y2="239" stroke="#E87090" stroke-width="1.6"/>
+            <ellipse cx="344" cy="239" rx="3.5" ry="2" fill="#E07080"/>
+            <circle cx="343" cy="237" r="1.8" fill="#C85060"/>
+          </g>
+          <g opacity=".8">
+            <line x1="352" y1="245" x2="352" y2="238" stroke="#D86070" stroke-width="1.4"/>
+            <ellipse cx="352" cy="238" rx="3" ry="1.8" fill="#D86070"/>
+          </g>
+
+          <!-- Flamingo group 2 — central lake (large colony) -->
+          <g opacity=".9">
+            <line x1="478" y1="240" x2="478" y2="233" stroke="#E87090" stroke-width="1.6"/>
+            <ellipse cx="478" cy="233" rx="3.5" ry="2.2" fill="#E87090"/>
+            <circle cx="477" cy="231" r="1.8" fill="#C85060"/>
+          </g>
+          <g opacity=".88">
+            <line x1="490" y1="239" x2="490" y2="232" stroke="#E87090" stroke-width="1.6"/>
+            <ellipse cx="490" cy="232" rx="3.5" ry="2" fill="#E07080"/>
+            <circle cx="489" cy="230" r="1.8" fill="#C85060"/>
+          </g>
+          <g opacity=".85">
+            <line x1="501" y1="240" x2="501" y2="233" stroke="#E87090" stroke-width="1.5"/>
+            <ellipse cx="501" cy="233" rx="3.5" ry="2" fill="#E87090"/>
+            <circle cx="500" cy="231" r="1.8" fill="#C85060"/>
+          </g>
+          <g opacity=".82">
+            <line x1="512" y1="239" x2="512" y2="232" stroke="#D86070" stroke-width="1.4"/>
+            <ellipse cx="512" cy="232" rx="3" ry="1.8" fill="#D86070"/>
+          </g>
+          <g opacity=".78">
+            <line x1="522" y1="240" x2="522" y2="234" stroke="#D86070" stroke-width="1.4"/>
+            <ellipse cx="522" cy="234" rx="3" ry="1.8" fill="#E87090" opacity=".7"/>
+          </g>
+
+          <!-- Flamingo group 3 — east shore -->
+          <g opacity=".85">
+            <line x1="648" y1="244" x2="648" y2="237" stroke="#E87090" stroke-width="1.5"/>
+            <ellipse cx="648" cy="237" rx="3.5" ry="2" fill="#E87090"/>
+            <circle cx="647" cy="235" r="1.8" fill="#C85060"/>
+          </g>
+          <g opacity=".8">
+            <line x1="658" y1="245" x2="658" y2="238" stroke="#D86070" stroke-width="1.4"/>
+            <ellipse cx="658" cy="238" rx="3" ry="1.8" fill="#D86070"/>
+          </g>
+
+          <!-- Flamingo label -->
+          <text x="500" y="226" font-family="'DM Sans',sans-serif" font-size="6.5" fill="rgba(232,112,144,.9)" text-anchor="middle">FLAMINGO COLONY — UP TO 2.5 MILLION</text>
+
+          <!-- ── WILDLIFE ON FLOOR ── -->
+          <!-- Giraffe left side -->
+          <g opacity=".85">
+            <rect x="236" y="204" width="3" height="16" rx="1" fill="#C8803A"/>
+            <!-- Neck -->
+            <path d="M237,204 Q234,196 235,188" stroke="#C8803A" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <!-- Head -->
+            <ellipse cx="235" cy="186" rx="4" ry="3" fill="#C8803A"/>
+            <!-- Ossicones -->
+            <line x1="234" y1="183" x2="233" y2="179" stroke="#A86030" stroke-width="1.2"/>
+            <line x1="237" y1="183" x2="237" y2="179" stroke="#A86030" stroke-width="1.2"/>
+            <!-- Body spots hint -->
+            <circle cx="238" cy="208" r="1.2" fill="#8B5020" opacity=".6"/>
+            <circle cx="235" cy="212" r="1" fill="#8B5020" opacity=".5"/>
+          </g>
+          <!-- Giraffe label -->
+          <text x="244" y="200" font-family="'DM Sans',sans-serif" font-size="6.5" fill="rgba(200,128,58,.8)">Giraffe</text>
+
+          <!-- Grant's Gazelle pair floor -->
+          <g opacity=".8">
+            <ellipse cx="285" cy="227" rx="7" ry="3.5" fill="#C8A060"/>
+            <circle cx="278" cy="224" r="3" fill="#C8A060"/>
+            <line x1="281" y1="230" x2="280" y2="236" stroke="#C8A060" stroke-width="1.2"/>
+            <line x1="286" y1="230" x2="286" y2="236" stroke="#C8A060" stroke-width="1.2"/>
+            <!-- Horns -->
+            <path d="M277,221 Q275,217 277,214" stroke="#A08040" stroke-width="1.2" fill="none"/>
+            <path d="M280,221 Q279,217 281,214" stroke="#A08040" stroke-width="1.2" fill="none"/>
+          </g>
+          <text x="290" y="222" font-family="'DM Sans',sans-serif" font-size="6.5" fill="rgba(255,255,255,.45)">Gazelle</text>
+
+          <!-- Zebra group floor right -->
+          <g opacity=".85">
+            <ellipse cx="650" cy="226" rx="9" ry="4.5" fill="#E0DAC0"/>
+            <circle cx="641" cy="223" r="4.5" fill="#E0DAC0"/>
+            <line x1="644" y1="230" x2="643" y2="237" stroke="#E0DAC0" stroke-width="1.5"/>
+            <line x1="650" y1="230" x2="650" y2="237" stroke="#E0DAC0" stroke-width="1.5"/>
+            <line x1="656" y1="230" x2="656" y2="237" stroke="#E0DAC0" stroke-width="1.5"/>
+            <line x1="660" y1="229" x2="661" y2="236" stroke="#E0DAC0" stroke-width="1.5"/>
+            <!-- Stripes -->
+            <line x1="645" y1="220" x2="644" y2="229" stroke="#1A1A1A" stroke-width=".9" opacity=".7"/>
+            <line x1="649" y1="220" x2="649" y2="230" stroke="#1A1A1A" stroke-width=".9" opacity=".7"/>
+            <line x1="653" y1="221" x2="653" y2="230" stroke="#1A1A1A" stroke-width=".9" opacity=".7"/>
+          </g>
+          <text x="664" y="220" font-family="'DM Sans',sans-serif" font-size="6.5" fill="rgba(255,255,255,.45)">Zebra</text>
+
+          <!-- Eland (large) right floor -->
+          <g opacity=".8">
+            <ellipse cx="695" cy="224" rx="12" ry="6" fill="#A08858"/>
+            <circle cx="683" cy="220" r="5.5" fill="#A08858"/>
+            <line x1="687" y1="229" x2="686" y2="237" stroke="#A08858" stroke-width="1.8"/>
+            <line x1="694" y1="230" x2="694" y2="238" stroke="#A08858" stroke-width="1.8"/>
+            <line x1="700" y1="230" x2="701" y2="238" stroke="#A08858" stroke-width="1.8"/>
+            <line x1="706" y1="229" x2="707" y2="237" stroke="#A08858" stroke-width="1.8"/>
+            <!-- Dewlap -->
+            <path d="M685,223 Q682,228 683,233" stroke="#806838" stroke-width="2" fill="none"/>
+            <!-- Spiral horns -->
+            <path d="M681,215 Q678,208 681,202" stroke="#806838" stroke-width="1.4" fill="none"/>
+            <path d="M686,214 Q684,207 687,202" stroke="#806838" stroke-width="1.4" fill="none"/>
+          </g>
+          <text x="710" y="218" font-family="'DM Sans',sans-serif" font-size="6.5" fill="rgba(255,255,255,.45)">Eland</text>
+
+          <!-- Ostrich on far left floor -->
+          <g opacity=".85">
+            <line x1="207" y1="215" x2="207" y2="228" stroke="#3A2A1A" stroke-width="2.5"/>
+            <!-- Body -->
+            <ellipse cx="207" cy="212" rx="7" ry="5" fill="#1A1A1A"/>
+            <!-- White wing patches -->
+            <ellipse cx="210" cy="213" rx="4" ry="2" fill="white" opacity=".6"/>
+            <!-- Neck -->
+            <path d="M207,207 Q206,200 207,192" stroke="#E0A080" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <!-- Head -->
+            <circle cx="207" cy="190" r="3.5" fill="#1A1A1A"/>
+            <!-- Legs -->
+            <line x1="204" y1="228" x2="202" y2="238" stroke="#D0A060" stroke-width="1.8"/>
+            <line x1="210" y1="228" x2="212" y2="238" stroke="#D0A060" stroke-width="1.8"/>
+          </g>
+          <text x="215" y="204" font-family="'DM Sans',sans-serif" font-size="6.5" fill="rgba(255,255,255,.45)">Ostrich</text>
+
+          <!-- Ol Doinyo Lengai label on diagram -->
+          <text x="847" y="19" font-family="'DM Sans',sans-serif" font-size="7" fill="rgba(208,164,74,.85)" text-anchor="middle" letter-spacing=".5">OL DOINYO LENGAI</text>
+          <text x="847" y="27" font-family="'DM Sans',sans-serif" font-size="6" fill="rgba(208,100,60,.8)" text-anchor="middle">ACTIVE VOLCANO</text>
+
+          <!-- Rift escarpment labels -->
+          <text x="92" y="44" font-family="'DM Sans',sans-serif" font-size="7" fill="rgba(255,255,255,.45)">Escarpment</text>
+          <text x="92" y="52" font-family="'DM Sans',sans-serif" font-size="7" fill="rgba(255,255,255,.45)">Wall</text>
+
+          <!-- Engare Sero gorge indicator left slope -->
+          <path d="M188,165 L183,170 L188,175" stroke="rgba(200,128,58,.5)" stroke-width="1.2" fill="none"/>
+          <text x="193" y="172" font-family="'DM Sans',sans-serif" font-size="6.5" fill="rgba(200,128,58,.75)">Engare Sero Gorge</text>
+          <text x="193" y="180" font-family="'DM Sans',sans-serif" font-size="6" fill="rgba(200,128,58,.6)">Rock Art &amp; Waterfall</text>
+
+          <!-- Rift Valley floor label -->
+          <text x="500" y="210" font-family="'DM Sans',sans-serif" font-size="7" fill="rgba(255,255,255,.4)" text-anchor="middle" letter-spacing="1">RIFT VALLEY FLOOR — 600m</text>
+
+          <!-- Valley width arrow -->
+          <line x1="200" y1="240" x2="700" y2="240" stroke="rgba(255,255,255,.12)" stroke-width="1" stroke-dasharray="4,4"/>
+          <text x="450" y="236" font-family="'DM Sans',sans-serif" font-size="6" fill="rgba(255,255,255,.3)" text-anchor="middle">~50 km valley floor</text>
+
+          <!-- Descent arrow from highlands -->
+          <path d="M155,120 L158,145" stroke="rgba(232,164,74,.45)" stroke-width="1.5" marker-end="url(#arr)" stroke-dasharray="3,3"/>
+          <text x="120" y="138" font-family="'DM Sans',sans-serif" font-size="6.5" fill="rgba(232,164,74,.65)">DESCENT</text>
+          <defs>
+            <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L6,3 Z" fill="rgba(232,164,74,.45)"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+    </div>
+
+    <!-- LAYER CARDS below diagram -->
+    <div class="rift-layers">
+      <div class="rift-layer">
+        <div class="layer-dot" style="background:#3A5A2A;"></div>
+        <div class="layer-name">Highlands Rim</div>
+        <div class="layer-elev">1,800 – 2,100 metres</div>
+        <p class="layer-animals">Highland forest and montane grassland. <strong>Buffalo, elephant, eland, colobus monkey</strong> on the escarpment above. The road from Mto wa Mbu climbs through this zone on the drive in.</p>
+      </div>
+      <div class="rift-layer">
+        <div class="layer-dot" style="background:#4A5A35;"></div>
+        <div class="layer-name">Escarpment Slope</div>
+        <div class="layer-elev">800 – 1,800 metres</div>
+        <p class="layer-animals">Acacia scrub and thorn woodland. <strong>Maasai cattle, giraffe, Grant's gazelle, lesser kudu</strong>. The Engare Sero gorge cuts through this zone, leading to ancient rock paintings and a hidden waterfall.</p>
+      </div>
+      <div class="rift-layer">
+        <div class="layer-dot" style="background:#7A6A4A;"></div>
+        <div class="layer-name">Valley Floor</div>
+        <div class="layer-elev">600 – 800 metres</div>
+        <p class="layer-animals">Semi-arid scrub and black cotton soil. <strong>Eland, zebra, ostrich, Grant's gazelle, Maasai giraffe, vultures</strong>. Hot and wind-scoured — the Rift's own microclimate, trapped between escarpment walls.</p>
+      </div>
+      <div class="rift-layer">
+        <div class="layer-dot" style="background:#C44030;"></div>
+        <div class="layer-name">Lake Shore</div>
+        <div class="layer-elev">600 metres</div>
+        <p class="layer-animals">Sodium carbonate crust and warm alkaline mud. <strong>Flamingo breeding colonies, avocet, stilts, pelican, cattle egret</strong>. The crust burns bare skin — walk with closed shoes. The flamingos are unbothered.</p>
+      </div>
+      <div class="rift-layer">
+        <div class="layer-dot" style="background:#1E1A10;"></div>
+        <div class="layer-name">Ol Doinyo Lengai</div>
+        <div class="layer-elev">2,878 metres</div>
+        <p class="layer-animals">Active carbonatite volcano. <strong>Near the summit</strong>: black carbonatite lava, sulphur vents, and a 360° Rift Valley panorama unlike anything else on Earth. Accessible by guided night ascent.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLAMINGO SPECIES -->
+  <section class="reveal">
+    <p class="section-eyebrow">The Stars of the Lake</p>
+    <h2 class="section-title">Two Species, <em>One Extraordinary Lake</em></h2>
+    <p class="section-lead">Lake Natron hosts both flamingo species found in Africa. Understanding the difference between them transforms a visit from spectacular to genuinely illuminating.</p>
+    <div class="flamingo-grid">
+      <div class="flamingo-card">
+        <span class="flamingo-num">Primary Species</span>
+        <span class="flamingo-emoji">🦩</span>
+        <div class="flamingo-name">Lesser Flamingo</div>
+        <div class="flamingo-latin">Phoeniconaias minor</div>
+        <p class="flamingo-desc">The lesser flamingo is the reason Lake Natron exists as a conservation priority. Up to 2.5 million individuals — three-quarters of the world's entire population — breed here when conditions are right, making Natron irreplaceable. They are smaller and more vibrantly pink than their greater cousins, and they feed exclusively on cyanobacteria (blue-green algae) that blooms in the lake's extreme alkalinity. The same sodium carbonate chemistry that makes the lake lethal to most animals is the lesser flamingo's food source, its fortress, and its nursery.</p>
+        <p class="flamingo-desc" style="margin-top:.7rem">When the colony is breeding — typically between August and November when water levels are low enough to expose mudflats for nesting — the lake's eastern section turns vivid pink from the air. Each breeding pair builds a raised mud cone just high enough to protect the single egg from the baking lake surface. The sight and sound of a breeding colony in full activity is one of Africa's great wildlife spectacles.</p>
+        <div class="flamingo-stat">
+          <div class="f-stat"><div class="f-stat-val">2.5M</div><div class="f-stat-label">Peak colony size</div></div>
+          <div class="f-stat"><div class="f-stat-val">80cm</div><div class="f-stat-label">Adult height</div></div>
+          <div class="f-stat"><div class="f-stat-val">30yr</div><div class="f-stat-label">Lifespan</div></div>
+        </div>
+      </div>
+      <div class="flamingo-card">
+        <span class="flamingo-num">Secondary Species</span>
+        <span class="flamingo-emoji">🦢</span>
+        <div class="flamingo-name">Greater Flamingo</div>
+        <div class="flamingo-latin">Phoenicopterus roseus</div>
+        <p class="flamingo-desc">Taller, paler, and less numerous than the lesser flamingo, greater flamingos are present at Natron year-round but in smaller numbers — typically tens of thousands rather than millions. They feed differently: using their uniquely bent bill to filter invertebrates, algae, and small crustaceans from the shallower margins of the lake where the water is less concentrated.</p>
+        <p class="flamingo-desc" style="margin-top:.7rem">Greater flamingos are identifiable by their white-to-pale-pink plumage with vivid red wing coverts, their larger size (up to 120cm), and their habit of feeding in areas slightly separated from the massed lesser flamingo colonies. Mixed flocks of both species at the lake's edge, silhouetted at dawn against the red lake water with Ol Doinyo Lengai behind them, represent one of the most extraordinary photographic compositions in Africa.</p>
+        <div class="flamingo-stat">
+          <div class="f-stat"><div class="f-stat-val">~50K</div><div class="f-stat-label">Typical numbers</div></div>
+          <div class="f-stat"><div class="f-stat-val">120cm</div><div class="f-stat-label">Adult height</div></div>
+          <div class="f-stat"><div class="f-stat-val">40yr</div><div class="f-stat-label">Lifespan</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MORE WILDLIFE -->
+  <section class="reveal">
+    <p class="section-eyebrow">Beyond the Flamingos</p>
+    <h2 class="section-title">The Natron Valley's <em>Full Cast</em></h2>
+    <div class="wildlife-grid">
+      <div class="wl-card"><div class="wl-emoji">🦒</div><div class="wl-name">Masai Giraffe</div><div class="wl-sub">Acacia scrub near camp</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦓</div><div class="wl-name">Plains Zebra</div><div class="wl-sub">Valley floor herds</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦌</div><div class="wl-name">Grant's Gazelle</div><div class="wl-sub">Most common antelope here</div></div>
+      <div class="wl-card"><div class="wl-emoji">🐾</div><div class="wl-name">Eland</div><div class="wl-sub">Largest antelope — valley edges</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦅</div><div class="wl-name">African Fish Eagle</div><div class="wl-sub">Lake shore dead trees</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦅</div><div class="wl-name">Kori Bustard</div><div class="wl-sub">World's heaviest flying bird</div></div>
+      <div class="wl-card"><div class="wl-emoji">🐦</div><div class="wl-name">Rufous-Tailed Weaver</div><div class="wl-sub">Endemic to Natron area</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦜</div><div class="wl-name">White Pelican</div><div class="wl-sub">Lake shore formations</div></div>
+      <div class="wl-card"><div class="wl-emoji">🐊</div><div class="wl-name">Nile Monitor Lizard</div><div class="wl-sub">Rocky outcrops near water</div></div>
+      <div class="wl-card"><div class="wl-emoji">🐦</div><div class="wl-name">Avocet & Black-Winged Stilt</div><div class="wl-sub">Lake margin waders</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦅</div><div class="wl-name">Martial Eagle</div><div class="wl-sub">Soaring above escarpment</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦁</div><div class="wl-name">African Lion</div><div class="wl-sub">Valley margins — rarely seen</div></div>
+    </div>
+  </section>
+
+  <!-- A DAY AT NATRON -->
+  <section class="reveal">
+    <div class="split-section reverse">
+      <div class="split-img-wrap">
+        <img class="split-img" src="https://mwala-tours-and-safaris.vercel.app/pexels-balazsimon-15994102.jpg" alt="Lake Natron at dawn — flamingos and volcano" />
+        <p class="split-img-caption">Dawn at the lake shore — the volcano turns amber while the flamingos begin feeding</p>
+      </div>
+      <div>
+        <p class="section-eyebrow">A Day at Lake Natron</p>
+        <h2 class="section-title">How the Perfect <em>Natron Day</em> Unfolds</h2>
+        <p class="section-lead">Natron operates on its own rhythm — dictated by heat, light, and the flamingos' own daily movements. Knowing the rhythm is the difference between a good visit and an unforgettable one.</p>
+      </div>
+    </div>
+    <div class="day-plan">
+      <div class="time-col">
+        <div class="time-block"><div class="time-pip">05:30</div></div>
+        <div class="time-block"><div class="time-pip">07:00</div></div>
+        <div class="time-block"><div class="time-pip">09:00</div></div>
+        <div class="time-block"><div class="time-pip">13:00</div></div>
+        <div class="time-block"><div class="time-pip">16:00</div></div>
+        <div class="time-block"><div class="time-pip">19:00</div></div>
+      </div>
+      <div class="event-col">
+        <div class="event-block">
+          <div class="event-time">Pre-Dawn — Lake Shore</div>
+          <div class="event-title">Dawn Walk to the Lake</div>
+          <p class="event-desc">The most extraordinary hour at Natron happens before the sun is fully up. Your guide leads you from camp along the black volcanic sand to the lake's southern shore. The flamingos have been feeding through the night — the sound reaches you before the sight does. As the light shifts from violet to orange, the lake surface turns from black to deep crimson and the flamingos resolve from silhouettes into tens of thousands of pink individuals moving in synchronised feeding formations. Ol Doinyo Lengai, directly to the south, exhales its first pale breath of sulphur in the warming air. This single hour is why people come to Natron.</p>
+        </div>
+        <div class="event-block">
+          <div class="event-time">Early Morning — Engare Sero Trail</div>
+          <div class="event-title">Gorge Hike to the Waterfall &amp; Rock Art</div>
+          <p class="event-desc">Depart by vehicle to the Engare Sero gorge trailhead (20 minutes from most camps). The 3–4 hour return hike leads through a narrow basalt gorge whose walls narrow to just a few metres in places, past towering columnar rock formations, and into sections of river canyon where the light barely reaches. En route your guide identifies the 5,000-year-old ochre rock paintings left by the gorge's ancient inhabitants — hunting scenes, cattle, and human figures that predate the Maasai presence in this valley by millennia. The gorge opens into a natural amphitheatre around a waterfall and deep plunge pool: one of the best swimming holes in northern Tanzania, utterly unknown to the tourist mainstream.</p>
+        </div>
+        <div class="event-block">
+          <div class="event-time">Mid-Morning — Valley Floor</div>
+          <div class="event-title">Wildlife Drive &amp; Maasai Community Visit</div>
+          <p class="event-desc">Return to camp for a late breakfast, then a game drive along the valley floor — giraffes browsing in the sparse acacia, eland moving in slow single file, ostrich trotting across the black soil in the distance. Your guide then facilitates a visit to one of the Natron valley's Maasai bomas — communities that have pastured their cattle on this valley floor for generations. Unlike the more commercially developed boma visits elsewhere, Natron's Maasai communities receive very few visitors. The exchange is correspondingly more genuine.</p>
+        </div>
+        <div class="event-block">
+          <div class="event-time">Afternoon Rest — Camp</div>
+          <div class="event-title">Midday at Camp — Rest &amp; Recovery</div>
+          <p class="event-desc">The Rift Valley floor in the middle of the day is genuinely hostile — temperatures above 38°C are common and the sun is direct and relentless. Rest is not laziness here; it is sensible. Most camps have shaded seating, cold drinks, and hammocks positioned to catch the occasional breeze from the escarpment. Those preparing for the optional Lengai night ascent should sleep from approximately 13:00–20:00 before the 22:00 departure.</p>
+        </div>
+        <div class="event-block">
+          <div class="event-time">Late Afternoon — Lake Shore</div>
+          <div class="event-title">Second Lake Walk — Golden Hour Photography</div>
+          <p class="event-desc">The late afternoon is the second great photographic window at Natron. The sun drops toward the western escarpment and the light turns the lake a different shade of red — warmer, more orange, less brutal than the midday crimson. The flamingos begin their evening congregation movements at this hour, often shifting from deep lake to shallower water in large formations visible from the shore. Your guide positions you for the best angles — the volcano and the birds and the lake surface in the same frame, the light perfect, the day cooling toward something almost comfortable.</p>
+        </div>
+        <div class="event-block">
+          <div class="event-time">Evening — Camp</div>
+          <div class="event-title">Dinner, Stargazing &amp; Volcano Night</div>
+          <p class="event-desc">Dinner is served as the Rift Valley fills with stars — the darkness here is complete, the Milky Way not a suggestion but a solid presence above the lake. After dinner, the Lengai group departs at 22:00 with headlamps and a local guide for the 5–7 hour summit ascent. Everyone else sleeps under open canvas to the sound of the flamingo colony settling for the night.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ECOSYSTEMS / ATTRACTIONS -->
+  <section class="reveal">
+    <p class="section-eyebrow">What to Explore</p>
+    <h2 class="section-title">Six Experiences, <em>One Valley</em></h2>
+    <p class="section-lead">The Natron area rewards those who venture beyond the lake shore. Each of these six experiences is completely distinct and together they make the most comprehensive Rift Valley adventure in Tanzania.</p>
+    <div class="ecosystem-grid">
+      <div class="eco-card">
+        <div class="eco-icon">🦩</div>
+        <div class="eco-name">The Lake Shore Walk</div>
+        <div class="eco-zone">Lake Natron · Dawn & Dusk</div>
+        <p class="eco-desc">The non-negotiable. A guided walk to the lake edge at dawn or dusk when the light and the flamingo activity are at their peak. Walk on the black volcanic sand to the crust edge — your guide will indicate how far is safe. The lake itself is a geological entity as much as a wildlife habitat: the sodium carbonate formations at its margins are as interesting as the birds above them.</p>
+        <div class="eco-tags"><span class="eco-tag">Flamingos</span><span class="eco-tag">Dawn best</span><span class="eco-tag">Photography</span></div>
+      </div>
+      <div class="eco-card">
+        <div class="eco-icon">💧</div>
+        <div class="eco-name">Engare Sero Gorge & Waterfall</div>
+        <div class="eco-zone">3–4 hr return hike</div>
+        <p class="eco-desc">A gorge walk through 5,000-year-old painted rock art to a hidden waterfall and swimming pool. One of Tanzania's least-known and most rewarding half-day hikes. The gorge itself is geologically spectacular — basalt columns formed by ancient lava flows that fractured into perfect geometric shapes as they cooled. The 2010 discovery of 19,000-year-old human footprints nearby makes this one of East Africa's most important archaeological landscapes.</p>
+        <div class="eco-tags"><span class="eco-tag">Rock art</span><span class="eco-tag">Swimming</span><span class="eco-tag">Archaeology</span></div>
+      </div>
+      <div class="eco-card">
+        <div class="eco-icon">🌋</div>
+        <div class="eco-name">Ol Doinyo Lengai Ascent</div>
+        <div class="eco-zone">Optional · Night ascent · 7–8 hrs return</div>
+        <p class="eco-desc">The world's only active carbonatite volcano — its lava erupts at just 500°C (half the temperature of normal basaltic lava) and appears black and fluid before hardening white in minutes of exposure to air. The summit ascent is strenuous but non-technical. Departing at midnight and reaching the rim at sunrise delivers one of the most extraordinary views available anywhere in Africa: the entire Rift Valley floor below, Natron's red surface visible, the Serengeti beyond.</p>
+        <div class="eco-tags"><span class="eco-tag">Strenuous</span><span class="eco-tag">Night start</span><span class="eco-tag">Sunrise summit</span></div>
+      </div>
+      <div class="eco-card">
+        <div class="eco-icon">🏺</div>
+        <div class="eco-name">Peninj Archaeological Site</div>
+        <div class="eco-zone">North shore · Half-day add-on</div>
+        <p class="eco-desc">In 1964, a UNSECO team discovered a 1.5-million-year-old Homo erectus mandible in lake sediment at Peninj — one of the most significant human ancestor finds in East Africa. The site sits in eroded badlands on Natron's northern shore where ancient lake deposits have been exposed by erosion. A guided walk with your naturalist guide contextualises the fossils within the Rift Valley's extraordinary record of human evolution.</p>
+        <div class="eco-tags"><span class="eco-tag">Homo erectus</span><span class="eco-tag">1.5M years</span><span class="eco-tag">Half day</span></div>
+      </div>
+      <div class="eco-card">
+        <div class="eco-icon">🏘</div>
+        <div class="eco-name">Maasai Valley Communities</div>
+        <div class="eco-zone">Throughout the valley</div>
+        <p class="eco-desc">The Natron valley Maasai are among the least commercially exposed communities in northern Tanzania. Their bomas on the valley floor are small, their herds still managed by traditional age-group systems, and their relationship with the lake and the volcano deeply embedded in spiritual practice. Ol Doinyo Lengai is literally the Maasai God's mountain — the word Lengai means "of God" in Maa. A visit here is not tourism — it is a genuine encounter.</p>
+        <div class="eco-tags"><span class="eco-tag">Cultural exchange</span><span class="eco-tag">Traditional life</span><span class="eco-tag">Spiritual site</span></div>
+      </div>
+      <div class="eco-card">
+        <div class="eco-icon">🌌</div>
+        <div class="eco-name">Rift Valley Stargazing</div>
+        <div class="eco-zone">Every night · Camp</div>
+        <p class="eco-desc">Lake Natron is among the darkest inhabited locations in East Africa — no significant town within 100 km, no electricity within 30 km, and the Rift Valley walls screen out the thin glow of Arusha to the south. The Milky Way is fully visible from horizon to horizon on a clear night. Your guide can identify southern hemisphere constellations and explain their use in Maasai navigation and seasonal calendars — knowledge built over thousands of years by people who have always slept under this sky.</p>
+        <div class="eco-tags"><span class="eco-tag">Dark sky</span><span class="eco-tag">Southern stars</span><span class="eco-tag">Every night</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OL DOINYO LENGAI / VOLCANO BANNER -->
+  <section class="reveal">
+    <div class="volcano-banner">
+      <div class="volcano-text">
+        <p class="section-eyebrow">The Mountain of God</p>
+        <h2 class="section-title">Ol Doinyo Lengai — <em>Earth's Most Unusual Volcano</em></h2>
+        <p class="section-lead">Ol Doinyo Lengai is not just an active volcano — it is the only carbonatite volcano on Earth currently erupting. What emerges from its crater is unlike anything produced by any other volcano on the planet, and the ascent is one of Africa's great physical challenges and rewards.</p>
+      </div>
+      <div class="volcano-facts">
+        <div class="volcano-fact">
+          <div class="volcano-fact-icon">🌡</div>
+          <p class="volcano-fact-text"><strong>500°C lava temperature.</strong> Natrocarbonatite lava erupts at half the temperature of normal basaltic lava — cool enough to appear black and viscous but still catastrophically hot. It solidifies from black to white within minutes of air exposure, a colour change unique to this volcano.</p>
+        </div>
+        <div class="volcano-fact">
+          <div class="volcano-fact-icon">🧪</div>
+          <p class="volcano-fact-text"><strong>Carbonatite chemistry.</strong> Lengai's lava is composed primarily of sodium and potassium carbonates — the same compounds that make Lake Natron's water alkaline. The volcano literally feeds the lake's chemistry, and has done so for hundreds of thousands of years. Flamingo colony and volcano are one connected system.</p>
+        </div>
+        <div class="volcano-fact">
+          <div class="volcano-fact-icon">⛰</div>
+          <p class="volcano-fact-text"><strong>A serious ascent.</strong> At 2,878 metres from a base of 600 metres, the climb involves 2,278 metres of elevation gain in 7–8 hours. The volcanic ash surface is exhausting — two steps forward, one step back. Non-technical but demanding. All ascending groups include a local licensed guide and our team provides a full briefing before departure.</p>
+        </div>
+        <div class="volcano-fact">
+          <div class="volcano-fact-icon">🌅</div>
+          <p class="volcano-fact-text"><strong>Summit at sunrise.</strong> Night starts are mandatory — the heat at the base of the volcano in the afternoon is too severe for a day ascent. Reaching the crater rim as the sun rises over Kenya to the east, with the entire Rift Valley and Lake Natron spread below you, is a reward proportionate to the effort. Every climber considers it worth it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRACTICAL INFO -->
+  <section class="reveal">
+    <p class="section-eyebrow">Planning Your Visit</p>
+    <h2 class="section-title">Practical <em>Information</em></h2>
+    <div class="practical-grid">
+      <div class="prac-card">
+        <div class="prac-icon">🚗</div>
+        <div class="prac-title">Getting There</div>
+        <p class="prac-body">Lake Natron is approximately 5–6 hours from Arusha by road. The route passes through Mto wa Mbu at the base of the Rift escarpment, then north through Engaruka village, dropping onto the valley floor via a dramatic descent road. <strong>The final 70 kilometres is unpaved</strong> — corrugated laterite in the dry season, potentially impassable in the long rains. A well-maintained 4×4 is essential. There are no flights serving Natron — the only airstrip is a basic gravel strip used by private charters.</p>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">🌡</div>
+        <div class="prac-title">Climate &amp; Conditions</div>
+        <p class="prac-body">Lake Natron sits at just <strong>600 metres</strong> in an enclosed valley — one of the hottest inhabited locations in Tanzania. Midday temperatures routinely exceed <strong>38–42°C</strong> in the dry season. Nights drop to a more comfortable 22–25°C. The lake itself raises the ambient temperature and humidity around its shore. Carry at least 3 litres of water per person per day. Avoid any outdoor activity between 11:00 and 15:30. The cool season (June–August) is considerably more manageable.</p>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">🏕</div>
+        <div class="prac-title">Accommodation</div>
+        <p class="prac-body">Options are limited and that is part of the appeal. <strong>Budget:</strong> Lake Natron Tented Camp — simple canvas tents on the lake shore, basic shared ablutions, outstanding location. <strong>Mid-range:</strong> Natron Camp by Dorobo Safaris — established operator with excellent food and knowledgeable staff. <strong>Comfort:</strong> Retreats at Lake Natron — private en-suite cottages, a small swimming pool, and the most comfortable kitchen in the valley. All camps are unfenced — wildlife passes through. Your guide will brief you on protocols.</p>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">📷</div>
+        <div class="prac-title">Photography Tips</div>
+        <p class="prac-body">Natron's photography opportunities are unique and require specific approaches. <strong>Protect your gear</strong> — sodium carbonate dust from the lake shore is corrosive to lens mechanisms. Use a UV filter and keep equipment in sealed bags when not shooting. <strong>Best light:</strong> 05:30–08:00 and 17:00–19:00. <strong>Best position:</strong> low to the ground at the lake margin, shooting along the surface to capture flamingos against the coloured water. A wide-angle captures the volcano-and-lake composition; a telephoto compresses the flamingo columns into a wall of pink.</p>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">⚠</div>
+        <div class="prac-title">Important Safety Notes</div>
+        <p class="prac-body"><strong>Never wade into the lake</strong> — the alkaline water causes rapid skin and eye damage and the sodium carbonate crust is unstable in places. <strong>Wear closed shoes</strong> at the lake shore — the crust at the water's edge can reach temperatures above 60°C in the midday sun. <strong>Comprehensive travel insurance</strong> with medical evacuation cover is essential — the nearest hospital is in Arusha (5+ hours). All Mwala guides carry a first aid kit and a satellite communication device. Volcano climbers must inform camp management before departure and expected return.</p>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">🎟</div>
+        <div class="prac-title">Fees &amp; Permits</div>
+        <p class="prac-body">Lake Natron is outside the national park system — there are no TANAPA entry fees. Community conservation fees are paid to the local Maasai Wildlife Conservation Trust (<strong>approximately USD 20–30 per person per day</strong>) and are collected at a roadside checkpoint before the lake. The Engare Sero waterfall and rock art site charges a separate access fee (~USD 10/person) paid directly to the community. Volcano ascent requires a licensed local guide (separate fee, approximately USD 80/person). All included in Mwala packages.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEST TIME -->
+  <section class="reveal">
+    <p class="section-eyebrow">When to Visit</p>
+    <h2 class="section-title">Best Time for <em>Lake Natron</em></h2>
+    <p class="section-lead">Natron's season is governed by rainfall, temperature, and flamingo behaviour. Each season offers a different version of the same extraordinary landscape.</p>
+    <div class="months-row">
+      <div class="month-cell month-good"><span class="month-label">Jan</span><div class="month-dot"></div></div>
+      <div class="month-cell month-peak"><span class="month-label">Feb</span><div class="month-dot"></div></div>
+      <div class="month-cell month-low"><span class="month-label">Mar</span><div class="month-dot"></div></div>
+      <div class="month-cell month-low"><span class="month-label">Apr</span><div class="month-dot"></div></div>
+      <div class="month-cell month-low"><span class="month-label">May</span><div class="month-dot"></div></div>
+      <div class="month-cell month-peak"><span class="month-label">Jun</span><div class="month-dot"></div></div>
+      <div class="month-cell month-peak"><span class="month-label">Jul</span><div class="month-dot"></div></div>
+      <div class="month-cell month-peak"><span class="month-label">Aug</span><div class="month-dot"></div></div>
+      <div class="month-cell month-peak"><span class="month-label">Sep</span><div class="month-dot"></div></div>
+      <div class="month-cell month-peak"><span class="month-label">Oct</span><div class="month-dot"></div></div>
+      <div class="month-cell month-good"><span class="month-label">Nov</span><div class="month-dot"></div></div>
+      <div class="month-cell month-good"><span class="month-label">Dec</span><div class="month-dot"></div></div>
+    </div>
+    <div class="month-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--savanna)"></div> Peak — Dry, Flamingo Breeding, Volcano Access Safe</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--grass)"></div> Good — Manageable Heat, Flamingos Present, Lush Gorge</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--stone)"></div> Low — Long Rains, Access Road Hazardous, Avoid</div>
+    </div>
+    <p class="section-lead" style="margin-top:1.2rem">
+      <strong>June–October</strong> is the prime window: the dry season drops temperatures to their most manageable (35–38°C rather than 42°C), the access road is in good condition, and flamingo breeding activity is at its peak on the lake. The volcano ascent is safest during the dry months when the ash surface is firm and cloud cover minimal. <strong>August–November</strong> sees the most intense flamingo breeding activity when water levels are low enough to expose the mud flats needed for nesting. <strong>February</strong> can also be excellent — the short dry period delivers clear skies and active flamingo flocks before the long rains arrive in March. <strong>March–May</strong> should be avoided: the access road floods badly and can be completely impassable for days at a time. We do not operate this route during the long rains.
+    </p>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="reveal">
+    <p class="section-eyebrow">Visit Natron with Mwala</p>
+    <h2 class="section-title">Choose Your <em>Natron</em> Adventure</h2>
+    <p class="section-lead" style="margin-bottom:0">Lake Natron works as a standalone expedition or as part of a combined Northern Tanzania itinerary pairing the frontier landscape of the Rift Valley with the wildlife of the Serengeti or Ngorongoro.</p>
+    <div class="pkgs-grid">
+      <a class="pkg-card" href="../itineraries/natron.html">
+        <div class="pkg-duration">4 Days · 3 Nights</div>
+        <div class="pkg-name">Natron Adventure</div>
+        <p class="pkg-desc">The complete Natron experience: dawn flamingo walks, the Engare Sero waterfall hike, Maasai community visit, valley game drives, and the optional Lengai volcano ascent.</p>
+        <span class="pkg-link">View Itinerary →</span>
+      </a>
+      <a class="pkg-card" href="../index.html#contact">
+        <div class="pkg-duration">Combined · Custom</div>
+        <div class="pkg-name">Natron + Serengeti</div>
+        <p class="pkg-desc">Four days at the lake followed by the Serengeti — two of Tanzania's most different landscapes paired in a single itinerary. Flamingos and volcanoes, then lions and migration.</p>
+        <span class="pkg-link">Enquire Now →</span>
+      </a>
+      <a class="pkg-card" href="../index.html#contact">
+        <div class="pkg-duration">Custom · Your Dates</div>
+        <div class="pkg-name">Bespoke Natron Trip</div>
+        <p class="pkg-desc">Add a longer Lengai acclimatisation period, a night at Empakaai Crater, or a cultural immersion programme with a specific Maasai community. We'll build around your priorities.</p>
+        <span class="pkg-link">Enquire Now →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="reveal">
+    <p class="section-eyebrow">Questions Answered</p>
+    <h2 class="section-title">Lake Natron <em>FAQ</em></h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question">Are the flamingos at Lake Natron year-round? <span class="faq-chevron">▼</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Flamingos are present at Lake Natron in all months — the lake is their permanent home. What varies dramatically is their number and behaviour. During the dry season (June–November), when water levels drop and expose mudflats, breeding activity intensifies and colony numbers can reach into the millions. During the wet season (March–May) the lake fills, the mudflats submerge, and flamingo numbers drop significantly as breeding conditions deteriorate. Flamingos are always worth visiting; the question is merely one of scale.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is the volcano ascent safe? Who can do it? <span class="faq-chevron">▼</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">The Ol Doinyo Lengai ascent is non-technical — it requires no ropes, harnesses, or specialist equipment — but it is physically demanding. The volcanic ash surface is exhausting, the elevation gain is substantial (2,278 metres from base to summit), and the night start is disorienting. We recommend the ascent for people with a baseline of good physical fitness who are comfortable with long hikes in the dark. Age is less of a barrier than fitness: we have guided people in their 60s to the summit. A full health briefing is conducted before departure, and any Mwala guide can advise honestly on whether the ascent is appropriate for a given group member.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why does the lake look red / pink? <span class="faq-chevron">▼</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">The lake's colour comes from halophilic (salt-loving) microorganisms — primarily the cyanobacterium Arthrospira and other extremophile bacteria — that thrive in the extreme alkalinity of the sodium carbonate-rich water. The pigments they produce turn the lake surface deep crimson, orange, and pink depending on their concentration, the season, and the angle of the light. In the dry season when the lake contracts and salt concentrations peak, the colour is most intense. The crust of sodium carbonate at the lake's edge is white — the same compound, crystallised.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is the access road really that bad? <span class="faq-chevron">▼</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">In the dry season, the unpaved section (approximately 70 kilometres) is rough and corrugated but entirely manageable in a well-maintained 4×4 at moderate speed. The drive takes approximately 2 hours from the tarmac end. In the short rains (November–December) it can be muddy in sections but is generally passable. In the long rains (March–May) it should not be attempted — the road crosses several seasonal rivers that flood completely and the black cotton soil becomes impassable even for experienced 4×4 drivers. All Mwala vehicles are high-clearance, properly maintained 4×4s serviced before every trip.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I swim in Lake Natron? <span class="faq-chevron">▼</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">No. The lake's alkalinity (pH 10.5) is caustic to human skin — prolonged immersion would cause serious chemical burns. The lake surface temperature in the shallow margins can also exceed 50°C in the midday sun, where geothermal springs enter the lake from below. The famous "petrified" animals sometimes photographed at Natron's edge are real — birds and bats that died at the lake shore were preserved by the sodium carbonate and appear calcified. None of this affects the flamingos, whose tough skin and specialised bills are adapted to the extreme environment. The Engare Sero waterfall pool, in contrast, is a clean, cool, freshwater plunge pool — excellent for swimming after the gorge hike.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is Natron suitable for families with children? <span class="faq-chevron">▼</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Lake Natron is best suited to children aged 10 and above. The extreme heat at the lake shore is a genuine concern for younger children, and the Engare Sero gorge hike requires sure footing on rocky terrain. The flamingo walk at dawn is accessible to any age and genuinely thrilling for children curious about birds and geology. The volcano ascent is adults only. For families with younger children who want the Rift Valley experience, we suggest combining a day at Natron (dawn lake walk, short cultural visit) with a night at Lake Manyara, where the distances are shorter and the shade considerably better.</div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="reveal">
+    <div class="cta-banner">
+      <div class="cta-text">
+        <p class="eyebrow">The Frontier Calls</p>
+        <h2>Stand at the Edge of <em>Lake Natron</em></h2>
+        <p>Send us your dates and we will build your Natron itinerary — volcano permit, community fees, camp, and a guide who has walked this lake shore a hundred times and still finds it extraordinary.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="../index.html#contact" class="btn-primary">Start Planning</a>
+        <a href="../itineraries/natron.html" class="btn-ghost">View Itinerary →</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- RELATED -->
+<section class="related-section">
+  <div class="related-inner">
+    <p class="section-eyebrow">Explore More Destinations</p>
+    <h2 class="section-title">Also Worth <em>Visiting</em></h2>
+    <div class="related-grid">
+      <a class="related-card" href="serengeti.html">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/omer-salom-gi6T2ktnpnE-unsplash.jpg" alt="Serengeti" />
+        <div class="related-body">
+          <p class="related-meta">Destination · Serengeti National Park</p>
+          <p class="related-name">The Serengeti</p>
+        </div>
+      </a>
+      <a class="related-card" href="ngorongoro.html">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/Images/ana-singh-1vOBJZ6228U-unsplash.jpg" alt="Ngorongoro" />
+        <div class="related-body">
+          <p class="related-meta">Destination · Ngorongoro Crater</p>
+          <p class="related-name">Ngorongoro Crater</p>
+        </div>
+      </a>
+      <a class="related-card" href="../index.html#packages">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/Images/ahmed-galal-VQqMACyNfwA-unsplash.jpg" alt="All Safaris" />
+        <div class="related-body">
+          <p class="related-meta">All Packages</p>
+          <p class="related-name">View All Safaris →</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Mwala Tours &amp; Safaris. All rights reserved. &nbsp;|&nbsp; <a href="../index.html">Back to Home</a></p>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

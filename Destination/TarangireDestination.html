@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/jpeg" href="../Mwalatourslogo.jpg" />
+  <link rel="shortcut icon" type="image/jpeg" href="../Mwalatourslogo.jpg" />
+  <link rel="apple-touch-icon" href="../Mwalatourslogo.jpg" />
+  <title>Tarangire National Park — Elephants, Baobabs & Ancient Africa | Mwala Tours</title>
+  <meta name="description" content="Tarangire National Park: Africa's highest elephant density, ancient baobab forests, and the Tarangire River teeming with wildlife. Plan your safari with Mwala Tours." />
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --savanna:  #C8803A;
+  --dusk:     #1C1410;
+  --ochre:    #E8A44A;
+  --earth:    #6B4226;
+  --mist:     #F5EFE6;
+  --stone:    #9A8A7A;
+  --white:    #FDFAF6;
+  --grass:    #3D6142;
+  --pale:     #FAF6F0;
+  --border:   rgba(0,0,0,.08);
+  --baobab:   #7A5A3A;
+  --dust:     #D4B896;
+
+  --display: 'Cormorant Garamond', Georgia, serif;
+  --body:    'DM Sans', system-ui, sans-serif;
+  --max: 1100px;
+  --r: 4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  background: var(--white);
+  color: var(--dusk);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%; height: 66px;
+  background: rgba(28,20,16,.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.nav-logo {
+  font-family: var(--display); font-size: 1.3rem; font-weight: 600;
+  color: var(--white); text-decoration: none; letter-spacing: .04em;
+}
+.nav-logo span { color: var(--ochre); }
+.nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
+.nav-links a {
+  color: rgba(255,255,255,.75); text-decoration: none;
+  font-size: .8rem; letter-spacing: .09em; text-transform: uppercase;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--ochre); }
+.nav-book {
+  background: var(--savanna); color: var(--white) !important;
+  padding: .45rem 1.1rem; border-radius: var(--r); font-weight: 500 !important;
+}
+.nav-book:hover { background: var(--ochre) !important; color: var(--dusk) !important; }
+
+/* ── HERO ── */
+.dest-hero {
+  height: 90vh; min-height: 600px;
+  position: relative; display: flex; align-items: center;
+  background-size: cover; background-position: center 60%;
+  padding-top: 66px;
+}
+.dest-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(28,20,16,.88) 0%,
+    rgba(28,20,16,.55) 55%,
+    rgba(28,20,16,.1) 100%
+  );
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  max-width: var(--max); margin: 0 auto;
+  width: 100%; padding: 0 5%;
+}
+.hero-breadcrumb {
+  font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ochre); margin-bottom: 1.2rem;
+}
+.hero-breadcrumb a { color: rgba(255,255,255,.55); text-decoration: none; }
+.hero-breadcrumb a:hover { color: var(--ochre); }
+.hero-eyebrow {
+  font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--ochre); font-weight: 500; margin-bottom: .7rem;
+}
+.hero-title {
+  font-family: var(--display);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 300; color: var(--white); line-height: 1.05;
+  margin-bottom: 1.1rem; max-width: 680px;
+}
+.hero-title em { font-style: italic; color: var(--ochre); display: block; }
+.hero-sub {
+  font-size: .98rem; color: rgba(255,255,255,.7); font-weight: 300;
+  line-height: 1.75; max-width: 500px; margin-bottom: 2.2rem;
+}
+.hero-stats {
+  display: flex; gap: 2.5rem; flex-wrap: wrap;
+}
+.hero-stat-num {
+  font-family: var(--display); font-size: 2.2rem; font-weight: 600;
+  color: var(--white); line-height: 1; margin-bottom: .15rem;
+}
+.hero-stat-num span { color: var(--ochre); }
+.hero-stat-label {
+  font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(255,255,255,.5); font-weight: 400;
+}
+
+/* ── FACTS BAND ── */
+.facts-band { background: var(--dusk); padding: 0 5%; }
+.facts-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-left: 1px solid rgba(255,255,255,.06);
+}
+.fact-cell {
+  padding: 2rem 1.5rem;
+  border-right: 1px solid rgba(255,255,255,.06);
+  border-top: 1px solid rgba(255,255,255,.06);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.fact-num {
+  font-family: var(--display); font-size: 2.3rem; font-weight: 300;
+  color: var(--white); line-height: 1; margin-bottom: .3rem;
+}
+.fact-num em { font-style: italic; color: var(--ochre); }
+.fact-label { font-size: .75rem; color: var(--stone); font-weight: 300; line-height: 1.5; }
+
+/* ── PAGE WRAP ── */
+.page-wrap {
+  max-width: var(--max); margin: 0 auto;
+  padding: 5rem 5%;
+}
+.page-wrap > * + * { margin-top: 5rem; }
+
+/* ── SECTION HEADERS ── */
+.section-eyebrow {
+  font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--savanna); margin-bottom: .6rem; font-weight: 500;
+}
+.section-title {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 300; color: var(--dusk); line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.section-title em { font-style: italic; color: var(--savanna); }
+.section-lead {
+  font-size: .95rem; color: #5A4A3A; font-weight: 300; line-height: 1.85;
+}
+
+/* ── SPLIT SECTIONS ── */
+.split-section {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: center;
+}
+.split-section.reverse { direction: rtl; }
+.split-section.reverse > * { direction: ltr; }
+.split-img-wrap { position: relative; }
+.split-img {
+  width: 100%; aspect-ratio: 4/3;
+  object-fit: cover; border-radius: var(--r); display: block;
+}
+.split-img-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(28,20,16,.8), transparent);
+  padding: 1.5rem 1rem .8rem;
+  font-size: .72rem; color: rgba(255,255,255,.75); font-weight: 300;
+  border-radius: 0 0 var(--r) var(--r);
+}
+
+/* ══════════════════════════════════════════
+   SIGNATURE — BAOBAB & ELEPHANT LANDSCAPE
+   ══════════════════════════════════════════ */
+.baobab-section {
+  background: linear-gradient(180deg, #2A1E14 0%, #1C1410 100%);
+  border-radius: var(--r);
+  overflow: hidden;
+}
+.baobab-header {
+  padding: 3rem 3rem 2rem;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.baobab-header .section-eyebrow { color: var(--ochre); }
+.baobab-header .section-title { color: var(--white); }
+.baobab-header .section-title em { color: var(--ochre); }
+.baobab-header .section-lead { color: rgba(255,255,255,.6); max-width: 620px; }
+
+.baobab-svg-wrap {
+  padding: 2rem 3rem 0;
+  overflow: hidden;
+}
+
+/* Age facts below SVG */
+.baobab-facts {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+.baobab-fact {
+  padding: 1.6rem 1.5rem 2rem;
+  border-right: 1px solid rgba(255,255,255,.07);
+  transition: background .2s;
+}
+.baobab-fact:last-child { border-right: none; }
+.baobab-fact:hover { background: rgba(255,255,255,.03); }
+.bf-age {
+  font-family: var(--display); font-size: 1.6rem; font-weight: 300;
+  color: var(--ochre); line-height: 1; margin-bottom: .3rem;
+}
+.bf-title {
+  font-size: .75rem; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--white); margin-bottom: .5rem;
+}
+.bf-desc {
+  font-size: .78rem; color: rgba(255,255,255,.5);
+  font-weight: 300; line-height: 1.6;
+}
+
+/* ── ELEPHANT SECTION ── */
+.elephant-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border); border-radius: var(--r);
+  overflow: hidden; margin-top: 2rem;
+}
+.ele-card {
+  background: var(--white); padding: 1.8rem 1.5rem;
+  transition: background .2s;
+}
+.ele-card:hover { background: var(--pale); }
+.ele-icon { font-size: 1.6rem; margin-bottom: .7rem; }
+.ele-name {
+  font-family: var(--display); font-size: 1.05rem; font-weight: 600;
+  color: var(--dusk); margin-bottom: .2rem;
+}
+.ele-sub {
+  font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--savanna); font-weight: 600; margin-bottom: .7rem;
+}
+.ele-desc {
+  font-size: .83rem; color: #5A4A3A; font-weight: 300; line-height: 1.65;
+}
+
+/* ── HABITATS ── */
+.habitats-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1rem; margin-top: 2rem;
+}
+.habitat-card {
+  display: flex; align-items: flex-start; gap: 1.2rem;
+  padding: 1.4rem; border: 1px solid var(--border);
+  border-radius: var(--r); transition: box-shadow .2s, transform .2s;
+}
+.habitat-card:hover { box-shadow: 0 6px 24px rgba(28,20,16,.08); transform: translateY(-2px); }
+.habitat-icon-wrap {
+  width: 50px; height: 50px; border-radius: 50%;
+  background: rgba(200,128,58,.1); border: 1px solid rgba(200,128,58,.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; flex-shrink: 0;
+}
+.habitat-title {
+  font-family: var(--display); font-size: 1.05rem; font-weight: 600;
+  color: var(--dusk); margin-bottom: .2rem;
+}
+.habitat-zone {
+  font-size: .65rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--savanna); font-weight: 600; margin-bottom: .5rem;
+}
+.habitat-desc {
+  font-size: .83rem; color: #5A4A3A; font-weight: 300; line-height: 1.65;
+}
+.habitat-tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .7rem; }
+.habitat-tag {
+  font-size: .63rem; padding: .18rem .5rem; border-radius: 20px;
+  background: var(--pale); color: var(--stone); border: 1px solid var(--border);
+}
+
+/* ── WILDLIFE GRID ── */
+.wildlife-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: .8rem; margin-top: 2rem;
+}
+.wl-card {
+  background: var(--pale); border-radius: var(--r);
+  padding: 1rem; text-align: center; border: 1px solid var(--border);
+  transition: box-shadow .2s, transform .2s;
+}
+.wl-card:hover { box-shadow: 0 4px 16px rgba(28,20,16,.08); transform: translateY(-2px); }
+.wl-card.span2 { grid-column: span 2; display: flex; align-items: center; gap: 1.2rem; text-align: left; padding: 1.3rem 1.5rem; background: var(--dusk); }
+.wl-card.span2 .wl-name { color: var(--white); font-size: .95rem; }
+.wl-card.span2 .wl-sub { color: var(--stone); }
+.wl-card.span2 .wl-desc { color: rgba(255,255,255,.6); font-size: .82rem; font-weight: 300; line-height: 1.6; margin-top: .4rem; }
+.wl-card.span2 .wl-emoji { font-size: 2.8rem; flex-shrink: 0; }
+.wl-emoji { font-size: 1.8rem; margin-bottom: .4rem; }
+.wl-name { font-size: .82rem; font-weight: 500; color: var(--dusk); }
+.wl-sub { font-size: .7rem; color: var(--stone); font-weight: 300; }
+
+/* ── EXPERIENCES ── */
+.exp-list { margin-top: 2rem; }
+.exp-item {
+  display: grid; grid-template-columns: 60px 1fr;
+  gap: 1.5rem; padding: 1.8rem 0;
+  border-bottom: 1px solid var(--border); align-items: start;
+}
+.exp-item:first-child { border-top: 1px solid var(--border); }
+.exp-icon-wrap {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: rgba(200,128,58,.1); border: 1px solid rgba(200,128,58,.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; flex-shrink: 0;
+}
+.exp-title {
+  font-family: var(--display); font-size: 1.15rem; font-weight: 600;
+  color: var(--dusk); margin-bottom: .3rem;
+}
+.exp-meta {
+  font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--savanna); font-weight: 500; margin-bottom: .5rem;
+}
+.exp-desc { font-size: .88rem; color: #5A4A3A; font-weight: 300; line-height: 1.7; }
+
+/* ── RIVER SECTION ── */
+.river-banner {
+  background: linear-gradient(135deg, #1A2E1A 0%, var(--dusk) 100%);
+  border-radius: var(--r); padding: 3rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;
+}
+.river-text .section-eyebrow { color: var(--ochre); }
+.river-text .section-title { color: var(--white); }
+.river-text .section-title em { color: var(--ochre); }
+.river-text .section-lead { color: rgba(255,255,255,.65); }
+.river-animals { display: flex; flex-direction: column; gap: .75rem; margin-top: .5rem; }
+.river-animal {
+  display: flex; align-items: flex-start; gap: .9rem;
+  background: rgba(255,255,255,.06); border-radius: var(--r);
+  padding: .9rem 1.1rem;
+}
+.river-animal-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: .05rem; }
+.river-animal-text { font-size: .83rem; color: rgba(255,255,255,.7); font-weight: 300; line-height: 1.6; }
+.river-animal-text strong { color: var(--ochre); font-weight: 500; }
+
+/* ── PRACTICAL ── */
+.practical-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1rem; margin-top: 2rem;
+}
+.prac-card {
+  background: var(--pale); border-radius: var(--r);
+  padding: 1.5rem; border: 1px solid var(--border);
+}
+.prac-icon { font-size: 1.4rem; margin-bottom: .6rem; }
+.prac-title {
+  font-family: var(--display); font-size: 1rem; font-weight: 600;
+  color: var(--dusk); margin-bottom: .5rem;
+}
+.prac-body { font-size: .84rem; color: #5A4A3A; font-weight: 300; line-height: 1.7; }
+.prac-body strong { font-weight: 500; color: var(--dusk); }
+
+/* ── BEST TIME ── */
+.months-row {
+  display: grid; grid-template-columns: repeat(12, 1fr);
+  gap: .3rem; margin-top: 1.4rem;
+}
+.month-cell {
+  text-align: center; padding: .7rem .2rem; border-radius: var(--r);
+  font-size: .65rem; font-weight: 500;
+}
+.month-label { display: block; letter-spacing: .06em; text-transform: uppercase; margin-bottom: .3rem; }
+.month-dot { width: 8px; height: 8px; border-radius: 50%; margin: 0 auto; }
+.month-peak { background: rgba(200,128,58,.15); color: var(--savanna); }
+.month-peak .month-dot { background: var(--savanna); }
+.month-good { background: rgba(61,97,66,.1); color: var(--grass); }
+.month-good .month-dot { background: var(--grass); }
+.month-low { background: var(--pale); color: var(--stone); }
+.month-low .month-dot { background: var(--stone); }
+.month-legend { display: flex; gap: 1.5rem; margin-top: .8rem; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: .4rem; font-size: .75rem; color: var(--stone); }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* ── FAQ ── */
+.faq-list { margin-top: 1.4rem; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-question {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 0; font-family: var(--body); font-size: .9rem;
+  font-weight: 500; color: var(--dusk); text-align: left; gap: 1rem;
+}
+.faq-question:hover { color: var(--savanna); }
+.faq-chevron { flex-shrink: 0; font-size: .7rem; color: var(--savanna); transition: transform .3s; }
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden; transition: max-height .4s ease;
+  font-size: .87rem; color: #5A4A3A; font-weight: 300; line-height: 1.75;
+}
+.faq-answer-inner { padding-bottom: 1rem; }
+.faq-item.open .faq-answer { max-height: 500px; }
+
+/* ── PACKAGES GRID ── */
+.pkgs-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: .8rem; margin-top: 2rem;
+}
+.pkg-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 1.4rem;
+  text-decoration: none; color: inherit; display: block;
+  transition: box-shadow .2s, transform .2s;
+}
+.pkg-card:hover { box-shadow: 0 6px 24px rgba(28,20,16,.08); transform: translateY(-3px); }
+.pkg-duration {
+  font-size: .65rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--savanna); font-weight: 600; margin-bottom: .4rem;
+}
+.pkg-name {
+  font-family: var(--display); font-size: 1rem; font-weight: 600;
+  color: var(--dusk); margin-bottom: .4rem;
+}
+.pkg-desc { font-size: .8rem; color: var(--stone); font-weight: 300; line-height: 1.5; }
+.pkg-link {
+  display: inline-flex; align-items: center; gap: .3rem;
+  margin-top: .8rem; font-size: .75rem; color: var(--savanna); font-weight: 500;
+}
+
+/* ── CTA ── */
+.cta-banner {
+  background: var(--dusk); border-radius: var(--r); padding: 3.5rem 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+}
+.cta-text .eyebrow {
+  font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ochre); margin-bottom: .5rem;
+}
+.cta-text h2 {
+  font-family: var(--display); font-size: 2.2rem; font-weight: 300;
+  color: var(--white); margin-bottom: .5rem; line-height: 1.15;
+}
+.cta-text h2 em { font-style: italic; color: var(--ochre); }
+.cta-text p { font-size: .88rem; color: rgba(255,255,255,.6); font-weight: 300; max-width: 400px; }
+.cta-actions { display: flex; gap: .8rem; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--savanna); color: var(--white); text-decoration: none;
+  padding: .95rem 2rem; border-radius: var(--r); font-size: .88rem;
+  font-weight: 500; transition: background .2s; white-space: nowrap;
+}
+.btn-primary:hover { background: var(--ochre); color: var(--dusk); }
+.btn-ghost {
+  border: 1px solid rgba(255,255,255,.25); color: var(--white);
+  text-decoration: none; padding: .95rem 2rem; border-radius: var(--r);
+  font-size: .88rem; font-weight: 400; transition: border-color .2s; white-space: nowrap;
+}
+.btn-ghost:hover { border-color: var(--ochre); color: var(--ochre); }
+
+/* ── RELATED ── */
+.related-section { background: var(--mist); padding: 5rem 5%; }
+.related-inner { max-width: var(--max); margin: 0 auto; }
+.related-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem; margin-top: 2rem;
+}
+.related-card {
+  border-radius: var(--r); overflow: hidden; background: var(--white);
+  border: 1px solid var(--border); text-decoration: none; color: inherit;
+  transition: box-shadow .2s, transform .2s; display: block;
+}
+.related-card:hover { box-shadow: 0 8px 32px rgba(28,20,16,.1); transform: translateY(-3px); }
+.related-img { width: 100%; height: 170px; object-fit: cover; display: block; }
+.related-body { padding: 1.1rem; }
+.related-meta { font-size: .7rem; color: var(--stone); margin-bottom: .3rem; }
+.related-name { font-family: var(--display); font-size: 1.05rem; font-weight: 600; color: var(--dusk); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dusk); color: rgba(255,255,255,.5);
+  padding: 2rem 5%; text-align: center; font-size: .8rem; font-weight: 300;
+}
+footer a { color: var(--ochre); text-decoration: none; }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1000px) {
+  .facts-inner { grid-template-columns: repeat(2, 1fr); }
+  .elephant-grid { grid-template-columns: repeat(2, 1fr); }
+  .habitats-grid { grid-template-columns: 1fr; }
+  .river-banner { grid-template-columns: 1fr; gap: 2rem; }
+  .split-section { grid-template-columns: 1fr; gap: 2rem; }
+  .split-section.reverse { direction: ltr; }
+  .baobab-facts { grid-template-columns: repeat(2, 1fr); }
+  .pkgs-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .dest-hero { height: 85vh; }
+  .hero-title { font-size: 2.4rem; }
+  .facts-inner { grid-template-columns: repeat(2, 1fr); }
+  .elephant-grid { grid-template-columns: 1fr; }
+  .wildlife-grid { grid-template-columns: repeat(2, 1fr); }
+  .wl-card.span2 { grid-column: span 2; }
+  .practical-grid { grid-template-columns: 1fr; }
+  .pkgs-grid { grid-template-columns: 1fr; }
+  .related-grid { grid-template-columns: 1fr; }
+  .months-row { grid-template-columns: repeat(6, 1fr); }
+  .cta-banner { padding: 2rem; }
+  .baobab-header { padding: 2rem 1.5rem 1.5rem; }
+  .baobab-svg-wrap { padding: 1.5rem 1.5rem 0; }
+  .baobab-facts { grid-template-columns: repeat(2, 1fr); }
+  nav .nav-links { display: none; }
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">Mwala <span>Tours</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#packages">Packages</a></li>
+    <li><a href="../index.html#destinations">Destinations</a></li>
+    <li><a class="nav-book" href="../index.html#contact">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="dest-hero" style="background-image:url('https://mwala-tours-and-safaris.vercel.app/Images/ahmed-galal-VQqMACyNfwA-unsplash.jpg');">
+  <div class="hero-inner">
+    <p class="hero-breadcrumb">
+      <a href="../index.html">Home</a> &nbsp;›&nbsp;
+      <a href="../index.html#destinations">Destinations</a> &nbsp;›&nbsp;
+      Tarangire
+    </p>
+    <p class="hero-eyebrow">Tanzania's Ancient Elephant Kingdom</p>
+    <h1 class="hero-title">
+      Tarangire
+      <em>Where Elephants Rule</em>
+    </h1>
+    <p class="hero-sub">
+      Ancient baobab trees. A river that never runs dry. And more elephants per square kilometre than anywhere else in Africa outside Botswana. Tarangire is Tanzania's most underestimated park — and one of its most spectacular.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">2,600<span>+</span></div>
+        <div class="hero-stat-label">km² of Wilderness</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">500<span>+</span></div>
+        <div class="hero-stat-label">Bird Species</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">2,000<span>yr</span></div>
+        <div class="hero-stat-label">Age of Oldest Baobabs</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FACTS BAND -->
+<div class="facts-band">
+  <div class="facts-inner">
+    <div class="fact-cell">
+      <div class="fact-num">Highest <em>Density</em></div>
+      <div class="fact-label">Elephant concentration in Tanzania — up to 400+ in a single afternoon game drive during dry season</div>
+    </div>
+    <div class="fact-cell">
+      <div class="fact-num">500<em>+</em></div>
+      <div class="fact-label">Bird species recorded — more than the UK's entire list, in a single park</div>
+    </div>
+    <div class="fact-cell">
+      <div class="fact-num">Year<em>-Round</em></div>
+      <div class="fact-label">River flows throughout the dry season, drawing all wildlife to one accessible corridor</div>
+    </div>
+    <div class="fact-cell">
+      <div class="fact-num">2 <em>Hours</em></div>
+      <div class="fact-label">From Arusha — the closest major game park to the Northern Circuit's starting point</div>
+    </div>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <!-- INTRO -->
+  <section class="reveal">
+    <div class="split-section">
+      <div>
+        <p class="section-eyebrow">About Tarangire</p>
+        <h2 class="section-title">The Park That <em>Surprises Everyone</em></h2>
+        <p class="section-lead">
+          Most visitors to Tanzania's Northern Circuit think of Tarangire as the opening act — a warm-up for the Serengeti and Ngorongoro. This is a mistake. Tarangire has a character so distinct from every other park in Tanzania that comparing it to what comes after misses the point entirely. It is not a smaller Serengeti. It is something else completely.
+        </p>
+        <p class="section-lead" style="margin-top:.9rem">
+          The park's defining feature is the Tarangire River — a permanent water source in a landscape that dries completely every year between June and October. As the surrounding plains turn brown and the seasonal waterholes evaporate, every animal for hundreds of kilometres converges on the river. Elephant families of forty individuals. Buffalo herds that throw up a visible dust cloud from two kilometres away. Zebra, wildebeest, impala, and giraffe packing the riverine forest and the flat grasslands on either side. The game viewing density during the dry season is extraordinary, and it happens in a landscape dominated by the ancient baobab trees that make Tarangire look unlike any other park in Africa.
+        </p>
+        <p class="section-lead" style="margin-top:.9rem">
+          The baobabs are the other reason to come. These are not decorative trees. Some of the specimens in Tarangire are over 2,000 years old — older than most of the world's cities, growing before the Roman Empire had its first emperor. Their trunks store thousands of litres of water. Their bark is stripped by elephants who need the moisture. Their canopies hold hornbills, rollers, and the extraordinary nests of weaver colonies. Understanding a baobab tree in Tarangire is understanding the entire ecosystem around it.
+        </p>
+      </div>
+      <div class="split-img-wrap">
+        <img class="split-img" src="https://mwala-tours-and-safaris.vercel.app/Images/ahmed-galal-VQqMACyNfwA-unsplash.jpg" alt="Tarangire National Park baobabs and elephants" />
+        <p class="split-img-caption">Elephant families move through the baobab forest at dusk — a scene two thousand years in the making</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAOBAB SIGNATURE ELEMENT -->
+  <div class="baobab-section reveal">
+    <div class="baobab-header">
+      <p class="section-eyebrow">The Baobab Chronicles</p>
+      <h2 class="section-title">Trees That Were Old <em>Before History Began</em></h2>
+      <p class="section-lead">Tarangire's baobabs are not backdrop — they are protagonists. Each tree is a living archive, its age readable in its circumference, its bark in the marks of every elephant that has ever stripped it for moisture. This is the park's oldest story.</p>
+    </div>
+    <div class="baobab-svg-wrap">
+      <svg viewBox="0 0 1000 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+        <defs>
+          <linearGradient id="skyT" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1A2A1A"/>
+            <stop offset="100%" stop-color="#2A1E14"/>
+          </linearGradient>
+          <linearGradient id="groundT" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#6B4A2A"/>
+            <stop offset="100%" stop-color="#3A2810"/>
+          </linearGradient>
+          <radialGradient id="sunGlow" cx="80%" cy="20%" r="30%">
+            <stop offset="0%" stop-color="rgba(232,164,74,.15)"/>
+            <stop offset="100%" stop-color="rgba(232,164,74,0)"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Sky -->
+        <rect x="0" y="0" width="1000" height="320" fill="url(#skyT)"/>
+        <rect x="0" y="0" width="1000" height="320" fill="url(#sunGlow)"/>
+
+        <!-- Horizon dust haze -->
+        <ellipse cx="500" cy="250" rx="600" ry="40" fill="rgba(180,120,60,.08)"/>
+
+        <!-- Ground -->
+        <rect x="0" y="258" width="1000" height="62" fill="url(#groundT)"/>
+        <!-- Ground texture -->
+        <line x1="0" y1="262" x2="1000" y2="262" stroke="rgba(180,120,60,.2)" stroke-width="1"/>
+
+        <!-- Dry grass clumps -->
+        <g stroke="#8A6A3A" stroke-width="1.2" opacity=".5">
+          <line x1="80" y1="258" x2="78" y2="248"/><line x1="84" y1="258" x2="86" y2="248"/><line x1="82" y1="258" x2="82" y2="247"/>
+          <line x1="200" y1="258" x2="198" y2="250"/><line x1="204" y1="258" x2="204" y2="250"/>
+          <line x1="350" y1="258" x2="348" y2="249"/><line x1="354" y1="258" x2="353" y2="249"/>
+          <line x1="620" y1="258" x2="618" y2="250"/><line x1="624" y1="258" x2="623" y2="250"/>
+          <line x1="780" y1="258" x2="779" y2="249"/><line x1="784" y1="258" x2="784" y2="249"/>
+          <line x1="920" y1="258" x2="918" y2="250"/><line x1="922" y1="258" x2="923" y2="250"/>
+        </g>
+
+        <!-- ── BAOBAB 1: Seedling ~50 years ── -->
+        <g>
+          <!-- Trunk -->
+          <rect x="118" y="218" width="14" height="40" rx="7" fill="#5A3A1A"/>
+          <!-- Roots -->
+          <path d="M118,256 Q112,260 108,258" stroke="#4A2A10" stroke-width="2" fill="none"/>
+          <path d="M132,256 Q138,260 142,258" stroke="#4A2A10" stroke-width="2" fill="none"/>
+          <!-- Branches -->
+          <path d="M125,218 Q118,208 108,204" stroke="#5A3A1A" stroke-width="3" fill="none"/>
+          <path d="M125,218 Q132,208 142,205" stroke="#5A3A1A" stroke-width="3" fill="none"/>
+          <path d="M125,218 Q125,206 125,198" stroke="#5A3A1A" stroke-width="3" fill="none"/>
+          <!-- Leaf tufts -->
+          <ellipse cx="108" cy="202" rx="10" ry="7" fill="#3D6142" opacity=".8"/>
+          <ellipse cx="142" cy="203" rx="10" ry="7" fill="#4A7050" opacity=".8"/>
+          <ellipse cx="125" cy="195" rx="9" ry="6" fill="#3D6142" opacity=".8"/>
+          <!-- Age label -->
+          <text x="105" y="278" font-family="'DM Sans', sans-serif" font-size="9" fill="rgba(232,164,74,.9)" text-anchor="middle" font-weight="600">~50 yrs</text>
+          <text x="105" y="290" font-family="'DM Sans', sans-serif" font-size="7.5" fill="rgba(255,255,255,.4)" text-anchor="middle">Seedling</text>
+          <text x="105" y="302" font-family="'DM Sans', sans-serif" font-size="7" fill="rgba(255,255,255,.3)" text-anchor="middle">1m trunk</text>
+        </g>
+
+        <!-- ── BAOBAB 2: Young ~200 years ── -->
+        <g>
+          <rect x="243" y="195" width="24" height="63" rx="10" fill="#6B4226"/>
+          <path d="M255,195 Q240,178 225,172" stroke="#6B4226" stroke-width="4" fill="none"/>
+          <path d="M255,195 Q270,178 285,173" stroke="#6B4226" stroke-width="4" fill="none"/>
+          <path d="M255,195 Q248,180 244,168" stroke="#5A3A1A" stroke-width="3" fill="none"/>
+          <path d="M255,195 Q262,180 266,168" stroke="#5A3A1A" stroke-width="3" fill="none"/>
+          <path d="M255,195 Q255,178 255,164" stroke="#6B4226" stroke-width="4" fill="none"/>
+          <path d="M243,256 Q236,260 230,258" stroke="#4A2A10" stroke-width="2" fill="none"/>
+          <path d="M267,256 Q274,260 280,258" stroke="#4A2A10" stroke-width="2" fill="none"/>
+          <ellipse cx="225" cy="169" rx="15" ry="9" fill="#3D6142" opacity=".8"/>
+          <ellipse cx="285" cy="170" rx="15" ry="9" fill="#4A7050" opacity=".8"/>
+          <ellipse cx="244" cy="165" rx="11" ry="7" fill="#3D6142" opacity=".8"/>
+          <ellipse cx="266" cy="165" rx="11" ry="7" fill="#4A7050" opacity=".8"/>
+          <ellipse cx="255" cy="161" rx="13" ry="8" fill="#3D6142" opacity=".9"/>
+          <text x="255" y="278" font-family="'DM Sans', sans-serif" font-size="9" fill="rgba(232,164,74,.9)" text-anchor="middle" font-weight="600">~200 yrs</text>
+          <text x="255" y="290" font-family="'DM Sans', sans-serif" font-size="7.5" fill="rgba(255,255,255,.4)" text-anchor="middle">Young Adult</text>
+          <text x="255" y="302" font-family="'DM Sans', sans-serif" font-size="7" fill="rgba(255,255,255,.3)" text-anchor="middle">2.5m trunk</text>
+        </g>
+
+        <!-- ── BAOBAB 3: Mature ~500 years (with elephant) ── -->
+        <g>
+          <!-- Trunk — bottle-shaped -->
+          <path d="M390,258 Q378,250 372,230 Q368,210 370,195 Q372,175 385,165 Q400,155 415,165 Q428,175 430,195 Q432,210 428,230 Q422,250 410,258 Z" fill="#7A5A3A"/>
+          <!-- Trunk texture lines -->
+          <path d="M382,240 Q390,238 398,240" stroke="#5A3A1A" stroke-width="1" fill="none" opacity=".4"/>
+          <path d="M378,220 Q390,218 402,220" stroke="#5A3A1A" stroke-width="1" fill="none" opacity=".4"/>
+          <!-- Elephant bark-stripping marks -->
+          <path d="M375,210 Q378,205 382,210" stroke="#D4B896" stroke-width="1.5" fill="none" opacity=".5"/>
+          <path d="M375,218 Q380,214 384,218" stroke="#D4B896" stroke-width="1.5" fill="none" opacity=".4"/>
+          <!-- Main branches -->
+          <path d="M385,165 Q365,148 340,140" stroke="#7A5A3A" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <path d="M415,165 Q435,148 460,141" stroke="#7A5A3A" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <path d="M400,160 Q390,140 388,122" stroke="#7A5A3A" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M400,160 Q410,140 412,122" stroke="#7A5A3A" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <!-- Sub-branches -->
+          <path d="M340,140 Q325,132 312,130" stroke="#6B4226" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M340,140 Q330,130 328,120" stroke="#6B4226" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M460,141 Q475,133 488,130" stroke="#6B4226" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M460,141 Q470,130 472,120" stroke="#6B4226" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <!-- Leaf canopy -->
+          <ellipse cx="316" cy="126" rx="22" ry="14" fill="#3D6142" opacity=".85"/>
+          <ellipse cx="330" cy="116" rx="18" ry="11" fill="#4A7050" opacity=".85"/>
+          <ellipse cx="490" cy="126" rx="22" ry="14" fill="#3D6142" opacity=".85"/>
+          <ellipse cx="474" cy="116" rx="18" ry="11" fill="#4A7050" opacity=".85"/>
+          <ellipse cx="390" cy="118" rx="20" ry="12" fill="#3D6142" opacity=".9"/>
+          <ellipse cx="412" cy="118" rx="20" ry="12" fill="#4A7050" opacity=".9"/>
+          <ellipse cx="401" cy="108" rx="28" ry="16" fill="#2D5032" opacity=".9"/>
+          <!-- Weaver bird nests hanging from branches -->
+          <ellipse cx="346" cy="145" rx="5" ry="7" fill="#8A7A3A" opacity=".7"/>
+          <line x1="346" y1="138" x2="344" y2="133" stroke="#6A5A2A" stroke-width="1"/>
+          <ellipse cx="454" cy="145" rx="5" ry="7" fill="#8A7A3A" opacity=".7"/>
+          <line x1="454" y1="138" x2="456" y2="133" stroke="#6A5A2A" stroke-width="1"/>
+          <!-- Elephant stripping bark -->
+          <g opacity=".9">
+            <ellipse cx="435" cy="228" rx="18" ry="11" fill="#5A4A3A"/>
+            <circle cx="415" cy="220" r="11" fill="#4A3A2A"/>
+            <!-- Ear -->
+            <ellipse cx="410" cy="216" rx="8" ry="11" fill="#5A4A3A" opacity=".8"/>
+            <!-- Trunk touching tree -->
+            <path d="M408,220 Q400,230 398,242 Q396,248 400,250" stroke="#4A3A2A" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <!-- Eye -->
+            <circle cx="413" cy="218" r="1.5" fill="#1A1008"/>
+            <!-- Tusk -->
+            <path d="M410,225 Q404,228 402,234" stroke="#F0E8D0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <!-- Legs -->
+            <rect x="421" y="237" width="6" height="20" rx="3" fill="#5A4A3A"/>
+            <rect x="430" y="237" width="6" height="20" rx="3" fill="#5A4A3A"/>
+            <rect x="440" y="237" width="6" height="20" rx="3" fill="#5A4A3A"/>
+            <rect x="449" y="237" width="6" height="20" rx="3" fill="#5A4A3A"/>
+          </g>
+          <!-- Age label -->
+          <text x="400" y="278" font-family="'DM Sans', sans-serif" font-size="9" fill="rgba(232,164,74,.9)" text-anchor="middle" font-weight="600">~500 yrs</text>
+          <text x="400" y="290" font-family="'DM Sans', sans-serif" font-size="7.5" fill="rgba(255,255,255,.4)" text-anchor="middle">Mature — Elephant Tree</text>
+          <text x="400" y="302" font-family="'DM Sans', sans-serif" font-size="7" fill="rgba(255,255,255,.3)" text-anchor="middle">5–6m circumference</text>
+        </g>
+
+        <!-- ── BAOBAB 4: Ancient ~1500 years ── -->
+        <g>
+          <!-- Massive bottle trunk -->
+          <path d="M640,258 Q622,248 616,225 Q610,200 612,180 Q614,155 628,142 Q644,132 660,132 Q676,132 692,142 Q706,155 708,180 Q710,200 704,225 Q698,248 680,258 Z" fill="#6B4226"/>
+          <!-- Texture -->
+          <path d="M622,235 Q640,232 658,235" stroke="#5A3A1A" stroke-width="1" fill="none" opacity=".35"/>
+          <path d="M618,215 Q640,212 662,215" stroke="#5A3A1A" stroke-width="1" fill="none" opacity=".35"/>
+          <path d="M616,195 Q640,192 664,195" stroke="#5A3A1A" stroke-width="1" fill="none" opacity=".3"/>
+          <!-- Heavy stripped marks from centuries of elephants -->
+          <path d="M620,200 Q628,194 636,200" stroke="#D4B896" stroke-width="2" fill="none" opacity=".45"/>
+          <path d="M618,212 Q628,207 638,212" stroke="#D4B896" stroke-width="2" fill="none" opacity=".4"/>
+          <path d="M617,224 Q630,220 642,224" stroke="#D4B896" stroke-width="1.5" fill="none" opacity=".35"/>
+          <!-- Hollow in trunk (ancient) -->
+          <ellipse cx="638" cy="210" rx="8" ry="12" fill="#2A1810" opacity=".5"/>
+          <!-- Massive canopy branches -->
+          <path d="M628,142 Q598,118 565,108" stroke="#6B4226" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path d="M692,142 Q722,118 755,108" stroke="#6B4226" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path d="M640,140 Q625,114 618,92" stroke="#6B4226" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <path d="M680,140 Q695,114 702,92" stroke="#6B4226" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <path d="M660,136 Q660,108 660,85" stroke="#7A5A3A" stroke-width="9" fill="none" stroke-linecap="round"/>
+          <!-- Sub-branches -->
+          <path d="M565,108 Q548,98 530,95" stroke="#5A3A1A" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M565,108 Q555,96 552,82" stroke="#5A3A1A" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M755,108 Q772,98 790,95" stroke="#5A3A1A" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M755,108 Q765,96 768,82" stroke="#5A3A1A" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M618,92 Q608,78 600,70" stroke="#5A3A1A" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M618,92 Q622,76 622,64" stroke="#5A3A1A" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M702,92 Q712,78 720,70" stroke="#5A3A1A" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M702,92 Q698,76 698,64" stroke="#5A3A1A" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <!-- Canopy -->
+          <ellipse cx="530" cy="91" rx="26" ry="16" fill="#2D5032" opacity=".9"/>
+          <ellipse cx="554" cy="79" rx="20" ry="12" fill="#3D6142" opacity=".85"/>
+          <ellipse cx="790" cy="91" rx="26" ry="16" fill="#2D5032" opacity=".9"/>
+          <ellipse cx="766" cy="79" rx="20" ry="12" fill="#3D6142" opacity=".85"/>
+          <ellipse cx="600" cy="67" rx="22" ry="13" fill="#3D6142" opacity=".9"/>
+          <ellipse cx="622" cy="61" rx="18" ry="11" fill="#4A7050" opacity=".85"/>
+          <ellipse cx="720" cy="67" rx="22" ry="13" fill="#3D6142" opacity=".9"/>
+          <ellipse cx="698" cy="61" rx="18" ry="11" fill="#4A7050" opacity=".85"/>
+          <ellipse cx="660" cy="58" rx="38" ry="22" fill="#2D5032" opacity=".95"/>
+          <ellipse cx="660" cy="68" rx="50" ry="28" fill="#3D6142" opacity=".7"/>
+          <!-- Weaver nests (many — old tree) -->
+          <ellipse cx="575" cy="112" rx="6" ry="8" fill="#8A7A3A" opacity=".75"/>
+          <line x1="575" y1="104" x2="573" y2="98" stroke="#6A5A2A" stroke-width="1.2"/>
+          <ellipse cx="745" cy="112" rx="6" ry="8" fill="#8A7A3A" opacity=".75"/>
+          <line x1="745" y1="104" x2="747" y2="98" stroke="#6A5A2A" stroke-width="1.2"/>
+          <ellipse cx="630" cy="97" rx="5" ry="7" fill="#8A7A3A" opacity=".7"/>
+          <ellipse cx="690" cy="97" rx="5" ry="7" fill="#8A7A3A" opacity=".7"/>
+          <!-- Hornbill on branch -->
+          <circle cx="558" cy="95" r="4" fill="#2A1A10"/>
+          <path d="M558,95 Q563,93 567,95" stroke="#C8803A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- Age label -->
+          <text x="660" y="278" font-family="'DM Sans', sans-serif" font-size="9" fill="rgba(232,164,74,.9)" text-anchor="middle" font-weight="600">~1,500 yrs</text>
+          <text x="660" y="290" font-family="'DM Sans', sans-serif" font-size="7.5" fill="rgba(255,255,255,.4)" text-anchor="middle">Ancient — Hollow Interior</text>
+          <text x="660" y="302" font-family="'DM Sans', sans-serif" font-size="7" fill="rgba(255,255,255,.3)" text-anchor="middle">10–12m circumference</text>
+        </g>
+
+        <!-- ── BAOBAB 5: Patriarch ~2000+ years ── -->
+        <g>
+          <!-- Enormous trunk with girth lines -->
+          <path d="M906,258 Q885,246 878,220 Q872,195 874,172 Q876,148 892,136 Q910,124 930,124 Q950,124 968,136 Q984,148 986,172 Q988,195 982,220 Q975,246 954,258 Z" fill="#8A6A3A"/>
+          <!-- Complex texture — many centuries -->
+          <path d="M884,238 Q908,234 932,238" stroke="#6A4A20" stroke-width="1.5" fill="none" opacity=".4"/>
+          <path d="M880,218 Q908,214 936,218" stroke="#6A4A20" stroke-width="1.5" fill="none" opacity=".4"/>
+          <path d="M878,198 Q908,194 938,198" stroke="#6A4A20" stroke-width="1" fill="none" opacity=".35"/>
+          <path d="M877,178 Q908,174 939,178" stroke="#6A4A20" stroke-width="1" fill="none" opacity=".3"/>
+          <!-- Deep hollow — 2000 year tree is often hollow -->
+          <ellipse cx="910" cy="200" rx="14" ry="20" fill="#1A1008" opacity=".6"/>
+          <!-- Elephant mark history — deep gouges -->
+          <path d="M882,225 Q894,219 906,225" stroke="#D4B896" stroke-width="2.5" fill="none" opacity=".55"/>
+          <path d="M880,238 Q895,233 910,238" stroke="#D4B896" stroke-width="2" fill="none" opacity=".45"/>
+          <path d="M879,210 Q893,205 907,210" stroke="#D4B896" stroke-width="2" fill="none" opacity=".4"/>
+          <!-- Roots visible at surface -->
+          <path d="M878,256 Q868,262 858,258" stroke="#6A4A20" stroke-width="3" fill="none"/>
+          <path d="M954,256 Q964,262 974,258" stroke="#6A4A20" stroke-width="3" fill="none"/>
+          <path d="M890,258 Q886,265 880,264" stroke="#6A4A20" stroke-width="2" fill="none"/>
+          <!-- Massive branch system -->
+          <path d="M892,136 Q860,106 830,92" stroke="#7A5A3A" stroke-width="12" fill="none" stroke-linecap="round"/>
+          <path d="M968,136 Q1000,106 1000,92" stroke="#7A5A3A" stroke-width="12" fill="none" stroke-linecap="round"/>
+          <path d="M910,132 Q898,98 895,70" stroke="#7A5A3A" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path d="M950,132 Q962,98 965,70" stroke="#7A5A3A" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path d="M930,128 Q930,92 930,65" stroke="#8A6A3A" stroke-width="11" fill="none" stroke-linecap="round"/>
+          <!-- Sub-branches -->
+          <path d="M830,92 Q812,78 795,72" stroke="#6A4A20" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M830,92 Q822,76 820,60" stroke="#6A4A20" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M895,70 Q885,52 880,40" stroke="#6A4A20" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M965,70 Q975,52 980,40" stroke="#6A4A20" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <!-- Vast canopy -->
+          <ellipse cx="795" cy="68" rx="30" ry="18" fill="#2D5032" opacity=".9"/>
+          <ellipse cx="820" cy="56" rx="24" ry="14" fill="#3D6142" opacity=".85"/>
+          <ellipse cx="880" cy="36" rx="26" ry="15" fill="#2D5032" opacity=".9"/>
+          <ellipse cx="980" cy="36" rx="26" ry="15" fill="#3D6142" opacity=".9"/>
+          <ellipse cx="930" cy="50" rx="60" ry="35" fill="#2D5032" opacity=".9"/>
+          <ellipse cx="930" cy="62" rx="75" ry="40" fill="#3D6142" opacity=".65"/>
+          <!-- Many weaver nests -->
+          <ellipse cx="840" cy="96" rx="7" ry="9" fill="#8A7A3A" opacity=".8"/>
+          <line x1="840" y1="87" x2="838" y2="80" stroke="#6A5A2A" stroke-width="1.5"/>
+          <ellipse cx="908" cy="76" rx="6" ry="8" fill="#8A7A3A" opacity=".75"/>
+          <ellipse cx="952" cy="76" rx="6" ry="8" fill="#8A7A3A" opacity=".75"/>
+          <ellipse cx="970" cy="96" rx="6" ry="8" fill="#8A7A3A" opacity=".7"/>
+          <!-- Age label + Patriarch crown -->
+          <text x="930" y="278" font-family="'DM Sans', sans-serif" font-size="9" fill="rgba(232,164,74,1)" text-anchor="middle" font-weight="600">~2,000+ yrs</text>
+          <text x="930" y="290" font-family="'DM Sans', sans-serif" font-size="7.5" fill="rgba(255,255,255,.5)" text-anchor="middle">Patriarch — Living Monument</text>
+          <text x="930" y="302" font-family="'DM Sans', sans-serif" font-size="7" fill="rgba(255,255,255,.4)" text-anchor="middle">15m+ circumference</text>
+        </g>
+
+        <!-- Timeline arrow at bottom -->
+        <line x1="90" y1="315" x2="980" y2="315" stroke="rgba(200,128,58,.3)" stroke-width="1"/>
+        <path d="M975,312 L982,315 L975,318" fill="rgba(200,128,58,.4)"/>
+        <text x="530" y="313" font-family="'DM Sans', sans-serif" font-size="7" fill="rgba(200,128,58,.4)" text-anchor="middle" letter-spacing="2">TIME</text>
+
+        <!-- ── ELEPHANT HERD in middle distance ── -->
+        <g opacity=".5">
+          <ellipse cx="530" cy="252" rx="12" ry="7" fill="#4A3A2A"/>
+          <circle cx="518" cy="246" r="7" fill="#3A2A1A"/>
+          <path d="M514,246 Q508,252 506,256" stroke="#3A2A1A" stroke-width="3" fill="none"/>
+          <rect x="521" y="256" width="4" height="12" rx="2" fill="#4A3A2A" opacity=".8"/>
+          <rect x="527" y="256" width="4" height="12" rx="2" fill="#4A3A2A" opacity=".8"/>
+          <rect x="533" y="256" width="4" height="12" rx="2" fill="#4A3A2A" opacity=".8"/>
+          <rect x="539" y="256" width="4" height="12" rx="2" fill="#4A3A2A" opacity=".8"/>
+        </g>
+        <g opacity=".4">
+          <ellipse cx="570" cy="254" rx="9" ry="5.5" fill="#4A3A2A"/>
+          <circle cx="561" cy="249" r="5" fill="#3A2A1A"/>
+          <path d="M559,249 Q555,254 553,257" stroke="#3A2A1A" stroke-width="2.5" fill="none"/>
+          <rect x="564" y="258" width="3.5" height="10" rx="1.5" fill="#4A3A2A" opacity=".8"/>
+          <rect x="570" y="258" width="3.5" height="10" rx="1.5" fill="#4A3A2A" opacity=".8"/>
+        </g>
+      </svg>
+    </div>
+    <div class="baobab-facts">
+      <div class="baobab-fact">
+        <div class="bf-age">50 yrs</div>
+        <div class="bf-title">The Seedling Stage</div>
+        <p class="bf-desc">Barely a metre of trunk. Most baobab seedlings do not survive their first decade — elephants, fire, and drought take the majority. Those that do begin the centuries-long growth that will outlast every other living thing around them.</p>
+      </div>
+      <div class="baobab-fact">
+        <div class="bf-age">500 yrs</div>
+        <div class="bf-title">The Elephant Tree</div>
+        <p class="bf-desc">Mature baobabs become essential to elephants — who strip the bark for moisture and fibre, hollow the trunk for salt, and remember individual trees across generations. The relationship is mutual: elephant dung spreads the seeds.</p>
+      </div>
+      <div class="baobab-fact">
+        <div class="bf-age">1,500 yrs</div>
+        <div class="bf-title">The Hollow Years</div>
+        <p class="bf-desc">Ancient baobabs develop hollow cores — enormous cavities that shelter bushbabies, owls, bats, and generations of insects. The Maasai used some large hollows as shelters. Weaver colonies build hundreds of nests in the canopy simultaneously.</p>
+      </div>
+      <div class="baobab-fact">
+        <div class="bf-age">2,000+ yrs</div>
+        <div class="bf-title">The Living Monument</div>
+        <p class="bf-desc">The oldest Tarangire baobabs predate the birth of Islam, the construction of Angkor Wat, and the founding of Venice. They were already ancient when the Maasai arrived in East Africa in the 15th century. They may outlive everything we are building today.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ELEPHANT KNOWLEDGE -->
+  <section class="reveal">
+    <p class="section-eyebrow">The Elephant Kingdom</p>
+    <h2 class="section-title">Understanding <em>Tarangire's Elephants</em></h2>
+    <p class="section-lead">No park in Tanzania — perhaps in Africa — provides a more intimate, sustained encounter with African elephants than Tarangire in the dry season. Understanding what you're watching transforms the experience.</p>
+    <div class="elephant-grid">
+      <div class="ele-card">
+        <div class="ele-icon">👨‍👩‍👧‍👦</div>
+        <div class="ele-name">Family Groups</div>
+        <div class="ele-sub">The Matriarch System</div>
+        <p class="ele-desc">Elephant herds are led by the oldest female — the matriarch — who carries decades of knowledge about water sources, safe routes, and seasonal food. In Tarangire, where water is seasonal and scarce, this knowledge is literally the difference between survival and death. A matriarch who knows the Tarangire River's hidden pools leads her family to them every year.</p>
+      </div>
+      <div class="ele-card">
+        <div class="ele-icon">🤝</div>
+        <div class="ele-name">Mega-Herds</div>
+        <div class="ele-sub">Dry Season Convergence</div>
+        <p class="ele-desc">In the peak dry season (August–October), individual family groups merge at the river into temporary aggregations of 200, 300, even 400 individuals — called mega-herds. The sound of a mega-herd moving through the riverine forest, the ground vibrating, the dust rising, is one of the most overwhelming sensory experiences in the natural world.</p>
+      </div>
+      <div class="ele-card">
+        <div class="ele-icon">🐘</div>
+        <div class="ele-name">Bull Elephants</div>
+        <div class="ele-sub">Solitary & Dangerous</div>
+        <p class="ele-desc">Adult male elephants live apart from the family herds, joining only to mate. In Tarangire, old bulls roam the baobab woodland alone — enormous, scarred, and sometimes in musth (a hormonal state of heightened aggression). A lone bull in musth at twenty metres is the moment you understand that "gentle giant" is a tourist's phrase, not a naturalist's one.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HABITATS -->
+  <section class="reveal">
+    <p class="section-eyebrow">Habitats</p>
+    <h2 class="section-title">Four Ecosystems, <em>One River</em></h2>
+    <p class="section-lead">The Tarangire River bisects a mosaic of distinct habitats, each supporting different wildlife and offering a different kind of game viewing.</p>
+    <div class="habitats-grid">
+      <div class="habitat-card">
+        <div class="habitat-icon-wrap">🌳</div>
+        <div>
+          <div class="habitat-title">Baobab Woodland</div>
+          <div class="habitat-zone">Northern Park — Main Drive Zone</div>
+          <p class="habitat-desc">The iconic Tarangire landscape: ancient baobab trees on red laterite soil, with a floor of dry grass and low acacia scrub. This is where the elephants concentrate at all times of year. Eland, greater kudu, and the gerenuk — the long-necked antelope that feeds standing upright — are found in the dense baobab areas.</p>
+          <div class="habitat-tags"><span class="habitat-tag">Elephant</span><span class="habitat-tag">Eland</span><span class="habitat-tag">Gerenuk</span><span class="habitat-tag">Best photography</span></div>
+        </div>
+      </div>
+      <div class="habitat-card">
+        <div class="habitat-icon-wrap">💧</div>
+        <div>
+          <div class="habitat-title">Tarangire River</div>
+          <div class="habitat-zone">Central Park — Year-Round Water</div>
+          <p class="habitat-desc">The river is the park's spine. A dense band of riverine forest — fig trees, acacias, doum palms — runs along both banks, providing shade, food, and cover for predators. Lion prides use the riverine vegetation as hunting ground; leopards move in the dense cover above the water; and hippos occupy every deep pool from June onward.</p>
+          <div class="habitat-tags"><span class="habitat-tag">Hippo</span><span class="habitat-tag">Lion</span><span class="habitat-tag">Leopard</span><span class="habitat-tag">Croc</span></div>
+        </div>
+      </div>
+      <div class="habitat-card">
+        <div class="habitat-icon-wrap">🌾</div>
+        <div>
+          <div class="habitat-title">Silale Swamp</div>
+          <div class="habitat-zone">Southern Park — Dry Season Refuge</div>
+          <p class="habitat-desc">A permanent swamp in the park's southern section — a critical dry-season refuge that holds enormous buffalo concentrations, waterbuck, and wading birds. The open, boggy terrain around the swamp is prime cheetah hunting ground, and the area consistently produces the park's best big-cat sightings in June–August.</p>
+          <div class="habitat-tags"><span class="habitat-tag">Buffalo</span><span class="habitat-tag">Cheetah</span><span class="habitat-tag">Waterbuck</span><span class="habitat-tag">Waders</span></div>
+        </div>
+      </div>
+      <div class="habitat-card">
+        <div class="habitat-icon-wrap">🏜</div>
+        <div>
+          <div class="habitat-title">Open Grassland</div>
+          <div class="habitat-zone">Eastern &amp; Western Flanks</div>
+          <p class="habitat-desc">The open short-grass plains flanking the baobab woodland are where the Migration herds pass through between December and May, and where the park's zebra, wildebeest, and gazelle concentrate year-round. The open terrain makes this the easiest zone for spotting cheetah and the park's population of wild dogs — one of Tanzania's most reliable packs.</p>
+          <div class="habitat-tags"><span class="habitat-tag">Wild Dog</span><span class="habitat-tag">Zebra</span><span class="habitat-tag">Wildebeest</span><span class="habitat-tag">Gazelle</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WILDLIFE -->
+  <section class="reveal">
+    <p class="section-eyebrow">Wildlife</p>
+    <h2 class="section-title">Animals of <em>Tarangire</em></h2>
+    <div class="wildlife-grid">
+      <div class="wl-card span2">
+        <div class="wl-emoji">🐘</div>
+        <div>
+          <div class="wl-name">African Elephant — Tarangire's Icon</div>
+          <div class="wl-sub">Loxodonta africana · Peak dry season: 400+ per afternoon drive</div>
+          <p class="wl-desc">No park in Tanzania delivers elephant encounters like Tarangire in the dry season. Family groups move to the river in columns; mega-herds form at dusk. The intimacy of watching a forty-strong family interact — calves playing, matriarchs navigating, bulls pushing boundaries — is Tarangire's defining experience.</p>
+        </div>
+      </div>
+      <div class="wl-card span2">
+        <div class="wl-emoji">🐕</div>
+        <div>
+          <div class="wl-name">African Wild Dog — Tanzania's Rarest</div>
+          <div class="wl-sub">Lycaon pictus · One of the most endangered carnivores in Africa</div>
+          <p class="wl-desc">Tarangire holds one of Tanzania's few reliable wild dog populations. These extraordinary pack hunters — all painted faces, enormous ears, and extraordinary coordination — have a hunting success rate of over 80%, making them far more effective predators than lions. A wild dog hunt, pursued on foot for kilometres, is one of the most intense wildlife experiences available anywhere.</p>
+        </div>
+      </div>
+      <div class="wl-card"><div class="wl-emoji">🦁</div><div class="wl-name">Lion</div><div class="wl-sub">River corridor prides</div></div>
+      <div class="wl-card"><div class="wl-emoji">🐆</div><div class="wl-name">Leopard</div><div class="wl-sub">Riverine forest canopy</div></div>
+      <div class="wl-card"><div class="wl-emoji">🐆</div><div class="wl-name">Cheetah</div><div class="wl-sub">Silale grasslands</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦬</div><div class="wl-name">Cape Buffalo</div><div class="wl-sub">Swamp — herds of hundreds</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦒</div><div class="wl-name">Masai Giraffe</div><div class="wl-sub">Acacia canopy browsers</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦌</div><div class="wl-name">Greater Kudu</div><div class="wl-sub">Baobab woodland</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦔</div><div class="wl-name">Fringe-Eared Oryx</div><div class="wl-sub">Unique to this region</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦩</div><div class="wl-name">Gerenuk</div><div class="wl-sub">Feeds standing upright</div></div>
+      <div class="wl-card"><div class="wl-emoji">🐊</div><div class="wl-name">Nile Crocodile</div><div class="wl-sub">River pools</div></div>
+      <div class="wl-card"><div class="wl-emoji">🦅</div><div class="wl-name">Martial Eagle</div><div class="wl-sub">Baobab crown perches</div></div>
+    </div>
+  </section>
+
+  <!-- RIVER SECTION -->
+  <section class="reveal">
+    <div class="river-banner">
+      <div class="river-text">
+        <p class="section-eyebrow">The Tarangire River</p>
+        <h2 class="section-title">One River, <em>All Life</em></h2>
+        <p class="section-lead">In the dry season, the Tarangire River is the only permanent water for hundreds of square kilometres. Every animal in the ecosystem knows where it is. Understanding this concentrating effect is understanding why Tarangire game viewing in July–October rivals anywhere in Africa.</p>
+        <p class="section-lead" style="margin-top:.8rem">The riverine ecosystem — the dense forest, the muddy banks, the pools — functions as a year-round wildlife corridor that sustains predator and prey through eight months of dry season.</p>
+      </div>
+      <div class="river-animals">
+        <div class="river-animal">
+          <div class="river-animal-icon">🦛</div>
+          <p class="river-animal-text"><strong>Hippo pods</strong> take up residence in the deeper pools from June onward, often 20–30 individuals to a pool, surfacing and bellowing through the night. The sound carries for a kilometre.</p>
+        </div>
+        <div class="river-animal">
+          <div class="river-animal-icon">🐊</div>
+          <p class="river-animal-text"><strong>Nile crocodiles</strong> bask on every sandbank in the dry season, waiting at the few crossing points where elephants enter the water. The river shallows are where the drama concentrates.</p>
+        </div>
+        <div class="river-animal">
+          <div class="river-animal-icon">🦅</div>
+          <p class="river-animal-text"><strong>500+ bird species</strong> — the Tarangire River corridor is one of East Africa's premier birding habitats. Six kingfisher species use the river banks; the yellow-collared lovebird swarms the doum palms; the Ashy starling is endemic to this ecosystem.</p>
+        </div>
+        <div class="river-animal">
+          <div class="river-animal-icon">🐘</div>
+          <p class="river-animal-text"><strong>Elephant crossings</strong> — families wade the river in column, calves helped across by their mothers and older siblings. The river crossings happen daily at dusk and are among the most moving scenes in African wildlife.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCES -->
+  <section class="reveal">
+    <div class="split-section">
+      <div>
+        <p class="section-eyebrow">Safari Experiences</p>
+        <h2 class="section-title">How to <em>Experience Tarangire</em></h2>
+        <p class="section-lead">Tarangire rewards time and early starts. The park's character is at its best before 09:00 and after 16:00 — the hours when the light is warm and the animals are active.</p>
+      </div>
+      <div class="split-img-wrap">
+        <img class="split-img" src="https://mwala-tours-and-safaris.vercel.app/Images/ahmed-galal-VQqMACyNfwA-unsplash.jpg" alt="Tarangire game drive at golden hour" />
+        <p class="split-img-caption">The baobab woodland at golden hour — when Tarangire looks exactly as Africa should look</p>
+      </div>
+    </div>
+    <div class="exp-list" style="margin-top:2.5rem">
+      <div class="exp-item">
+        <div class="exp-icon-wrap">🚙</div>
+        <div>
+          <div class="exp-title">Private Full-Day Game Drive</div>
+          <div class="exp-meta">Sunrise to Sunset · All Zones</div>
+          <p class="exp-desc">A full day in Tarangire gives you access to all four zones: the baobab woodland in the morning cool, the river corridor through midday, the Silale Swamp for predators in the afternoon, and the return through the woodland at golden hour. Bush lunch is served in the field — often beside the river, with elephants crossing within view. No half-days; the park rewards time.</p>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-icon-wrap">🌙</div>
+        <div>
+          <div class="exp-title">Night Game Drive</div>
+          <div class="exp-meta">Available at Select Camps · Spotlight &amp; Open Vehicle</div>
+          <p class="exp-desc">Tarangire at night is a completely different world. The nocturnal predators — serval, genet, African civet — move through the baobab woodland. Spring hares leap in the spotlight. Bush babies peer from the acacia canopy. And the sounds: the distant hyena clan, the hippo bellowing from the river, the nightjar calling continuously from the darkness. Available through our partner camps in the private conservancy north of the park gate.</p>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-icon-wrap">🚶</div>
+        <div>
+          <div class="exp-title">Walking Safari in the Conservancy</div>
+          <div class="exp-meta">Private Concession · Armed Guide · Morning Only</div>
+          <p class="exp-desc">The private conservancy areas adjacent to Tarangire's northern boundary allow walking safaris with armed Maasai guides — a completely different perspective on the same animals. On foot, the baobab trees feel even more ancient; the elephant tracks in the red dust are enormous; and the experience of tracking a herd through the woodland with your guide reading the signs is something a vehicle can never replicate.</p>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-icon-wrap">🐦</div>
+        <div>
+          <div class="exp-title">Dedicated Birding Drive</div>
+          <div class="exp-meta">500+ Species · Specialist Guide Available</div>
+          <p class="exp-desc">Tarangire is one of East Africa's top birding destinations. The river corridor holds six kingfisher species, the booted eagle, African hawk-eagle, and three species of roller. The Ashy starling is endemic to the Tarangire ecosystem and found nowhere else in the world. If you are a birder, please note this specifically when enquiring — we will pair you with a guide who has a bird specialist qualification and a life list rather than a mammal-focused guide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRACTICAL -->
+  <section class="reveal">
+    <p class="section-eyebrow">Planning Your Visit</p>
+    <h2 class="section-title">Practical <em>Information</em></h2>
+    <div class="practical-grid">
+      <div class="prac-card">
+        <div class="prac-icon">🚗</div>
+        <div class="prac-title">Getting There</div>
+        <p class="prac-body">Tarangire is <strong>2 hours south of Arusha</strong> on a good tarmac road via Makuyuni junction — the closest major game park to the city and to Kilimanjaro International Airport. It is always the first stop on the Northern Circuit for good logistical reason. We pick up from all major Arusha hotels at 07:00 and reach the park gate by 09:00. No domestic flights serve the park; it is road access only.</p>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">📅</div>
+        <div class="prac-title">How Long to Stay</div>
+        <p class="prac-body">A minimum of <strong>one full day and one night</strong> allows both the morning and afternoon game drives, which together cover the full park circuit. Two nights is recommended for serious photographers or birders who want time in the southern Silale area and the northern baobab woodland. Tarangire is the first stop on our 7-day Northern Circuit, which allocates two nights here — we consider this the correct amount of time.</p>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">🏕</div>
+        <div class="prac-title">Accommodation</div>
+        <p class="prac-body"><strong>Budget:</strong> Tarangire River Camp — simple but beautifully located on the river bank, with the sound of hippos and baboons at night. <strong>Mid-range:</strong> Tarangire Sopa Lodge — on the escarpment above the park with sweeping views. <strong>Luxury:</strong> Oliver's Camp — one of East Africa's finest small camps in the private conservancy north of the park, with walking safaris and night drives included. Tarangire Treetops Lodge offers rooms built into the canopy of giant baobab trees.</p>
+      </div>
+      <div class="prac-card">
+        <div class="prac-icon">📷</div>
+        <div class="prac-title">Photography Notes</div>
+        <p class="prac-body">Tarangire's red laterite soil, golden grass, and baobab silhouettes create some of the most distinctive and beautiful light in East Africa. <strong>Best light:</strong> 06:30–09:00 and 16:30–18:30. The baobab trees photograph best backlit at dusk. Elephant portraits at the river are best in the morning when dust is lower. A 70–200mm lens covers most situations; a wider 24–70mm captures the baobab scale. Red, orange, and golden filters are largely unnecessary — the landscape provides its own.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEST TIME -->
+  <section class="reveal">
+    <p class="section-eyebrow">When to Visit</p>
+    <h2 class="section-title">Best Time for <em>Tarangire</em></h2>
+    <p class="section-lead">Tarangire's game viewing quality follows a simple rule: as the landscape dries, the wildlife concentrates on the river. The drier the year, the more extraordinary the game viewing.</p>
+    <div class="months-row">
+      <div class="month-cell month-good"><span class="month-label">Jan</span><div class="month-dot"></div></div>
+      <div class="month-cell month-good"><span class="month-label">Feb</span><div class="month-dot"></div></div>
+      <div class="month-cell month-low"><span class="month-label">Mar</span><div class="month-dot"></div></div>
+      <div class="month-cell month-low"><span class="month-label">Apr</span><div class="month-dot"></div></div>
+      <div class="month-cell month-low"><span class="month-label">May</span><div class="month-dot"></div></div>
+      <div class="month-cell month-good"><span class="month-label">Jun</span><div class="month-dot"></div></div>
+      <div class="month-cell month-peak"><span class="month-label">Jul</span><div class="month-dot"></div></div>
+      <div class="month-cell month-peak"><span class="month-label">Aug</span><div class="month-dot"></div></div>
+      <div class="month-cell month-peak"><span class="month-label">Sep</span><div class="month-dot"></div></div>
+      <div class="month-cell month-peak"><span class="month-label">Oct</span><div class="month-dot"></div></div>
+      <div class="month-cell month-good"><span class="month-label">Nov</span><div class="month-dot"></div></div>
+      <div class="month-cell month-good"><span class="month-label">Dec</span><div class="month-dot"></div></div>
+    </div>
+    <div class="month-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--savanna)"></div> Peak — Late Dry Season, Mega-Herds, Best Concentration</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--grass)"></div> Good — Game Present, Green Landscape, Migration Calves</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--stone)"></div> Low — Long Rains, Animals Disperse Away from River</div>
+    </div>
+    <p class="section-lead" style="margin-top:1.2rem">
+      <strong>July–October</strong> is Tarangire at its absolute peak. The long dry season concentrates every animal in the ecosystem onto the river — elephant mega-herds of 400+, hippo pods in every deep pool, and predators positioned along the bank waiting for the concentration of prey. This is the period we most strongly recommend for first-time visitors. <strong>June</strong> is excellent and quieter than high season. <strong>January–February</strong> offers green landscape, migratory bird species in large numbers, and newborn animals. <strong>March–May</strong> sees the animals disperse across the wider ecosystem as the rains return water everywhere — still worth visiting for birders, but the extraordinary dry-season concentration is absent.
+    </p>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="reveal">
+    <p class="section-eyebrow">Visit Tarangire with Mwala</p>
+    <h2 class="section-title">Choose Your <em>Tarangire</em> Safari</h2>
+    <p class="section-lead" style="margin-bottom:0">Tarangire works as a standalone 2–3 day destination or as the opening chapter of the full Northern Circuit.</p>
+    <div class="pkgs-grid">
+      <a class="pkg-card" href="northern-circuit.html">
+        <div class="pkg-duration">7 Days · 6 Nights</div>
+        <div class="pkg-name">Northern Circuit Grand Safari</div>
+        <p class="pkg-desc">Tarangire is the perfect opener for the full Northern Circuit — two days here, then Natron, Serengeti, Manyara, and Ngorongoro.</p>
+        <span class="pkg-link">View Package →</span>
+      </a>
+      <a class="pkg-card" href="../index.html#contact">
+        <div class="pkg-duration">2–3 Days</div>
+        <div class="pkg-name">Tarangire Standalone</div>
+        <p class="pkg-desc">A focused 2-night stay in Tarangire — full day drives, night game drive, and optional walking in the conservancy. Perfect for a weekend escape from Arusha or Nairobi.</p>
+        <span class="pkg-link">Enquire Now →</span>
+      </a>
+      <a class="pkg-card" href="../index.html#contact">
+        <div class="pkg-duration">Custom</div>
+        <div class="pkg-name">Bespoke Tarangire Experience</div>
+        <p class="pkg-desc">Birding focus, photography itinerary, or walking safari emphasis — tell us what you want to experience and we build around it.</p>
+        <span class="pkg-link">Enquire Now →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="reveal">
+    <p class="section-eyebrow">Questions Answered</p>
+    <h2 class="section-title">Tarangire <em>FAQ</em></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">Is Tarangire worth visiting if I'm already going to the Serengeti? <span class="faq-chevron">▼</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Absolutely — and for a specific reason. Tarangire offers something the Serengeti cannot: the baobab landscape and the elephant density. The Serengeti's elephants are present but not concentrated; Tarangire's are. And no park in Africa produces the visual of hundreds of elephants moving through ancient baobab trees at dusk. They are complementary experiences, not repetitive ones. On our Northern Circuit, Tarangire is always the first stop — it calibrates the eye and sets a standard that the Serengeti then approaches from a completely different direction.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">When are the elephant mega-herds visible? <span class="faq-chevron">▼</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">The mega-herds — aggregations of 200–400+ elephants — form at the peak of the dry season, typically August through October. They result from multiple family groups converging on the river simultaneously. In a good dry year, a single afternoon drive along the Tarangire River can encounter more elephants than most people see in a lifetime of safaris. June and July also produce large concentrations, though typically smaller than August–October peaks. In the wet season, the families disperse across the wider ecosystem and herd sizes return to the usual 10–50 range.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Are African wild dogs reliably seen in Tarangire? <span class="faq-chevron">▼</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Tarangire has one of Tanzania's most reliable wild dog populations, but "reliable" is a relative term for an animal that roams enormous territories and moves unpredictably. Our guides maintain contact with the resident packs through radio networks and ranger updates. In peak season, wild dog sightings occur on a significant proportion of full-day game drives. We cannot promise a sighting, but we can tell you that Tarangire gives better odds than almost any other park in Tanzania — better, in our experience, than the Serengeti. Dawn drives are best, as the packs are returning from nocturnal hunts.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is Tarangire good for children? <span class="faq-chevron">▼</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Tarangire is excellent for families. The elephant encounters are particularly captivating for children — calves are visible in almost every family group, playing, stumbling, being corrected by older siblings. The baobab trees are visually extraordinary and the story of their age is something children respond to strongly. The drive time from Arusha (2 hours) is manageable, and the park's compact main circuit means less time between sightings than in larger parks. We recommend Tarangire for children aged 4 and above.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="reveal">
+    <div class="cta-banner">
+      <div class="cta-text">
+        <p class="eyebrow">The Ancient Kingdom Awaits</p>
+        <h2>Plan Your <em>Tarangire Safari</em></h2>
+        <p>Two thousand year old trees, four hundred elephants, and a river that never runs dry. Tell us your dates and we'll handle everything else.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="../index.html#contact" class="btn-primary">Start Planning</a>
+        <a href="northern-circuit.html" class="btn-ghost">View Northern Circuit →</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- RELATED -->
+<section class="related-section">
+  <div class="related-inner">
+    <p class="section-eyebrow">Explore More Destinations</p>
+    <h2 class="section-title">Also Worth <em>Visiting</em></h2>
+    <div class="related-grid">
+      <a class="related-card" href="serengeti.html">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/omer-salom-gi6T2ktnpnE-unsplash.jpg" alt="Serengeti" />
+        <div class="related-body">
+          <p class="related-meta">Destination · Serengeti National Park</p>
+          <p class="related-name">The Serengeti</p>
+        </div>
+      </a>
+      <a class="related-card" href="ngorongoro.html">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/Images/ana-singh-1vOBJZ6228U-unsplash.jpg" alt="Ngorongoro" />
+        <div class="related-body">
+          <p class="related-meta">Destination · Ngorongoro Crater</p>
+          <p class="related-name">Ngorongoro Crater</p>
+        </div>
+      </a>
+      <a class="related-card" href="manyara.html">
+        <img class="related-img" src="https://mwala-tours-and-safaris.vercel.app/jorge-tung--5Betfvtgso-unsplash.jpg" alt="Lake Manyara" />
+        <div class="related-body">
+          <p class="related-meta">Destination · Lake Manyara</p>
+          <p class="related-name">Lake Manyara</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Mwala Tours &amp; Safaris. All rights reserved. &nbsp;|&nbsp; <a href="../index.html">Back to Home</a></p>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
